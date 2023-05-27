@@ -1,0 +1,68 @@
+:root{
+    --darkText: hsl(var(--hue), 50%, 30%);
+    --backgroundColor1: hsl(var(--hue), 33%, 86%);
+    --backgroundColor2: hsl(var(--hue2), 33%, 86%);
+    --mainBackground: linear-gradient(var(--angle), var(--backgroundColor1) 25%, var(--backgroundColor2));
+    --defaultTextColor: hsl(var(--hue), 6%, 27%);
+    --sectionHeaderColor1: hsl(var(--hue), 100%, 30%);
+    --sectionHeaderColor2: hsl(var(--hue2), 100%, 30%);
+    --sectionHeaderBackground: linear-gradient(var(--angle), var(--sectionHeaderColor1) 25%, var(--sectionHeaderColor2));
+    --lightColor: hsl(var(--hue), 100%, 90%);
+    --sectionLabelColor: hsl(var(--hue), 100%, 80%);
+}
+body{
+    font-family: 'Spectral', serif;
+    margin: 0;
+    background-image: var(--mainBackground);
+    color: var(--defaultTextColor);
+    -webkit-text-size-adjust: 100%;
+}
+header{
+    background-color: var(--sectionHeaderColor1);
+    color: var(--lightColor);
+    text-align: center;
+    margin: 0;
+}
+.sectionHeader{
+    background-image: var(--sectionHeaderBackground);
+    background-attachment: fixed;
+    text-align: center;
+    margin: 0;
+    padding: 1px;
+    line-height: 2;
+}
+.sectionLabel{
+    background-color: var(--sectionLabelColor);
+    mix-blend-mode: color-burn;
+    mix-blend-mode: saturation, luminosity;
+    padding: 1px;
+    margin-bottom: 30px;
+}
+h1{
+    color: var(--lightColor);
+    mix-blend-mode: luminosity;
+    font-size: 29.33333333333px;
+    font-weight: 700;
+}
+p{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+.sectionLabel p{
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 900;
+    font-family: 'Merriweather Sans', sans-serif;
+    color: hsl(var(--hue), 50%, 12.5%);
+}
+
+.br{
+    display: block;
+    margin-bottom: 0.75em;
+}
+.brLarge{
+    display: block;
+    margin-bottom: 2em;
+}
