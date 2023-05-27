@@ -1,0 +1,94 @@
+let CreateHrStyle = (middle = "✿", imageMiddle = " ⋆⋅☆⋅⋆ ") => {
+    document.querySelector('head').innerHTML += `
+    <style>
+        hr {
+            text-align: center; /* horizontal centering */
+            line-height: 1px; /* vertical centering */
+            height: 0px; /* gap between the lines */
+            width: 50%;
+            transform: translateX(calc(50% - 0.51em));
+            font-size: 1.2em;
+            border: 1px solid hsl(var(--hue), 6%, 12.5%);
+            margin: 20px 10px;
+            overflow: visible;
+            background-image: var(--mainBackground);
+
+            /* ensure 1px gap between borders */
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            -ms-box-sizing: content-box;
+            -o-box-sizing: content-box;
+            box-sizing: content-box;
+            mix-blend-mode: luminosity;
+            background-blend-mode: normal;
+        }
+
+        hr:after {
+            content: "${middle}";
+            color: hsl(var(--hue), 6%, 12.5%);
+            display: inline; /* for vertical centering and background knockout */
+            background-color: var(--sectionLabelColor);
+            padding: 0 0.5em; /* size of background color knockout */
+        }
+        hr.ImageTop, hr.ImageBottom{
+            border-width: 0px 0;
+        }
+        .ImageTop:after{
+            content: "╭──────${imageMiddle}──────╮";
+            background-image: none;
+            background-color: inherit;
+        }
+        .ImageBottom:after{
+            content: "╰──────${imageMiddle}──────╯";
+            background-image: none;
+            background-color: inherit;
+        }
+        hr.ImageBottom, hr.ImageTop{
+            width: fit-content;
+            transform: translateX(calc(50vw - 50% - 0.51em));
+            background-image: none;
+            background-color: transparent;
+        }
+        hr.ImageTop{
+            margin-top: 40px;
+        }
+        hr.ImageBottom{
+            margin-bottom: 40px;
+        }
+        x:-o-prefocus, hr:after {
+            content: "";
+        }
+        @media (min-width: 530px){
+            hr{
+                width: 20vw;
+                transform: translateX(calc(50vw - 10vw - 0.51em));
+            }
+            .ImageTop:after{
+                content: "╭────────────${imageMiddle}────────────╮";
+            }
+            .ImageBottom:after{
+                content: "╰────────────${imageMiddle}────────────╯";
+            }
+            hr.ImageTop, hr.ImageBottom{
+                width: fit-content;
+                transform: translateX(calc(50vw - 50% - 0.51em));
+            }
+        }
+        @media (max-width: 375px){
+            .ImageTop:after{
+                content: "╭─${imageMiddle.length < 8 ? '──' : ''}───${imageMiddle}───${imageMiddle.length < 8 ? '──' : ''}─╮";
+            }
+            .ImageBottom:after{
+                content: "╰─${imageMiddle.length < 8 ? '──' : ''}───${imageMiddle}───${imageMiddle.length < 8 ? '──' : ''}─╯";
+            }
+        }
+        @media (max-width: 320px){
+            .ImageTop:after{
+                content: "╭─${imageMiddle.length < 8 ? '──' : ''}─${imageMiddle}─${imageMiddle.length < 8 ? '──' : ''}─╮";
+            }
+            .ImageBottom:after{
+                content: "╰─${imageMiddle.length < 8 ? '──' : ''}─${imageMiddle}─${imageMiddle.length < 8 ? '──' : ''}─╯";
+            }
+        }
+    </style>`;
+}

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Document</title> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700;800&family=Spectral:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --hue: 120;
+            --hue2: 200;
+        }
+        body{
+            margin: 0;
+            color: hsl(var(--hue), 6%, 27%);
+        }
+        a:link, a:visited, a:active{
+            color: hsl(var(--hue), 6%, 27%);
+            text-decoration: underline 0px solid transparent;
+        }
+        a:hover {
+            color: hsl(var(--hue), 22%, 48%);
+            text-decoration: underline white solid 2px !important;
+        }
+
+        /* Navbar container */
+        /* .navbar {
+            overflow: hidden;
+            background-color: hsl(var(--hue), 100%, 30%);
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+        #SiteName {
+            float: left;
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            color: hsl(var(--hue), 100%, 96%);
+            padding: 13px 16px 0px 16px;
+            margin: 0;
+        }
+        .navbar a {
+            float: right;
+            font-size: 16px;
+            color: hsl(var(--hue), 100%, 96%);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: underline 0px solid transparent;
+        }
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: hsl(var(--hue), 100%, 96%);
+            padding: 14px 16px;
+            background-color: transparent;
+            font-family: inherit; Important for vertical align on mobile phones
+            margin: 0; Important for vertical align on mobile phones
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn, .Selected:hover {
+            background-color: hsl(var(--hue), 69%, 46%);
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: hsl(var(--hue), 100%, 30%);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: hsl(var(--hue), 100%, 96%);
+            padding: 5px 15px 5px 15px;
+            text-decoration: underline 0px solid transparent;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: hsl(var(--hue), 69%, 46%);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        } */
+
+
+        .navbar {
+            background-color: hsl(var(--hue), 100%, 30%);
+            font-family: 'Merriweather Sans', sans-serif;
+            /* display: flex; */
+            /* align-items: center; */
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            /* gap: 1.5em; */
+            padding: 0 1.5em 0 1.5em;
+        }
+        .flex-container{
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: flex-end;
+            align-items: stretch;
+            gap: 1.5em;
+            padding-left: 1.5em;
+            padding-right: 1.5em;
+        }
+        .flex-container > a, .flex-container > div button, .flex-container > div{
+            font-size: clamp(0.5rem, 2.5vw, 1rem);
+            white-space: nowrap;
+            /* height: 100%; */
+            /* flex: 1 1 0; */
+        }
+        .flex-container > a, .flex-container > div button{
+            padding-top: 1.2em;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        /* .navbar > h3{
+            font-size: clamp(0.5rem, 2.5vw, 1rem);
+            white-space: nowrap;
+            /* flex: 3 1 0; 
+        } */
+        #SiteName {
+            /* font-size: 18px; */
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            color: hsl(var(--hue), 100%, 96%);
+            text-align: left;
+        }
+        .navbar a {
+            /* font-size: 16px; */
+            color: hsl(var(--hue), 100%, 96%);
+            text-align: center;
+            text-decoration: underline 0px solid transparent;
+        }
+        .dropdown {
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            /* font-size: 16px; */
+            border: none;
+            outline: none;
+            color: hsl(var(--hue), 100%, 96%);
+            background-color: transparent;
+            font-family: inherit; /*Important for vertical align on mobile phones*/
+            margin: 0; /*Important for vertical align on mobile phones*/
+            /* transform: translateY(calc(100vw - 395px)); */
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn, .Selected:hover {
+            background-color: hsl(var(--hue), 69%, 46%);
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: hsl(var(--hue), 100%, 30%);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            font-size: inherit;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .dropdown-content a {
+            float: none;
+            color: hsl(var(--hue), 100%, 96%);
+            padding: 5px 15px 5px 15px;
+            text-decoration: underline 0px solid transparent;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:last-child {
+            padding: 5px 15px 10px 15px;
+        }
+        .dropdown-content a:hover {
+            background-color: hsl(var(--hue), 69%, 46%);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .Selected{
+            font-weight: 800;
+            text-decoration: underline 2px solid white !important;
+        }
+        #BackToTop{
+            width: 75px;
+            height: 75px;
+            font-size: 40px;
+            border-radius: 45%;
+            border-width: 0;
+            background-color: hsla(var(--hue), 69%, 46%, 0.25);
+            color: hsl(var(--hue), 60%, 30%);
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 1;
+        }
+        #BackToTop:hover{
+            background-color: hsla(var(--hue2), 69%, 46%, 0.25);
+            color: hsl(var(--hue2), 60%, 30%);
+            &:before{
+                border-top:5px solid hsl(var(--hue2), 60%, 30%);
+                border-right:5px solid hsl(var(--hue2), 60%, 30%);
+            }
+        }
+        #BackToTop:before {
+            content:"";
+            position:absolute;
+            inset:30%;
+            transform:translateY(20%) rotate(-45deg);
+            border-top:5px solid hsl(var(--hue), 60%, 30%);
+            border-right:5px solid hsl(var(--hue), 60%, 30%);
+        }
+
+        @media only screen and (max-width: 520px) {
+            /* #SiteName {
+                display: none;
+            }
+            .navbar a {
+                font-size: 13px;
+                padding: 10px 10px;
+            }
+            .dropdown .dropbtn {
+                font-size: 13px;
+                padding: 10px 10px;
+            } */
+            #BackToTop{
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+        }
+        @media only screen and (max-width: 630px) {
+            #SiteName{
+                /* display: none; */
+                font-size: 0px;
+            }
+            .navbar{
+                grid-template-columns: 1px 1fr;
+            }
+            .flex-container{
+                padding-top: 0.25em;
+                padding-bottom: 0.25em;
+                padding-left: 0em;
+                justify-content: space-around;
+            }
+            .flex-container > a, .flex-container > div button{
+                padding-top: 0em;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+        @media only screen and (max-width: 385px) {
+            /* #SiteName {
+                font-size: 12px;
+                font-weight: 900;
+                letter-spacing: 1.5px;
+                padding: 9.5px 7px 0px 7px;
+                margin: 0;
+            } */
+            /* .navbar a {
+                font-size: 10px;
+                padding: 10px 7px;
+            }
+            .dropdown .dropbtn {
+                font-size: 10px;
+                padding: 10px 7px;
+            } */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- <div class="navbar">
+            <h3 id="SiteName">Prismoria</h3>
+            <a href="Updates.html" id="Updates" class=''>Site Updates</a>
+            <a href="SomeStories.html" id="SomeStories" class="">Some Stories</a>
+            <div class="dropdown">
+                <button class="dropbtn Selected" id="Characters">Characters
+                </button>
+                <div class="dropdown-content">
+                  <a href="Jay.html">Jay Star</a>
+                  <a href="#">Jacob Jackson</a>
+                  <a href="Sam.html">Samuel Broteez</a>
+                  <a href="">Elliot Evans</a>
+                  <a href="">Adam Zondervan</a>
+                  <a href="">Rene Tickle</a>
+                </div>
+              </div>
+            <a href="index.html" id="TheParticle">The Particle</a>
+        </div>
+        <a href="#" id='BackToTop'></a> -->
+
+        <div class="navbar">
+            <h3 id="SiteName">Prismoria</h3>
+            <div class="flex-container">
+                <a href="index.html" id="TheParticle">The Particle</a>
+                <div class="dropdown">
+                    <button class="dropbtn Selected" id="Characters">Characters
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="Jay.html">Jay Star</a>
+                        <a href="#">Jacob Jackson</a>
+                        <a href="Sam.html">Samuel Broteez</a>
+                        <a href="">Elliot Evans</a>
+                        <a href="">Adam Zondervan</a>
+                        <a href="">Rene Tickle</a>
+                    </div>
+                </div>
+                <a href="SomeStories.html" id="SomeStories" class="">Some Stories</a>
+                <a href="Updates.html" id="Updates" class=''>Site Updates</a>
+            </div>
+        </div>
+        <a href="#" id='BackToTop'></a>
+        <!-- <a href="#" class="top">Back to Top &#8593;</a>   &#11165;-->
+    </header>
+</body>
+</html>
