@@ -1,0 +1,144 @@
+audio {
+    width: 100%;
+    height: 100%;
+}
+audio::-webkit-media-controls-enclosure {
+    /* height: 16px; */
+    text-align: right;
+    background-color:transparent;
+    width: 100%;
+    height: 100%;
+}
+audio::-webkit-media-controls {
+    text-align: right;
+    /* background-color:#301934; */
+    background-color: hsl(var(--hue), 75%, 70%);
+    width: 100%;
+    height: 100%;
+    border-radius: 45px;
+}
+audio::-webkit-media-controls-panel{
+    position: absolute;
+    bottom: 5px;
+    width: 90%;
+    height: 45%;
+    text-align: right;
+    background-color:transparent;
+    right: 50%;
+    transform: translateX(50%);
+}
+.audio-player{
+    margin: 0px 0 10px 0;
+    padding: 10px 0 0 0 ;
+    height: 85px;
+    position: relative;
+    overflow: hidden;
+    width: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.audio-player div{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: calc(50% - 15px);
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.audio-player div h2{
+    width: 100%;
+    white-space: pre;
+    text-align: center;
+    color: hsl(var(--hue), 40%, 25%);
+    z-index: 10;
+    mix-blend-mode: luminosity;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 50%;
+    /* top: 50%; */
+    /* transform: translateY(calc(-50% - 7.5px)); */
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1.35rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+}
+#SongName{
+    height: fit-content;
+}
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-current-time-display {
+    display: none;
+}
+audio::-webkit-media-controls-play-button, .audioButtons
+{
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+.audioButtons
+{
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    background-repeat: no-repeat;
+}
+#PrevSong{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 100% 100%'%3E%3Cpath d='M11.729 5.055a.5.5 0 0 0-.52.038L8.5 7.028V5.5a.5.5 0 0 0-.79-.407L5 7.028V5.5a.5.5 0 0 0-1 0v5a.5.5 0 0 0 1 0V8.972l2.71 1.935a.5.5 0 0 0 .79-.407V8.972l2.71 1.935A.5.5 0 0 0 12 10.5v-5a.5.5 0 0 0-.271-.445z' transform='scale(1.6) translate(2 2)' fill='currentcolor'/%3E%3C/svg%3E");
+}
+#NextSong{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 100% 100%'%3E%3Cpath d='M4.271 5.055a.5.5 0 0 1 .52.038L7.5 7.028V5.5a.5.5 0 0 1 .79-.407L11 7.028V5.5a.5.5 0 0 1 1 0v5a.5.5 0 0 1-1 0V8.972l-2.71 1.935a.5.5 0 0 1-.79-.407V8.972l-2.71 1.935A.5.5 0 0 1 4 10.5v-5a.5.5 0 0 1 .271-.445z' transform='scale(1.6) translate(2 2)' fill='currentcolor'/%3E%3C/svg%3E");
+}
+.audioButtons:hover, audio::-webkit-media-controls-mute-button:hover, audio::-webkit-media-controls-play-button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: hsl(calc(var(--hue) + 180), 50%, 70%);
+}
+audio::-webkit-media-controls-mute-button, audio::-webkit-media-controls-play-button, .audioButtons
+{
+    background-color: hsl(calc(var(--hue) + 180), 50%, 50%);
+    border-radius: 50%;
+    border: 0px;
+    transition: .2s ease-in-out 0s;
+}
+
+audio::-webkit-media-controls-timeline {
+    background-color: hsl(calc(var(--hue) + 180), 50%, 50%);
+    border-radius: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+audio::-webkit-media-controls-volume-control-container{
+    background-color: hsl(calc(var(--hue) + 180), 50%, 50%);
+    border-radius: 25px;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+
+@media (max-width: 750px) {
+    .audio-player div h2{
+        /* transform: translateY(calc(-50% - 7.5px)); */
+        font-size: 3vw;
+    }
+    .audio-player{
+        width: 85%;
+    }
+}
+@media (max-width: 600px) {
+    .audio-player div h2{
+        /* transform: translateY(calc(-50% - 5.5px)); */
+        font-size: 3.5vw;
+    }
+    .audio-player{
+        width: 95%;
+    }
+}
