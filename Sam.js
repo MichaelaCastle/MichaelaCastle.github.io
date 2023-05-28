@@ -172,7 +172,7 @@ window.onload = () => {
     <p class='answer'><a href='Jay.html'>Jay Star</a></p>`;
     document.querySelector('#Perception').innerHTML = `
     <p class='question'>How they feel about themselves</p>
-    <p class='answer'>He does not like himself. He believes his only purpose in life is to raise his little brother, nothing else. He doesn't care if his brother treats him terribly, he deserves it. </p>
+    <p class='answer'>He does not like himself. He believes his only purpose in life is to raise his little brother, nothing else. He doesn't care if his brother treats him terribly, he deserves it.</p>
     <div class='brLarge'></div>
     <p class='question'>How they would describe themselves</p>
     <p class='answer'>Someone who tries and often fails to be nice. Someone who can't even fulfill their only purpose in life. Someone who doesn't deserve to be happy. Someone who can't be fixed.</p>
@@ -205,7 +205,7 @@ window.onload = () => {
     <p class='question'>Dislikes</p>
     <p class='answer'>Anything that he considers to be childish. He had to start going to work and support a family by himself when he was 10. He stopped being a kid. But employers don't want to be paying a ten year old, that would just be stupid. Because of his age, it was very hard to make enough money to even be able to buy food. He hates being viewed as young or child-like because of this</p>
     <p class='answer'>Similar to the last one, he hates when people assume things based on ones appearance. He didn't look like a skilled intellect or anything when he was 10, he was 10 for Christ's sake. Nobody wanted to hire a stupid little kid. But when he started to make himself look older and more mature than he was, he started getting better results. But why should he have to change his outfit just to be hired? That in itself is stupid. He will never, well, he always tries not to judge someone based off of their looks, he tries his best to ignore any prejudice biases due to how someone appears on the outside. Someone also once said something that really stuck with him: "I care more about someone's personality. People aren't always going to look as good as they used to. We all get old. But if you find someone who has a golden heart, that's not going to change, and you'll still be happy living with them."</p>
-    <p class='answer'>Competition or someone challenging his intellect. He can be pretty jealous sometimes, and he is a sore loser. </p>
+    <p class='answer'>Competition or someone challenging his intellect. He can be pretty jealous sometimes, and he is a sore loser.</p>
     <div class='brLarge'></div>
     <p class='question'>Positive Traits</p>
     <p class='answer'>Kind and caring, he will try to help anyone he can. He's very compassionate</p>
@@ -232,7 +232,7 @@ window.onload = () => {
     <div class='brLarge'></div>
     <p class='question'>Love Language(s)</p>
     <p class='answer'>Words of Affirmation: You really like hearing your partner say, "I love you." Those three words are particularly meaningful, special, and reassuring for you to hear. Again and again and again. You appreciate when you are being acknowledged and praised. It's nice to have your efforts recognized with kind words, no matter how small it is. It lets you know that you are valued.</p>
-    <p class='answer'>Physical Touch: People who communicate their appreciation through this language, when they consent to it, feel appreciated when they are hugged, kissed, or cuddled. They value the feeling of warmth and comfort that comes with physical touch. </p>
+    <p class='answer'>Physical Touch: People who communicate their appreciation through this language, when they consent to it, feel appreciated when they are hugged, kissed, or cuddled. They value the feeling of warmth and comfort that comes with physical touch.</p>
     <div class='brLarge'></div>
     <p class='question'>Greatest joy in life</p>
     <p class='answer'>Helping others</p>

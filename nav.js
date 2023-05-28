@@ -8,9 +8,6 @@ let handleDeviceChange = (e) => {
     }
 };
 
-// Run it initially
-// handleDeviceChange(smallDevice);
-
 let CreateNavbar = (selected = 'Characters') =>{
     document.querySelector('header').innerHTML += `
     <div class="navbar">
@@ -34,7 +31,6 @@ let CreateNavbar = (selected = 'Characters') =>{
             <a href="Updates.html" id="Updates" class='${selected === "Updates" ? "Selected" : ""}'>Site Updates</a>
         </div>
     </div>`;
-    //<a href="#" id='BackToTop'></a>`;
     smallDevice.addListener(handleDeviceChange);
     handleDeviceChange(smallDevice);
 }
