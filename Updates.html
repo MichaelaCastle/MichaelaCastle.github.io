@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Merriweather+Sans:wght@400;500;600;700;800&family=Spectral:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --hue: 290;
+            --hue2: 320;
+            --angle: 160deg;
+
+            --middleHR: "✿";
+            --middleImageHR: " ⋆⋅☆⋅⋆ ";
+            --middleLength: 7;
+            --middleAddition: "──";
+        }
+        img{
+            width: clamp(50%, 75%, 100%);
+            /* max-height: 30vw; */
+            /* width: auto; */
+            height: auto;
+            /* transform: translateX(calc(50vw - 50%)); */
+            border-radius: 15px;
+            border: 2px solid rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        .card ul{
+            text-indent: 0px;
+            margin-left: 0px;
+        }
+        .posts{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 1.5em;
+            /* margin-left: 10%; */
+            /* margin-right: 10%; */
+        }
+        .card {
+            border-radius: 20px;
+            font-family: 'Itim', cursive;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: auto;
+            /* flex: 1 1 auto; */
+            display: block;
+            width: clamp(45ch, 52.5ch, 75ch);
+            /* height: clamp(30px, 200px, 100%); */
+            padding: 15px;
+            margin-top: calc(var(--step3) + 10px);
+            margin-right: calc(var(--step3) + 10px);
+            margin-left: calc(var(--step3) + 20px);
+
+            --step1: 7px;
+            --step2: 14px;
+            --step3: 21px;
+            --step1N: -7px;
+            --step2N: -14px;
+            --step3N: -21px;
+            --hueOne: 290;
+            --hueDif: 10;
+            --hueOneThird: calc(var(--hueOne) + var(--hueDif));
+            --hueTwoThird: calc(var(--hueOne) + var(--hueDif) + var(--hueDif));;
+            --hueThrThird: calc(var(--hueOne) + var(--hueDif) + var(--hueDif) + var(--hueDif));;
+            --bgColor: hsl(var(--hueOne), 90%, 97.5%);
+            --bgColor2: hsl(var(--hueOne), 60%, 85%);
+
+            background-color: var(--bgColor);
+            border: 3px solid hsl(var(--hueOne), 90%, 60%);
+            box-shadow: var(--step1) var(--step1N) 0 -3px var(--bgColor2), var(--step1) var(--step1N) 0 0px hsl(var(--hueOneThird), 90%, 60%),
+                        var(--step2) var(--step2N) 0 -3px var(--bgColor2), var(--step2) var(--step2N) 0 0px hsl(var(--hueTwoThird), 90%, 60%),
+                        var(--step3) var(--step3N) 0 -3px var(--bgColor2), var(--step3) var(--step3N) 0 0px hsl(var(--hueThrThird), 90%, 60%);
+            transition: box-shadow 1s, top 1s, left 1s;
+            &:hover {
+                top: -40px;
+                left: 40px;
+                box-shadow: 0 0 0 -3px var(--bgColor2), 0 0 0 0 hsl(var(--hueOneThird), 90%, 60%),
+                            0 0 0 -3px var(--bgColor2), 0 0 0 0 hsl(var(--hueTwoThird), 90%, 60%),
+                            0 0 0 -3px var(--bgColor2), 0 0 0 0 hsl(var(--hueThrThird), 90%, 60%);
+            }
+            > blockquote {
+                background: hsl(var(--hueOne), 100%, 95%);
+                border-left: 10px solid hsl(var(--hueOne), 80%, 80%);
+                margin: 0.75em 10px;
+                padding: 0.5em 10px;
+                quotes: "\201C""\201D""\2018""\2019";
+                border-radius: 10px;
+            }
+            > blockquote p{
+                text-align: left;
+            }
+        }
+        .card:hover {
+            top: -40px;
+            left: 40px;
+            box-shadow: 0 0 0 -3px var(--bgColor2), 0 0 0 0 hsl(var(--hueOneThird), 90%, 60%),
+                        0 0 0 -3px var(--bgColor2), 0 0 0 0 hsl(var(--hueTwoThird), 90%, 60%),
+                        0 0 0 -3px var(--bgColor2), 0 0 0 0 hsl(var(--hueThrThird), 90%, 60%);
+        }
+        .card > blockquote {
+            background: hsl(var(--hueOne), 100%, 95%);
+            border-left: 10px solid hsl(var(--hueOne), 80%, 80%);
+            margin: 0.75em 10px;
+            padding: 0.5em 10px;
+            quotes: "\201C""\201D""\2018""\2019";
+            border-radius: 10px;
+        }
+        .card > blockquote p{
+            text-align: left;
+        }
+        .card h2{
+            padding-top: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 1em;
+            /* font-weight: 600; */
+        }
+        
+        @media (max-width: 520px){
+            .posts{
+                margin-left:initial;
+                margin-right:initial;
+            }
+            .card{
+                width: clamp(20ch, 30ch, 40ch);
+                box-shadow: none;
+                margin-top: 0px;
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+        }
+        @media (min-width: 521px){
+            img{
+                max-width: 50%;
+                height: clamp(5vh, auto, 50vh);
+                width: auto;
+                /* height: auto; */
+                /* transform: translateX(calc(50vw - 50%)); */
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="CSS/HeadersAndDefaults.css?v=1">
+    <link rel="stylesheet" href="CSS/HrStyles.css?v=1">
+    <link rel="stylesheet" href="CSS/Nav.css?v=1">
+    <script src="nav.js"></script>
+    <script>window.onload = () => {CreateNavbar("Updates");}</script>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="posts">
+            <div class="card">
+                <p>
+                    May 27th, 2023 - 1/1
+                </p>
+                <h2>
+                    We have <i>sound</i> working in the character sheets! Set up the audio element to match the theme while also showing the name of the song playing above the controls.
+                </h2>
+                <blockquote>
+                    <p>audio::-webkit-media-controls-volume-control-container</p>
+                    <p>audio::-webkit-media-controls-enclosure</p>
+                    <p>audio::-webkit-media-controls-time-remaining-display</p>
+                </blockquote>
+                <h2>Had to deal with styling elements like those.</h2>
+            </div>
+            <div class="card">
+                <p>
+                    May 26th, 2023 - 1/1
+                </p>
+                <h2>
+                    I learned what css versions are! I can now put all my css into external stylesheets and not have to worry about not being able to see the changes in my browser! So, I put all my css into separeate files except for some things that were unique for each page. Currently, I am going about this in a component-based route, attaching differnet component types when needed but leave the individual differences in the head of each file.<br><br>I also created Elliot's character sheet.
+                </h2>
+            </div>
+            <div class="card">
+                <p>
+                    May 25th, 2023 - 1/1
+                </p>
+                <h2>
+                    Updates here have been slow as I have recently started my new job! It started on the 15th, it's been taking up most of my time. Hopefully I still find time to update this site though!
+                </h2>
+            </div>
+            <div class="card">
+                <p>
+                    May 12th, 2023 - 1/1
+                </p>
+                <h2>
+                    Breakdown of some stuff that got done by 5pm today:
+                </h2>
+                <ul>
+                    <li>Added <a href="Jacob.html">Jacob</a> to the list of characters fully move over to this site</li>
+                    <li>Refactored the navbar to make responsive design easier</li>
+                    <!-- <img src="images/Posts/5-12-HomeMobile.jpg">
+                    <img src="images/Posts/5-12-CharacterMobile.jpg"> -->
+                    <!-- <h2 style="text-align: center;">That's what the mobile version looks like currently</h2> -->
+                    <li>Took the hr styling and threw it into a js file for html sites to call if they need an hr element. That way that giant block of styling isn't taking up space everywhere</li>
+                </ul>
+            </div>
+            <div class="card">
+                <p>
+                    May 11th, 2023 - 3/3
+                </p>
+                <h2>
+                    Okay, I am not going into as much detail anymore. Here's the breakdown of some stuff that happened / got done:
+                </h2>
+                <ul>
+                    <li><a href="https://fossheim.io/">Sarah Fossheim</a>  is great. I based these post appearances off of their work</li>
+                    <li><a href="https://css-tricks.com/author/chriscoyier/">Chris Coyier</a> is also great. He actually made a thing called <a href="https://flickity.metafizzy.co/">Flickity</a>, which I used for the carousel in the <a href="index.html">homepage</a></li>
+                    <li>Added a button the the navbar component that remains at the bottom of the screen to be able to quickly go back to the top of the page</li>
+                    <li>Fiddled with the gradients more</li>
+                    <li>The <i>Horizontal Rule</i> element, oh my goodness, that was so complicated for no reason. And that is a piece of CSS that I am copying and pasting into each page. But this time, there's a reason for that! It's so that I can change the symbol in the middle of the line.</li>
+                    <li>The @media rules kept breaking on me, who knows why</li>
+                    <li>Since I worked out most kinks in the design for <a href="Sam.html">Sam's</a> character sheet, creating <a href="Jay.html">Jay</a> was smooth and quick</li>
+                    <li>I got my <a href="SomeStories.html">story page</a> set up!</li>
+                    <li>After learning a bunch of stuff from looking stuff up and since my back was hurting from sitting for too long, I decided to just rest in bed and watch some YouTube. But, I still wanted to be productive, so I watched some stuff to learn better technique for CSS code. That's also where I got the idea of making this page and tracking my progress</li>
+                    <li>I implemnted some tips from the videos I watched</li>
+                </ul>
+            </div>
+            <div class="card">
+                <p>
+                    May 11th, 2023 - 2/3
+                </p>
+                <h2>
+                    There is one element I want to be able to carry through multiple pages. Now that I'm moving on to making <a href="Jay.html">Jay</a>, I don't want to have to keep copying and pasting the code from place to place for the navigation bar at the top. But like mentioned before, I can't use external stylesheets. What's the net best choice?
+                </h2>
+                <blockquote><p>let CreateNavbar = () => &#123; document .querySelector('head') .innerHTML += `&lt;style&gt; &hellip;</p></blockquote>
+                <h2>Create my own version of an external stylesheet. Yup. Fun times. I also did this with all the big chuncks of text in the character sheets so they wouldn't clutter the HTML semantics. The only thing that needs to be done in the HTML is for the script to be called.</h2>
+            </div>
+            <div class="card">
+                <p>
+                    May 11th, 2023 - 1/3
+                </p>
+                <h2>
+                    I found some more tutorials and stuff the the gradients. Woke up and went straight to work on this. I found out a better method for the gradients on all the separate elements: stop trying to figure it out, use blending modes.
+                </h2>
+                <blockquote><p>background-color: var(--sectionLabelColor);</p>
+                    <p>mix-blend-mode: color-burn;</p>
+                    <p>mix-blend-mode: saturation, luminosity;</p></blockquote>
+                <h2>It wasn't as dark as I wanted while keeping the saturation, so, I went the other way. The headers are a more pastel version of the background color. The body spans the entire page, the gradient was on that the entire time. It everything else just maintains that hue, the gradient will follow through. It was the same with the text:</h2>
+                <blockquote><p>color: var(--darkText);</p>
+                    <p>mix-blend-mode: luminosity;</p></blockquote>
+            </div>
+            <div class="card">
+                <p>
+                    May 10th, 2023 - 3/3
+                </p>
+                <h2>
+                    Started the first character sheet for <a href="Sam.html">Sam</a>. No clue why, but I decided I wanted to have a dual color scheme, with a main color and a secondary color the the ENTIRE page gradients towards. Why did I do this to myself? Not only do I want the backgrounds to have a gradient throughout the page, I want the text to subtly change too. I found <a href="https://stackoverflow.com/questions/27791081/css-gradient-over-multiple-elements">this</a> code snippet and tried to use it: 
+                </h2>
+                <blockquote class="quote"><p>background-image: linear-gradient(white, black);</p>
+                    <p>background-size: cover;</p>
+                    <p>background-position: center;</p>
+                    <p>background-attachment: fixed;</p></blockquote>
+                <h2>
+                    That had an... Interesting effect.<br>
+                    I later found out this was because of the "background-attachment: fixed;" that caused this to happen, but instead of the gradient filling the entire page, it only covered the current view of the page; the height of the screen, not the page.
+                </h2>
+            </div>
+            <div class="card">
+                <p>
+                    May 10th, 2023 - 2/3
+                </p>
+                <h2>
+                    I got <a href="index.html">the first page</a> done! I'm trying my best to use scalable practices so that development doesn't become exponentially harder as time goes on, however, I cannot keep my CSS in external stylesheets. It may just be my computer, but if I upload a CSS file with the same name as another, replacing the old one, the new one seems to take no effect. So, I just keep all the style in the head, which is annoying.
+                </h2>
+            </div>
+            <div class="card">
+                <p>
+                    May 10th, 2023 - 1/3
+                </p>
+                <h2>
+                    Started this site. I have an old version of it <a href="https://sites.google.com/view/prismoria">here</a>. For some reason, some people I rp with can't access that <a href="https://www.google.com">Google</a> site though, so, I'm making my own website to hold all my information. This way, it's even more customizable too. Hopefully, I can move it off of my college profile eventually, but then I'd have to figure out how to hook up <a href="https://github.com/">GitHub</a> with HTML. I know that would be like a 5 minute tutorial or something, but I'm stubborn and don't feel like doing that right now.
+                </h2>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
