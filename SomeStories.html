@@ -79,7 +79,28 @@
     </script>
 </head>
 <body>
-    <header></header>
+    <header>
+        <div class="navbar">
+            <h3 id="SiteName">Prismoria</h3>
+            <div class="flex-container">
+                <a href="index.html" id="TheParticle">The Particle</a>
+                <div class="dropdown">
+                    <button class="dropbtn" id="Characters">Characters
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="Jay.html">Jay Star</a>
+                        <a href="Jacob.html">Jacob Jackson</a>
+                        <a href="Sam.html">Samuel Broteez</a>
+                        <a href="Elliot.html">Elliot Evans</a>
+                        <a href="Adam.html">Adam Zondervan</a>
+                        <a href="Rene.html">Rene Tickle</a>
+                    </div>
+                </div>
+                <a href="SomeStories.html" id="SomeStories" class="Selected">Some Stories</a>
+                <a href="Updates.html" id="Updates">Site Updates</a>
+            </div>
+        </div>
+    </header>
     <main>
         <div class="sectionHeader" id="ToCTitle"><h1>Table of Contents</h1></div>
         <div class="tableOfContents">
@@ -646,6 +667,11 @@
             </div>
         </details> -->
     </main>
+    <footer>
+        <button data-theme="normal" aria-pressed="true" id="NormalMode"></button>
+        <button data-theme="alt" aria-pressed="false" id="AltMode"></button>
+        <!-- <button data-theme="custom" aria-pressed="false" id="CustMode"></button> -->
+    </footer>
     <script src="Accordian.js"></script>
 </body>
 </html>

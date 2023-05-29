@@ -1,13 +1,19 @@
 window.onload = () => {
-    /*CreateTemplate(1, "Jacob Jackson", 0, 300, "♫", " ♪ ♫ 𝄞 ♫ ♪ ", "𝄞 ", "None really. Might change this", `<p><i>Credit</i></p>
-    <p><i>I don't know how this happened, but Jacob seriously looks just like the way some people draw Grian's avatar (Except for the eyes. Other than the eye color, it is spot on). Any character art is by VSasha on twitter. They are an amazing artist</i></p>`, "images/Jacob/Smile.png", "The rarer someone's smile, the special-er it is.",
-    "images/Jacob/Grian1.jpg", "When my father walked out that door, I swore I would never leave those close to me. Nobody deserves that pain.",
-    "images/Jacob/Pride.png", "Oh, you love me. You wouldn't dare hurt an innocent little cutie~",
-    "images/Jacob/Grian2.jpg", "Revenge is always ten times worse~",
-    "images/Jacob/Microphone.jpg", "What's the point of living if you don't go wild over the tiniest things?",
-    "images/Jacob/Grian3.png", "... We've all lost someone close to us, even... Even the ones we think can never leave.",
-    "images/Jacob/Dramtic.jpg", "Want to play a game~?",
-    "images/Jacob/LoveLife.gif", "You're beautiful in your own way, so just be you. The point of life is to be happy, not to spend it all trying to meet everyone's expectations.", "");*/
+    getVersionNumber();
+    let headerText = document.querySelector('head').innerHTML;
+    let headSubstring;
+    let headStyles = `
+    <link rel="stylesheet" href="CSS/HeadersAndDefaults.css?v=${versionNumber}">
+    <link rel="stylesheet" href="CSS/Character.css?v=${versionNumber}">
+    <link rel="stylesheet" href="CSS/Audioplayer.css?v=${versionNumber}">
+    <link rel="stylesheet" href="CSS/HrStyles.css?v=${versionNumber}">
+    <link rel="stylesheet" href="CSS/Nav.css?v=${versionNumber}">
+    `;
+    headSubstring = headerText.substring(headerText.indexOf("<link rel=\"stylesheet\" href=\"CSS/"), 
+    headerText.indexOf("href=\"CSS/Nav.css\">") + 20);
+    document.querySelector('head').innerHTML = document.querySelector('head').innerHTML.replace(headSubstring, headStyles);
+    let player = document.querySelector('#player');
+    player.pause();
     CreateNavbar();
     document.querySelector('#BasicInfo').innerHTML= `
     <p class="question">Birth Name</p>

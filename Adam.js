@@ -1,4 +1,17 @@
 window.onload = () => {
+    getVersionNumber();
+    let headerText = document.querySelector('head').innerHTML;
+    let headSubstring;
+    let headStyles = `
+    <link rel="stylesheet" href="CSS/HeadersAndDefaults.css?v=${versionNumber}">
+    <link rel="stylesheet" href="CSS/Character.css?v=${versionNumber}">
+    <link rel="stylesheet" href="CSS/Audioplayer.css?v=${versionNumber}">
+    <link rel="stylesheet" href="CSS/HrStyles.css?v=${versionNumber}">
+    <link rel="stylesheet" href="CSS/Nav.css?v=${versionNumber}">
+    `;
+    headSubstring = headerText.substring(headerText.indexOf("<link rel=\"stylesheet\" href=\"CSS/"), 
+    headerText.indexOf("href=\"CSS/Nav.css\">") + 20);
+    document.querySelector('head').innerHTML = document.querySelector('head').innerHTML.replace(headSubstring, headStyles);
     let player = document.querySelector('#player');
     player.pause();
     CreateNavbar();

@@ -104,16 +104,40 @@
     <link rel="stylesheet" href="CSS/HeadersAndDefaults.css">
     <link rel="stylesheet" href="CSS/Character.css?v=1">
     <link rel="stylesheet" href="CSS/Audioplayer.css">
+    <link rel="stylesheet" href="CSS/CollapsibleGroup.css">
     <link rel="stylesheet" href="CSS/HrStyles.css">
     <link rel="stylesheet" href="CSS/Nav.css">
-    <link rel="stylesheet" href="CSS/CollapsibleGroup.css">
     <script src="nav.js"></script>
     <script src="Jay.js"></script>
-    
+    <script>
+        let current = 0;
+        let names = ["  Prisoner Of My Past  -  Spies Are Forever  ", "  Scrawny   -   Wallows  "/*, "  One Jump Ahead  -  Aladdin  "*/];
+        let songs = ["Audio/Prisoner Of My Past.mp3", "Audio/Wallows - Scrawny.ogg"/*, "Audio/One Jump Ahead.ogg"*/];
+    </script>
+    <script src="Audioplayer.js"></script>
 </head>
 <body>
     <header>
-
+        <div class="navbar">
+            <h3 id="SiteName">Prismoria</h3>
+            <div class="flex-container">
+                <a href="index.html" id="TheParticle">The Particle</a>
+                <div class="dropdown">
+                    <button class="dropbtn Selected" id="Characters">Characters
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="Jay.html">Jay Star</a>
+                        <a href="Jacob.html">Jacob Jackson</a>
+                        <a href="Sam.html">Samuel Broteez</a>
+                        <a href="Elliot.html">Elliot Evans</a>
+                        <a href="Adam.html">Adam Zondervan</a>
+                        <a href="Rene.html">Rene Tickle</a>
+                    </div>
+                </div>
+                <a href="SomeStories.html" id="SomeStories">Some Stories</a>
+                <a href="Updates.html" id="Updates">Site Updates</a>
+            </div>
+        </div>
     </header>
     <main>
         <div class="sectionHeader" id="Name"><h1>Jay Star</h1></div>
@@ -128,9 +152,9 @@
         <div class="tw">
             <div class="audio-player">
                 <div><h2>
-                    <!-- <button id="PrevSong" onclick="playPrev()" class="audioButtons"></button> -->
+                    <button id="PrevSong" onclick="playPrev()" class="audioButtons"></button>
                     <span id="SongName">  Prisoner Of My Past  -  Spies Are Forever  </span>
-                    <!-- <button id="NextSong" onclick="playNext()" class="audioButtons"></button> -->
+                    <button id="NextSong" onclick="playNext()" class="audioButtons"></button>
                 </h2></div>
                 <audio preload="auto" onended="playNext()" id="player" src="Audio/Prisoner Of My Past.mp3" type="audio/mpeg" controls controlsList="nodownload noplaybackrate"></audio>
             </div>
@@ -267,5 +291,10 @@
         <div class='qAndA'><h2>How much of Jay's health does it regulate? And why?</h2>
             <p>If Jay dies, it dies, so it will not let Jay die. He doesn't need to eat, he doesn't need to sleep, he can be stabbed, he can be shot, he can jump off a building, he will not die. The pendant heals him just enough to stay alive. Though, it will not let any wound heal, it keeps those from getting better. Then when it needs them, it can open up all those wounds to hurt Jay and make him listen. It has all the power over Jay. If he didn't have the pendant, he would be dead.</p></div>
     </main>
+    <footer>
+        <button data-theme="normal" aria-pressed="true" id="NormalMode"></button>
+        <button data-theme="alt" aria-pressed="false" id="AltMode"></button>
+        <!-- <button data-theme="custom" aria-pressed="false" id="CustMode"></button> -->
+    </footer>
 </body>
 </html>

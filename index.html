@@ -143,6 +143,30 @@
             width: 100%;
             font-size: 14px;
         }
+        [data-selected-theme="alt"] .sam{
+            background-color: hsl(120, 40%, 33%);
+        }
+        [data-selected-theme="alt"] .elliot{
+            background-color: hsl(86, 40%, 33%);
+        }
+        [data-selected-theme="alt"] .jay{
+            background-color: hsl(180, 40%, 33%);
+        }
+        [data-selected-theme="alt"] .rene{
+            background-color: hsl(270, 40%, 33%);
+        }
+        [data-selected-theme="alt"] .jacob{
+            background-color: hsl(0, 40%, 33%);
+        }
+        [data-selected-theme="alt"] .adam{
+            background-color: hsl(45, 40%, 33%);
+        }
+        [data-selected-theme="alt"] .card h4, [data-selected-theme="alt"] .card p{
+            color: hsl(0, 60%, 80%);
+        }
+        [data-selected-theme="alt"] .gallery-cell {
+            border-color: hsl(0, 0%, 85%);
+        }
         img{
             max-width: 50%;
             max-height: 50%;
@@ -198,6 +222,26 @@
 </head>
 <body>
     <header>
+        <div class="navbar">
+            <h3 id="SiteName">Prismoria</h3>
+            <div class="flex-container">
+                <a href="index.html" id="TheParticle" class="Selected">The Particle</a>
+                <div class="dropdown">
+                    <button class="dropbtn" id="Characters">Characters
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="Jay.html">Jay Star</a>
+                        <a href="Jacob.html">Jacob Jackson</a>
+                        <a href="Sam.html">Samuel Broteez</a>
+                        <a href="Elliot.html">Elliot Evans</a>
+                        <a href="Adam.html">Adam Zondervan</a>
+                        <a href="Rene.html">Rene Tickle</a>
+                    </div>
+                </div>
+                <a href="SomeStories.html" id="SomeStories">Some Stories</a>
+                <a href="Updates.html" id="Updates">Site Updates</a>
+            </div>
+        </div>
     </header>
     <main>
         <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
@@ -306,5 +350,10 @@
             <hr>
             <p>There is one characteristic a person can get without needing the particle. If they die and come back, they might come back and a few years later gain angel wings. Since people also have mutations, a lot of people write that off as a mutation and not any proof towards a specific religion. However, it is not a mutation.</p></div>
     </main>
+    <footer>
+        <button data-theme="normal" aria-pressed="true" id="NormalMode"></button>
+        <button data-theme="alt" aria-pressed="false" id="AltMode"></button>
+        <!-- <button data-theme="custom" aria-pressed="false" id="CustMode"></button> -->
+    </footer>
 </body>
 </html>
