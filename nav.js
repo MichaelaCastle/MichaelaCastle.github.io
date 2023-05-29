@@ -85,6 +85,17 @@ let CreateNavbar = (selected = 'Characters') =>{
         button[aria-pressed="true"] {
             border-style: solid;
         }
+        @media (max-width: 529px) {
+            footer button{
+                background-color: hsl(var(--hue2), 50%, 70%);
+                width: 50px;
+                height: 50px;
+                border-radius: 25px;
+                border-style: dotted;
+                border-width: 3px;
+                margin: 5px;
+            }
+        }
     </style>`;
     document.querySelector('header').innerHTML += `
     <div class="navbar">
