@@ -55,6 +55,14 @@ hr.ImageBottom{
 x:-o-prefocus, hr:after {
     content: "";
 }
+
+[data-selected-theme="alt"] hr:not(.ImageBottom):not(.ImageTop):after{
+    background-color: hsl(var(--hue), 50%, 50%);
+}
+[data-selected-theme="alt"] .ImageBottom:after, [data-selected-theme="alt"] .ImageTop:after{
+    color: hsl(var(--hue), 6%, 87.5%);
+}
+
 @media (min-width: 530px){
     hr{
         width: 20vw;

@@ -59,6 +59,12 @@ summary:before {
     background-image: none;
 }
 
+[data-selected-theme="alt"] summary:before{
+    border-color: transparent transparent transparent var(--sectionLabelColor);
+}
+
+
+
 @media only screen and (max-width: 520px) {
     .twc{
         font-size: 15px;

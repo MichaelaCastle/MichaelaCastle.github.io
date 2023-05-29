@@ -123,6 +123,18 @@ audio::-webkit-media-controls-volume-control-container{
     filter: invert(100%);
 }
 
+[data-selected-theme="alt"] audio::-webkit-media-controls{
+    background-color: hsl(var(--hue), 75%, 30%);
+}
+[data-selected-theme="alt"] .audio-player div h2{
+    color: hsl(var(--hue), 40%, 75%);
+}
+[data-selected-theme="alt"] audio::-webkit-media-controls-volume-control-container, [data-selected-theme="alt"] audio::-webkit-media-controls-timeline, [data-selected-theme="alt"] .audioButtons, [data-selected-theme="alt"] audio::-webkit-media-controls-mute-button, [data-selected-theme="alt"] audio::-webkit-media-controls-play-button{
+    background-color: hsl(calc(var(--hue) + 180), 50%, 50%);
+}
+[data-selected-theme="alt"] .audioButtons:hover, [data-selected-theme="alt"] audio::-webkit-media-controls-mute-button:hover, [data-selected-theme="alt"] audio::-webkit-media-controls-play-button:hover{
+    background-color: hsl(calc(var(--hue) + 180), 50%, 70%);
+}
 
 @media (max-width: 750px) {
     .audio-player div h2{

@@ -115,6 +115,14 @@ header{
     top: 0;
     z-index: 100;
 }
+
+[data-selected-theme="alt"] a:not(.navbar *):link, [data-selected-theme="alt"] a:not(.navbar *):visited, [data-selected-theme="alt"] a:not(.navbar *):active {
+    color: hsl(var(--hue), 6%, 83%);
+}
+[data-selected-theme="alt"] a:not(.navbar *):hover {
+    color: hsl(var(--hue), 22%, 52%);
+}
+
 @media only screen and (max-width: 685px) {
     #SiteName{
         font-size: 0px;

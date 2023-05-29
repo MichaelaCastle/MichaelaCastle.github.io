@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-selected-theme="normal">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,6 +79,19 @@
         .audioButtons, audio::-webkit-media-controls-timeline, audio::-webkit-media-controls-volume-control-container
         {
             background-color: hsl(calc(var(--hue2) + 270), 50%, 50%) !important;
+        }
+
+        [data-selected-theme="alt"] audio::-webkit-media-controls{
+            background-color: hsl(calc(var(--hue2) + 90), 75%, 30%) !important;
+        }
+        [data-selected-theme="alt"] .audio-player div h2{
+            color: hsl(calc(var(--hue2) + 90), 40%, 75%) !important;
+        }
+        [data-selected-theme="alt"] audio::-webkit-media-controls-volume-control-container, [data-selected-theme="alt"] audio::-webkit-media-controls-timeline, [data-selected-theme="alt"] .audioButtons, [data-selected-theme="alt"] audio::-webkit-media-controls-mute-button, [data-selected-theme="alt"] audio::-webkit-media-controls-play-button{
+            background-color: hsl(calc(var(--hue2) + 270), 50%, 50%) !important;
+        }
+        [data-selected-theme="alt"] .audioButtons:hover, [data-selected-theme="alt"] audio::-webkit-media-controls-mute-button:hover, [data-selected-theme="alt"] audio::-webkit-media-controls-play-button:hover{
+            background-color: hsl(calc(var(--hue2) + 270), 50%, 70%) !important;
         }
 
         @media (min-width: 530px){

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-selected-theme="normal">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +15,8 @@
             --angle: 160deg;
         }
     </style>
+    <link rel="stylesheet" href="CSS/HeadersAndDefaults.css?v=1">
+    <link rel="stylesheet" href="CSS/CollapsibleGroup.css?v=1">
     <style>
         details {
             margin: initial;
@@ -23,12 +25,14 @@
             padding-left: 0;
             text-decoration: underline hsl(var(--hue), 100%, 90%) 3px solid;
         }
-        p{
+        p:not(.info){
             text-align: left;
             color: hsl(var(--hue), 50%, 30%);
             mix-blend-mode: luminosity;
             padding-bottom: 5px;
             text-indent: 20px;
+            width: clamp(75px, min(150ch, 85%), 100%);
+            transform: translateX(calc(50vw - 50% - 10px));
         }
         .info{
             font-size: 20px;
@@ -36,11 +40,13 @@
             text-align: center;
             padding: 10px;
         }
+        [data-selected-theme="normal"] .tableOfContents{
+            color: hsl(var(--hue), 50%, 30%);
+        }
         .tableOfContents{
             font-size: 17.5px;
             font-weight: 550;
             text-align: left;
-            color: hsl(var(--hue), 50%, 30%);
             mix-blend-mode: luminosity;
             padding-left:15vw;
             padding-right:15vw;
@@ -56,10 +62,14 @@
                 padding-left:0vw;
                 padding-right:0vw;
             }
+            p:not(.info){
+                text-indent: 0px;
+            }
+            .content{
+                padding: 10px 10px 10px 10px;
+            }
         }
     </style>
-    <link rel="stylesheet" href="CSS/HeadersAndDefaults.css?v=1">
-    <link rel="stylesheet" href="CSS/CollapsibleGroup.css?v=1">
     <link rel="stylesheet" href="CSS/Nav.css?v=1">
     <script src="nav.js"></script>
     <script>
@@ -94,9 +104,9 @@
                     <ul>
                         <li>You Better Run, Nerd!</li>
                         <li>The Subject of the Sentence</li>
-                        <li>Battleship</li>
                         <li>What if I can't make you happy?</li>
                         <li>Wings</li>
+                        <li>Battleship</li>
                         <li>Opening the curtains to the sun</li>
                     </ul>
                 </li>
@@ -462,39 +472,6 @@
             </div>
         </details>
         <details>
-            <summary><h1>Battleship</h1></summary>
-            <div class="content">
-                <p>"B9." The blonde calls out, a subtle grin on his face. He has this game in the bag. He has most of Jacob's ships already sunken and c9 was a hit. It's only a matter of time before he wins.</p>
-                <p>The two were in the living room playing some battleship. Each of them were on their own couch, a coffee table in between them with the board in the middle. Both of them had some paper out to take notes on what spots were already hit and whatnot.</p>
-                <p>"Hit..." the brunette stares at his side of the board. Sam has that smug grin on his face, he has something up his sleeve, that's for sure. But there's only one direction he can go if he wants to finish this ship off. E3 was a hit, f3 and e2 were misses, and on e5 is another ship that he already sunk. So, it has to be... "D3?"</p>
-                <p>Now the grin widens. "Miss~" Oh, he's enjoying this. Now comes the moment of realization for the other, the moment Sam has been waiting for since the beginning of the game.</p>
-                <p>"What? But... You have another ship on E5, you can't have two ships touching-" Jacob looks up at Sam, confused. And just by seeing the angel's face, he gets annoyed. "Oh, shut up, don't act all high and mighty. You cheated!"</p>
-                <p>"Not-uh, check the rules!" Sam takes the rule pamphlet out of the box and opens it up to a picture of a sample board set up with two ship touching each other, not separated by one or more spaces. It's in the rulebook, so it's fair game.</p>
-                <p>With a glare, Jacob snatches the pamphlet away from Sam and closes it. He doesn't want to see the proof Sam is right. "You cheated... But fine. Go, it's your turn."</p>
-                <p>"A9~"</p>
-                <p>"Hit, and you sunk the ship. E4?" Sam must have it set up so he has a 2 piece vertical boat right next to a 5 piece horizontal boat. He already sunk the 5-piecer. Thats the only way this works.</p>
-                <p>"Hit, but you didn't sink the ship~" That grin widens. God, Jacob wants to kill this man.</p>
-                <p>"Excuse me? But... There's nowhere else for the boat to be! What do you mean not sunken?! What, do you have a boat defying the laws of physics and phasing through another boat?! Sam, at least cheat in a reasonable way!"</p>
-                <p>"No... You're boxing your thought process in. See, you think its a small vertical boat being stopped by a long horizontal boat... But when you got the horizontal one, you accidentally hit the vertical one BEFORE finishing off the horizontal one. That made you think it was all one ship. It's actually two~"</p>
-                <p>Jacob doesn't understand what Sam's saying. But that doesn't matter. He's pissed off. Sam's being a dick, and he knows it. He's playing dirty. He can't let that slide. "... Alright, you asked for it." Suddenly, he hops down from his couch before tackling Sam down on the other couch, grabbing at his hands to make sure he doesn't try anything.</p>
-                <p>This immediately makes Sam break into a fit of nervous, adorable giggles as he tries to squirm away from Jacob's grasp. "H-Hey now, thehehere's no need to dohoho anything drahahastic, we can tahahalk about this-"</p>
-                <p>"I don't want to talk about it. You've been a bad boy~ It's only fair you get taught a lesson." He holds onto the blonde's wrists with one of his hands, gently trailing his other hand down one of Sam's wings. They really are the softest things he has ever felt. And he knows how sensitive they are, which makes it all the more enjoyable to touch them. Since merely trailing a hand down one of them makes Sam giggle like crazy and squirm around more, his wing twitching at the feeling.</p>
-                <p>"Jahahacohob! Wahahait!"</p>
-                <p>Jacob steals one of the feathers from Sam's wings, careful not to hurt him at all in the process. Then he holds it in front of himself, where Sam can very clearly see it, threatening the angel. He also let's go of Sam's wrists. He's trying to get him to direct his focus away from his now free hand. "Yes~? What should I wait for~?"</p>
-                <p>Sam quickly tries to grab the feather from Jacob. But the minute he tries, Jacob suddenly let's go of it and digs his hands into his sides, scribbling his fingers up and down rapidly. The blonde squeals and dissolves into a fit of laughter, no longer able to speak. His laugh is really quiet, almost silent. It makes it hard to speak through. Jacob knows that Sam doesn't actually mind light stuff, since he can still talk through that. Not being able to talk drives him mad, and he hates that.</p>
-                <p>"You should've thought before you cheated~ And don't say you didn't cheat and that its technically in the rules, I don't care! You know that I wasn't aware of those rules. Which makes it an unfair advantage, aka, cheating~" Jacob can't let Sam get away with this unpunished. The blonde must've known it wouldn't end well for him, he sealed his own fate, just to piss off Jacob. Which just means he can't go easy on the guy, since the guy probably already mentally prepared himself for that. His hands trail down to Sam's hips before squeezing them a few times. This really makes Sam go wild, kicking his legs around as he bucks his hips, struggling to get away. Luckily for Sam, he doesn't keep this up for too long. He knows Sam can only take so much. So eventually, he stops, a huge grin on his face now too.</p>
-                <p>Sam takes some time to get himself back together, still a giggly mess as he slowly catches his breath. "Ihihi... Ihihi wahahasn't cheheheating~ It wahahas ihi--" Jacob gives his hips another squeeze. "EEK! NOhoho! Sohohorry!"</p>
-                <p>Jacob rolls his eyes and gets off Sam, leaving him be now. "You asshole~"</p>
-                <p>"Lahahanguage!" Sam sits up and starts trying to fix his appearance, readjusting his clothes and attempting to make his hair stop sticking up. After thrashing around so much, his hair has become a mess. "And why do you think you can call me the cheater? I was playing smart, not illegally. Whereas you, whenever we play Mario Kart and I'm inevitably winning, you..." His sentence trails off, he gets flustered just by the word.</p>
-                <p>"Oh? What do I do~? Please, tell me Samikins, how do I cheat at Mario Kart~?"</p>
-                <p>Sam blushes a little and looks down to hide it. "S-Shut up..."</p>
-                <p>Jacob giggles softly, moving over to be closer to Sam, gently pulling at Sam's wing to get him to wrap it around him. Which, Sam obliges, wrapping a wing around Jacob and letting him cuddle. "I'm sorry, you just look so cute like that~"</p>
-                <p>"I am not cute!"</p>
-                <p>Jacob rolls his eyes. "Yes you are~" He looks down at the coffee table to see how Sam actually had his battleships board set up. There wasn't even only one instance of boats being less than a block away from each other, there were multiple. Jacob never stood a chance. At least not in the game. "... You are an asshole-"</p>
-                <p>This time, Sam doesn't tell Jacob off for swearing. Mainly due to Jacob's tone of bewilderment and slight admiration. That smug grin tugs at Sam's lips again. "I know~"</p>
-            </div>
-        </details>
-        <details>
             <summary><h1>What if I can't make you happy?</h1><h2 class="twc">Trigger warning: Depression/Suicide</h2></summary>
             <div class="content">
                 <p>It was 4:30 in the afternoon. Jacob was at the hospital, visiting his best friend, Sam. He's been beside Sam's bedside day in and day out after school for the last week. The doctors say Sam will be able to be released in a few days, they just need to keep him under watch a little longer to make sure the new medicine is working. It's been almost a year since Jacob last saw a real smile on Sam's face, it's always fake.</p>
@@ -572,6 +549,97 @@
                 <p>"Why?... OH!" Jacob laughs softly. "You really can't retract them?" When Sam shakes his head, the brunette can't help laughing again. "Guess I'm going to have to be taking care of you until you can learn~"</p>
             </div>
         </details>
+        <details>
+            <summary><h1>Battleship</h1></summary>
+            <div class="content">
+                <p>"B9." The blonde calls out, a subtle grin on his face. He has this game in the bag. He has most of Jacob's ships already sunken and c9 was a hit. It's only a matter of time before he wins.</p>
+                <p>The two were in the living room playing some battleship. Each of them were on their own couch, a coffee table in between them with the board in the middle. Both of them had some paper out to take notes on what spots were already hit and whatnot.</p>
+                <p>"Hit..." the brunette stares at his side of the board. Sam has that smug grin on his face, he has something up his sleeve, that's for sure. But there's only one direction he can go if he wants to finish this ship off. E3 was a hit, f3 and e2 were misses, and on e5 is another ship that he already sunk. So, it has to be... "D3?"</p>
+                <p>Now the grin widens. "Miss~" Oh, he's enjoying this. Now comes the moment of realization for the other, the moment Sam has been waiting for since the beginning of the game.</p>
+                <p>"What? But... You have another ship on E5, you can't have two ships touching-" Jacob looks up at Sam, confused. And just by seeing the angel's face, he gets annoyed. "Oh, shut up, don't act all high and mighty. You cheated!"</p>
+                <p>"Not-uh, check the rules!" Sam takes the rule pamphlet out of the box and opens it up to a picture of a sample board set up with two ship touching each other, not separated by one or more spaces. It's in the rulebook, so it's fair game.</p>
+                <p>With a glare, Jacob snatches the pamphlet away from Sam and closes it. He doesn't want to see the proof Sam is right. "You cheated... But fine. Go, it's your turn."</p>
+                <p>"A9~"</p>
+                <p>"Hit, and you sunk the ship. E4?" Sam must have it set up so he has a 2 piece vertical boat right next to a 5 piece horizontal boat. He already sunk the 5-piecer. Thats the only way this works.</p>
+                <p>"Hit, but you didn't sink the ship~" That grin widens. God, Jacob wants to kill this man.</p>
+                <p>"Excuse me? But... There's nowhere else for the boat to be! What do you mean not sunken?! What, do you have a boat defying the laws of physics and phasing through another boat?! Sam, at least cheat in a reasonable way!"</p>
+                <p>"No... You're boxing your thought process in. See, you think its a small vertical boat being stopped by a long horizontal boat... But when you got the horizontal one, you accidentally hit the vertical one BEFORE finishing off the horizontal one. That made you think it was all one ship. It's actually two~"</p>
+                <p>Jacob doesn't understand what Sam's saying. But that doesn't matter. He's pissed off. Sam's being a dick, and he knows it. He's playing dirty. He can't let that slide. "... Alright, you asked for it." Suddenly, he hops down from his couch before tackling Sam down on the other couch, grabbing at his hands to make sure he doesn't try anything.</p>
+                <p>This immediately makes Sam break into a fit of nervous, adorable giggles as he tries to squirm away from Jacob's grasp. "H-Hey now, thehehere's no need to dohoho anything drahahastic, we can tahahalk about this-"</p>
+                <p>"I don't want to talk about it. You've been a bad boy~ It's only fair you get taught a lesson." He holds onto the blonde's wrists with one of his hands, gently trailing his other hand down one of Sam's wings. They really are the softest things he has ever felt. And he knows how sensitive they are, which makes it all the more enjoyable to touch them. Since merely trailing a hand down one of them makes Sam giggle like crazy and squirm around more, his wing twitching at the feeling.</p>
+                <p>"Jahahacohob! Wahahait!"</p>
+                <p>Jacob steals one of the feathers from Sam's wings, careful not to hurt him at all in the process. Then he holds it in front of himself, where Sam can very clearly see it, threatening the angel. He also let's go of Sam's wrists. He's trying to get him to direct his focus away from his now free hand. "Yes~? What should I wait for~?"</p>
+                <p>Sam quickly tries to grab the feather from Jacob. But the minute he tries, Jacob suddenly let's go of it and digs his hands into his sides, scribbling his fingers up and down rapidly. The blonde squeals and dissolves into a fit of laughter, no longer able to speak. His laugh is really quiet, almost silent. It makes it hard to speak through. Jacob knows that Sam doesn't actually mind light stuff, since he can still talk through that. Not being able to talk drives him mad, and he hates that.</p>
+                <p>"You should've thought before you cheated~ And don't say you didn't cheat and that its technically in the rules, I don't care! You know that I wasn't aware of those rules. Which makes it an unfair advantage, aka, cheating~" Jacob can't let Sam get away with this unpunished. The blonde must've known it wouldn't end well for him, he sealed his own fate, just to piss off Jacob. Which just means he can't go easy on the guy, since the guy probably already mentally prepared himself for that. His hands trail down to Sam's hips before squeezing them a few times. This really makes Sam go wild, kicking his legs around as he bucks his hips, struggling to get away. Luckily for Sam, he doesn't keep this up for too long. He knows Sam can only take so much. So eventually, he stops, a huge grin on his face now too.</p>
+                <p>Sam takes some time to get himself back together, still a giggly mess as he slowly catches his breath. "Ihihi... Ihihi wahahasn't cheheheating~ It wahahas ihi--" Jacob gives his hips another squeeze. "EEK! NOhoho! Sohohorry!"</p>
+                <p>Jacob rolls his eyes and gets off Sam, leaving him be now. "You asshole~"</p>
+                <p>"Lahahanguage!" Sam sits up and starts trying to fix his appearance, readjusting his clothes and attempting to make his hair stop sticking up. After thrashing around so much, his hair has become a mess. "And why do you think you can call me the cheater? I was playing smart, not illegally. Whereas you, whenever we play Mario Kart and I'm inevitably winning, you..." His sentence trails off, he gets flustered just by the word.</p>
+                <p>"Oh? What do I do~? Please, tell me Samikins, how do I cheat at Mario Kart~?"</p>
+                <p>Sam blushes a little and looks down to hide it. "S-Shut up..."</p>
+                <p>Jacob giggles softly, moving over to be closer to Sam, gently pulling at Sam's wing to get him to wrap it around him. Which, Sam obliges, wrapping a wing around Jacob and letting him cuddle. "I'm sorry, you just look so cute like that~"</p>
+                <p>"I am not cute!"</p>
+                <p>Jacob rolls his eyes. "Yes you are~" He looks down at the coffee table to see how Sam actually had his battleships board set up. There wasn't even only one instance of boats being less than a block away from each other, there were multiple. Jacob never stood a chance. At least not in the game. "... You are an asshole-"</p>
+                <p>This time, Sam doesn't tell Jacob off for swearing. Mainly due to Jacob's tone of bewilderment and slight admiration. That smug grin tugs at Sam's lips again. "I know~"</p>
+            </div>
+        </details> 
+        <details>
+            <summary><h1>Opening the Curtains to the Sun</h1></summary>
+            <div class="content">
+                <p>It's been one year since Jacob has gotten Jay to speak his first words towards him. That's great and all, it took him three years to be able to do it, but that's still pretty sad... Only talking... His tone is mostly monotone as well. He might as well be a robot.</p>
+                <p>Though Jacob can't really blame him... The guy has gone through a lot...</p>
+                <div class='brLarge'></div>
+                <p>----</p>
+                <div class='brLarge'></div>
+                <p>Jacob wakes up to a pebble bouncing off his head, groaning softly and rolling over. "It's still dark outside..." He whines, covering his head with his arms to block out the morning rays of sunlight.</p>
+                <p>"We have to keep going, they're closing in on us-" Jays deep but quiet voice penetrates through the silence of the forest. Well, almost silence. Birds and small animals can still be heard.</p>
+                <div class='brLarge'></div>
+                <p>They had just escaped from the lab. That's why Jay says they should keep moving, because he know that Jacob won't be able to survive much longer in that dang cell.</p>
+                <div class='brLarge'></div>
+                <p>"I don't want t- Alright, alright, I'm going!" Jacob cuts himself off halfway as Jay started trying to drag him up to his feet. He looks up at the taller male tiredly, letting out a sigh. "Did you get any sleep? You really don't look good..."</p>
+                <p>Jay dismissively waves Jacobs concerns off, pulling him to get him to start walking. "I'm fine, we need to get moving!" His expression and his voice both are void of any feelings, but his eyes... His electric blue eyes are filled with fear and paranoia as he tries to hurry Jacob along, staying alert to any disturbances around them.</p>
+                <p>This makes Jacob's heart sink. This innocent boy is constantly tormented by his past, and there's not much the brunet can do about it. "Jay... When's the last time you were happy?" That stops the curly haired blonde in his tracks. "I just... You're always so stressed out and stuff. I mean, these circumstances aren't the best, we could die at any minute, but... You still deserve to be happy..."</p>
+                <div class='brLarge'></div>
+                <p>"...Happy? What's that supposed to mean?"</p>
+                <p>Oh, his heart just plummeted down another foot-</p>
+                <p>"You don't know what happiness is?"</p>
+                <p>"..." The tall boy shakes his head. But then he focuses himself again. "It doesn't matter, we need to keep moving," he mutters as he grabs the midgets arm and pulls him through the trees and branches.</p>
+                <div class='brLarge'></div>
+                <p>Jacob shakes his head as well now, standing his ground and keeping Jay from continuing onward. "No, it does matter, Jay. It matters a lot." He walks up to Jay, softly wrapping his arms around his waist in a hug.</p>
+                <p>Jay really wants to get out of this forest. He wants to get to safety. He doesn't have time for this. So, he puts his arms around Jacob and lifts him up bridal style, holding him close as he continues on walking like that.</p>
+                <div class='brLarge'></div>
+                <p>"Have you ever laughed? Smiled? Anything?" Jacob asks as he gives up and just curls up in Jay's arms, enjoying his warmth. But he does get an idea, softly slipping a hand under his shirt but making it seem like he was just trying to hug him more.</p>
+                <p>The scared boy shrugs his shoulders. "Once. But then the scientists cut my finger off for it." He shivers a little at the feeling of Jacobs cold hand, but he loves any type of affection, so he doesn't mind.</p>
+                <p>"But both of your hands have all fingers-" He starts to ever so lightly skitter his hand along Jay's bare side.</p>
+                <p>"I was o-only five when it h-happened, it grew ba-ack... What a-are you doing?" Jay asks as he tries to keep walking, his breath catching in his throat a few times.</p>
+                <p>A smirk rises to Jacob's lips as he goes a little harder, moving his hand up towards his ribs. "I'm trying to make you happy~"</p>
+                <p>His lips twitch, but he fights to keep a straight face. "C-cut it o-out! We have to k-keep going. S-Stop horsing aro-ound!"</p>
+                <p>Jacob adds his other hand in, reaching up and starting to scribble his fingers along his underarms. "Oh, come on~ We've been walking for days, you need a break~"</p>
+                <div class='brLarge'></div>
+                <p>A smile plays on Jays lip that he tries to fight back, but he can't help the giggles that start pouring out of him, his grip on Jacob starting to loosen a bit as he leans against a tree to support himself. His giggles have a weird sound to them. They sound like an anime schoolgirl giggle. "Stahap!"</p>
+                <div class='brLarge'></div>
+                <p>This just encourages Jacob to keep going, speeding up a bit as well. "Aw, but that's such an adorable laugh~! And you need some laughter in your life~"</p>
+                <p>Jay ends up falling to the ground, which makes it easier for Jacob to pin him down and start to really tickle him, which gets him squealing and laughing, kicking his legs a bit. "JaHaHACohOb!" His laughter is even higher pitched than his giggles. He kinda sounds like a dying dolphin-</p>
+                <p>Jacob grins and keeps this up for a while, exploring all over to find sweet spots and make Jay laugh louder. It's... Freeing.</p>
+                <div class='brLarge'></div>
+                <p><i>(This paragraph is from Jay's perspective, he sees life through metaphors-)</i></p>
+                <div class='brLarge'></div>
+                <p>All his life, it's been as if he were trapped in a dark room, blind, unable to know what was safe, but it's like... This bright light... This big ball of light in the sky has come pouring through the window, blocked only by the curtains. He's scared of the new change, so he keeps the curtains closed, blocking out the light as much as he can.</p>
+                <div class='brLarge'></div>
+                <p>But then once Jacob stops, Jay rolls over and pins the shorter boy down, attacking his ribs.</p>
+                <div class='brLarge'></div>
+                <p>He opens the curtains. It's such a freeing feeling, like this weight has finally been lifted off of him, like he could fly if he wanted. Jacob has opened Jays eyes up to the true beauty of the world outside that window, the world he can finally see. Jacob is the sun and Jay is all the plants growing towards him, reaching for his light.</p>
+                <div class='brLarge'></div>
+                <p>He can finally see.</p>
+                <p>He can finally be free.</p>
+                <p>He can finally thrive and feel things he's never felt before.</p>
+                <p>He can be happy.</p>
+                <p>He knows what it means to be happy.</p>
+                <p>It might seem like an exaggeration, but it's not. He's never felt so... So... So light. So free. So happy.</p>
+                <div class='brLarge'></div>
+                <p>It was the first time he's ever laughed. And Jay is sure Jacob won't let it be the last.</p>
+            </div>
+        </details>
+
         <!-- <details>
             <summary><h1>The Fog</h1><h2 class="twc">Trigger Warning - Drug Addiction, Depression</h2></summary>
             <div class="content">

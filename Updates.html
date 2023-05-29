@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-selected-theme="normal">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +18,10 @@
             --middleImageHR: " ⋆⋅☆⋅⋆ ";
             --middleLength: 7;
             --middleAddition: "──";
+            --bg1l: 97.5%;
+            --bg2l: 85%;
+            --bqbg1l: 95%;
+            --bqbg2l: 80%;
         }
         img{
             width: clamp(50%, 75%, 100%);
@@ -70,8 +74,8 @@
             --hueOneThird: calc(var(--hueOne) + var(--hueDif));
             --hueTwoThird: calc(var(--hueOne) + var(--hueDif) + var(--hueDif));;
             --hueThrThird: calc(var(--hueOne) + var(--hueDif) + var(--hueDif) + var(--hueDif));;
-            --bgColor: hsl(var(--hueOne), 90%, 97.5%);
-            --bgColor2: hsl(var(--hueOne), 60%, 85%);
+            --bgColor: hsl(var(--hueOne), 90%, var(--bg1l));
+            --bgColor2: hsl(var(--hueOne), 60%, var(--bg2l));
 
             background-color: var(--bgColor);
             border: 3px solid hsl(var(--hueOne), 90%, 60%);
@@ -87,8 +91,8 @@
                             0 0 0 -3px var(--bgColor2), 0 0 0 0 hsl(var(--hueThrThird), 90%, 60%);
             }
             > blockquote {
-                background: hsl(var(--hueOne), 100%, 95%);
-                border-left: 10px solid hsl(var(--hueOne), 80%, 80%);
+                background: hsl(var(--hueOne), 100%, var(--bqbg1l));
+                border-left: 10px solid hsl(var(--hueOne), 80%, var(--bqbg2l));
                 margin: 0.75em 10px;
                 padding: 0.5em 10px;
                 quotes: "\201C""\201D""\2018""\2019";
@@ -106,8 +110,8 @@
                         0 0 0 -3px var(--bgColor2), 0 0 0 0 hsl(var(--hueThrThird), 90%, 60%);
         }
         .card > blockquote {
-            background: hsl(var(--hueOne), 100%, 95%);
-            border-left: 10px solid hsl(var(--hueOne), 80%, 80%);
+            background: hsl(var(--hueOne), 100%, var(--bqbg1l));
+            border-left: 10px solid hsl(var(--hueOne), 80%, var(--bqbg2l));
             margin: 0.75em 10px;
             padding: 0.5em 10px;
             quotes: "\201C""\201D""\2018""\2019";
@@ -125,6 +129,10 @@
         }
         .card a:link, .card a:visited, .card a:active{
             text-decoration: underline hsl(var(--hue), 6%, 27%) solid 2px;
+        }
+
+        [data-selected-theme="alt"] .card a:link, [data-selected-theme="alt"] .card a:visited, [data-selected-theme="alt"] .card a:active {
+            text-decoration: underline hsl(var(--hue), 6%, 83%) solid 2px;
         }
         
         @media (max-width: 520px){
