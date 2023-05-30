@@ -1,15 +1,14 @@
 # _{Application Name}_
 
-#### By Michaela (Sam) Castle**{List of contributors}**_
+#### By Michaela (Sam) Castle
 
 #### _{Brief description of application}_
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* HTML
+* CSS
+* JavaScript
 
 ## Description
 
