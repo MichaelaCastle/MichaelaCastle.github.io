@@ -96,15 +96,29 @@
 
 
         .tableOfContents a {
-            box-shadow: inset 0 0 0 0 var(--darkText);
             color: var(--darkText);
             padding: 0 .25rem;
             margin: 0 -.25rem;
-            transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+            position: relative;
+            transition: color .55s ease-in-out;
         }
         .tableOfContents a:hover {
             color: var(--lightColor);
-            box-shadow: inset 200px 0 0 0 var(--darkText);
+        }
+        .tableOfContents a:after {
+            border-radius: 25px;
+            transition: box-shadow .5s ease-in-out;
+            box-shadow: inset 0 0 0 0 var(--darkText);
+            content: '';
+            z-index: -1;
+            position: absolute;
+            left: -5px;
+            height: 100%;
+            width: calc(100% + 10px);
+            top: 0%;
+        }
+        .tableOfContents a:hover:after {
+            box-shadow: inset 500px 0 0 0 var(--darkText);
         }
         [data-selected-theme="alt"] .tableOfContents a:hover {
             color: var(--lightColor) !important;
@@ -133,6 +147,7 @@
     <script src="Audioplayer.js"></script>
 </head>
 <body>
+    
     <header>
         <div class="navbar">
             <h3 id="SiteName">Prismoria</h3>

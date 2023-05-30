@@ -31,7 +31,7 @@ img{
     transition: transform 0.3s;
 }
 img:hover{
-    transform: scale(1.15);
+    transform: translateX(calc(50vw - 50%)) scale(1.15);
 }
 .info, #TeaserText, .quoteCaption{
     padding: 0 7rem 0 7rem;
