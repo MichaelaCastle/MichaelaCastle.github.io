@@ -94,6 +94,22 @@
             background-color: hsl(calc(var(--hue2) + 270), 50%, 70%) !important;
         }
 
+
+        .tableOfContents a {
+            box-shadow: inset 0 0 0 0 var(--darkText);
+            color: var(--darkText);
+            padding: 0 .25rem;
+            margin: 0 -.25rem;
+            transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+        }
+        .tableOfContents a:hover {
+            color: var(--lightColor);
+            box-shadow: inset 200px 0 0 0 var(--darkText);
+        }
+        [data-selected-theme="alt"] .tableOfContents a:hover {
+            color: var(--lightColor) !important;
+            text-decoration-color: var(--lightColor) !important;
+        }
         @media (min-width: 530px){
             .qAndA, .tableOfContents{
                 padding-left:15vw;

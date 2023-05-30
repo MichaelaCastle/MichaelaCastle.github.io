@@ -3,6 +3,10 @@
     font-weight: 900;
     margin: 0;
     text-decoration: underline solid 5px var(--lightColor);
+    text-shadow: -1.5px  1.5px  1px hsl(var(--hue2), 100%, 25%),
+                  1.5px  1.5px  1px hsl(var(--hue2), 100%, 0%),
+                  1.5px -1.5px  1px hsl(var(--hue2), 100%, 25%),
+                 -1.5px -1.5px  1px hsl(var(--hue2), 100%, 50%);
 }
 .quoteCaption{
     font-style: italic;
@@ -24,6 +28,10 @@ img{
     transform: translateX(calc(50vw - 50%));
     border-radius: 15px;
     border: 2px solid rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+img:hover{
+    transform: scale(1.15);
 }
 .info, #TeaserText, .quoteCaption{
     padding: 0 7rem 0 7rem;
@@ -85,5 +93,8 @@ p, .quoteCaption, #TeaserText{
         width: auto;
         height: auto;
         transform: translateX(calc(50vw - 50%));
+    }
+    img:hover{
+        transform: translateX(calc(50vw - 50%)) scale(1.1);
     }
 }

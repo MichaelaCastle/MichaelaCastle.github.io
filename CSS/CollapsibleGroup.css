@@ -62,7 +62,9 @@ summary:before {
 [data-selected-theme="alt"] summary:before{
     border-color: transparent transparent transparent var(--sectionLabelColor);
 }
-
+[data-selected-theme="alt"] .twc{
+    color: var(--sectionLabelColor);
+}
 
 
 @media only screen and (max-width: 520px) {

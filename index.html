@@ -44,6 +44,35 @@
             padding-left: 0;
         }
 
+        .tableOfContents a {
+            color: var(--darkText);
+            padding: 0 .25rem;
+            margin: 0 -.25rem;
+            position: relative;
+            transition: color .55s ease-in-out;
+        }
+        .tableOfContents a:hover {
+            color: var(--lightColor);
+        }
+        .tableOfContents a:after {
+            border-radius: 25px;
+            transition: box-shadow .5s ease-in-out;
+            box-shadow: inset 0 0 0 0 var(--darkText);
+            content: '';
+            z-index: -1;
+            position: absolute;
+            left: -5px;
+            height: 100%;
+            width: calc(100% + 10px);
+            top: 0%;
+        }
+        .tableOfContents a:hover:after {
+            box-shadow: inset 500px 0 0 0 var(--darkText);
+        }
+        [data-selected-theme="alt"] .tableOfContents a:hover {
+            color: var(--lightColor) !important;
+            text-decoration-color: var(--lightColor) !important;
+        }
         @media only screen and (orientation: landscape) {
             .qAndA, .tableOfContents {
                 padding-left:15vw;
@@ -83,19 +112,21 @@
         }
         /* big buttons, no circle */
         .flickity-prev-next-button {
-            width: 100px;
-            height: 100px;
-            background: transparent;
+            width: 80px;
+            height: 80px;
+            background: hsla(var(--hue), 50%, 75%, 0.25);
+            transition: transform 0.3s;
         }
         /* arrow color */
         .flickity-prev-next-button .arrow {
-            fill: white;
+            fill: hsl(var(--hue), 100%, 75%);
         }
         .flickity-prev-next-button.no-svg {
-            color: white;
+            color: hsl(var(--hue), 100%, 75%);
         }
         .flickity-prev-next-button:hover {
-            background: transparent;
+            background: hsla(var(--hue), 50%, 75%, 0.25);
+            transform: scale(1.25) translateY(-40%);
         }
         /* hide disabled button */
         .flickity-prev-next-button:disabled {
@@ -175,6 +206,12 @@
             /* transform: translateX(calc(0%)); */
             border-radius: 15px;
             /* border: 2px solid rgba(0, 0, 0, 0.5); */
+        }
+        .gallery-cell img{
+            transition: transform 0.3s;
+        }
+        .gallery-cell img:hover{
+            transform: scale(1.15);
         }
         @media only screen and (max-width: 920px) {
             .gallery-cell {

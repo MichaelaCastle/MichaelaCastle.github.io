@@ -51,6 +51,35 @@
             padding-left:15vw;
             padding-right:15vw;
         }
+        .tableOfContents a {
+            color: var(--darkText);
+            padding: 0 .25rem;
+            margin: 0 -.25rem;
+            position: relative;
+            transition: color .5s ease-in-out;
+        }
+        .tableOfContents a:hover {
+            color: var(--lightColor);
+        }
+        .tableOfContents a:after {
+            border-radius: 25px;
+            transition: box-shadow .4s ease-in-out;
+            box-shadow: inset 0 0 0 0 var(--darkText);
+            content: '';
+            z-index: -1;
+            position: absolute;
+            left: -5px;
+            height: 100%;
+            width: calc(100% + 10px);
+            top: 0%;
+        }
+        .tableOfContents a:hover:after {
+            box-shadow: inset 500px 0 0 0 var(--darkText);
+        }
+        [data-selected-theme="alt"] .tableOfContents a:hover {
+            color: var(--lightColor) !important;
+            text-decoration-color: var(--lightColor) !important;
+        }
         ul{
             font-size: 20px;
         }
@@ -105,36 +134,36 @@
         <div class="sectionHeader" id="ToCTitle"><h1>Table of Contents</h1></div>
         <div class="tableOfContents">
             <ul>
-                <li>First Meetings
+                <li><a href="#FirstMeetings">First Meetings</a>
                     <ul>
-                        <li>Jacob x Sam</li>
-                        <li>Jay x Jacob</li>
-                        <li>Jay x Sam</li>
+                        <li><a href="#JacobXSam">Jacob x Sam</a></li>
+                        <li><a href="#JayXJacob">Jay x Jacob</a></li>
+                        <li><a href="#JayXSam">Jay x Sam</a></li>
                     </ul>
                 </li>
-                <li>Short Stories (Sometimes for events)
+                <li><a href="#ShortStories">Short Stories (Sometimes for events)</a>
                     <ul>
-                        <li>The Briefcase (Christmas Prompt)</li>
-                        <li>Christmas Tree (Christmas Prompt)</li>
-                        <li>The Fog</li>
-                        <li>The Perfect Test Subject</li>
-                        <li>You're not Alone</li>
+                        <li><a href="#Briefcase">The Briefcase (Christmas Prompt)</a></li>
+                        <li><a href="#ChristmasTree">Christmas Tree (Christmas Prompt)</a></li>
+                        <li><a href="#TheFog">The Fog</a></li>
+                        <li><a href="#PerfectTestSubject">The Perfect Test Subject</a></li>
+                        <li><a href="#NotAlone">You're not Alone</a></li>
                     </ul>
                 </li>
-                <li>Cutesy Stuff
+                <li><a href="#CutesyStuff">Cutesy Stuff</a>
                     <ul>
-                        <li>You Better Run, Nerd!</li>
-                        <li>The Subject of the Sentence</li>
-                        <li>What if I can't make you happy?</li>
-                        <li>Wings</li>
-                        <li>Battleship</li>
-                        <li>Opening the curtains to the sun</li>
+                        <li><a href="#YouBetterRun">You Better Run, Nerd!</a></li>
+                        <li><a href="#SubjectOfSentence">The Subject of the Sentence</a></li>
+                        <li><a href="#CantMakeYouHappy">What if I can't make you happy?</a></li>
+                        <li><a href="#Wings">Wings</a></li>
+                        <li><a href="#Battleship">Battleship</a></li>
+                        <li><a href="#Curtains">Opening the curtains to the sun</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
-        <div class="sectionHeader"><h1>First Meetings</h1></div>
-        <details>
+        <div class="sectionHeader" id="FirstMeetings"><h1>First Meetings</h1></div>
+        <details id="JacobXSam">
             <summary>
                 <h1>Jacob x Sam</h1>
             </summary>
@@ -164,7 +193,7 @@
                 <p>"Your handwriting is hideous but I see where you messed up. 1 + 1 is not 5." The bluntness that Sam has makes Jacob blush a little at his own simple mistakes. The blonde picks up a pencil and starts correcting all of Jacob's errors, which doesn't help Jacob that much, but once he's done, he starts to go over the reasoning behind the errors and how to remember not to make them again. That really does help Jacob.</p>
             </div>
         </details>
-        <details>
+        <details id="JayXJacob">
             <summary><h1>Jay x Jacob</h1></summary>
             <div class="content">
                 <p>"Sam, c'mon~! You should get out in the sun some more. It's only lunch!" Jacob pleads with the green eyed blonde for the fifth time this week. He hates seeing his best friend like this. He doesn't remember the last time he saw Sam smile, genuinely. And every time Sam flashes him that reassuring smile, it stabs through his heart like a knife. All he wants is for him to get out and get some sun. They're still kids after all, he shouldn't have to be cooped up with all this paperwork.</p>
@@ -196,7 +225,7 @@
                 <p>Unfortunately, Jacob will never find out that Sam did decide to take him up on his offer. About fifteen minutes before the period was supposed to end, Sam got to the door to the courtyard and looked out at the bench, where Jacob's tray of untouched food remains with no Jacob in sight. With a sigh, he lowers his head defeatedly and heads back to the lunchroom to wait for the period to finish.</p>
             </div>
         </details>
-        <details>
+        <details id="JayXSam">
             <summary><h1>Jay x Sam</h1></summary>
             <div class="content">
                 <p>White.</p>
@@ -238,8 +267,8 @@
                 <p>Jay hesitates. This guy is very hard not to want to trust. But he can't let his guard down. So he says nothing. His body does relax again at his words, but it's going to take a while for him to learn to trust someone else. And Sam will let Jay take all the time he needs.</p>
             </div>
         </details>
-        <div class="sectionHeader"><h1>Short Stories</h1></div>
-        <details>
+        <div class="sectionHeader" id="ShortStories"><h1>Short Stories</h1></div>
+        <details id="Briefcase">
             <summary><h1>The Briefcase (Christmas Prompt)</h1></summary>
             <div class="content">
                 <p>Lights twinkle around the house, little paper snowflakes skatter around the walls but not in a cluttered way. They're arranged in a very aesthetic way. A few handcrafted trinkets and Christmas themed items furnish the home. The scrawny boy was keeping himself busy, measuring a piece of wood before sawing into it. He was trying to create something that could impress his father. He will continue to craft both day and night if there's a chance that it'll make his father happy.</p>
@@ -277,7 +306,7 @@
                 <p>Elliot may put all this effort in to make his father happy, but it will never be reciprocated.</p>
             </div>
         </details>
-        <details>
+        <details id="ChristmasTree">
             <summary><h1>Christmas Tree (Christmas Prompt)</h1><h2 class="twc">Trigger warning: Financial problems, alcoholism, mentions of suicide</h2></summary>
             <div class="content">
                 <p>This was the best he could do. He tried his best. Sam just got done trying to create a makeshift Christmas tree. It looked a lot like that small Christmas tree from Charlie Brown. But... A lot worse- He made it out of paper. Simon's young though, he shouldn't care, right? The material objects aren't the point, the point of a holiday is to be with family.</p>
@@ -317,7 +346,7 @@
                 <p>"Can... Can you help me with math?"</p>
             </div>
         </details>
-        <details>
+        <details id="TheFog">
             <summary><h1>The Fog</h1><h2 class="twc">Trigger Warning - Drug Addiction, Depression</h2></summary>
             <div class="content">
                 <p>"Yeah, like you could understand... I'm not saying what you went through is easier, it is not, I know that. But that doesn't mean you understand exactly what I go through." The angel mutters as he goes back to filing out some paperwork, not in the mood to put up with Jay's crap.</p>
@@ -368,7 +397,7 @@
                 <p>"But now you're better!" Jay nuzzles Sam softly, clearly in a better mood as well now. He was in a better mood the second Sam offered to let him cuddle though.</p>
             </div>
         </details>
-        <details>
+        <details id="PerfectTestSubject">
             <summary><h1>The Perfect Test Subject</h1><h2 class="twc">Trigger Warning: Gore, abuse, kidnap</h2></summary>
             <div class="content">
                 <p>Jacob lies in the concrete cell, waiting for Jay to be brought back. He still doesn't understand what the point of this entire place is. This is the second time they've been stuck in this cell. They escaped once before, but... Were they ever truly free?</p>
@@ -389,7 +418,7 @@
                 <p>Jay doesn't answer. He's done talking. That guard walking by outside scared him off from reaching out for now. Its not long before Jacob realizes this. "Thank you for telling me. It means a lot~" He smiles and rests his head on Jays chest. "Mind if I stay here tonight? You're really warm..." He asks a bit quieter now, to which Jay just nods.</p>
             </div>
         </details>
-        <details>
+        <details id="NotAlone">
             <summary><h1>You're not Alone</h1><h2 class="twc">Trigger warning: mention of rape</h2></summary>
             <div class="content">
                 <p>The statement lingers in the air.</p>
@@ -420,9 +449,9 @@
                 <p>"Cuddle? Perfectly fine with me~"</p>
             </div>
         </details>
-        <div class="sectionHeader"><h1>Cutesy Stuff</h1></div>
+        <div class="sectionHeader" id="CutesyStuff"><h1>Cutesy Stuff</h1></div>
         <p class="info"><span style="width: clamp(45ch, 60ch, 75ch); transform: translateX(calc(50vw - 50%));">Info before you read this stuff: I just find this stuff cute.<br>It's simply something that I find wholesome. If you don't, that's fine, you don't have to read it.</span></p>
-        <details>
+        <details id="YouBetterRun">
             <summary><h1>You Better Run, Nerd!</h1></summary>
             <div class="content">
                 <p>"No, try again. You're really close! 8 divided by 4 isn't 4, so how about we try thinking about it again?" Sam was sat next to Jacob on a nice couch, helping him with some math homework. The blonde always makes sure to try to help the other not get too frustrated with the work. That is a big part of tutoring, understanding that the people you're helping can get very frustrated. It's not the tutors fault, don't take it personally. When someone can't grasp a concept, thats frustrating. So, Sam always tries his best to make sure the brunette doesn't get too mad at himself.</p>
@@ -468,7 +497,7 @@
                 <p>"We got enough math done, I'm perfectly fine spending the rest of our hour having fun~ We only have a few minutes left anyway~"</p>
             </div>
         </details>
-        <details>
+        <details id="SubjectOfSentence">
             <summary><h1>The Subject of The Sentence</h1></summary>
             <div class="content">
                 <p>Jacob stares at the sentences in front of him. 'The dog ran after the ball.' What is the object of the sentence...</p>
@@ -492,7 +521,7 @@
                 <p>Jacob giggles softly and lets Sam go, happy with that answer. "Thats what I thought~" Ever since he found out how ticklish Sam is, he's been using it against the kid all the time. And it works every time.</p>
             </div>
         </details>
-        <details>
+        <details id="CantMakeYouHappy">
             <summary><h1>What if I can't make you happy?</h1><h2 class="twc">Trigger warning: Depression/Suicide</h2></summary>
             <div class="content">
                 <p>It was 4:30 in the afternoon. Jacob was at the hospital, visiting his best friend, Sam. He's been beside Sam's bedside day in and day out after school for the last week. The doctors say Sam will be able to be released in a few days, they just need to keep him under watch a little longer to make sure the new medicine is working. It's been almost a year since Jacob last saw a real smile on Sam's face, it's always fake.</p>
@@ -533,7 +562,7 @@
                 <p>And every day from then on, until Sam got released from the hospital, the first thing Jacob would do when he went to see Sam was tickling the heck out of him, leaving him in a giddy mood for the rest of the day. Sam almost misses being in the hospital — Almost. It still sucked in there when Jacob wasn't around.</p>
             </div>
         </details>
-        <details>
+        <details id="Wings">
             <summary><h1>Wings</h1></summary>
             <div class="content">
                 <p>This is wrong. Where did they come from? Is he crazy? He must be hallucinating.</p>
@@ -570,7 +599,7 @@
                 <p>"Why?... OH!" Jacob laughs softly. "You really can't retract them?" When Sam shakes his head, the brunette can't help laughing again. "Guess I'm going to have to be taking care of you until you can learn~"</p>
             </div>
         </details>
-        <details>
+        <details id="Battleship">
             <summary><h1>Battleship</h1></summary>
             <div class="content">
                 <p>"B9." The blonde calls out, a subtle grin on his face. He has this game in the bag. He has most of Jacob's ships already sunken and c9 was a hit. It's only a matter of time before he wins.</p>
@@ -603,7 +632,7 @@
                 <p>This time, Sam doesn't tell Jacob off for swearing. Mainly due to Jacob's tone of bewilderment and slight admiration. That smug grin tugs at Sam's lips again. "I know~"</p>
             </div>
         </details> 
-        <details>
+        <details id="Curtains">
             <summary><h1>Opening the Curtains to the Sun</h1></summary>
             <div class="content">
                 <p>It's been one year since Jacob has gotten Jay to speak his first words towards him. That's great and all, it took him three years to be able to do it, but that's still pretty sad... Only talking... His tone is mostly monotone as well. He might as well be a robot.</p>
