@@ -2,8 +2,6 @@
 
 #### By Michaela (Sam) Castle
 
-#### Just a place to hold my characters and information about my au!
-
 ## Technologies Used
 
 * HTML
@@ -11,6 +9,8 @@
 * JavaScript
 
 ## Description
+
+Just a place to hold my characters and information about my au!
 
 ## License
 
