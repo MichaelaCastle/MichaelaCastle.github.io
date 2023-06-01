@@ -33,7 +33,12 @@
     <link rel="stylesheet" href="CSS/Nav.css">
     <script src="nav.js"></script>
     <script src="Jacob.js"></script>
-
+    <script>
+        let current = 0;
+        let names = ["  Sugar Popped Sunshine     -     Static-P  ", "  I Swallowed Shampoo  ", "  Count On Me  -  Bruno Mars  "];
+        let songs = ["Audio/Sugar Popped Sunshine.mp3", "Audio/I Swallowed Shampoo.ogg", "Audio/Count On Me.ogg"];
+    </script>
+    <script src="Audioplayer.js"></script>
 </head>
 <body>
     <header>
@@ -65,8 +70,12 @@
         
         <div class="tw">
             <div class="audio-player">
-                <div><h2>Sugar Popped Sunshine     -     Static-P</h2></div>
-                <audio preload="auto" id="player" src="Audio/Sugar Popped Sunshine.mp3" type="audio/mpeg" controls controlsList="nodownload noplaybackrate"></audio>
+                <div><h2>
+                    <button id="PrevSong" onclick="playPrev()" class="audioButtons"></button>
+                    <span id="SongName">  Sugar Popped Sunshine     -     Static-P  </span>
+                    <button id="NextSong" onclick="playNext()" class="audioButtons"></button>
+                </h2></div>
+                <audio preload="auto" onended="playNext()" id="player" src="Audio/Sugar Popped Sunshine.mp3" type="audio/mpeg" controls controlsList="nodownload noplaybackrate"></audio>
             </div>
             <p>╭━━━━━━━━━━━━━━━━╮</p>
             <p>Trigger Warnings</p>

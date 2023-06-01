@@ -1,5 +1,5 @@
 let playNext = () => {
-    console.log(current);
+    // console.log(current);
     current++;
     if(current < songs.length){
         document.querySelector('#player').src = songs[current];
@@ -14,7 +14,7 @@ let playNext = () => {
     }
 }
 let playPrev = () => {
-    console.log(current);
+    // console.log(current);
     current--;
     if(current >= 0){
         document.querySelector('#player').src = songs[current];
