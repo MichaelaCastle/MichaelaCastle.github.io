@@ -85,6 +85,12 @@
     <script src="nav.js"></script>
     <script>
         window.onload = () => {
+            getVersionNumber();
+            let headStyles = `
+            <link rel="stylesheet" href="CSS/HeadersAndDefaults.css?v=${versionNumber}">
+            <link rel="stylesheet" href="CSS/Nav.css?v=${versionNumber}">
+            `;
+            document.querySelector('head').innerHTML += headStyles;
             CreateNavbar("TheParticle")
         }
     </script>

@@ -35,7 +35,7 @@ const getVersionNumber = () => {
         localStorage.setItem('versionNumber', versionNumber);
     }
     else{
-        localStorage.setItem('versionNumber', (parseInt(versionNumber) + 1).toString());
+        localStorage.setItem('versionNumber', (parseInt(versionNumber) + 0.001).toString());
     }
 }
 
