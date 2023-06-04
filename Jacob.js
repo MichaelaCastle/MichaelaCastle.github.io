@@ -4,7 +4,6 @@ window.onload = () => {
     <link rel="stylesheet" href="CSS/HeadersAndDefaults.css?v=${versionNumber}">
     <link rel="stylesheet" href="CSS/Character.css?v=${versionNumber}">
     <link rel="stylesheet" href="CSS/Audioplayer.css?v=${versionNumber}">
-    <link rel="stylesheet" href="CSS/CollapsibleGroup.css?v=${versionNumber}">
     <link rel="stylesheet" href="CSS/HrStyles.css?v=${versionNumber}">
     <link rel="stylesheet" href="CSS/Nav.css?v=${versionNumber}">
     `;

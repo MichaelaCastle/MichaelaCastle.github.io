@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-selected-theme="normal">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rene Tickle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700;800&family=Spectral:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/Favicons/Rene512.png" sizes="512x512">
+    <link rel="icon" type="image/png" href="images/Favicons/Rene256.png" sizes="256x256">
+    <link rel="icon" type="image/png" href="images/Favicons/Rene180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="images/Favicons/Rene128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="images/Favicons/Rene96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="images/Favicons/Rene32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/Favicons/Rene16.png" sizes="16x16">
+    <style>
+        :root {
+            --hue: 280;
+            --hue2: 320;
+            --angle: 160deg;
+
+            --middleHR: "</>";
+            --middleImageHR: " 『••✎••』 ";
+            --middleLength: 9;
+            --middleAddition: "";
+
+            --answerDecor: "++ ";
+        }
+    </style>
+    <link rel="stylesheet" href="CSS/HeadersAndDefaults.css">
+    <link rel="stylesheet" href="CSS/Character.css">
+    <link rel="stylesheet" href="CSS/Audioplayer.css">
+    <link rel="stylesheet" href="CSS/HrStyles.css">
+    <link rel="stylesheet" href="CSS/Nav.css">
+    <script src="nav.js"></script>
+    <script src="Rene.js"></script>
+    <script>
+        let current = 0;
+        let names = ["  The Software Engineer Song  "];
+        let songs = ["Audio/The Software Engineer Song.ogg"];
+        </script>
+    <script src="Audioplayer.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h3 id="SiteName">Prismoria</h3>
+            <div class="flex-container">
+                <a href="index.html" id="TheParticle">The Particle</a>
+                <div class="dropdown">
+                    <button class="dropbtn Selected" id="Characters">Characters
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="Jay.html">Jay Star</a>
+                        <a href="Jacob.html">Jacob Jackson</a>
+                        <a href="Sam.html">Samuel Broteez</a>
+                        <a href="Elliot.html">Elliot Evans</a>
+                        <a href="Adam.html">Adam Zondervan</a>
+                        <a href="Rene.html">Rene Tickle</a>
+                    </div>
+                </div>
+                <a href="SomeStories.html" id="SomeStories">Some Stories</a>
+                <a href="Updates.html" id="Updates">Site Updates</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="sectionHeader" id="Name"><h1>Rene Tickle</h1></div>
+        <div class="sectionHeader"><h1>Character Sheet (WIP)</h1></div>
+        <div class="tw">
+            <div class="audio-player">
+                <div><h2>
+                    <button id="PrevSong" onclick="playPrev()" class="audioButtons"></button>
+                    <span id="SongName">  The Software Engineer Song  </span>
+                    <button id="NextSong" onclick="playNext()" class="audioButtons"></button>
+                </h2></div>
+                <audio preload="auto" onended="playNext()" id="player" src="Audio/The Software Engineer Song.ogg" type="audio/mpeg" controls controlsList="nodownload noplaybackrate"></audio>
+            </div>
+            <p>╭━━━━━━━━━━━━━━━━╮</p>
+            <p>Trigger Warnings</p>
+            <p>Unknown</p>
+            <p>╰━━━━━━━━━━━━━━━━╯</p>
+        </div>
+        <div class="sectionLabel">
+            <hr>
+            <p><b>Contents</b></p>
+            <hr>
+        </div>
+        <p>I. Teaser</p>
+        <p>II. Basic info</p>
+        <p>III. Health and Abilities</p>
+        <p>IV. Appearance</p>
+        <p>V. Personality</p>
+        <p>VI. Self Perception</p>
+        <p>VII. Relations</p>
+        <p>VIII. Roleplay Info</p>
+        <hr class="ImageTop">
+        <img src="images/Adam/Guitar.jpg">
+        <p class="quoteCaption">“...”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <p><b>Teaser</b></p>
+            <hr>
+        </div>
+        <p id="TeaserText"></p>
+        <hr class="ImageTop">
+        <img src="images/Rene/Rene2.png">
+        <p class="quoteCaption">“...”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <p><b>Basic Info</b></p>
+            <hr>
+        </div>
+        <div class="info" id="BasicInfo"></div>
+        <hr class="ImageTop">
+        <img src="images/Rene/Rene3.png">
+        <p class="quoteCaption">“...”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <p><b>Health and Abilities</b></p>
+            <hr>
+        </div>
+        <div class="info" id="Health"></div>
+        <hr class="ImageTop">
+        <img src="images/Rene/Rene.png">
+        <p class="quoteCaption">“...”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <p><b>Appearance</b></p>
+            <hr>
+        </div>
+        <div class="info" id="Appearance"></div>
+        <hr class="ImageTop">
+        <img src="images/Adam/MusicSheet.png">
+        <p class="quoteCaption">“...”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <p><b>Personality</b></p>
+            <hr>
+        </div>
+        <div class="info" id="Personality"></div>
+        <hr class="ImageTop">
+        <img src="images/Adam/Diary2.jpg">
+        <p class="quoteCaption">“...”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <p><b>Self-Perception</b></p>
+            <hr>
+        </div>
+        <div class="info" id="Perception"></div>
+        <hr class="ImageTop">
+        <img src="images/Adam/Aesthetic.jpg">
+        <p class="quoteCaption">“...”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <p><b>Relations</b></p>
+            <hr>
+        </div>
+        <div class="info" id="Relations"></div>
+        <hr class="ImageTop">
+        <img src="images/Adam/Aesthetic2.jpg">
+        <p class="quoteCaption">“...”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <p><b>Roleplay Info</b></p>
+            <hr>
+        </div>
+        <div class="info" id="RpInfo"></div>
+    </main>
+    <footer>
+        <button data-theme="normal" aria-pressed="true" id="NormalMode"></button>
+        <button data-theme="alt" aria-pressed="false" id="AltMode"></button>
+        <!-- <button data-theme="custom" aria-pressed="false" id="CustMode"></button> -->
+    </footer>
+</body>
+</html>
