@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700;800&family=Spectral:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+    <style>
+        :root {
+            --hue: 200;
+            --hue2: 150;
+            --angle: 160deg;
+
+            --ratingSize: 1rem;
+        }
+        @font-face {
+            font-family:star-rating;
+            src:url(data:application/x-font-ttf;base64,AAEAAAALAIAAAwAwT1MvMigiLIYAAAC8AAAAYGNtYXAmCyZNAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5ZlNxiKoAAAF4AAABFGhlYWQBHDApAAACjAAAADZoaGVhA+IB6AAAAsQAAAAkaG10eAcAAAAAAALoAAAAHGxvY2EAjADoAAADBAAAABBtYXhwAAoAGAAAAxQAAAAgbmFtZYWP6p0AAAM0AAABaXBvc3QAAwAAAAAEoAAAACAAAwIAAZAABQAAAUwBZgAAAEcBTAFmAAAA9QAZAIQAAAAAAAAAAAAAAAAAAAABAAAgAAAAAAAAAAAAAAAAAABAAAAl0AHg/+D/4AHgACAAAAABAAAAAAAAAAAAAAAgAAAAAAACAAAAAwAAABQAAwABAAAAFAAEAEAAAAAMAAgAAgAEAAEAICXLJdD//f//AAAAAAAgJcslz//9//8AAf/j2jnaNgADAAEAAAAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAACAAD/7QIAAdMACgAVAAABLwEPARcHNxcnNwUHNyc/AR8BBxcnAgCxT0+xgB6enh6A/wBwFlt9ODh9WxZwARkaoKAafLBTU7B8sjp8WBJxcRJYfDoAAAAAAQAA/+0CAAHTAAoAAAEvAQ8BFwc3Fyc3AgCxT0+xgB6enh6AARkaoKAafLBTU7B8AAAAAAIAAP/tAgAB0wAKABIAAAEvAQ8BFwc3Fyc3BTERHwEHFycCALFPT7GAHp6eHoD/ADh9WxZwARkaoKAafLBTU7B8sgEdcRJYfDoAAAABAAAAAQAA1qooUl8PPPUACwIAAAAAAM/+d7YAAAAAz/53tgAA/+0CAAHTAAAACAACAAAAAAAAAAEAAAHg/+AAAAIAAAAAAAIAAAEAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAQAAAAIAAAACAAAAAgAAAAAAAAAACgAUAB4ASgBkAIoAAQAAAAcAFgACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABABYAAAABAAAAAAACAA4AYwABAAAAAAADABYALAABAAAAAAAEABYAcQABAAAAAAAFABYAFgABAAAAAAAGAAsAQgABAAAAAAAKADQAhwADAAEECQABABYAAAADAAEECQACAA4AYwADAAEECQADABYALAADAAEECQAEABYAcQADAAEECQAFABYAFgADAAEECQAGABYATQADAAEECQAKADQAhwBzAHQAYQByAC0AcgBhAHQAaQBuAGcAVgBlAHIAcwBpAG8AbgAgADEALgAwAHMAdABhAHIALQByAGEAdABpAG4AZ3N0YXItcmF0aW5nAHMAdABhAHIALQByAGEAdABpAG4AZwBSAGUAZwB1AGwAYQByAHMAdABhAHIALQByAGEAdABpAG4AZwBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format('truetype'),url(data:application/font-woff;base64,d09GRk9UVE8AAAUgAAoAAAAABNgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAAA9AAAAWMAAAFjbsVsoU9TLzIAAAJYAAAAYAAAAGAoIiyGY21hcAAAArgAAABUAAAAVCYLJk1nYXNwAAADDAAAAAgAAAAIAAAAEGhlYWQAAAMUAAAANgAAADYBHDApaGhlYQAAA0wAAAAkAAAAJAPiAehobXR4AAADcAAAABwAAAAcBwAAAG1heHAAAAOMAAAABgAAAAYAB1AAbmFtZQAAA5QAAAFpAAABaYWP6p1wb3N0AAAFAAAAACAAAAAgAAMAAAEABAQAAQEBDHN0YXItcmF0aW5nAAECAAEAOvgcAvgbA/gYBB4KABlT/4uLHgoAGVP/i4sMB4tr+JT4dAUdAAAAjg8dAAAAkxEdAAAACR0AAAFaEgAIAQEMFxkbHiMoLXN0YXItcmF0aW5nc3Rhci1yYXRpbmd1MHUxdTIwdTI1Q0J1MjVDRnUyNUQwAAACAYkABQAHAQEEBwoNVn29/JQO/JQO/JQO+5QO+JT3rRX7RaU89zQ8+zT7RXH3FPsQbftE9zLe9zI4bfdE9xT3EAX7lPtGFfsEUaH3EDDj9xGdw/cFw/sF9xF5MDOh+xD7BMUFDviU960V+0WlPPc0PPs0+0Vx9xT7EG37RPcy3vcyOG33RPcU9xAFDviU960V+0WlPPc0PPs0+0Vx9xT7EG37RPcy3vcyOG33RPcU9xAF+5T7RhWLi4v3scP7BfcReTAzofsQ+wTFBQ74lBT4lBWLDAoAAAMCAAGQAAUAAAFMAWYAAABHAUwBZgAAAPUAGQCEAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAAAAAQAAAJdAB4P/g/+AB4AAgAAAAAQAAAAAAAAAAAAAAIAAAAAAAAgAAAAMAAAAUAAMAAQAAABQABABAAAAADAAIAAIABAABACAlyyXQ//3//wAAAAAAICXLJc///f//AAH/49o52jYAAwABAAAAAAAAAAAAAAAAAAEAAf//AA8AAQAAAAEAAOJjA1tfDzz1AAsCAAAAAADP/ne2AAAAAM/+d7YAAP/tAgAB0wAAAAgAAgAAAAAAAAABAAAB4P/gAAACAAAAAAACAAABAAAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAAAEAAAACAAAAAgAAAAIAAAAAAFAAAAcAAAAAAA4ArgABAAAAAAABABYAAAABAAAAAAACAA4AYwABAAAAAAADABYALAABAAAAAAAEABYAcQABAAAAAAAFABYAFgABAAAAAAAGAAsAQgABAAAAAAAKADQAhwADAAEECQABABYAAAADAAEECQACAA4AYwADAAEECQADABYALAADAAEECQAEABYAcQADAAEECQAFABYAFgADAAEECQAGABYATQADAAEECQAKADQAhwBzAHQAYQByAC0AcgBhAHQAaQBuAGcAVgBlAHIAcwBpAG8AbgAgADEALgAwAHMAdABhAHIALQByAGEAdABpAG4AZ3N0YXItcmF0aW5nAHMAdABhAHIALQByAGEAdABpAG4AZwBSAGUAZwB1AGwAYQByAHMAdABhAHIALQByAGEAdABpAG4AZwBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format('woff');
+            font-weight:normal;
+            font-style:normal;
+        }
+        .stars{
+            --percent: calc(var(--rating) / 5.1 * 100%);
+            flex-basis: 50%;
+            text-align: right;
+        }
+        .stars::before {
+            font-family:star-rating;
+            content: '●●●●●';
+            letter-spacing: 0.25rem;
+            line-height: 1;
+            background: linear-gradient(90deg, var(--darkText) var(--percent), transparent var(--percent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-width: 0.05rem;
+            -webkit-text-stroke-color: var(--darkText);
+            mix-blend-mode: luminosity;
+            position: absolute;
+            right: 0;
+        }
+        .rating{
+            font-family: 'Merriweather Sans', sans-serif;
+            padding-left: var(--ratingSize);
+            width: calc(100% - var(--ratingSize));
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-bottom: calc(var(--ratingSize) * 0.5);
+        }
+        .rating-label{
+            font-weight: 900;
+            flex-basis: 45%;
+            text-align: left;
+        }
+        .rating p{
+            display: inline-block;
+            font-size: var(--ratingSize);
+        }
+        .lighter{
+            opacity: 0.75;
+        }
+        .widget{
+            padding: var(--ratingSize);
+            border-radius: var(--ratingSize);
+            display: flex;
+            flex-direction: column;
+        }
+        .widget p{
+            text-align: left;
+        }
+        .AboutMe{
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        .AboutMe p, .Projects p, .Experience p{
+            width: clamp(30px, 100%, 75ch);
+        }
+        .Projects{
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 2;
+        }
+        .Experience{
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 3;
+        }
+        .skills{
+            /* display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: calc(40px - var(--ratingSize)) calc(40px - var(--ratingSize));
+            gap: var(--ratingSize); */
+            display: flex;
+            flex-direction: column;
+            /* width: 25%; */
+            /* background-color: var(--sectionHeaderColor1); */
+            grid-column-start: 4;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 5;
+        }
+        .widget h1{
+            text-decoration: underline;
+            margin: 0;
+            padding: 0;
+            font-size: calc(var(--ratingSize) + 12.5px);
+            color: var(--darkColor);
+        }
+        .widget h2{
+            color: var(--darkColor);
+            mix-blend-mode: luminosity;
+            font-size: calc(var(--ratingSize) + 7.5px);
+            font-weight: 700;
+            margin: 0;
+            padding: 0;
+            /* text-decoration: underline; */
+        }
+        .widget h3{
+            color: var(--darkColor);
+            mix-blend-mode: luminosity;
+            font-size: calc(var(--ratingSize) + 2.5px);
+            margin: 0;
+            padding: 0;
+        }
+        main{
+            margin: 0 2rem 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+        .Projects a:link, .Projects a:visited, .Projects a:active{
+            text-decoration: underline hsl(var(--hue), 6%, 27%) solid 1px;
+        }
+
+        [data-selected-theme="alt"] .Projects a:link, [data-selected-theme="alt"] .Projects a:visited, [data-selected-theme="alt"] .Projects a:active {
+            text-decoration: underline hsl(var(--hue), 6%, 83%) solid 1px;
+        }
+        [data-selected-theme="alt"] .widget h2,
+        [data-selected-theme="alt"] .widget h3,
+        [data-selected-theme="alt"] .widget h1{
+            color: var(--sectionLabelColor);
+        }
+        @media (max-width: 900px) {
+            main{
+                margin: 0 1rem 0 1rem;
+                grid-template-columns: 1fr;
+            }
+            .Projects{
+                grid-row-start: 2;
+            }
+            .Experience{
+                grid-row-start: 3;
+            }
+            .skills{
+                grid-column-start: 1;
+                grid-row-start: 4;
+            }
+        }
+        @media (max-width: 530px) {
+            main{
+                margin: 0;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="CSS/HeadersAndDefaults.css">
+    <link rel="stylesheet" href="CSS/Nav.css">
+    <script src="nav.js"></script>
+    <script>
+    window.onload = () => {
+        defaultTheme = "alt";
+        getVersionNumber();
+        let headStyles = `
+        <link rel="stylesheet" href="CSS/HeadersAndDefaults.css?v=${versionNumber}">
+        <link rel="stylesheet" href="CSS/Nav.css?v=${versionNumber}">
+        `;
+        document.querySelector('head').innerHTML += headStyles;
+        CreateNavbar();
+        const savedTheme = localStorage.getItem('selected-theme');
+        if(!savedTheme || savedTheme === defaultTheme) {
+            applyTheme(defaultTheme);
+        }
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <!-- <div class="navbar">
+            <h3 id="SiteName">Prismoria</h3>
+            <div class="flex-container">
+                <a href="index.html" id="TheParticle">The Particle</a>
+                <div class="dropdown">
+                    <button class="dropbtn Selected" id="Characters">Characters
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="Jay.html">Jay Star</a>
+                        <a href="Jacob.html">Jacob Jackson</a>
+                        <a href="Sam.html">Samuel Broteez</a>
+                        <a href="Elliot.html">Elliot Evans</a>
+                        <a href="Adam.html">Adam Zondervan</a>
+                        <a href="Rene.html">Rene Tickle</a>
+                    </div>
+                </div>
+                <a href="SomeStories.html" id="SomeStories">Some Stories</a>
+                <a href="Updates.html" id="Updates">Site Updates</a>
+            </div>
+        </div> -->
+    </header>
+    <main>
+        <div class="AboutMe widget">
+            <h1>Sam Castle</h1>
+            <h3>Software Developer</h3>
+            <h3>mlc8776@rit.edu</h3>
+            <p>Ever since I was young, I loved programming. The first thing I ever got to program was an Arduino, which my father gifted to me when I was about eight. I loved creating and learning how to make new things with it.<span class="br"></span>
+            When I turned about twelve, I found that I also really liked to create stories and art. I spent hours upon hours creating a detailed world with character that I still use to this day. When you take all three interests and combine them, you get a game!<span class="br"></span>
+            I plan on turning that story mentioned before into a game one day. I am still developing the same characters I made when I was twelve into more and more realistic characters. I have also been defining more information about how magic and mutations work in my universe.</p>
+        </div>
+        <div class="Projects widget">
+            <h1>Projects</h1>
+            <p><a href="index.html">Prismoria</a>, a world and story that I've been developing since I was 12 years old. This is a passion project that I'm still waiting on starting. This story has become too complex for me to be able to develop this on my own, and I still need to figure out how to represent it in a game. This project however is a custom webpage created to show off details of this world that have been fleshed out.</p><span class="br"></span>
+            <p><a href="https://people.rit.edu/mlc8776/235/Project3/">Sudoku</a>, a recreation of the classic Sudoku game in JavaScript, HTML, and CSS. This includes extra features such as boards with more rules on top of the classic rules, a notetaking system, and error checking so the user knows when the broke a rule.</p><span class="br"></span>
+            <p><a href="https://people.rit.edu/mlc8776/235/Project2/">DND Database</a>, which uses a public API to retrieve and parse data. It then displays said data to the user. The user can filter and search for items within the database.</p><span class="br"></span>
+            <p><a href="https://github.com/IGME-202-2221/project-1-MichaelaCastle">Nucifera</a>, an academic solo project made in Unity without utilizing Unity's built-in ridgedbody or physics system. It's a 2D Shoot-'em-up game that I made all the artwork, AI, and code for.</p><span class="br"></span>
+            <p><a href="https://github.com/bpe4955/Good-Luck">Good Luck~</a>, a group project made in Monogame. I made all the graphics and I also contributed to the enemy behaviors, menu system, and player attacks.</p><span class="br"></span>
+            <p><a href="https://sites.google.com/view/michaela-castle-portfolio/factory-simulator?authuser=0">Factory Simulator</a>, a 6-month long project created in an attempt to learn more about databases. I did not learn anything about databases, but I got a lot of experience with Unity.</p>
+        </div>
+        <div class="Experience widget">
+            <h1>Experience</h1>
+            <h3>Rochester Colonial:<br></h3>
+            <p>● ...<br>
+                ● ...<br>
+                ● ...<br>
+                ● ...</p><span class="br"></span>
+            <h3>SI Group:<br></h3>
+            <p>● Developed an easy to use, drag and drop production scheduling application in Unity for plant operations that implements MVC with an SQL database<br>
+                ● Developed a Microsoft Blazor web application to view the schedule and to maintain a communication feature and modify content on an SQL database using an API system<br>
+                ● Implemented additional features and modifications based on feedback from testers and target users<br>
+                ● Utilized C#, HTML5, CSS, Unity, and Visual Studio 2019</p><span class="br"></span>
+            <h3>RIT Tutor:<br></h3>
+            <p>● Help students understand and work through problems involving basic C# and programming logic<br>
+                ● Discuss and communicate computing principles in easy to understand ways</p>
+        </div>
+        <div class="skills widget">
+            <h1>Skills</h1>
+            <h2>Languages</h2>
+            <div class="rating">
+                <p class="rating-label">C#</p>
+                <p class="stars" style="--rating: 4.3;"></p>
+                <p class="lighter">Experienced</p>
+                <p class="lighter">3 Years</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">C++</p>
+                <p class="stars" style="--rating: 2.5;"></p>
+                <p class="lighter">Competent</p>
+                <p class="lighter">1 Year</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">.Net</p>
+                <p class="stars" style="--rating: 4.3;"></p>
+                <p class="lighter">Experienced</p>
+                <p class="lighter">2 Years</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">Java</p>
+                <p class="stars" style="--rating: 3;"></p>
+                <p class="lighter">Competent</p>
+                <p class="lighter">4 Years</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">Javascript</p>
+                <p class="stars" style="--rating: 3.6;"></p>
+                <p class="lighter">Experienced</p>
+                <p class="lighter">4 Years</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">HTML5</p>
+                <p class="stars" style="--rating: 4;"></p>
+                <p class="lighter">Experienced</p>
+                <p class="lighter">1.5 Years</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">CSS</p>
+                <p class="stars" style="--rating: 4.1;"></p>
+                <p class="lighter">Experienced</p>
+                <p class="lighter">1.5 Years</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">SQL</p>
+                <p class="stars" style="--rating: 2;"></p>
+                <p class="lighter">Competent</p>
+                <p class="lighter">1 Year</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">Visual basic 6</p>
+                <p class="stars" style="--rating: 1.3;"></p>
+                <p class="lighter">Novice</p>
+                <p class="lighter">1 Year</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">Python</p>
+                <p class="stars" style="--rating: 0.5;"></p>
+                <p class="lighter">Novice</p>
+                <p class="lighter">1 Year</p>
+            </div>
+            <h2>Tools</h2>
+            <div class="rating">
+                <p class="rating-label">Git</p>
+                <p class="stars" style="--rating: 4;"></p>
+                <p class="lighter">Experienced</p>
+                <p class="lighter">2 Years</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">Microsoft Office</p>
+                <p class="stars" style="--rating: 3.5;"></p>
+                <p class="lighter">Competent</p>
+                <p class="lighter">3 Year</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">Microsoft IIS</p>
+                <p class="stars" style="--rating: 3;"></p>
+                <p class="lighter">Competent</p>
+                <p class="lighter">1 Year</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">SQL Server</p>
+                <p class="stars" style="--rating: 4.3;"></p>
+                <p class="lighter">Experienced</p>
+                <p class="lighter">2 Years</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">Photoshop</p>
+                <p class="stars" style="--rating: 2.5;"></p>
+                <p class="lighter">Competent</p>
+                <p class="lighter">2 Year</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">Illustrator</p>
+                <p class="stars" style="--rating: 2.3;"></p>
+                <p class="lighter">Novice</p>
+                <p class="lighter">1 Year</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">Maya</p>
+                <p class="stars" style="--rating: 3;"></p>
+                <p class="lighter">Competent</p>
+                <p class="lighter">1 Year</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">Blender</p>
+                <p class="stars" style="--rating: 3;"></p>
+                <p class="lighter">Competent</p>
+                <p class="lighter">1 Year</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">Visual Studio</p>
+                <p class="stars" style="--rating: 4.7;"></p>
+                <p class="lighter">Mastery</p>
+                <p class="lighter">4 Years</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">Visual Studio Code</p>
+                <p class="stars" style="--rating: 4;"></p>
+                <p class="lighter">Experienced</p>
+                <p class="lighter">1 Year</p>
+            </div>
+            <h2>Engines</h2>
+            <div class="rating">
+                <p class="rating-label">Unity</p>
+                <p class="stars" style="--rating: 4.5;"></p>
+                <p class="lighter">Experienced</p>
+                <p class="lighter">3 Years</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">Unreal Engine</p>
+                <p class="stars" style="--rating: 2;"></p>
+                <p class="lighter">Competent</p>
+                <p class="lighter">1 Year</p>
+            </div>
+            <!-- <div class="rating">
+                <p class="rating-label">Label</p>
+                <p class="stars" style="--rating: 1.65;"></p>
+                <p class="lighter">Beginner</p>
+                <p class="lighter">1 Year</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">Label</p>
+                <p class="stars" style="--rating: 1.65;"></p>
+                <p class="lighter">Beginner</p>
+                <p class="lighter">1 Year</p>
+            </div>
+            <div class="rating">
+                <p class="rating-label">Label</p>
+                <p class="stars" style="--rating: 1.65;"></p>
+                <p class="lighter">Beginner</p>
+                <p class="lighter">1 Year</p>
+            </div> -->
+        </div>
+    </main>
+    <footer>
+        <button data-theme="normal" aria-pressed="true" id="NormalMode"></button>
+        <button data-theme="alt" aria-pressed="false" id="AltMode"></button>
+        <!-- <button data-theme="custom" aria-pressed="false" id="CustMode"></button> -->
+    </footer>
+</body>
+</html>
