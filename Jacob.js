@@ -195,12 +195,12 @@ window.onload = () => {
     <p class="question">Hobbies</p>
     <p class="answer">Singing</p>
     <p class="answer">Acting</p>
-    <p class="question">▪ Playing the guitar</p>
+    <p class="answer">Playing the guitar</p>
     <div class='brLarge'></div>
     <p class="question">Love Language(s)</p>
     <p class="answer">Quality Time: This love language is all about giving your undivided attention to that one special person, without the distraction of television, phone screens, or any other outside interference. They have a strong desire to actively spend time with their significant other, having meaningful conversations or sharing recreational activities.</p>
     <p class="answer">Physical Touch: People who communicate their appreciation through this language, when they consent to it, feel appreciated when they are hugged, kissed, or cuddled. They value the feeling of warmth and comfort that comes with physical touch.</p>
     <div class='brLarge'></div>
     <p class="question">Extra</p>
-    <p class="answer">He will do anything to make someone smile if he finds them interesting or could se some cheering up. He doesn't give up easily. The guy spent 3 full years trying to get one guy to just say one word to him, then another 3 years trying to help him heal from past trauma and be happier in general. He is determined.</p>`;
+    <p class="answer">He will do anything to make someone smile if he finds them interesting or could use some cheering up. He doesn't give up easily. The guy spent 3 full years trying to get one guy to just say one word to him, then another 3 years trying to help him heal from past trauma and be happier in general. He is determined.</p>`;
 };

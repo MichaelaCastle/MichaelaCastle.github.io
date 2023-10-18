@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elliot Evans</title>
+    <title>Elliot Evans - Young (WIP)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700;800&family=Spectral:wght@200;300;400;600;700&display=swap" rel="stylesheet">
@@ -17,8 +17,8 @@
     <link rel="icon" type="image/png" href="images/Favicons/Elliot16.png" sizes="16x16">
     <style>
         :root {
-            --hue: 65;
-            --hue2: 80;
+            --hue: 75;
+            --hue2: 90;
             --angle: 160deg;
 
             --middleHR: "🛠";
@@ -26,8 +26,7 @@
             --middleLength: 7;
             --middleAddition: "──";
 
-            --answerDecor: "⫘⫘ ";
-            --answerDecor: ";ଓ ";
+            --answerDecor: "👟 ";
 
         }
         .PersonalityFlexbox{
@@ -35,22 +34,25 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-        details{
+        #TeaserText p{
+            text-align: left;
+        }
+        .PersonalityFlexbox details{
             flex: 1 1 auto;
             width: clamp(40%, 50%, 90%);
         }
-        .content{
+        .PersonalityFlexbox .content{
             border: 3px hsla(var(--hue2), 58%, 30%, 0.388) solid;
             border-top: 0px;
             border-radius: 0px 0px 10px 10px;
         }
         @media (max-width: 950px){
-            details{
+            .PersonalityFlexbox details{
                 width: clamp(45%, 70%, 100%);
             }
         }
         @media (max-width: 650px){
-            details{
+            .PersonalityFlexbox details{
                 width: clamp(45%, 70%, 100%);
             }
             #Personality{
@@ -73,7 +75,7 @@
     <link rel="stylesheet" href="CSS/HrStyles.css">
     <link rel="stylesheet" href="CSS/Nav.css">
     <script src="nav.js"></script>
-    <script src="Elliot.js"></script>
+    <script src="YoungElliot.js"></script>
     <script>
         let current = 0;
         let names = ["  Mr. Johnson    -    David Reid  ", "  Again   -   Aruvn  ", "  Twisted   -   Starkid's Productions  "];
@@ -106,7 +108,7 @@
         </div>
     </header>
     <main>
-        <div class="sectionHeader" id="Name"><h1>Elliot Evans</h1></div>
+        <div class="sectionHeader" id="Name"><h1>Elliot Evans - Young</h1></div>
         <div class="sectionHeader"><h1>Character Sheet</h1></div>
         <div class="tw">
             <div class="audio-player">
@@ -139,18 +141,54 @@
         <p>VIII. Roleplay Info</p>
         <hr class="ImageTop">
         <img src="images/Elliot/Elliot Transparent.png">
-        <p class="quoteCaption">“I don't have much time left.”</p>
+        <p class="quoteCaption">“”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
             <p><b>Teaser</b></p>
             <hr>
         </div>
-        <p id="TeaserText">"Get back to work then!" The scrawny man commands the group of scientists, who were previously coming to him to report an issue with the latest experiment. "What do I pay you for?"<span class="br"></span>"Sir, you don't pay us-" One of the scientists speak up.<span class="br"></span>He doesn't have time for this. He can feel the mutation about to kick in again, he needs to get back to his office asap. "I don't care, just get back to work and fix it! We don't have much more time." With that, he walks off to get back to his office. By now, the scientists are used to him just walking off like that, and they all know exactly what's happening.<span class="brLarge"></span>Pain, so much pain. Elliot barely makes it back to his office in time, quickly shutting and locking the door behind himself. His legs give out, he crumbles to the ground as the mutation wins again. Unbearable pain shoots through his body as he can feel his bone being crushed and pulled further inward. It's excruciating.<span class="brLarge"></span>But this is what he deserves. He created what caused this, he's the cause of the suffering of hundreds others. Everyone will be glad when the mutation fully devours him from the inside out until he no longer exists. The world will be a better place once he leaves. And he'll no longer have to put up with this pain... He just wants the scientists to finish making a cure. It doesn't matter if it's too late for him, nobody else should have to feel this pain. But it's been a decade.<span class="brLarge"></span>The cure may never be developed. He will die in pain, alone. And he may never get the chance to right his wrongs before he leaves.
-        </p>
+        <details>
+            <summary><h1>Teaser</h1></summary>
+            <div class="content" id="TeaserText">
+                <p>Lights twinkle around the house, little paper snowflakes skatter around the walls but not in a cluttered way. They're arranged in a very aesthetic way. A few handcrafted trinkets and Christmas themed items furnish the home. The scrawny boy was keeping himself busy, measuring a piece of wood before sawing into it. He was trying to create something that could impress his father. He will continue to craft both day and night if there's a chance that it'll make his father happy.</p>
+                <p>Its not everyday that dad comes back. He's normally away on business trips for Christmas, so this is a great opportunity to make the best Christmas gift possible.</p>
+                <div class='brLarge'></div>
+                <p>One of his cats hops up onto the workbench and the boy has to shoo them away. "Two fifteen, go hang out with 3 o'clock, it's dangerous up here-" He has so many cats that he refers to them based on when they normally show up at his house. The only cat he truly owns is a white cat he named Noon as a play on naming black cats Midnight. All the other cats are strays that he lets in and takes care of when his father isn't around. They come and go as they please. </p>
+                <p>The cat meows, ignoring his warning, trying to get the boys attention. His father is home. The cat heard a new human at the door.</p>
+                <p>He puts the saw down to look at the cat. "What? Do you need food or something? I already fed yo--" He hears the front door's lock being fiddled with. He immediately jumps into action. Time to lead all the stray cats to the back door. He runs over to the living room. "Alright guys, we practiced this! Time to evacuate." At the word 'evacuate,' all the cats except for his permanent cat spring into action as well, bolting down the hall to the kitty door in the back, running outside. Yes, he trained the cats. That's how much free time he has. This whole routine is pointless for a specific reason, but the boy does it anyways.</p>
+                <p>And they escaped just in time. The front door opens and the father saunters into the living room, tossing his keys down onto the coffee table before setting his briefcase down. "I see you've been busy at work, Ellie..." He does not seem pleased, sitting down on the couch and starting to take off his shoes so he can relax now that he's home.</p>
+                <div class='brLarge'></div>
+                <p>"Dad! What a surprise~" Elliot reaches up to take his hairband out, since he knows his father doesn't like him keeping his hair up like that. His hair is pretty long, going a few inches past his shoulders. "How was work? How long do you think you'll be staying?"</p>
+                <p>The father sets his shoes aside and leans back against the couch, letting out a long sigh. "Probably not long, sorry bud. I can stay around for maybe two weeks if I'm lucky." He looks up at the ceiling, closing his eyes. "And you probably want to show me those things you made? You do know its pointless to make surprises right? I see everything you do." He gestures to one of the nearby cameras.</p>
+                <div class='brLarge'></div>
+                <p>This is why the evacuation thing was pointless. This house has 24/7 surveillance. To an extreme. Every room in this house, even the bathroom and a few blocks down the street, is being recorded. Every second of Elliot's life is on a hard drive.</p>
+                <div class='brLarge'></div>
+                <p>"But, it's different when you see it in real life~!" His fathers negativity is not enough to get him down.</p>
+                <p>But his positivity does not spread to his father. "Doubt it... But fine, show me your briefcase."</p>
+                <p>Elliot happily runs off to his room to fetch the present he made for his father. It only takes a few seconds, then he runs back to the living room, proudly holding it out to his father. The thing he was working on earlier is a separate present. He makes his father multiple presents.</p>
+                <div class='brLarge'></div>
+                <p>It's a very useful briefcase. He had done some studying on how they work and made a bunch of blueprints to find ways to make them more efficient: ie. Lighter while still being able to carry the same amount, or utilizing more organization, or being able to store more for the same weight. Or all combined into one. He spent weeks drafting and redrafting designs for this. The final product is immaculate. Sleek and modern while bearing some personal touches, like his fathers name embossed in the well treated leather. And there are some fancy patterns engraved around the edges to add a more expensive look to it. It looks professional. And the inside of it is pretty similar to a normal briefcase, but it does have some differences to add more capabilities and functionality to it, based around the specific needs of his father. Not everyone uses them the same way, so they have to be more generic. But a specific person has a more specific style of use. So, Elliot can skew the functionality towards that.</p>
+                <div class='brLarge'></div>
+                <p>"Elliot... I have a briefcase."</p>
+                <p>"I know, but... Just hold it, please?"</p>
+                <p>The father reluctantly sits up to take the gift from Elliot, opening it up and inspecting it. "... You're going to be an entrepreneur one day."</p>
+                <p>"That's the plan~!" Elliot smiles and hops onto the couch next to his father, just happy that he didn't totally reject the gift. Thats a win in his books. "One day I'm going to be just like you."</p>
+                <p>"Good luck with that, kid..." The father sets the briefcase down next to his old one before sitting back against the couch again, gently placing an arm around Elliot. "You might be able to craft, but you have no spine."</p>
+                <p>"I'll hire people to be my spine!"</p>
+                <p>His father snorts for a second. "Alright, you do that~"</p>
+                <div class='brLarge'></div>
+                <p>Elliot smiles brightly and moves over to be closer to his father. Not exactly cuddling with him, they're not exactly the cuddling kind of family. That half hug his father gave him is very affectionate in terms of this family. "I should be able to have your other gift finished before you leave again."</p>
+                <p>"You don't need to worry about that. You should be focusing your efforts on getting into a good college. And finding a way to pay for it."</p>
+                <p>"I already have that covered~" Elliot shrugs. "Did you get anything for me?"</p>
+                <p>"No, sorry."</p>
+                <div class='brLarge'></div>
+                <p>Elliot may put all this effort in to make his father happy, but it will never be reciprocated.</p>
+            </div>
+        </details>
         <hr class="ImageTop">
         <img src="images/Elliot/Security.jpg">
-        <p class="quoteCaption">“I never meant to hurt everyone so much, I just...<br>That's all I know how to do.”</p>
+        <p class="quoteCaption">“”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
@@ -160,7 +198,7 @@
         <div class="info" id="BasicInfo"></div>
         <hr class="ImageTop">
         <img src="images/Elliot/Flasks.jpg">
-        <p class="quoteCaption">“It's karma; I am now fading out of existence<br>because of my own creation.”</p>
+        <p class="quoteCaption">“”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
@@ -170,7 +208,7 @@
         <div class="info" id="Health"></div>
         <hr class="ImageTop">
         <img src="images/Elliot/Magic.jpg">
-        <p class="quoteCaption">“Sometimes it feels like I'm stranded <br>in an endless sea, all by myself,<br>but other times that sea is only the size of a cup...”</p>
+        <p class="quoteCaption">“”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
@@ -188,8 +226,6 @@
             <hr>
         </div>
         <div class="info" id="Personality">
-            <p class="question">Closest Stereotype</p>
-            <p class="answer">Grump old man</p>
             <p class="question">Overall Description</p>
             <p class="answer">Since Elliot has DID, here's a quick description of his main alters.</p>
             <div class='brLarge'></div>
@@ -235,8 +271,8 @@
             </div>
             <div class='brLarge'></div>
             <p class="question">Likes</p>
-            <p class="answer">Running. He used to be on the track team when he was in school. He just kind of broke his habit of going for a run every day. But he still has that speed</p>
-            <p class="answer">Height. He's kind of like a cat in that aspect, he likes being able to be at the top, watching over everything else. But with his age and the fact the mutation is literally making him shorter and shorter, he's not going to be rock climbing or anything any time soon</p>
+            <p class="answer">Running. He used to be on the track team when he was in high school, and is still in one in college</p>
+            <p class="answer">Height. He's kind of like a cat in that aspect, he likes being able to be at the top, watching over everything else.</p>
             <p class="answer">Cats, kittens. He loves cats, and he would just cuddle up with a bunch if he could</p>
             <div class='brLarge'></div>
             <p class="question">Dislikes</p>
@@ -246,7 +282,7 @@
             <div class='brLarge'></div>
             <p class="question">Positive Traits</p>
             <p class="answer">He isn't going to abandon anyone, he's loyal. To a dangerous extent, but hey, it's the thought that counts</p>
-            <p class="answer">Efficient, he built an entire lab from ground up by himself and made it work. And he did so relatively quickly</p>
+            <p class="answer">Efficient, very efficient</p>
             <p class="answer">Creative and innovative, he makes things work out even when he doesn't have sufficient materials</p>
             <p class="answer">He has good intentions. Yes, he's a bad guy and he's done terrible things, but for most of them, he thought it was good</p>
             <p class="answer">When he starts something, he is committed. He doesn't quit or give up on anything</p>
@@ -260,7 +296,6 @@
             <p class="answer">Stubborn. Really stubborn</p>
             <div class='brLarge'></div>
             <p class="question">Fears</p>
-            <p class="answer">Death. No, he's not just scared because he's dying, he's scared because of what he's leaving behind, who's going to remember him or even care that he's gone. He's going to die soon, and he has nobody who will be sad that he's gone, nobody who will cherish his memory. When he leaves this earth, the only thing he'll be known for is being an asshole, everyone will be relieved that he's gone. "Thank God, that psycho will finally leave me alone!" He's terrified that his father will be right: He's just an ignorant jerk who can't do anything for himself and needs everyone else to do every little thing for him. He's a disappointment. And it's too late to try and fix any of it. He almost wishes he could just die faster, then he wouldn't have to be stuck just waiting for his story to come to an end. Just waiting is more painful than anything. He's the one who caused the mutation that's slowly breaking him down piece by piece, even if they do find a cure, does he really deserve it? Maybe God wanted him to die. He has nothing to live for anyway</p>
             <p class="answer">Guns. He does make his guards have guns, but they're not allowed to take them out around him</p>
             <p class="answer">The unknown</p>
             <div class='brLarge'></div>
@@ -278,7 +313,7 @@
         </div>
         <hr class="ImageTop">
         <img src="images/Elliot/Rope.jpg">
-        <p class="quoteCaption">“Nico hates me, my son hates me,<br>my mother couldn't bear to stay with me, maybe...<br>Maybe I'm just meant to be alone.”</p>
+        <p class="quoteCaption">“”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
@@ -298,7 +333,7 @@
         <div class="info" id="Relations"></div>
         <hr class="ImageTop">
         <img src="images/Elliot/Workbench.jpg">
-        <p class="quoteCaption">“I've fought death for over a decade.<br>It's time I give up and let him take me.”</p>
+        <p class="quoteCaption">“”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
