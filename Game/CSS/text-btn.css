@@ -1,0 +1,40 @@
+.text-btn::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #eeeeee;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .15s ease-in-out;
+}
+
+.text-btn:hover{
+    color: #eeeeee;
+}
+.text-btn:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.text-btn{
+    background-color: transparent;
+    outline: none;
+    border-width: 0px;
+    font-family: "Montserrat Alternates", sans-serif;
+    color: #bbbbbb;
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.text-btn.selected{
+    color: #eeeeee;
+}
+.text-btn.selected::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-selected-theme="normal">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prismorian Tales</title>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <link href="CSS/text-btn.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/ad096bdfd9.js" crossorigin="anonymous"></script>
+    <style>
+        html{
+            font-size: 16px;
+        }
+        body{
+            margin: 0;
+            background-color: #222222;
+            color: #bbbbbb;
+            font-family: "Montserrat Alternates", sans-serif;
+        }
+        main{
+            display: flex;
+            height: 100vh;
+            flex-direction: row;
+            /* max-width: 1200px; */
+            justify-content: center;
+            gap: 5px;
+            background-color: black;
+        }
+        .story-tile{
+            flex: 1;
+            max-width: 400px;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .story-tile:nth-child(1){
+            background-color: hsl(200 100 40);
+        }
+        .story-tile:nth-child(2){
+            background-color: hsl(120 100 30);
+        }
+        .story-tile:nth-child(3){
+            background-color: hsl(75 50 50);
+        }
+
+        .story-tile img{
+            flex: none;
+            transition: transform 0.5s ease-in-out;
+            z-index: 0;
+            min-width: 100%;
+            object-fit: cover;
+            overflow-clip-margin: unset;
+            overflow: visible;
+        }
+        .story-tile:hover img{
+            transform: translateY(5%);
+        }
+
+        /* .image {
+  --n:2;  
+  --d:0px;
+  --s:1.075;  
+  
+  flex: 1;
+  position:relative;
+  background-image: url(https://picsum.photos/id/10/400/300);
+  background-size: 0 0;
+  transition:0.5s ease-in-out;
+}
+
+.image > * {
+  position: absolute;
+  top: var(--d);
+  left: 0;
+  right: 0;
+  bottom: var(--d);
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  -webkit-mask:linear-gradient(#fff,#fff) no-repeat;
+  -webkit-mask-size:100% calc(50% + 1px);
+  -webkit-mask-position:50% var(--p);
+          mask:linear-gradient(#fff,#fff) no-repeat;
+          mask-size:100% calc(50% + 1px);
+          mask-position:50% var(--p);
+   transition:inherit;
+   transform-origin:50% var(--p);
+}
+
+.image > :nth-child(1)  {--p:0;}
+.image > :nth-child(2)  {--p:100%;}
+
+.image:hover > :nth-child(even){
+   transform:translateY(var(--d))  scale(calc(1/var(--s)));
+}
+.image:hover > :nth-child(odd){
+   transform:translateY(calc(-1*var(--d)))  scale(calc(1/var(--s)));
+}
+.image:hover {
+   transform:scale(var(--s));
+} */
+
+
+        .title, .options{
+            position: absolute;
+            left: 0;
+            right: 0;
+            color: white;
+            padding: 10px;
+            z-index: 2;
+        }
+        .options{
+            bottom: 0;
+            background: linear-gradient(-90deg, black, transparent);
+            text-align: right;
+            align-items: flex-end;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .title{
+            top: 0;
+            background: linear-gradient(90deg, black, transparent);
+        }
+        .title h2, .title p{
+            margin: 0;
+            padding: 0;
+        }
+        .title p, .options button{
+            font-size: 1rem;
+        }
+        .options button{
+            padding: 0px 5px 5px 5px;
+        }
+        .title p{
+            color: #ffffffbb;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="story-tile">
+            <div class="options">
+                <button class="text-btn">Continue <i class="fas fa-caret-right"></i></button>
+                <button class="text-btn">Chapter Select <i class="fas fa-caret-right"></i></button>
+            </div>
+            <img src="images/JayDark.png"/>
+            <div class="title">
+                <h2>A5</h2>
+                <p>Chapter 1</p>
+            </div>
+        </div>
+        <div class="story-tile">
+            <img src="images/tie.jpg"/>
+            <!-- <div class="image" style="background-image: url(images/tie.jpg)">
+                <div></div><div></div>
+            </div> -->
+        </div>
+        <div class="story-tile">
+            <img src="images/workbench.jpg"/>
+        </div>
+    </main>
+</body>
+</html>

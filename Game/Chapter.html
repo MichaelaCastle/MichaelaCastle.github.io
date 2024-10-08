@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-selected-theme="normal">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prismorian Tales</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <link href="CSS/text-btn.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript"src="JayStory/Chapter1.js"></script>
+    <script src="https://kit.fontawesome.com/ad096bdfd9.js" crossorigin="anonymous"></script>
+    <style>
+        html{
+            font-size: 16px;
+        }
+        body{
+            margin: 0;
+            background-color: #222222;
+            color: #bbbbbb;
+            font-family: "Montserrat Alternates", sans-serif;
+        }
+        main{
+            /* display: flex; */
+            height: 100vh;
+            /* flex-direction: column; */
+            /* max-width: 1200px; */
+            align-items: center;
+            width: 100%;
+        }
+        article{
+            /* background: url("Images/Waterfall2.jpg"); */
+            background: linear-gradient(125deg, hwb(340deg 0% 60%), hwb(200deg 0% 60%));
+            height: 100%;
+            left: 0;
+            right: 0;
+            padding: 0px 10vw 0px 10vw;
+            background-position: center;
+            background-origin: content-box;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        
+        .fade-out-bottom, .center{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            align-items: center;
+            background-color: #222222e6;
+            padding: 0px 0px 5px 0px;
+        }
+        .fade-out-bottom::before{
+            content: ' ';
+            top: -25px;
+            height: 25px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, transparent, #222222e6);
+        }
+        .center{
+            top: 0;
+            justify-content: center;
+            background-color: transparent;
+        }
+        .options .text-btn{
+            margin: 0;
+            padding: 5px;
+            font-size: 1rem;
+        }
+        .options .text-btn i{
+            padding-right: 10px;
+        }
+        .content{
+            flex-direction: row;
+            justify-content: center;
+            padding-bottom: 20px;
+        }
+        .content p{
+            min-width: 50%;
+            /* overflow: hidden; */
+            /* border-right: .15em solid orange; */
+            white-space: pre-wrap;
+            /* animation: typing 3.5s steps(40, end) */
+        }
+        .center p{
+            text-align: center;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        .content .text-btn{
+            padding: 10px 5px 0px 5px;
+        }
+        
+
+
+
+        :root{
+            --line: " ✦ • • ✦ • • ☀ • • ✦ • • ✦ ";
+        }
+        .divider{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+        .divider div{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+        .divider h2{
+            padding-left: 40px;
+        }
+        hr {
+            border: 0px;
+            overflow: visible;
+        }
+
+        hr:after {
+            content: var(--line);
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+
+    <script>
+        let contentB = null;
+        let contentC = null;
+        let content = null;
+        let options = null;
+        let contentBT = null;
+        let contentCT = null;
+        let contentT = null;
+        let article = null;
+        let divider = null;
+        let dividerT = null;
+        let textID = 0;
+        function starting(){
+            contentB = document.querySelector('.content');
+            contentC = document.querySelector('.center');
+            content = contentB;
+            options = document.querySelector('.options');
+            contentCT = contentC.querySelector('p');
+            contentBT = contentB.querySelector('p');
+            article = document.querySelector('article');
+            divider = document.querySelector('.divider')
+            dividerT = divider.querySelector('h2');
+            goTo(textID);
+        }
+        window.onload = starting;
+        function goTo(id){
+            textID = id;
+            if(text[textID].background !== undefined){
+                article.style.background = text[textID].background;
+            }
+            if(text[textID].type === 0){
+                if(text[textID].align !== undefined){
+                    content.classList.add("hidden");
+                    if(text[textID].align === "center"){
+                        content = contentC;
+                        contentT = contentCT;
+                    }
+                    else{
+                        content = contentB;
+                        contentT = contentBT;
+                    }
+                }
+                content.classList.remove("hidden");
+                options.classList.add("hidden");
+                divider.classList.add("hidden");
+                contentT.innerHTML = text[textID].content;
+            }
+            else if(text[textID].type === 2){
+                content.classList.add("hidden");
+                options.classList.add("hidden");
+                divider.classList.remove("hidden");
+                // divider.querySelectorAll('hr').forEach(e => { e.content = text[textID].hr; });
+                divider.style.setProperty('--line', `"${text[textID].hr}"`);
+                dividerT.innerText = text[textID].content;
+            }
+            else{
+                options.classList.remove("hidden");
+                divider.classList.add("hidden");
+                content.classList.add("hidden");
+            }
+        }
+        const nextLine = () => goTo(textID + 1);
+    </script>
+</head>
+<body>
+    <main>
+        <article>
+            <div class="options fade-out-bottom hidden">
+                <button class="text-btn"><i class="fa-solid fa-caret-right"></i>Uhhh... Okay</button>
+                <button class="text-btn"><i class="fa-solid fa-caret-right"></i>No</button>
+                <button class="text-btn"><i class="fa-solid fa-caret-right"></i>Who even are you?</button>
+            </div>
+            <div class="content fade-out-bottom hidden">
+                <p>What's that one?</p>
+                <button class='text-btn' onclick="nextLine()"><i class="fa-solid fa-caret-right"></i></button>
+            </div>
+            <div class="content center hidden">
+                <p>What's that one?</p>
+                <button class='text-btn' onclick="nextLine()"><i class="fa-solid fa-caret-right"></i></button>
+            </div>
+            <div class="divider hidden">
+                <hr>
+                <div>
+                    <h2>Chapter One</h2>
+                    <button class='text-btn' onclick="nextLine()"><i class="fa-solid fa-caret-right"></i></button>
+                </div>
+                <hr>
+            </div>
+        </article>
+    </main>
+</body>
+</html>

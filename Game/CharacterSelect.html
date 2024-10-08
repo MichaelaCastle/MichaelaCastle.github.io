@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-selected-theme="normal">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prismorian Tales</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <link href="CSS/text-btn.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/ad096bdfd9.js" crossorigin="anonymous"></script>
+    <style>
+        html{
+            font-size: 16px;
+        }
+        body{
+            margin: 0;
+            background-color: #222222;
+            color: #bbbbbb;
+            font-family: "Montserrat Alternates", sans-serif;
+        }
+        main{
+            display: flex;
+            /* height: 100vh; */
+            flex-direction: column;
+            /* max-width: 1200px; */
+            align-items: center;
+            margin: auto;
+            gap: 5px;
+            width: 50%;
+        }
+        #img{
+            width: auto;
+            height: auto;
+            max-height: 45vh;
+        }
+        .fr{
+            display: flex;
+            flex-direction: row;
+        }
+        .options{
+            justify-content: space-evenly;
+            width: 100%;
+            margin: 10px 0px;
+        }
+
+        #name{
+            outline: none;
+            border-width: 0px;
+            background-color: #555555;
+            border-radius: 5px;
+            width: 75%;
+            padding: 5px;
+            color: white;
+            font-family: "Montserrat Alternates", sans-serif;
+            font-weight: 500;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        #name::placeholder{
+            color: #aaaaaa;
+        }
+        #start{
+            border-radius: 10px;
+            font-size: 1.75rem;
+            padding: 5px 15px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        let selectedGender;
+        let imgs = ["images/TSelect.png", "images/MSelect.png", "images/FSelect.png"]
+        let img = null;
+        function selectBtn(elem, imgIndex){
+            selectedGender.classList.remove("selected");
+            elem.classList.add("selected");
+            selectedGender = elem;
+            img.src = imgs[imgIndex];
+        }
+        function starting(){
+            selectedGender = document.querySelector('.selected');
+            img = document.querySelector('#img');
+        }
+        window.onload = starting;
+    </script>
+</head>
+<body>
+    <main>
+        <h1>Who are you?</h1>
+        <img src="images/TSelect.png" id="img"/>
+        <div class="fr options">
+            <button class="text-btn" onclick="selectBtn(this, 1)">He/Him</button>
+            <button class="text-btn selected" onclick="selectBtn(this, 0)">They/Them</button>
+            <button class="text-btn" onclick="selectBtn(this, 2)">She/Her</button>
+        </div>
+        <input type="text" id="name" placeholder="River">
+        <button id="start" class="text-btn">Start <i class="fa-solid fa-caret-right"></i></button>
+    </main>
+</body>
+</html>

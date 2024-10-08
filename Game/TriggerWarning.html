@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-selected-theme="normal">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prismorian Tales</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Beiruti:wght@200..900&display=swap" rel="stylesheet">
+
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <link href="CSS/text-btn.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/ad096bdfd9.js" crossorigin="anonymous"></script>
+    <style>
+        html{
+            font-size: 16px;
+            font-optical-sizing: auto;
+        }
+        *{
+            margin: 0;
+        }
+        body{
+            background-color: #222222;
+            color: #bbbbbbbb;
+            background: radial-gradient(circle at center, #661111, #222222);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            font-family: "Montserrat Alternates", sans-serif;
+        }
+        .fc-c{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        main{
+            gap: 2rem;
+            height: 100%;
+            justify-content: center;
+        }
+        h1, p{
+            font-family: "Beiruti", sans-serif;
+            font-size: 2.5rem;
+        }
+        p{
+            font-size: 1.75rem;
+            font-weight: 500;
+            padding: 0px 1rem;
+        }
+        .text-btn{
+            padding-bottom: 5px;
+            color: #bbbbbbbb;
+        }
+        div{gap:5px;}
+        div button{
+            font-size: 1rem;
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            outline: none;
+            color: #bbbbbbbb;
+            border: #bbbbbbbb 3px solid;
+            background-color: transparent;
+        }
+        div button:hover{
+            background-color: #bbbbbbbb;
+            color: #222222;
+            border: #222222 3px solid;
+        }
+        .info{
+            overflow: hidden;
+            max-height: 50px;
+            transition: all 0.25s;
+        }
+        .hidden{
+            max-height: 0px;
+        }
+    </style>
+    <script>
+        let hidden = true;
+        let info = null;
+        function showInfo(){
+            if(hidden){ info.classList.remove("hidden"); }
+            else{ info.classList.add("hidden"); }
+            hidden = !hidden;
+        }
+        function starting(){
+            info = document.querySelector('.info');
+        }
+        window.onload = starting;
+    </script>
+</head>
+<body>
+    <main class="fc-c">
+        <h1>Warning</h1>
+        <div class="fc-c">
+            <p>The content in this game is not suitable for all ages.</p>
+            <p class="info hidden">May contain mentions of abuse, torture, rape, and other heavy subjects.</p>
+            <button onclick="showInfo()"><i class="fa-solid fa-info"></i></button>
+        </div>
+        <button class="text-btn">Understood <i class="fa-solid fa-caret-right"></i></button>
+    </main>
+</body>
+</html>

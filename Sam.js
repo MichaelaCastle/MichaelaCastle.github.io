@@ -47,6 +47,9 @@ window.onload = () => {
     <p class='answer'>Biscuit</p>
     <p><i>Reason</i></p>
     <p><i>Because he's sweet uwu</i></p>
+    <p class='answer'>Dozens of other Sam variations</p>
+    <p><i>Reason</i></p>
+    <p><i>Jacob is constantly coming up with new names he hates</i></p>
     <div class="brLarge"></div>
     <p class='question'>Biological Gender</p>
     <p class='answer'>Male</p>
