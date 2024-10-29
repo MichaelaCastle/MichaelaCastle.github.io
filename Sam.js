@@ -59,9 +59,10 @@ window.onload = () => {
     <p class='answer'>He / him / his</p>
     <div class="brLarge"></div>
     <p class='question'>Sexual Orientation</p>
-    <p class='answer'>Asexual</p>
+    <p class='answer'>Demi-sexual</p>
     <p class='question'>Romantic Orientation</p>
-    <p class='answer'>Demiromantic</p>
+    <p class='answer'>Bi-romantic</p>
+    <p class='answer'><i>Often attracted to intelligence, so he's a bit sapio-romantic / sapio-sexual</i></p>
     <div class="brLarge"></div>
     <p class='question'>Age</p>
     <p class='answer'>20</p>
