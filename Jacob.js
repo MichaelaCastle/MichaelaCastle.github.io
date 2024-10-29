@@ -68,7 +68,9 @@ window.onload = () => {
     <p class="question">Physical Illnesses</p>
     <p class="answer">Dwarfism</p>
     <p class="question">Mental Illnesses</p>
-    <p class="answer">None</p>
+    <p class="answer">None (Maybe PTSD)-</p>
+    <p class="question">Triggers</p>
+    <p class="answer">SA/Depression, abandonment, Being trapped, cannibalism</p>
     <div class='brLarge'></div>
     <p class="question">Mutation / Power</p>
     <p class="answer">Time Manipulation</p>
@@ -100,6 +102,7 @@ window.onload = () => {
     <div class='brLarge'></div>
     <p class="question">Piercings (If any)</p>
     <p class="answer">Ear piercings</p>
+    <p class="answer">He wears a dangling gold star earing on his right ear</p>
     <p class="question">Scars (If any)</p>
     <p class="answer">None</p>
     <p class="question">Tattoos (If any)</p>
@@ -109,14 +112,14 @@ window.onload = () => {
     <p class="question">Freckles</p>
     <p class="answer">Yes</p>
     <p class="question">Where</p>
-    <p class="answer">Arms</p>
+    <p class="answer">Arms and the bridge of his nose</p>
     <div class='brLarge'></div>
     <p class="question">Accent / Voice</p>
     <p class="answer">He has a very melodic and enchanting voice. He is a singer after all, he chose that career for a reason</p>`;
     document.querySelector('#RpInfo').innerHTML=`
     <p class="question">Availability</p>
-    <p class="answer">Closed</p>
-    <p class="answer">He may be in an rp where I use Sam as my main, but I cannot play Jacob as my main. He's just too cheerful</p>
+    <p class="answer">Open</p>
+    <p class="answer">I may have to pair him with another oc to bounce off of. I haven't done many (or any) rps with Jacob as my main.</p>
     <div class='brLarge'></div>
     <p class="question">Genres</p>
     <p class="answer">Fantasy</p>
@@ -127,17 +130,17 @@ window.onload = () => {
     <p class="question">Mother</p>
     <p class="answer">Ally Kane</p>
     <p class="question">Status</p>
-    <p class="answer">Alive</p>
+    <p class="answer">Deceased</p>
     <div class='brLarge'></div>
     <p class="question">Father</p>
     <p class="answer">Keven Jackson</p>
     <p class="question">Status</p>
-    <p class="answer">Alive</p>
+    <p class="answer">Alive but estranged</p>
     <div class='brLarge'></div>
     <p class="question">Ex-Lover</p>
     <p class="answer"><a href="Jay.html">Jay Star</a></p>
     <p class="question">Status</p>
-    <p class="answer">(Alive or Deceased)</p>
+    <p class="answer">Alive (?) <i>He lives in an unknown state of living</i></p>
     <div class='brLarge'></div>
     <p class="question">Best Friend</p>
     <p class="answer"><a href="Sam.html">Sam Broteez</a></p>
@@ -154,7 +157,7 @@ window.onload = () => {
     <p class="answer">His loyalty</p>
     <div class='brLarge'></div>
     <p class="question">What they think is their worst trait</p>
-    <p class="answer">...</p>
+    <p class="answer">He can be a bit much to handle. There is just a <i>lot</i> of energy pent up inside of him.</p>
     <div class='brLarge'></div>
     <p class="question">How they think other perceive them</p>
     <p class="answer">An outgoing, if not annoyingly energetic, cheerful person</p>
@@ -166,6 +169,7 @@ window.onload = () => {
     <p class="answer">That over-energetic guy who's always happy</p>
     <p class="question">Overall Description</p>
     <p class="answer">Jacob is a ‘lil ball of sunshine, always trying to cheer people up. If you are sad, he won’t try to fix the problem, because not everything needs to be fixed, he’ll just offer you the comfort and attention you need. This is a pure and wholesome boi who will do anything for his friends. However, Jacob is a force of nature, he cannot be stopped. He is very mischievous and always pulling pranks to get a reaction.</p>
+    <p class='answer'>Jacob is strangely good at reading others. He can look at someone and recite, down to a percentage, what they are feeling. But, he isn't doing this all the time. It's a result of something that happened with <a href="Sam.html"><u>Sam</u></a>, something he vowed to never let happen again.</p>
     <div class='brLarge'></div>
     <p class="question">Likes</p>
     <p class="answer">Making people smile and joking around</p>
@@ -193,9 +197,9 @@ window.onload = () => {
     <p class="answer">Losing hope. As long as he has even a little bit of hope, he can go on, but if he doesn't have any more hope, there really is no point in living</p>
     <div class='brLarge'></div>
     <p class="question">Hobbies</p>
-    <p class="answer">Singing</p>
-    <p class="answer">Acting</p>
-    <p class="answer">Playing the guitar</p>
+    <p class="answer">Singing - His father was a singer, and he always looked up to his father as a kid. He used to watch all his shows and concerts on this old, box tv.</p>
+    <p class="answer">Playing the guitar - His father taught him how to play guitar. They would sometimes play together</p>
+    <p class="answer">Acting - Musicals were some of the first places he was able to sing or perform in front of a crowd. He also managed to drag <a href="Jay.html"><u>Jay</u></a> into musicals and plays.</p>
     <div class='brLarge'></div>
     <p class="question">Love Language(s)</p>
     <p class="answer">Quality Time: This love language is all about giving your undivided attention to that one special person, without the distraction of television, phone screens, or any other outside interference. They have a strong desire to actively spend time with their significant other, having meaningful conversations or sharing recreational activities.</p>
