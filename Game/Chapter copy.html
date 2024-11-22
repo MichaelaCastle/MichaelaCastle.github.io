@@ -18,7 +18,7 @@
     <link href="CSS/text-btn.css" rel="stylesheet" type="text/css">
     <link href="CSS/defaults.css" rel="stylesheet" type="text/css">
     <!-- <link href="CSS/character-speech.css" rel="stylesheet" type="text/css"> -->
-    <script type="text/javascript"src="JayStory/Chapter1.js"></script>
+    <script type="text/javascript"src="ShortStories/Tutor.js"></script>
     <script src="https://kit.fontawesome.com/ad096bdfd9.js" crossorigin="anonymous"></script>
     <style>
         html{
@@ -41,6 +41,7 @@
         article{
             /* background: url("Images/Waterfall2.jpg"); */
             background: linear-gradient(125deg, hwb(340deg 0% 60%), hwb(200deg 0% 60%));
+            /* background: linear-gradient(125deg, hwb(120deg 0% 60%), hwb(60deg 0% 60%), hwb(0deg 0% 60%)); */
             height: 100%;
             left: 0;
             right: 0;
@@ -53,6 +54,12 @@
         }
     </style>
     <script>
+        let name;
+        let img;
+        let content;
+        let speechContainer;
+        let line = -1;
+        let history;
         window.onload = starting;
         window.onresize = sizeSprite;
         function sizeSprite(){
@@ -65,9 +72,37 @@
         }
         function starting(){
             sizeSprite();
+            speechContainer = document.querySelector('.character-speech');
+            name = speechContainer.querySelector('.name');
+            img = speechContainer.querySelector('.heading').querySelector('img');
+            content = speechContainer.querySelector('.text').querySelector('p');
+            history = document.querySelector('.history');
+            nextLine();
         }
-        let makeRed = () => {
-            document.querySelector(".speech").style.backgroundColor = "#BB4488";
+        let nextLine = () => {
+            console.log(Typewriter.typing);
+            if(Typewriter.typing){
+                Typewriter.pasteString(text[line].content);
+            }
+            else{
+                line += 1;
+                let s = text[line].speaker;
+                speechContainer.classList = `character-speech flex-col ${s}`;
+                name.innerText = s;
+                if(s !== "Narrator"){img.src = text[line].image;}
+                if(s === "Narrator"){s = " - "}
+                else{s = "<b>" + s + ":</b> "}
+                showLine(text[line].content);
+                history.innerHTML += `<p>${s}${text[line].content}</p>`;
+            }
+        }
+        let toggleHistory = () => {
+            if(history.classList.contains("hidden")){
+                history.classList.remove("hidden");
+            }
+            else{
+                history.classList.add("hidden");
+            }
         }
     </script>
     <style>
@@ -87,6 +122,9 @@
             --bg:#BBBBBB;
             --bc:#222222;
             --tc:#353535;
+            /* --tc:#BBBBBB;
+            --bg:#222222;
+            --bc:#353535; */
         }
         .character-speech img{
             width: var(--sprite-size);
@@ -94,8 +132,10 @@
             margin-bottom: -4px;
             margin-left: 20px;
         }
-        .Jay  {--bg:#4488BB;--bc:#001122;--tc:#002244;}
-        .River{--bg:#BB8844;--bc:#221100;--tc:#442200;}
+        .Jay   {--bg:#4488BB;--bc:#001122;--tc:#002244;}
+        .Sam   {--bg:#44BB88;--bc:#002211;--tc:#004422;}
+        .Jacob {--bg:#BB4488;--bc:#220011;--tc:#440022;}
+        .River {--bg:#BB8844;--bc:#221100;--tc:#442200;}
         .character-speech.Narrator .heading{display: none;}
         .speech .text-btn::before{background-color: var(--bc);}
         .speech .text-btn{color: inherit;}
@@ -128,6 +168,9 @@
         .speech .text p{
             margin: 0;
             flex: 1;
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
         }
         .speech-btns{
             gap: 20px;
@@ -166,22 +209,42 @@
             content: var(--line);
         }
     </style>
+    <style>
+        .history{
+            position: absolute;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+            top: 50px;
+            left: calc(50px + 10vw);
+            right: calc(50px + 10vw);
+            background-color: #222B;
+            border-radius: 10px;
+            gap: 5px;
+            z-index: 10;
+        }
+        .history p{
+            margin: 0;
+            font-size: 0.75rem;
+        }
+    </style>
 </head>
 <body>
     <main>
         <article>
-            <div class="character-speech flex-col Jay">
+            <div class="history flex-c-p hidden">
+            </div>
+            <div class="character-speech flex-col Narrator">
                 <div class="heading">
                     <p class="name">Jay</p>
                     <img src="CharacterSprites/JayNeutral.png">
                 </div>
                 <div class="speech flex-col">
-                    <div class="text flex-row" onclick="makeRed()">
-                        <p>"That's the north star."</p>
+                    <div class="text flex-row" onclick="nextLine()">
+                        <p></p>
                         <button class='text-btn'><i class="fa-solid fa-caret-right"></i></button>
                     </div>
                     <div class="speech-btns flex-rc">
-                        <button class='text-btn'>History</button>
+                        <button class='text-btn' onclick="toggleHistory()">History</button>
                         <button class='text-btn'>Auto</button>
                         <button class='text-btn'>Settings</button>
                     </div>

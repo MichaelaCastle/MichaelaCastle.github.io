@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-selected-theme="normal">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prismorian Tales</title>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <link href="CSS/text-btn.css" rel="stylesheet" type="text/css">
+    <link href="CSS/defaults.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/ad096bdfd9.js" crossorigin="anonymous"></script>
+    <style>
+        html{
+            font-size: 16px;
+        }
+        body{
+            margin: 0;
+            background-color: #222;
+            color: #BBB;
+            font-family: "Montserrat Alternates", sans-serif;
+        }
+        main{
+            margin: 10px auto;
+            width: 50%;
+        }
+        .chapter *{
+            margin: 0;
+        }
+        .chapter p{
+            font-style: italic;
+            color: #AAAA;
+        }
+        .chapter .flex-row p:first-child{
+            flex: 1;
+        }
+        .chapter.completed .flex-row p:last-child{
+            color: #6AE;
+        }
+
+        .text-btn{
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .chapter:nth-child(2){
+            --url: url("images/ShortStoryBanners/Tutoring2.jpg");
+            --grad: linear-gradient(135deg, #284, #882, #824);
+        }
+        .chapter:nth-child(3){
+            --url: url("images/ShortStoryBanners/tree.webp");
+            --grad: linear-gradient(135deg, #284, #882, #824);
+        }
+        .chapter:nth-child(4){
+            --url: url("images/ShortStoryBanners/Forest.jpg");
+            --grad: linear-gradient(135deg, #248, #828, #824);
+        }
+        .chapter:nth-child(5){
+            --url: url("images/ShortStoryBanners/Blizzard.jpg");
+            --grad: linear-gradient(135deg, #248, #288, #284);
+        }
+        .chapter:hover{
+            background: linear-gradient(90deg, #222 10%, #2228), var(--url);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .chapter{
+            margin-bottom: 10px;
+            --url: url("images/ShortStoryBanners/Tutoring2.jpg");
+            --grad: linear-gradient(135deg, #284, #882, #824);
+            background: linear-gradient(90deg, #222e 10%, transparent), var(--url);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+            position: relative;
+        }
+        .chapter::before{
+            content: '';
+            position: absolute;
+            top: -2px;
+            bottom: -2px;
+            left: -2px;
+            right: -2px;
+            background: var(--grad);
+            border-radius: 22px;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <button class="text-btn"><a href="MenuScreen.html"><i class="fa-solid fa-left-long"></i>  Back</a></button>
+        <div class="chapter flex-c-p">
+            <h3>The Tutor</h3>
+            <p>Sam x Jacob</p>
+        </div>
+        <div class="chapter flex-c-p">
+            <h3>The Christmas Tree</h3>
+            <p>Sam x Jacob</p>
+        </div>
+        <div class="chapter flex-c-p">
+            <h3>Forest Man</h3>
+            <p>Jay x Jacob</p>
+        </div>
+        <div class="chapter flex-c-p">
+            <h3>Blizzard</h3>
+            <p>Jay x Sam</p>
+        </div>
+    </main>
+</body>
+</html>

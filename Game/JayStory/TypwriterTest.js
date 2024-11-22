@@ -1,20 +1,58 @@
-let app = document.querySelector('.text').querySelector('p');
-var Typewriter = new Typewriter(app, {
-    delay: 50,
-    wrapperClassName: "tw_wrapper"
-});
-let showLine = (s) => {
-    Typewriter
-        .callFunction(deleteLine)
-        .pauseFor(100)
-        .typeString(s)
-        .start();
+function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
-let deleteLine = () => {
-    let wrapper = app.querySelector(".tw_wrapper");
-    if(wrapper !== null && wrapper !== undefined){
-        wrapper.innerHTML = "";
+class TW{
+    delay = 25;
+    waitingPaste = false;
+    typing = false;
+    constructor(text){ this.text = text; }
+    typeString = async(s) => {
+        this.typing = true;
+        for(let i = 0; i < s.length; i++){
+            await wait(this.delay);
+            if(s[i] === " "){
+                i += 1;
+                this.text.innerText += ` ${s[i]}`;
+            }
+            else{this.text.innerText += s[i];}
+            if(this.waitingPaste) i = s.length;
+        }
+        this.typing = false;
+        if(this.waitingPaste) this.pasteString(s);
     }
+    pasteString = (s) => {
+        if(this.typing && !this.waitingPaste){
+            this.waitingPaste = true;
+            return;
+        }
+        this.text.innerText = s;
+        this.waitingPaste = false;
+    }
+    deleteLine = () => this.pasteString("");
+    pauseFor = async(ms) => await wait(ms);
+    changeDelay = (delay) => {this.delay = delay;}
 }
 
-showLine("Everyone knows about that little girl who was eaten alive by wolves ten years ago, that's why most people stay away. He ignored the warning signs. And now, there's a wolf hot on his trail.");
+let app = document.querySelector('.text').querySelector('p');
+// let typing = false;
+// var Typewriter = new Typewriter(app, {
+//     delay: 25,
+//     wrapperClassName: "tw_wrapper",
+//     cursor: ""
+// });
+Typewriter = new TW(app);
+let showLine = (s) => {
+    Typewriter.deleteLine();
+    Typewriter.pauseFor(100);
+    Typewriter.typeString(s);
+        // .callFunction(() => {typing = false;})
+        // .start();
+}
+// let deleteLine = () => {
+//     let wrapper = app.querySelector(".tw_wrapper");
+//     if(wrapper !== null && wrapper !== undefined){
+//         wrapper.innerHTML = "";
+//     }
+// }
+
+
