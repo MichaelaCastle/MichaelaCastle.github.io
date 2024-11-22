@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-selected-theme="normal">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prismorian Tales</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <link href="CSS/text-btn.css" rel="stylesheet" type="text/css">
+    <link href="CSS/defaults.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/ad096bdfd9.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            margin: 0;
+            background-color: #222;
+            color: #bbb;
+            font-family: "Montserrat Alternates", sans-serif;
+            background: url("images/PSJacobWide.png"), #222;
+            background-position: center;
+            background-origin: content-box;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        main{
+            height: 100vh;
+            width: 100%;
+        }
+        .side-panel{
+            height: 100%;
+            width: fit-content;
+            border-radius: 0;
+            /* border-top-left-radius: 0;
+            border-top-right-radius: 70% 50%;
+            border-bottom-right-radius: 70% 50%;
+            border-bottom-left-radius: 0;
+            background-color: #1a1a1a;
+            border-right: solid 5px white; */
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 0 70px 0 20px;
+        }
+        .side-panel .text-btn, .side-panel .text-btn a{
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <main class="flex-row">
+        <div class="side-panel flex-col">
+            <button class='text-btn'><a href="MenuScreen.html">Main Menu</a></button>
+            <button class='text-btn'>Save</button>
+            <button class='text-btn'><a href="Settings.html">Settings</a></button>
+            <button class='text-btn'>Return</button>
+        </div>
+    </main>
+</body>
+</html>

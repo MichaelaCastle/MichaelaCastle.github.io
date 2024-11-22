@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" data-selected-theme="normal">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prismorian Tales</title>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <link href="CSS/text-btn.css" rel="stylesheet" type="text/css">
+    <link href="CSS/defaults.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/ad096bdfd9.js" crossorigin="anonymous"></script>
+    <style>
+        html{
+            font-size: 16px;
+        }
+        body{
+            margin: 0;
+            background-color: #222;
+            color: #BBB;
+            font-family: "Montserrat Alternates", sans-serif;
+        }
+        main{
+            margin: 10px auto;
+            width: 50%;
+        }
+        .chapter *{
+            margin: 0;
+        }
+        .chapter.locked{
+            /* background-color: #111; */
+            color: #AAAA;
+        }
+        .chapter.locked p{
+            color: #8888;
+        }
+        .chapter:not(.locked):hover{
+            background-color: #000;
+            border-radius: 10px;
+            border: 1px #BBB solid;
+        }
+        .chapter p{
+            font-style: italic;
+            color: #AAAA;
+        }
+        .chapter.locked .progress-bar{
+            background-color: #2368;
+        }
+        .progress-bar{
+            height: 10px;
+            border-radius: 10px;
+            /* border: #BBB 1px solid; */
+            width: 100%;
+            overflow: hidden;
+            background-color: #223366;
+            --progress: 0%;
+            margin: 10px 0 0 0;
+        }
+        .progress{
+            height: 10px;
+            background-color: #48C;
+            width: var(--progress);
+            border-radius: 10px;
+        }
+        .chapter .flex-row p:first-child{
+            flex: 1;
+        }
+        .chapter.completed .flex-row p:last-child{
+            color: #6AE;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="chapter completed flex-c-p">
+            <h3>Chapter One</h3>
+            <div class="flex-row">
+                <p>He shines as brightly as the stars above</p>
+                <p>Completed</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="--progress: 100%"></div>
+            </div>
+        </div>
+        <div class="chapter flex-c-p">
+            <h3>Chapter Two</h3>
+            <div class="flex-row">
+                <p>More puzzle than man</p>
+                <p>20%</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="--progress: 20%"></div>
+            </div>
+        </div>
+        <div class="chapter locked flex-c-p">
+            <h3>Chapter Three</h3>
+            <div class="flex-row">
+                <p>He shines as brightly as the stars above</p>
+                <p>Locked</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <div class="chapter locked flex-c-p">
+            <h3>Chapter Four</h3>
+            <div class="flex-row">
+                <p>More puzzle than man</p>
+                <p>Locked</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <div class="chapter locked flex-c-p">
+            <h3>Chapter Five</h3>
+            <div class="flex-row">
+                <p>He shines as brightly as the stars above</p>
+                <p>Locked</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <div class="chapter locked flex-c-p">
+            <h3>Chapter Six</h3>
+            <div class="flex-row">
+                <p>More puzzle than man</p>
+                <p>Locked</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <div class="chapter locked flex-c-p">
+            <h3>Chapter Seven</h3>
+            <div class="flex-row">
+                <p>He shines as brightly as the stars above</p>
+                <p>Locked</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <div class="chapter locked flex-c-p">
+            <h3>Chapter Eight</h3>
+            <div class="flex-row">
+                <p>More puzzle than man</p>
+                <p>Locked</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <div class="chapter locked flex-c-p">
+            <h3>Chapter Nine</h3>
+            <div class="flex-row">
+                <p>He shines as brightly as the stars above</p>
+                <p>Locked</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <div class="chapter locked flex-c-p">
+            <h3>Chapter Ten</h3>
+            <div class="flex-row">
+                <p>More puzzle than man</p>
+                <p>Locked</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <div class="chapter locked flex-c-p">
+            <h3>Chapter Eleven</h3>
+            <div class="flex-row">
+                <p>He shines as brightly as the stars above</p>
+                <p>Locked</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <div class="chapter locked flex-c-p">
+            <h3>Chapter Twelve</h3>
+            <div class="flex-row">
+                <p>More puzzle than man</p>
+                <p>Locked</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <div class="chapter locked flex-c-p">
+            <h3>Chapter Thirteen</h3>
+            <div class="flex-row">
+                <p>He shines as brightly as the stars above</p>
+                <p>Locked</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <div class="chapter locked flex-c-p">
+            <h3>Chapter Fourteen</h3>
+            <div class="flex-row">
+                <p>More puzzle than man</p>
+                <p>Locked</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

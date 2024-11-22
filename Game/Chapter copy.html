@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-selected-theme="normal">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prismorian Tales</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <!-- <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script> -->
+    
+    <link href="CSS/text-btn.css" rel="stylesheet" type="text/css">
+    <link href="CSS/defaults.css" rel="stylesheet" type="text/css">
+    <!-- <link href="CSS/character-speech.css" rel="stylesheet" type="text/css"> -->
+    <script type="text/javascript"src="JayStory/Chapter1.js"></script>
+    <script src="https://kit.fontawesome.com/ad096bdfd9.js" crossorigin="anonymous"></script>
+    <style>
+        html{
+            font-size: 16px;
+        }
+        body{
+            margin: 0;
+            background-color: #222222;
+            color: #bbbbbb;
+            font-family: "Montserrat Alternates", sans-serif;
+        }
+        main{
+            /* display: flex; */
+            height: 100vh;
+            /* flex-direction: column; */
+            /* max-width: 1200px; */
+            align-items: center;
+            width: 100%;
+        }
+        article{
+            /* background: url("Images/Waterfall2.jpg"); */
+            background: linear-gradient(125deg, hwb(340deg 0% 60%), hwb(200deg 0% 60%));
+            height: 100%;
+            left: 0;
+            right: 0;
+            padding: 0px 10vw 0px 10vw;
+            background-position: center;
+            background-origin: content-box;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+    </style>
+    <script>
+        window.onload = starting;
+        window.onresize = sizeSprite;
+        function sizeSprite(){
+            let w = window.innerWidth;
+            let h = window.innerHeight;
+            let ss = 200;
+            if(w > h){ ss = h * 0.3; }
+            else     { ss = w * 0.3; }
+            document.documentElement.style.setProperty('--sprite-size', `${ss}px`);
+        }
+        function starting(){
+            sizeSprite();
+        }
+        let makeRed = () => {
+            document.querySelector(".speech").style.backgroundColor = "#BB4488";
+        }
+    </script>
+    <style>
+        html{
+            font-size: 20px;
+        }
+        :root{
+            --sprite-size: 200px;
+        }
+        .character-speech{
+            height: calc(100% - 30px);
+            width: 66%;/*calc(100% - 40px);*/
+            justify-content: end;
+            padding: 15px 0px;
+            margin: 0px auto;
+
+            --bg:#BBBBBB;
+            --bc:#222222;
+            --tc:#353535;
+        }
+        .character-speech img{
+            width: var(--sprite-size);
+            height: var(--sprite-size);
+            margin-bottom: -4px;
+            margin-left: 20px;
+        }
+        .Jay  {--bg:#4488BB;--bc:#001122;--tc:#002244;}
+        .River{--bg:#BB8844;--bc:#221100;--tc:#442200;}
+        .character-speech.Narrator .heading{display: none;}
+        .speech .text-btn::before{background-color: var(--bc);}
+        .speech .text-btn{color: inherit;}
+        .name, .speech{
+            background: var(--bg);
+            border-color: var(--bc);
+            color: var(--tc);
+        }
+        .name, .speech{
+            border-style: solid;
+            border-width: 3px;
+            font-family: "Sour Gummy", sans-serif;
+        }
+        .name{
+            font-size: 1.25rem;
+            border-width: 3px 3px 0 3px;
+            border-radius: 10px 10px 0 0;
+            padding: 0px 10px 5px 10px;
+            width: fit-content;
+            height: fit-content;
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            margin: 0;
+        }
+        .speech{
+            padding: 5px;
+            border-radius: 10px;
+        }
+        .speech .text p{
+            margin: 0;
+            flex: 1;
+        }
+        .speech-btns{
+            gap: 20px;
+        }
+        .speech-btns .text-btn{
+            font-size: 0.75rem;
+        }
+        .character-speech .heading{position: relative;}
+        .character-speech.right .heading{align-self: end;}
+        .character-speech.right .name{
+            right: 10px;
+            left: auto;
+        }
+        .character-speech.right img{margin-left: 0px;}
+    </style>
+    <style>
+        :root{
+            --line: " ✦ • • ✦ • • ☀ • • ✦ • • ✦ ";
+        }
+        .divider{
+            gap: 20px;
+        }
+        .divider *{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .divider h4{
+            font-style: italic;
+        }
+        hr {
+            border: 0px;
+            overflow: visible;
+        }
+        hr:after {
+            content: var(--line);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <article>
+            <div class="character-speech flex-col Jay">
+                <div class="heading">
+                    <p class="name">Jay</p>
+                    <img src="CharacterSprites/JayNeutral.png">
+                </div>
+                <div class="speech flex-col">
+                    <div class="text flex-row" onclick="makeRed()">
+                        <p>"That's the north star."</p>
+                        <button class='text-btn'><i class="fa-solid fa-caret-right"></i></button>
+                    </div>
+                    <div class="speech-btns flex-rc">
+                        <button class='text-btn'>History</button>
+                        <button class='text-btn'>Auto</button>
+                        <button class='text-btn'>Settings</button>
+                    </div>
+                </div>
+            </div>
+            <div class="divider flex-cc full-sized hidden">
+                <hr>
+                <h2>Chapter One</h2>
+                <h4>He shines as brightly as<br>the stars above</h4>
+                <hr>
+            </div>
+        </article>
+    </main>
+    <script src="JayStory/TypwriterTest.js"></script>
+</body>
+</html>

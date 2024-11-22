@@ -1,0 +1,67 @@
+:root{
+    --sprite-size: 200px;
+}
+.character-speech{
+    height: calc(100% - 30px);
+    width: 66%;/*calc(100% - 40px);*/
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 15px 0px;
+    margin: 0px auto;
+
+    --bg:#BBBBBB;
+    --bc:#222222;
+    --tc:#353535;
+}
+.character-speech img{
+    width: var(--sprite-size);
+    height: var(--sprite-size);
+    margin-bottom: -4px;
+    margin-left: 20px;
+}
+.Jay  {--bg:#4488BB;--bc:#001122;--tc:#002244;}
+.River{--bg:#BB8844;--bc:#221100;--tc:#442200;}
+.character-speech.Narrator .heading{display: none;}
+.speech .text-btn::before{background-color: var(--bc);}
+.speech .text-btn{color: inherit;}
+.name, .speech{
+    background: var(--bg);
+    border-color: var(--bc);
+    color: var(--tc);
+}
+.name, .speech{
+    border-style: solid;
+    border-width: 3px;
+    font-family: "Sour Gummy", sans-serif;
+}
+.name{
+    font-size: 1.25rem;
+    border-width: 3px 3px 0 3px;
+    border-radius: 10px 10px 0 0;
+    padding: 0px 10px 5px 10px;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    margin: 0;
+}
+.speech{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+}
+.speech p{
+    margin: 0;
+    flex: 1;
+}
+.character-speech .heading{position: relative;}
+.character-speech.right .heading{align-self: end;}
+.character-speech.right .name{
+    right: 10px;
+    left: auto;
+}
+.character-speech.right img{margin-left: 0px;}

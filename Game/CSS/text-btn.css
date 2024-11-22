@@ -12,7 +12,7 @@
     transition: transform .15s ease-in-out;
 }
 
-.text-btn:hover{
+.text-btn:hover, .text-btn a:hover{
     color: #eeeeee;
 }
 .text-btn:hover::before {
@@ -20,7 +20,7 @@
     transform: scaleX(1);
 }
 
-.text-btn{
+.text-btn, .text-btn a{
     background-color: transparent;
     outline: none;
     border-width: 0px;
@@ -29,9 +29,10 @@
     font-size: 1.5rem;
     font-weight: 500;
     position: relative;
+    text-decoration: none;
 }
 
-.text-btn.selected{
+.text-btn.selected, .text-btn.selected a{
     color: #eeeeee;
 }
 .text-btn.selected::before{

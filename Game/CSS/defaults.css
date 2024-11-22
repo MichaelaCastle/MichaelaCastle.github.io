@@ -1,0 +1,34 @@
+.g10, .flex-c-g, .flex-r-g, .flex-cc-g, .flex-rc-g, .flex-c-p-g, .flex-r-p-g, .flex-cc-p-g, .flex-rc-p-g {
+    gap: 10px;
+}
+  
+.p10, .flex-c-p, .flex-c-p-g, .flex-r-p, .flex-r-p-g, .flex-cc-p, .flex-cc-p-g, .flex-rc-p, .flex-rc-p-g {
+    padding: 10px;
+}
+  
+.flex-row, .flex-r-g, .flex-r-p, .flex-r-p-g, .flex-rc, .icon-btn, .flex-rc-g, .flex-rc-p, .flex-rc-p-g {
+    display: flex;
+    flex-direction: row;
+}
+  
+.flex-col, .flex-c-g, .flex-c-p, .flex-c-p-g, .flex-cc, .flex-cc-g, .flex-cc-p, .flex-cc-p-g {
+    display: flex;
+    flex-direction: column;
+}
+  
+.flex-center, .flex-cc, .flex-cc-g, .flex-cc-p, .flex-cc-p-g, .flex-rc, .icon-btn, .flex-rc-g, .flex-rc-p, .flex-rc-p-g {
+    align-items: center;
+    justify-content: center;
+}
+
+.full-sized{
+    width: 100%;
+    height: 100%;
+}
+.full-width{
+    width: 100%;
+}
+  
+.hidden {
+    display: none;
+}
