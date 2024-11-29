@@ -12,8 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <!-- <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script> -->
     
     <link href="CSS/text-btn.css" rel="stylesheet" type="text/css">
     <link href="CSS/defaults.css" rel="stylesheet" type="text/css">
@@ -21,9 +19,6 @@
     <script type="text/javascript"src="ShortStories/Tutor.js"></script>
     <script src="https://kit.fontawesome.com/ad096bdfd9.js" crossorigin="anonymous"></script>
     <style>
-        html{
-            font-size: 16px;
-        }
         body{
             margin: 0;
             background-color: #222222;
@@ -60,6 +55,8 @@
         let speechContainer;
         let line = -1;
         let history;
+        let historyBtn;
+        let autoToggle;
         window.onload = starting;
         window.onresize = sizeSprite;
         function sizeSprite(){
@@ -71,25 +68,37 @@
             document.documentElement.style.setProperty('--sprite-size', `${ss}px`);
         }
         function starting(){
+            document.querySelector("html").style.fontSize = `${parseInt(localStorage.getItem("fontSize")) + 4}px`;
             sizeSprite();
             speechContainer = document.querySelector('.character-speech');
             name = speechContainer.querySelector('.name');
             img = speechContainer.querySelector('.heading').querySelector('img');
             content = speechContainer.querySelector('.text').querySelector('p');
             history = document.querySelector('.history');
+            historyBtn = document.querySelector("#history");
+            autoToggle = document.querySelector('#auto');
+
+            document.addEventListener("keyup", function(event) {
+                if (event.key === " ") nextLine();
+                if (event.key === "h" || event.key === "H") toggleHistory();
+                if (event.key === "a" || event.key === "A") toggleAuto();
+                if (event.key === "s" || event.key === "S") settings();
+                if (event.key === "Escape" || event.key === "Esc") pause();
+            });
+
             nextLine();
+            document.addEventListener('requestString', () => {nextLine();})
         }
         let nextLine = () => {
-            console.log(Typewriter.typing);
             if(Typewriter.typing){
                 Typewriter.pasteString(text[line].content);
             }
             else{
                 line += 1;
-                let s = text[line].speaker;
-                speechContainer.classList = `character-speech flex-col ${s}`;
+                let s = text[line].speaker.replace(" right", "");
                 name.innerText = s;
                 if(s !== "Narrator"){img.src = text[line].image;}
+                speechContainer.classList = `character-speech flex-col ${text[line].speaker}`;
                 if(s === "Narrator"){s = " - "}
                 else{s = "<b>" + s + ":</b> "}
                 showLine(text[line].content);
@@ -99,16 +108,23 @@
         let toggleHistory = () => {
             if(history.classList.contains("hidden")){
                 history.classList.remove("hidden");
+                historyBtn.classList = "text-btn selected";
             }
             else{
                 history.classList.add("hidden");
+                historyBtn.classList = "text-btn";
             }
         }
+        let toggleAuto = () => {
+            Typewriter.auto = ! Typewriter.auto;
+            if(Typewriter.auto) auto.classList = "text-btn selected";
+            else auto.classList = "text-btn";
+            if(!Typewriter.typing) nextLine();
+        }
+        let settings = () => window.location.href = "Settings.html";
+        let pause = () => window.location.href = "Pause.html";
     </script>
     <style>
-        html{
-            font-size: 20px;
-        }
         :root{
             --sprite-size: 200px;
         }
@@ -122,9 +138,9 @@
             --bg:#BBBBBB;
             --bc:#222222;
             --tc:#353535;
-            /* --tc:#BBBBBB;
+            --tc:#BBBBBB;
             --bg:#222222;
-            --bc:#353535; */
+            --bc:#353535;
         }
         .character-speech img{
             width: var(--sprite-size);
@@ -136,8 +152,12 @@
         .Sam   {--bg:#44BB88;--bc:#002211;--tc:#004422;}
         .Jacob {--bg:#BB4488;--bc:#220011;--tc:#440022;}
         .River {--bg:#BB8844;--bc:#221100;--tc:#442200;}
+        .Jay   {--tc:#4488BB;--bg:#001122;--bc:#002244;}
+        .Sam   {--tc:#44BB88;--bg:#002211;--bc:#004422;}
+        .Jacob {--tc:#BB4488;--bg:#220011;--bc:#440022;}
+        .River {--tc:#BB8844;--bg:#221100;--bc:#442200;}
         .character-speech.Narrator .heading{display: none;}
-        .speech .text-btn::before{background-color: var(--bc);}
+        .speech .text-btn::before{background-color: var(--tc);}
         .speech .text-btn{color: inherit;}
         .name, .speech{
             background: var(--bg);
@@ -184,7 +204,7 @@
             right: 10px;
             left: auto;
         }
-        .character-speech.right img{margin-left: 0px;}
+        .character-speech.right img{margin-left: 0; margin-right: 25px;}
     </style>
     <style>
         :root{
@@ -217,7 +237,7 @@
             top: 50px;
             left: calc(50px + 10vw);
             right: calc(50px + 10vw);
-            background-color: #222B;
+            background-color: #222D;
             border-radius: 10px;
             gap: 5px;
             z-index: 10;
@@ -236,7 +256,7 @@
             <div class="character-speech flex-col Narrator">
                 <div class="heading">
                     <p class="name">Jay</p>
-                    <img src="CharacterSprites/JayNeutral.png">
+                    <img src="CharacterSprites/JacobNeutral.png">
                 </div>
                 <div class="speech flex-col">
                     <div class="text flex-row" onclick="nextLine()">
@@ -244,9 +264,9 @@
                         <button class='text-btn'><i class="fa-solid fa-caret-right"></i></button>
                     </div>
                     <div class="speech-btns flex-rc">
-                        <button class='text-btn' onclick="toggleHistory()">History</button>
-                        <button class='text-btn'>Auto</button>
-                        <button class='text-btn'>Settings</button>
+                        <button class='text-btn' onclick="toggleHistory()" id="history">History</button>
+                        <button class='text-btn' onclick="toggleAuto()" id="auto">Auto</button>
+                        <button class='text-btn' onclick="settings()">Settings</button>
                     </div>
                 </div>
             </div>
@@ -258,6 +278,6 @@
             </div>
         </article>
     </main>
-    <script src="JayStory/TypwriterTest.js"></script>
+    <script src="Typwriter.js"></script>
 </body>
 </html>

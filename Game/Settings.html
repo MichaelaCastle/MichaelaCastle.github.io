@@ -165,6 +165,75 @@
             left: 0px;
             /* border-radius: 3px; */
         }
+        .settings .text-btn{
+            font-size: 1rem;
+        }
+    </style>
+    <script>
+        let sliders;
+        let toggles;
+        let loader;
+        function wait(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        let submit = async() => {
+            localStorage.setItem("textSpeed", sliders[0].value * -1);
+            localStorage.setItem("autoPause", sliders[1].value);
+            localStorage.setItem("musicVol", sliders[2].value);
+            localStorage.setItem("soundVol", sliders[3].value);
+            localStorage.setItem("fontSize", sliders[4].value);
+            localStorage.setItem("enableTW", toggles[0].checked);
+            localStorage.setItem("disableSound", toggles[1].checked);
+            loader.classList.remove("hidden");
+            await wait(1000);
+            loader.classList.add("hidden");
+        }
+        let cancel = () => {
+            sliders[0].value = localStorage.getItem("textSpeed") * -1;
+            sliders[1].value = localStorage.getItem("autoPause");
+            sliders[2].value = localStorage.getItem("musicVol");
+            sliders[3].value = localStorage.getItem("soundVol");
+            sliders[4].value = localStorage.getItem("fontSize");
+            toggles[0].checked = localStorage.getItem("enableTW") == "true";
+            toggles[1].checked = localStorage.getItem("disableSound") == "true";
+        }
+        let reset = () => {
+            sliders[0].value = -25;
+            sliders[1].value = 1000
+            sliders[2].value = 50;
+            sliders[3].value = 100;
+            sliders[4].value = 16;
+            toggles[0].checked = true;
+            toggles[1].checked = false;
+        }
+        let starting = () => {
+            sliders = document.querySelectorAll('.slider');
+            toggles = [document.querySelector('#switch'), document.querySelector('#switch2')]
+            loader = document.querySelector('.loader');
+            cancel();
+        }
+        window.onload = starting;
+    </script>
+    <style>
+        /* HTML: <div class="loader"></div> */
+        .loader:not(.hidden) {
+            width: 100px;
+            height: 100px;
+            aspect-ratio: 1;
+            --_c:no-repeat radial-gradient(farthest-side,#BBB 99%,#0000);
+            background: 
+                var(--_c) top,
+                var(--_c) left,
+                var(--_c) right,
+                var(--_c) bottom;
+            background-size: 30px 30px;
+            animation: l7 0.75s infinite;
+            position: absolute;
+            left: calc(50vw - 50px);
+            top: calc(50vh - 50px);
+            z-index: 100;
+        }
+        @keyframes l7 {to{transform: rotate(.5turn)}}
     </style>
 </head>
 <body>
@@ -175,20 +244,21 @@
             <button class='text-btn selected'>Settings</button>
             <button class='text-btn'>Return</button>
         </div>
+        <div class="loader hidden"></div>
         <section class="settings">
             <h2>Typewriter</h2>
             <div class="setting-collection flex-rc">
                 <div class="flex-col">
                     <p>Text Speed</p>
-                    <input type="range" min="-75" max="0" value="-50" class="slider"/>
+                    <input type="range" min="-75" max="-1" value="-25" step="1" class="slider"/>
                 </div>
                 <div class="flex-col">
-                    <p>Auto Pause</p>
-                    <input type="range" min="20" max="200" value="100" class="slider"/>
+                    <p>Auto Speed</p>
+                    <input type="range" min="100" max="3000" value="1000" step="100" class="slider"/>
                 </div>
                 <div class="flex-col">
                     <p>Enable Text Animation</p>
-                    <input type="checkbox" id="switch" />
+                    <input type="checkbox" id="switch" checked/>
                     <label for="switch">Toggle</label>
                 </div>
             </div>
@@ -196,7 +266,7 @@
             <div class="setting-collection flex-rc">
                 <div class="flex-col">
                     <p>Music Volume</p>
-                    <input type="range" min="0" max="100" value="75" class="slider"/>
+                    <input type="range" min="0" max="100" value="50" class="slider"/>
                 </div>
                 <div class="flex-col">
                     <p>Sound Volume</p>
@@ -216,6 +286,12 @@
                     <input type="range" min="12" max="30" value="16" step="1" class="slider"/>
                 </div>
                 <div></div>
+            </div>
+            <h2>Submit</h2>
+            <div class="setting-collection flex-rc">
+                <button class="text-btn" onclick="submit()">Save</button>
+                <button class="text-btn" onclick="reset()">Reset to defaults</button>
+                <button class="text-btn" onclick="cancel()">Cancel</button>
             </div>
         </section>
     </main>

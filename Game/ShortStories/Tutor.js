@@ -61,7 +61,7 @@ let text = [
     },
     {
         content: "Living room...",
-        speaker: "Jacob",
+        speaker: "Jacob right",
         image: "CharacterSprites/Jacob45.png"
     },
     {
@@ -91,7 +91,7 @@ let text = [
     },
     {
         content: "What was your name again?",
-        speaker: "Jacob",
+        speaker: "Jacob right",
         image: "CharacterSprites/Jacob35.png"
     },
     {
@@ -111,7 +111,7 @@ let text = [
     },
     {
         content: "Are you always this... Intense?",
-        speaker: "Jacob",
+        speaker: "Jacob right",
         image: "CharacterSprites/Jacob31.png"
     },
     {
@@ -136,7 +136,7 @@ let text = [
     },
     {
         content: "Is that why you want to tutor? I'm a grade above you I think, how are you going to teach me?...",
-        speaker: "Jacob",
+        speaker: "Jacob right",
         image: "CharacterSprites/JacobNeutral.png"
     },
     {
@@ -156,7 +156,7 @@ let text = [
     },
     {
         content: "You what? I... I barely know my multiplication-",
-        speaker: "Jacob",
+        speaker: "Jacob right",
         image: "CharacterSprites/Jacob45.png"
     },
     {
@@ -166,7 +166,7 @@ let text = [
     },
     {
         content: "Oh, shut up, it's not easy!",
-        speaker: "Jacob",
+        speaker: "Jacob right",
         image: "CharacterSprites/Jacob32.png"
     },
     {

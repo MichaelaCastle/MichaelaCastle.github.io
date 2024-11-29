@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
     <link href="CSS/text-btn.css" rel="stylesheet" type="text/css">
+    <link href="CSS/defaults.css" rel="stylesheet" type="text/css">
+    <link href="CSS/stars.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/ad096bdfd9.js" crossorigin="anonymous"></script>
     <style>
         html{
@@ -17,94 +19,82 @@
         }
         body{
             margin: 0;
-            background-color: #222;
+            background: linear-gradient(#012, #124, #248/*, hsl(340 50% 40%)*/) #222;
             color: #BBB;
             font-family: "Montserrat Alternates", sans-serif;
         }
         main{
-            display: flex;
-            height: 100vh;
-            flex-direction: row;
-            /* max-width: 1200px; */
-            justify-content: center;
-            gap: 5px;
-            background-color: #222;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 75px calc(100vh - 135px);
+            width: 70%;
+            height: calc(100vh - 40px);
+            gap: 20px;
+            margin: 20px auto;
+        }
+        section, header{
+            border: 2px solid #BBB7;
+            border-radius: 20px;
+            border: 2px solid hsl(210, 100%, 80%);
+            transition: box-shadow 0.3s ease-in-out;
+            box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
+        }
+        .story-tile-cont{
+            position: relative;
+            height: calc(100vh - 135px);
+        }
+        .story-tile-cont > img{
+            position: absolute;
+            width: auto;
+            height: auto;
+            z-index: 10;
+        }
+        .bottom-left{
+            left: -15px;
+            bottom: -15px;
+            max-width: calc(25% + 40px);
+        }
+        .top-right{
+            right: -10px;
+            top: -15px;
+            max-width: calc(35% + 40px);
         }
         .story-tile{
-            flex: 1;
-            max-width: 400px;
-            display: flex;
-            justify-content: center;
+            border-radius: 20px;
             overflow: hidden;
             position: relative;
-        }
-        .story-tile:nth-child(1){
-            background-color: hsl(200 100 40);
+            height: inherit;
         }
         .story-tile:nth-child(2){
-            background-color: hsl(120 100 30);
+            background-color: hsl(200 100 40);
         }
         .story-tile:nth-child(3){
+            background-color: hsl(120 100 30);
+        }
+        .story-tile:nth-child(4){
             background-color: hsl(75 50 50);
         }
 
-        .story-tile img{
-            flex: none;
-            transition: transform 0.5s ease-in-out;
-            z-index: 0;
-            min-width: 100%;
+        .story-tile .img-cont {
+            overflow: hidden;
+            border-radius: 10px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .story-tile img {
+            width: 100%;
+            height: 110%;
             object-fit: cover;
-            overflow-clip-margin: unset;
-            overflow: visible;
+            object-position: center;
+            transition: transform 0.5s ease-in-out;
         }
+
         .story-tile:hover img{
-            transform: translateY(5%);
+            transform: translateY(4%);
         }
-
-        /* .image {
-  --n:2;  
-  --d:0px;
-  --s:1.075;  
-  
-  flex: 1;
-  position:relative;
-  background-image: url(https://picsum.photos/id/10/400/300);
-  background-size: 0 0;
-  transition:0.5s ease-in-out;
-}
-
-.image > * {
-  position: absolute;
-  top: var(--d);
-  left: 0;
-  right: 0;
-  bottom: var(--d);
-  background-image: inherit;
-  background-size: cover;
-  background-position: center;
-  -webkit-mask:linear-gradient(#fff,#fff) no-repeat;
-  -webkit-mask-size:100% calc(50% + 1px);
-  -webkit-mask-position:50% var(--p);
-          mask:linear-gradient(#fff,#fff) no-repeat;
-          mask-size:100% calc(50% + 1px);
-          mask-position:50% var(--p);
-   transition:inherit;
-   transform-origin:50% var(--p);
-}
-
-.image > :nth-child(1)  {--p:0;}
-.image > :nth-child(2)  {--p:100%;}
-
-.image:hover > :nth-child(even){
-   transform:translateY(var(--d))  scale(calc(1/var(--s)));
-}
-.image:hover > :nth-child(odd){
-   transform:translateY(calc(-1*var(--d)))  scale(calc(1/var(--s)));
-}
-.image:hover {
-   transform:scale(var(--s));
-} */
-
 
         .title, .options{
             position: absolute;
@@ -144,52 +134,126 @@
         main > p{
             flex: 0;
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 20px;
+            left: 20px;
             margin: 0;
             width: 100px;
         }
+
+
+        .title-tile{
+            grid-column: 1 / 4;
+            background: linear-gradient(90deg, #124 25%, #142, #441 75%);
+            padding: 10px;
+            position: relative;
+        }
+        .title-tile h2{
+            color: #FFF;
+            white-space: pre;
+        }
+        .title-tile h2, .title-tile p{
+            margin: 0;
+            padding: 0;
+        }
+        .title-tile .text-btn a{
+            font-size: 1rem;
+        }
+        .title-tile .text-btn{
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+        }
+        .bmc-button{
+            position: fixed;
+            height:35px;
+            display:inline-flex;
+            background-color:#FF813F;
+            border-radius: 20px;
+            border: #ffcbaf 2px solid;
+            padding: 5px 10px;
+            right: 20px;
+            bottom: 20px;
+        }
+        .bmc-button:hover, .bmc-button:active, .bmc-button:focus {
+            background-color: #ae4d19;
+        }
     </style>
+    <script>
+        window.onload = starting;
+        function starting() {
+            let star = document.querySelector(".stars");
+            for(let i = 0; i < ((Math.random() * 20) + 20); i++){
+                let s = document.createElement('div');
+                s.classList = "star";
+                s.style.setProperty('--top-offset', `${(Math.random() * 170) - 35}em`);
+                s.style.setProperty('--star-tail-length', `${(Math.random() * 3) + 5}em`);
+                s.style.setProperty('--fall-duration', `${(Math.random() * 8) + 4}s`);
+                s.style.setProperty('--fall-delay', `${(Math.random() * 7) + 2}s`);
+                star.appendChild(s);
+            }
+        }
+    </script>
 </head>
 <body>
+    <div class="stars"></div>
     <main>
-        <div class="story-tile">
-            <div class="options">
-                <button class="text-btn">Continue <i class="fas fa-caret-right"></i></button>
-                <button class="text-btn">Chapter Select <i class="fas fa-caret-right"></i></button>
-            </div>
-            <img src="images/JayDark.png"/>
-            <div class="title">
-                <h2>A5</h2>
-                <p>Chapter 1</p>
-            </div>
+        <header class="title-tile">
+            <!-- <h2>Fractured Reflections ★ Chronicles of Prismoria</h2> -->
+            <h2>Fractured Reflections  ⤚✿⤙  Prismorian Tales</h2>
+            <p>Please use desktop. Press Fn + F11 for best viewing.</p>
+            <button class="text-btn"><a href="Settings.html">Settings <i class="fas fa-caret-right"></i></a></button>
+        </header>
+        <div class="story-tile-cont">
+            <!-- <img src="images/stars.png"> -->
+            <!-- <img src="images/blFlower.webp" class="bottom-left"> -->
+            <!-- <img src="images/trFlower.webp" class="top-right"> -->
+            <section class="story-tile">
+                <div class="options">
+                    <button class="text-btn">Continue <i class="fas fa-caret-right"></i></button>
+                    <button class="text-btn">Chapter Select <i class="fas fa-caret-right"></i></button>
+                </div>
+                <div class="img-cont">
+                    <img src="images/JayDark.png"/>
+                </div>
+                <div class="title">
+                    <h2>A5</h2>
+                    <p>Chapter 1</p>
+                </div>
+            </section>
         </div>
-        <div class="story-tile">
-            <div class="options">
-                <button class="text-btn">Continue <i class="fas fa-caret-right"></i></button>
-                <button class="text-btn">Chapter Select <i class="fas fa-caret-right"></i></button>
-            </div>
-            <img src="images/tie.jpg"/>
-            <!-- <div class="image" style="background-image: url(images/tie.jpg)">
-                <div></div><div></div>
-            </div> -->
-            <div class="title">
-                <h2>Wolf Boy</h2>
-                <p>Chapter 1</p>
-            </div>
+        <div class="story-tile-cont">
+            <section class="story-tile">
+                <div class="options">
+                    <button class="text-btn">Continue <i class="fas fa-caret-right"></i></button>
+                    <button class="text-btn">Chapter Select <i class="fas fa-caret-right"></i></button>
+                </div>
+                <div class="img-cont">
+                    <img src="images/SamMaybe.jpeg"/>
+                </div>
+                <div class="title">
+                    <h2>Wolf Boy</h2>
+                    <p>Chapter 1</p>
+                </div>
+            </section>
         </div>
-        <div class="story-tile">
-            <div class="options">
-                <button class="text-btn">Continue <i class="fas fa-caret-right"></i></button>
-                <button class="text-btn">Chapter Select <i class="fas fa-caret-right"></i></button>
-            </div>
-            <img src="images/workbench.jpg"/>
-            <div class="title">
-                <h2>Inventor</h2>
-                <p>Chapter 1</p>
-            </div>
+        <div class="story-tile-cont">
+            <section class="story-tile">
+                <div class="options">
+                    <button class="text-btn">Continue <i class="fas fa-caret-right"></i></button>
+                    <button class="text-btn">Chapter Select <i class="fas fa-caret-right"></i></button>
+                </div>
+                <div class="img-cont">
+                    <img src="images/ElliotMaybe.webp"/>
+                </div>
+                <div class="title">
+                    <h2>Inventor</h2>
+                    <p>Chapter 1</p>
+                </div>
+            </section>
         </div>
-        <p>Press Fn + F11 for best viewing<br><br>Please use desktop</p>
+        <a class="bmc-button">
+            <img src="images/BMC2.png" alt="Buy me a coffee">
+        </a>
     </main>
 </body>
 </html>
