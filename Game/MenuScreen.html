@@ -37,7 +37,7 @@
             border-radius: 20px;
             border: 2px solid hsl(210, 100%, 80%);
             transition: box-shadow 0.3s ease-in-out;
-            box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.65);
         }
         .story-tile-cont{
             position: relative;
@@ -143,13 +143,26 @@
 
         .title-tile{
             grid-column: 1 / 4;
-            background: linear-gradient(90deg, #124 25%, #142, #441 75%);
+            /* background: linear-gradient(90deg, #124 25%, #142, #441 75%); */
+            background: url("images/TitleBanner.png");
             padding: 10px;
             position: relative;
         }
         .title-tile h2{
-            color: #FFF;
+            color: #000B;
             white-space: pre;
+        }
+        .title-tile p{
+            font-weight: 500;
+        }
+        .title-tile p, .title-tile a{
+            color: #333B;
+        }
+        .title-tile .text-btn:hover a{
+            color: #222;
+        }
+        .title-tile .text-btn::before{
+            background-color: #222;
         }
         .title-tile h2, .title-tile p{
             margin: 0;

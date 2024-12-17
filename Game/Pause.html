@@ -14,6 +14,7 @@
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
     <link href="CSS/text-btn.css" rel="stylesheet" type="text/css">
     <link href="CSS/defaults.css" rel="stylesheet" type="text/css">
+    <link href="CSS/stars.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/ad096bdfd9.js" crossorigin="anonymous"></script>
     <style>
         body{
@@ -21,7 +22,8 @@
             background-color: #222;
             color: #bbb;
             font-family: "Montserrat Alternates", sans-serif;
-            background: url("images/PSJacobWide.png"), #222;
+            /* background: url("images/PSJacobWide.png"), #222; */
+            background: url("images/UI/stars.gif"), linear-gradient(#012, #124, #248/*, hsl(340 50% 40%)*/), #222;
             background-position: center;
             background-origin: content-box;
             background-size: cover;
@@ -30,6 +32,12 @@
         main{
             height: 100vh;
             width: 100%;
+            background: url("images/UI/PS.png");
+            background-position: center;
+            background-origin: content-box;
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 3;
         }
         .side-panel{
             height: 100%;
@@ -45,15 +53,66 @@
             align-items: flex-start;
             gap: 20px;
             padding: 0 70px 0 20px;
+            z-index: 4;
         }
         .side-panel .text-btn, .side-panel .text-btn a{
             font-size: 2rem;
         }
+        .side-panel h1{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            width: 100%;
+            font-size: 2.5rem;
+        }
+        .side-panel .underline{
+            width: 100%;
+            margin: -20px 0 0 0;
+        }
+        .line {
+            flex: 1;
+            height: 4px;
+            border-radius: 2px;
+            background-color: #bbb;
+        }
+        #clouds{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("images/UI/PSClouds.png");
+            background-position: center;
+            background-origin: content-box;
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
     </style>
+    <script>
+        window.onload = starting;
+        function starting() {
+            let star = document.querySelector(".stars");
+            for(let i = 0; i < ((Math.random() * 20) + 20); i++){
+                let s = document.createElement('div');
+                s.classList = "star";
+                s.style.setProperty('--top-offset', `${(Math.random() * 170) - 35}em`);
+                s.style.setProperty('--star-tail-length', `${(Math.random() * 3) + 5}em`);
+                s.style.setProperty('--fall-duration', `${(Math.random() * 8) + 4}s`);
+                s.style.setProperty('--fall-delay', `${(Math.random() * 7) + 2}s`);
+                s.style.zIndex = `${Math.round(Math.random()) * 2}`;
+                star.appendChild(s);
+            }
+        }
+    </script>
 </head>
 <body>
+    <div class="stars"></div>
+    <div id="clouds"></div>
     <main class="flex-row">
         <div class="side-panel flex-col">
+            <h1>Paused</h1>
+            <div class="underline flex-rc-g">✦<span class="line"></span>✦</div>
             <button class='text-btn'><a href="MenuScreen.html">Main Menu</a></button>
             <button class='text-btn'>Save</button>
             <button class='text-btn'><a href="Settings.html">Settings</a></button>
