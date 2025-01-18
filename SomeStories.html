@@ -27,6 +27,11 @@
         details {
             margin: initial;
         }
+        details.lore summary{
+            /* background: /*linear-gradient(90deg, #66aacc55, #cc66aa55) linear-gradient(0deg, #000000, transparent), var(--sectionHeaderBackground);
+            background-attachment: fixed; */
+            border-left: solid 10px #66aacc;
+        }
         .sectionHeader:not(#ToCTitle) h1{
             padding-left: 0;
             text-decoration: underline hsl(var(--hue), 100%, 90%) 3px solid;
@@ -92,6 +97,14 @@
         ul li ul{
             font-size: 17.5px;
         }
+        .tableOfContents li.lore{
+            list-style: disc;
+        }
+        .tableOfContents h3{
+            padding: 0;
+            margin: 15px 0 -5px 0;
+            font-size: 20px;
+        }
         @media only screen and (max-width: 520px) {
             .tableOfContents {
                 padding-left:0vw;
@@ -140,12 +153,13 @@
     <main>
         <div class="sectionHeader" id="ToCTitle"><h1>Table of Contents</h1></div>
         <div class="tableOfContents">
+            <h3>Filled circles and/or left-aligned lines indicate a story with lore</h3>
             <ul>
                 <li><a href="#FirstMeetings">First Meetings</a>
                     <ul>
-                        <li><a href="#JacobXSam">Jacob x Sam</a></li>
-                        <li><a href="#JayXJacob">Jay x Jacob</a></li>
-                        <li><a href="#JayXSam">Jay x Sam</a></li>
+                        <li class="lore"><a href="#JacobXSam">Jacob x Sam</a></li>
+                        <li class="lore"><a href="#JayXJacob">Jay x Jacob</a></li>
+                        <li class="lore"><a href="#JayXSam">Jay x Sam</a></li>
                     </ul>
                 </li>
                 <li><a href="#ShortStories">Short Stories (Sometimes for events)</a>
@@ -155,7 +169,7 @@
                         <li><a href="#ChristmasTreeV2">Christmas Tree V2 (7 years later)</a></li>
                         <!-- <li><a href="#TheFog">The Fog</a></li> -->
                         <li><a href="#Colors">Colors (Christmas story)</a></li>
-                        <li><a href="#Taken">Taken</a></li>
+                        <li class="lore"><a href="#Taken">Taken</a></li>
                         <li><a href="#PerfectTestSubject">The Perfect Test Subject</a></li>
                         <li><a href="#NotAlone">You're not Alone</a></li>
                         <li><a href="#Driving">Driving</a></li>
@@ -165,7 +179,7 @@
             </ul>
         </div>
         <div class="sectionHeader" id="FirstMeetings"><h1>First Meetings</h1></div>
-        <details id="JacobXSam">
+        <details id="JacobXSam" class="lore">
             <summary>
                 <h1>Jacob x Sam</h1>
             </summary>
@@ -195,7 +209,7 @@
                 <p>"Your handwriting is hideous but I see where you messed up. 1 + 1 is not 5." The bluntness that Sam has makes Jacob blush a little at his own simple mistakes. The blonde picks up a pencil and starts correcting all of Jacob's errors, which doesn't help Jacob that much, but once he's done, he starts to go over the reasoning behind the errors and how to remember not to make them again. That really does help Jacob.</p>
             </div>
         </details>
-        <details id="JayXJacob">
+        <details id="JayXJacob" class="lore">
             <summary><h1>Jay x Jacob</h1></summary>
             <div class="content">
                 <p>"Sam, c'mon~! You should get out in the sun some more. It's only lunch!" Jacob pleads with the green eyed blonde for the fifth time this week. He hates seeing his best friend like this. He doesn't remember the last time he saw Sam smile, genuinely. And every time Sam flashes him that reassuring smile, it stabs through his heart like a knife. All he wants is for him to get out and get some sun. They're still kids after all, he shouldn't have to be cooped up with all this paperwork.</p>
@@ -227,7 +241,7 @@
                 <p>Unfortunately, Jacob will never find out that Sam did decide to take him up on his offer. About fifteen minutes before the period was supposed to end, Sam got to the door to the courtyard and looked out at the bench, where Jacob's tray of untouched food remains with no Jacob in sight. With a sigh, he lowers his head defeatedly and heads back to the lunchroom to wait for the period to finish.</p>
             </div>
         </details>
-        <details id="JayXSam">
+        <details id="JayXSam" class="lore">
             <summary><h1>Jay x Sam</h1></summary>
             <div class="content">
                 <p>White.</p>
@@ -434,7 +448,7 @@
                 <p>Jay doesn't respond, but Jacob doesn't need him to. As he heads back toward the building, he glances over his shoulder one last time. Jay is still sitting there, sketchbook open, colored pencils in hand.</p>
             </div>
         </details>
-        <details id="Taken">
+        <details id="Taken" class="lore">
             <summary><h1>Taken</h1><h2 class="twc">Trigger warning: Kidnap</h2></summary>
             <div class="content">
                 <p>Cold. Dark and cold.</p>
