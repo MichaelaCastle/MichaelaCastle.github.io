@@ -30,7 +30,7 @@
         details.lore summary{
             /* background: /*linear-gradient(90deg, #66aacc55, #cc66aa55) linear-gradient(0deg, #000000, transparent), var(--sectionHeaderBackground);
             background-attachment: fixed; */
-            border-left: solid 10px #66aacc;
+            border-left: solid 10px #FFFFFFCC;/*#66aacc;*/
         }
         .sectionHeader:not(#ToCTitle) h1{
             padding-left: 0;
@@ -101,8 +101,8 @@
             list-style: disc;
         }
         .tableOfContents h3{
-            padding: 10px;
-            margin: 15px 0 -5px 0;
+            padding: 10px 0;
+            margin: 15px 0 0 0;
             font-size: 20px;
         }
         @media only screen and (max-width: 520px) {
@@ -153,7 +153,7 @@
     <main>
         <div class="sectionHeader" id="ToCTitle"><h1>Table of Contents</h1></div>
         <div class="tableOfContents">
-            <h3>Filled circles and/or left-aligned lines indicate a story with lore</h3>
+            <h3>Filled circles and/or left-aligned white lines indicate a story with lore<br>However, I have tried to put these in chronological order, sort of. Similar stories still get grouped together</h3>
             <ul>
                 <li><a href="#FirstMeetings">First Meetings</a>
                     <ul>
@@ -173,13 +173,23 @@
                         <li><a href="#PerfectTestSubject">The Perfect Test Subject</a></li>
                         <li><a href="#NotAlone">You're not Alone</a></li>
                         <li><a href="#Driving">Driving</a></li>
-                        <li><a href="NeverHaveIEver">Never Have I Ever</a></li>
+                        <li><a href="#NeverHaveIEver">Never Have I Ever</a></li>
                     </ul>
                 </li>
             </ul>
+            <!-- <ul>
+                <li>Colors:
+                    <ul>
+                        <li>Jay - Blue</li>
+                        <li>Sam - Green</li>
+                        <li>Jacob - Red</li>
+                        <li>Elliot - Yellow</li>
+                    </ul>
+                </li>
+            </ul> -->
         </div>
         <div class="sectionHeader" id="FirstMeetings"><h1>First Meetings</h1></div>
-        <details id="JacobXSam" class="lore">
+        <details id="JacobXSam" class="Jacob Sam lore">
             <summary>
                 <h1>Jacob x Sam</h1>
             </summary>
@@ -209,7 +219,7 @@
                 <p>"Your handwriting is hideous but I see where you messed up. 1 + 1 is not 5." The bluntness that Sam has makes Jacob blush a little at his own simple mistakes. The blonde picks up a pencil and starts correcting all of Jacob's errors, which doesn't help Jacob that much, but once he's done, he starts to go over the reasoning behind the errors and how to remember not to make them again. That really does help Jacob.</p>
             </div>
         </details>
-        <details id="JayXJacob" class="lore">
+        <details id="JayXJacob" class="Jay Jacob lore">
             <summary><h1>Jay x Jacob</h1></summary>
             <div class="content">
                 <p>"Sam, c'mon~! You should get out in the sun some more. It's only lunch!" Jacob pleads with the green eyed blonde for the fifth time this week. He hates seeing his best friend like this. He doesn't remember the last time he saw Sam smile, genuinely. And every time Sam flashes him that reassuring smile, it stabs through his heart like a knife. All he wants is for him to get out and get some sun. They're still kids after all, he shouldn't have to be cooped up with all this paperwork.</p>
@@ -241,7 +251,7 @@
                 <p>Unfortunately, Jacob will never find out that Sam did decide to take him up on his offer. About fifteen minutes before the period was supposed to end, Sam got to the door to the courtyard and looked out at the bench, where Jacob's tray of untouched food remains with no Jacob in sight. With a sigh, he lowers his head defeatedly and heads back to the lunchroom to wait for the period to finish.</p>
             </div>
         </details>
-        <details id="JayXSam" class="lore">
+        <details id="JayXSam" class="Jay Sam lore">
             <summary><h1>Jay x Sam</h1></summary>
             <div class="content">
                 <p>White.</p>
@@ -284,7 +294,7 @@
             </div>
         </details>
         <div class="sectionHeader" id="ShortStories"><h1>Short Stories</h1></div>
-        <details id="Briefcase">
+        <details id="Briefcase" class="Elliot">
             <summary><h1>The Briefcase (Christmas Prompt)</h1></summary>
             <div class="content">
                 <p>Lights twinkle around the house, little paper snowflakes skatter around the walls but not in a cluttered way. They're arranged in a very aesthetic way. A few handcrafted trinkets and Christmas themed items furnish the home. The scrawny boy was keeping himself busy, measuring a piece of wood before sawing into it. He was trying to create something that could impress his father. He will continue to craft both day and night if there's a chance that it'll make his father happy.</p>
@@ -322,7 +332,7 @@
                 <p>Elliot may put all this effort in to make his father happy, but it will never be reciprocated.</p>
             </div>
         </details>
-        <details id="ChristmasTree">
+        <details id="ChristmasTree" class="Jacob Sam">
             <summary><h1>Christmas Tree (Christmas Prompt)</h1><h2 class="twc">Trigger warning: Financial problems, alcoholism, mentions of suicide</h2></summary>
             <div class="content">
                 <p>This was the best he could do. He tried his best. Sam just got done trying to create a makeshift Christmas tree. It looked a lot like that small Christmas tree from Charlie Brown. But... A lot worse- He made it out of paper. Simon's young though, he shouldn't care, right? The material objects aren't the point, the point of a holiday is to be with family.</p>
@@ -362,7 +372,7 @@
                 <p>"Can... Can you help me with math?"</p>
             </div>
         </details>
-        <details id="ChristmasTreeV2">
+        <details id="ChristmasTreeV2" class="Jacob Sam">
             <summary><h1>Christmas Tree V2 (7 years later)</h1></summary>
             <div class="content">
                 <p>Colorful lights twinkle around the house. Christmas day, yet there is nobody to celebrate it with.</p>
@@ -413,7 +423,7 @@
                 <p>Sam rolls his eyes, even though the offer does make him feel appreciated. "Fine. Only this once."</p>
             </div>
         </details>
-        <details id="Colors">
+        <details id="Colors" class="Jay Jacob">
             <summary><h1>Colors (Christmas story)</h1></summary>
             <div class="content">
                 <p>Today is one of the last days in school before Christmas break. One of his last chances to give Jay something. Last year, he didn't bother. Back then, Jay was an enigma, a distant figure with too many walls to breach. But now, Jacob has a better sense of him. A better sense of who he really is.</p>
@@ -448,7 +458,7 @@
                 <p>Jay doesn't respond, but Jacob doesn't need him to. As he heads back toward the building, he glances over his shoulder one last time. Jay is still sitting there, sketchbook open, colored pencils in hand.</p>
             </div>
         </details>
-        <details id="Taken" class="lore">
+        <details id="Taken" class="Jay Jacob lore">
             <summary><h1>Taken</h1><h2 class="twc">Trigger warning: Kidnap</h2></summary>
             <div class="content">
                 <p>Cold. Dark and cold.</p>
@@ -541,7 +551,7 @@
                 <p>"But now you're better!" Jay nuzzles Sam softly, clearly in a better mood as well now. He was in a better mood the second Sam offered to let him cuddle though.</p>
             </div>
         </details> -->
-        <details id="PerfectTestSubject">
+        <details id="PerfectTestSubject" class="Jay Jacob">
             <summary><h1>The Perfect Test Subject</h1><h2 class="twc">Trigger Warning: Gore, abuse, kidnap</h2></summary>
             <div class="content">
                 <p>Jacob lies in the concrete cell, waiting for Jay to be brought back. He still doesn't understand what the point of this entire place is. This is the second time they've been stuck in this cell. They escaped once before, but... Were they ever truly free?</p>
@@ -562,7 +572,7 @@
                 <p>Jay doesn't answer. He's done talking. That guard walking by outside scared him off from reaching out for now. Its not long before Jacob realizes this. "Thank you for telling me. It means a lot~" He smiles and rests his head on Jays chest. "Mind if I stay here tonight? You're really warm..." He asks a bit quieter now, to which Jay just nods.</p>
             </div>
         </details>
-        <details id="NotAlone">
+        <details id="NotAlone" class="Jay Jacob">
             <summary><h1>You're not Alone</h1><h2 class="twc">Trigger warning: mention of rape</h2></summary>
             <div class="content">
                 <p>The statement lingers in the air.</p>
@@ -593,7 +603,7 @@
                 <p>"Cuddle? Perfectly fine with me~"</p>
             </div>
         </details>
-        <details id="Driving">
+        <details id="Driving" class="Jacob Sam">
             <summary><h1>Driving</h1></summary>
             <div class="content">
                 <p>"Okay... Are you ready for this?" Jacob asks as he looks at Sam cautiously, a little scared for his own life right now.</p>
@@ -657,7 +667,7 @@
             <div class="content">
             </div>
         </details> -->
-        <details id="NeverHaveIEver">
+        <details id="NeverHaveIEver" class="Jay">
             <summary><h1>Never Have I Ever</h1></summary>
             <div class="content">
                 <p>"Truth or dare~?"
