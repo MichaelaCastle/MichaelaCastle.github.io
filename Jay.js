@@ -271,8 +271,8 @@ window.onload = () => {
     <p class="answer">6'8"</p>
     <p class="answer">203.2 cm</p>
     <p class="question">Weight</p>
-    <p class="answer">90 lbs.</p>
-    <p class="answer">40.8 kg</p>
+    <p class="answer">190 lbs.</p>
+    <p class="answer">86.2 kg</p>
     <div class='brLarge'></div>
     <p class="question">Skin color</p>
     <p class="answer">Pale ivory</p>
