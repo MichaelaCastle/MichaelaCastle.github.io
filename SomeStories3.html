@@ -16,44 +16,23 @@
     <title>Some Stores</title>
     <style>
         :root {
-            --hue1: 200deg;
-            --hue2: 320deg;
+            --hue: 200;
+            --hue2: 300;
             --angle: 160deg;
-            --h1-0-1-h2-0-1: linear-gradient(var(--angle), hwb(var(--hue1) 00% 10%) 25%, hwb(var(--hue2) 00% 10%));
         }
-
+    </style>
+    <link rel="stylesheet" href="CSS/HeadersAndDefaults.css?v=1">
+    <link rel="stylesheet" href="CSS/CollapsibleGroup.css?v=1">
+    <style>
         details {
             margin: initial;
         }
         details.lore summary{
             border-left: solid 10px #FFFFFFCC;
         }
-        summary p.chars{
-            margin-left: 30px;
-            margin-bottom: 5px;
-            text-align: left;
-            text-indent: 0;
-            width: fit-content;
-            transform: translateX(0px);
-            font-size: 1rem;
-            font-weight: 700;
-            font-family: 'Merriweather Sans', sans-serif;
-        }
-        summary.sectionHeader{
-            background-image: var(--h1-0-1-h2-0-1);
-            background-attachment: fixed;
-        }
-        .twc{
-            margin-bottom: 0px;
-        }
-        summary{
-            text-align: left;
-        }
-        summary h1{
-            margin-bottom: 0;
-        }
-        .sectionHeader:not(#ToCTitle):not(summary) h1{
+        .sectionHeader:not(#ToCTitle) h1{
             padding-left: 0;
+            text-decoration: underline hsl(var(--hue), 100%, 90%) 3px solid;
         }
         .sectionHeader:not(:first-of-type){
             margin: 5px 0;
@@ -61,6 +40,8 @@
         p:not(.info){
             white-space: pre-line;
             text-align: left;
+            color: hsl(var(--hue), 50%, 30%);
+            mix-blend-mode: luminosity;
             padding-bottom: 5px;
             text-indent: 20px;
             width: clamp(75px, min(150ch, 85%), 100%);
@@ -72,6 +53,9 @@
             text-align: center;
             padding: 10px;
         }
+        [data-selected-theme="normal"] .tableOfContents{
+            color: hsl(var(--hue), 50%, 30%);
+        }
         .tableOfContents{
             font-size: 17.5px;
             font-weight: 550;
@@ -81,15 +65,19 @@
             padding-right:15vw;
         }
         .tableOfContents a {
+            color: var(--darkText);
             padding: 0 .25rem;
             margin: 0 -.25rem;
             position: relative;
             transition: color .5s ease-in-out;
         }
+        .tableOfContents a:hover {
+            color: var(--lightColor);
+        }
         .tableOfContents a:after {
             border-radius: 25px;
             transition: box-shadow .4s ease-in-out;
-            box-shadow: inset 0 0 0 0 var(--h2-6-0);
+            box-shadow: inset 0 0 0 0 var(--darkText);
             content: '';
             z-index: -1;
             position: absolute;
@@ -99,7 +87,11 @@
             top: 0%;
         }
         .tableOfContents a:hover:after {
-            box-shadow: inset 500px 0 0 0 var(--h2-6-0);
+            box-shadow: inset 500px 0 0 0 var(--darkText);
+        }
+        [data-selected-theme="alt"] .tableOfContents a:hover {
+            color: var(--lightColor) !important;
+            text-decoration-color: var(--lightColor) !important;
         }
         ul{
             font-size: 20px;
@@ -128,8 +120,7 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="CSS/Defaults.css">
-    <link rel="stylesheet" href="CSS/Dropdowns.css">
+    <link rel="stylesheet" href="CSS/Nav.css?v=1">
     <script src="nav.js"></script>
     <script>
         window.onload = () => {
@@ -214,10 +205,9 @@
             </ul>
         </div>
         <div class="sectionHeader" id="Pre-Plot"><h1>Before the plot (Aka, Elliot's life)</h1></div>
-        <details id="1" class="">
-            <summary class='sectionHeader'>
+        <details id="1" class="Elliot">
+            <summary>
                 <h1>Briefcase</h1>
-                <p class="chars">Elliot</p>
             </summary>
             <div class="content">
                 <p>Lights twinkle around the house, little paper snowflakes skatter around the walls but not in a cluttered way. They're arranged in a very aesthetic way. A few handcrafted trinkets and Christmas themed items furnish the home. The scrawny boy was keeping himself busy, measuring a piece of wood before sawing into it. He was trying to create something that could impress his father. He will continue to craft both day and night if there's a chance that it'll make his father happy.
@@ -255,10 +245,9 @@
                 Elliot may put all this effort in to make his father happy, but it will never be reciprocated.</p>
             </div>
         </details>
-        <details id="1" class="">
-            <summary class='sectionHeader'>
+        <details id="1" class="Elliot">
+            <summary>
                 <h1>Valentines</h1>
-                <p class="chars">Elliot</p>
             </summary>
             <div class="content">
                 <p>Surely, this is enough.  
@@ -316,10 +305,9 @@
             </div>
         </details>
         <div class="sectionHeader" id="Pre-Jay"><h1>Pre-Jay</h1></div>
-        <details id="1" class="lore">
-            <summary class='sectionHeader'>
+        <details id="1" class="Jacob Sam lore">
+            <summary>
                 <h1>Sam x Jacob First Meeting</h1>
-                <p class="chars">Jacob x Sam</p>
             </summary>
             <div class="content">
                 <p>The last bell of the school day rings. The brunette grabs all his books and pencils, shoving them into his backpack nervously, leaving out one slip of orange paper.  
@@ -329,7 +317,7 @@
                     
                     With a sigh, Jacob slings his red bookbag over his shoulder and clutches the orange paper. Doubts creep in. What if they're not accepting of him? What if they get frustrated and leave him too?
                     
-                    No. No more 'what ifs.' That's just a fast track to feeling worse. Right now, he just needs to get on the right bus.
+                    No. No more ‘what ifs.' That's just a fast track to feeling worse. Right now, he just needs to get on the right bus.
                     
                     He weaves through the crowded hallways, making his way outside. Slot 27... 26... 15... 14... There—Slot 13.
                     
@@ -395,13 +383,12 @@
                     Jacob sighs, shaking his head. Maybe—just maybe—this won't be so bad after all.</p>
             </div>
         </details>
-        <details id="2" class="">
-            <summary class='sectionHeader'>
+        <details id="2" class="Jacob Sam">
+            <summary>
                 <h1>The Meeting - Part 2</h1>
-                <p class="chars">Jacob x Sam</p>
             </summary>
             <div class="content">
-                <p class="chars">Jacob groans, squeezing his eyes shut as he brings an arm up to pinch the bridge of his nose. After what feels like hours has gone by, he is now lying down on the couch, staring up at the ceiling in frustration. Sam has moved to the couch across from him.
+                <p>Jacob groans, squeezing his eyes shut as he brings an arm up to pinch the bridge of his nose. After what feels like hours has gone by, he is now lying down on the couch, staring up at the ceiling in frustration. Sam has moved to the couch across from him.
 
                     "Now, Jacob, it's really quite simple, if you just picture the numbers in your head and—" and blah blah blah blah. That's all Jacob hears. Sam says more, but it's all blurring together.
                     
@@ -489,10 +476,9 @@
                     Jacob tries to follow along with what he's saying, but he only really gets about half of it. But, at least it cheered Sam up again. And at least he won't get in trouble for this.</p>
             </div>
         </details>
-        <details id="3" class="">
-            <summary class='sectionHeader'>
+        <details id="3" class="Jacob Sam">
+            <summary>
                 <h1>Lunch</h1>
-                <p class="chars">Jacob x Sam</p>
             </summary>
             <div class="content">
                 <p>The next day, Jacob goes about his first 4 classes like normal. Strangely enough, during math class, he can't help but hear Sam's voice in his head reminding him of a simpler way to do multiplication. He still doesn't really understand what the kid was trying to say, but he's able to keep up with the teacher slightly more.
@@ -556,10 +542,9 @@
                     Jacob nods, a wide smile still stuck on his face. "Alright. Well, it was fun talk with you~!" Jacob gets up and picks up his bookbag, slinging it over his shoulder. Then he picks up his lunch tray to go join his friends at his normal table.</p>
             </div>
         </details>
-        <details id="4" class="">
-            <summary class='sectionHeader'>
+        <details id="4" class="Jacob Sam">
+            <summary>
                 <h1>Dictionary</h1>
-                <p class="chars">Jacob x Sam</p>
             </summary>
             <div class="content">
                 <p>Later that day, Jacob takes the bus to Sam's house again. When Sam answers the door, Jacob freezes.
@@ -627,10 +612,9 @@
                     For the rest of the hour, Sam helps Jacob with identifying what -ing verbs and how to use them properly, as well as why they're important; how they add action and flow to a sentence. Why they're better than using passive voice. Jacob doesn't really know what passive voice means, but he sort of started to see how having an action 'in action' is more interesting than if the action has already been completed or is about to happen.</p>
             </div>
         </details>
-        <details id="5" class="">
-            <summary class='sectionHeader'>
+        <details id="5" class="Jacob Sam">
+            <summary>
                 <h1>3.14159, this is pi, followed by...</h1>
-                <p class="chars">Jacob x Sam</p>
             </summary>
             <div class="content">
                 <p>The next week is uneventful until one of the tutoring sessions is scheduled for. Jacob finds Sam at lunch a few times, so he would join him and mess with the kid for a little while before inevitably being shooed away to his own table.
@@ -699,10 +683,9 @@
                     "Sounds like a plan~"</p>
             </div>
         </details>
-        <details id="6" class="">
-            <summary class='sectionHeader'>
+        <details id="6" class="Jacob Sam">
+            <summary>
                 <h1>Friends?</h1>
-                <p class="chars">Jacob x Sam</p>
             </summary>
             <div class="content">
                 <p>The next day during science class, Jacob is able to ace that quiz about photosynthesis. The entire time, he was quietly humming the melody he and Sam had composed. He even hums it on his way to the cafeteria. This time as he's walking up the cafeteria, though, he gets stopped just outside the door.
@@ -718,7 +701,7 @@
                     "Sammy?" he asks quietly, but before Sam can answer, the kid turns toward them, his lips curling into a smirk.
                     "There you are, pipsqueak," the bully sneers, stepping forward. "Took you long enough. Where's that money you promised me?"
                     Sam instinctively takes a step back. "I-I never promised you anything-"
-                    "Oh yeah?" The kid cocks his head, taking another step toward them. "You sure about that? 'Cause I remember you saying you'd pay me back." He cracks his knuckles. "Maybe I can jog your memory."
+                    "Oh yeah?" The kid cocks his head, taking another step toward them. "You sure about that? ‘Cause I remember you saying you'd pay me back." He cracks his knuckles. "Maybe I can jog your memory."
                     
                     Jacob doesn't even think. He steps in front of Sam, his heart pounding as he plants himself between them. Sam doesn't even hesitate before ducking behind him.
                     "He said he didn't promise you anything," Jacob says firmly, standing his ground. "So I'd back off if I were you."
@@ -838,10 +821,9 @@
                     Right as he says that, the bell rings. For the first time, Jacob stayed with Sam through the entire lunch period.</p>
             </div>
         </details>
-        <details id="7" class="">
-            <summary class='sectionHeader'>
+        <details id="7" class="Jacob Sam">
+            <summary>
                 <h1>Friends!</h1>
-                <p class="chars">Jacob x Sam</p>
             </summary>
             <div class="content">
                 <p>Friends.  
@@ -870,20 +852,18 @@
                     "I won't."</p>
             </div>
         </details>
-        <details id="8" class="">
-            <summary class='sectionHeader'>
+        <details id="8" class="Jacob Sam">
+            <summary>
                 <h1>Sleepover (Not yet imported)</h1>
-                <p class="chars">Jacob x Sam</p>
             </summary>
             <div class="content">
                 <p></p>
             </div>
         </details>
-        <details id="9" class="lore">
-            <summary class='sectionHeader'>
+        <details id="9" class="Sam lore">
+            <summary>
                 <h1>The Event</h1>
                 <h2 class="twc">Trigger warning: Death, Wolf attack</h2>
-                <p class="chars">Sam </p>
             </summary>
             <div class="content">
                 <p>For the week, Sam's family was spending time in one of their vacation homes near the woods. It's a quaint little cottage away from the rest of town. Since it's not that big, there's little to do. So, very often, the kids spend their time outside when they stay at this vacation home. This was one of those days.
@@ -940,13 +920,12 @@
                     He misses Jacob... Where's Jacob?</p>
             </div>
         </details>
-        <details id="10" class="">
-            <summary class='sectionHeader'>
+        <details id="10" class="Jacob">
+            <summary>
                 <h1>The News</h1>
-                <p class="chars">Jacob</p>
             </summary>
             <div class="content">
-                <p class="chars">Jacob stares at the tv in complete and utter shock.
+                <p>Jacob stares at the tv in complete and utter shock.
 
                     "Ten-year-old boy, Samuel Broteez, allegedly fed his seven-year-old sister, Lindsey Broteez, to the wolves. What does this mean for the Broteez family? Was it truly an act of horrific spite or merely an accident? More on this after the break."
                     
@@ -984,11 +963,10 @@
                     He nods again, going quiet as he stays curled up with his mother. It all seems so crazy. Who would blame a child for this? Why would they think Sam did this?</p>
             </div>
         </details>
-        <details id="11" class="">
-            <summary class='sectionHeader'>
+        <details id="11" class="Jacob Sam">
+            <summary>
                 <h1>I'm here for you</h1>
                 <h2 class="twc">Trigger warning: Mention of abuse</h2>
-                <p class="chars">Jacob x Sam</p>
             </summary>
             <div class="content">
                 <p>Sam is away from school for several days. Jacob keeps looking every day, keeping an eye out in the halls and in the cafeteria, but the blonde is nowhere to be found. It's very concerning.
@@ -1076,10 +1054,9 @@
                     "Always."</p>
             </div>
         </details>
-        <details id="12" class="">
-            <summary class='sectionHeader'>
+        <details id="12" class="Jacob Sam">
+            <summary>
                 <h1>You said I could stay here...</h1>
-                <p class="chars">Jacob x Sam</p>
             </summary>
             <div class="content">
                 <p>A few days later, Jacob was just at home, chilling with Keegan and playing some games with him. After joining him on the bus all the time, he and the ginger became friends too. Jacob befriends everyone he comes in contact with.
@@ -1166,10 +1143,9 @@
             </div>
         </details>
         <div class="sectionHeader" id="Pre-Kidnap"><h1>Pre-Kidnap</h1></div>
-        <details id="1-1" class="lore">
-            <summary class='sectionHeader'>
+        <details id="1-1" class="Jacob Jay lore">
+            <summary>
                 <h1>Jay x Jacob First Meeting</h1>
-                <p class="chars">Jacob x Jay</p>
             </summary>
             <div class="content">
                 <p>"Sam, c'mon~! You should get out in the sun some more. It's only lunch!" Jacob pleads with the green eyed blonde for the fifth time this week. He hates seeing his best friend like this. He doesn't remember the last time he saw Sam smile, genuinely. And every time Sam flashes him that reassuring smile, it stabs through his heart like a knife. All he wants is for him to get out and get some sun. They're still kids after all, he shouldn't have to be cooped up with all this paperwork.
@@ -1201,11 +1177,10 @@
                 Unfortunately, Jacob will never find out that Sam did decide to take him up on his offer. About fifteen minutes before the period was supposed to end, Sam got to the door to the courtyard and looked out at the bench, where Jacob's tray of untouched food remains with no Jacob in sight. With a sigh, he lowers his head defeatedly and heads back to the lunchroom to wait for the period to finish.</p>
             </div>
         </details>
-        <details id="1-2" class="">
-            <summary class='sectionHeader'>
+        <details id="1-2" class="Jacob Sam">
+            <summary>
                 <h1>Christmas Tree V1</h1>
                 <h2 class="twc">Trigger warning: Financial problems, alcoholism, mentions of suicide</h2>
-                <p class="chars">Jacob x Sam</p>
             </summary>
             <div class="content">
                 <p>This was the best he could do. He tried his best. Sam just got done trying to create a makeshift Christmas tree. It looked a lot like that small Christmas tree from Charlie Brown. But... A lot worse- He made it out of paper. Simon's young though, he shouldn't care, right? The material objects aren't the point, the point of a holiday is to be with family.
@@ -1261,10 +1236,9 @@
                     "Can... Can you help me with math?"</p>
             </div>
         </details>
-        <details id="1-3" class="">
-            <summary class='sectionHeader'>
+        <details id="1-3" class="Jacob Jay">
+            <summary>
                 <h1>Colors</h1>
-                <p class="chars">Jacob x Jay</p>
             </summary>
             <div class="content">
                 <p>Today is one of the last days in school before Christmas break. One of his last chances to give Jay something. Last year, he didn't bother. Back then, Jay was an enigma, a distant figure with too many walls to breach. But now, Jacob has a better sense of him. A better sense of who he really is.
@@ -1307,10 +1281,9 @@
                     Jay doesn't respond, but Jacob doesn't need him to. As he heads back toward the building, he glances over his shoulder one last time. Jay is still sitting there, sketchbook open, colored pencils in hand.</p>
             </div>
         </details>
-        <details id="1-4" class="">
-            <summary class='sectionHeader'>
+        <details id="1-4" class="Jacob Jay">
+            <summary>
                 <h1>The Musical</h1>
-                <p class="chars">Jacob x Jay</p>
             </summary>
             <div class="content">
                 <p>Honestly, he did not expect Jay to follow him here. This is the last place the mute giant should be.
@@ -1359,10 +1332,9 @@
                     Mrs. Bailor, who was holding a thick folder, starts handing out pamphlets of the script. "As always, today is a short meeting. Next week will be auditions for which parts you want. Today, we'll be going over how much each part has and what will be expected of you all."</p>
             </div>
         </details>
-        <details id="1-5" class="">
-            <summary class='sectionHeader'>
+        <details id="1-5" class="Jacob Jay">
+            <summary>
                 <h1>The Musical - Part 2</h1>
-                <p class="chars">Jacob x Jay</p>
             </summary>
             <div class="content">
                 <p>Well, it is time to see if Jay is still going to follow him to rehearsal. Today, he absolutely has no reason to go, since he has no reason to audition. But lo and behold, Jay silently accompanies Jacob outside the auditorium.
@@ -1425,10 +1397,9 @@
                     The two fall into a peaceful quiet as they walk along the sidewalk. About halfway to Jacob's home, Jay splits off. To where? Who knows. </p>
             </div>
         </details>
-        <details id="1-6" class="">
-            <summary class='sectionHeader'>
+        <details id="1-6" class="Jacob Jay">
+            <summary>
                 <h1>Visiting</h1>
-                <p class="chars">Jacob x Jay</p>
             </summary>
             <div class="content">
                 <p>How did he do this.
@@ -1503,11 +1474,10 @@
             </div>
         </details>
         <div class="sectionHeader" id="Post-Kidnap"><h1>Post-Kidnap</h1></div>
-        <details id="2-1" class="lore">
-            <summary class='sectionHeader'>
+        <details id="2-1" class="Jacob Jay lore">
+            <summary>
                 <h1>Taken</h1>
                 <h2 class="twc">Trigger warning: Kidnap</h2>
-                <p class="chars">Jacob x Jay</p>
             </summary>
             <div class="content">
                 <p>Cold. Dark and cold.
@@ -1551,10 +1521,9 @@
                     He's no longer sobbing. Even so, he leans back into Jay's warmth, closing his eyes. "Thank you." He can tell by the way the blonde is now more hesitant to go back to hugging him close, this is still foreign to him. Physical contact. But right now, this is what Jacob needs. That much, Jay knows.</p>
             </div>
         </details>
-        <details id="2-2" class="lore">
-            <summary class='sectionHeader'>
+        <details id="2-2" class="Sam Jay lore">
+            <summary>
                 <h1>Jay x Sam First Meeting</h1>
-                <p class="chars">Jay x Sam</p>
             </summary>
             <div class="content">
                 <p> White.
@@ -1596,11 +1565,10 @@
                 Jay hesitates. This guy is very hard not to want to trust. But he can't let his guard down. So he says nothing. His body does relax again at his words, but it's going to take a while for him to learn to trust someone else. And Sam will let Jay take all the time he needs.</p>
             </div>
         </details>
-        <details id="2-3" class="lore">
-            <summary class='sectionHeader'>
+        <details id="2-3" class="Sam Jay lore">
+            <summary>
                 <h1>Bandages</h1>
                 <h2 class="twc">Trigger warning: Description of injuries, abuse</h2>
-                <p class="chars">Jay x Sam</p>
             </summary>
             <div class="content">
                 <p>This took a good few days of convincing. Sam didn't want to pressure Jay into agreeing, but God damn, his injuries are horrendous. It's a miracle Jacob barely has a scratch on him. Clearly, the brunt of whatever was going on with this mysterious "them" happened to Jay.
@@ -1679,10 +1647,9 @@
                     *Motherfu-*</p>
             </div>
         </details>
-        <details id="2-4" class="">
-            <summary class='sectionHeader'>
+        <details id="2-4" class="Jacob Sam">
+            <summary>
                 <h1>Nightmares</h1>
-                <p class="chars">Jacob x Sam</p>
             </summary>
             <div class="content">
                 <p>A knock at the door wakes him up. The blonde had been peacefully asleep before, but now the dim lighting of the nightlights scattered about his room illuminate the small figure in his doorway.
@@ -1709,10 +1676,9 @@
                     He pouts playfully. "It was an innocent question~ But alright, Mr. Serious." Now he nuzzles into Sam a bit more before finally closing his eyes to sleep.</p>
             </div>
         </details>
-        <details id="2-5" class="">
-            <summary class='sectionHeader'>
+        <details id="2-5" class="Sam Jacob">
+            <summary>
                 <h1>Returning</h1>
-                <p class="chars">Jacob x Sam</p>
             </summary>
             <div class="content">
                 <p>Walking home has never felt so... Surreal. Foreign.
@@ -1767,11 +1733,10 @@
                     He has to find a way to stay alive.</p>
             </div>
         </details>
-        <details id="2-6" class="lore">
-            <summary class='sectionHeader'>
+        <details id="2-6" class="Jacob Sam lore">
+            <summary>
                 <h1>Dead Man Walking</h1>
                 <h2 class="twc">Trigger warning: Mentions of drug abuse</h2>
-                <p class="chars">Jacob x Sam</p>
             </summary>
             <div class="content">
                 <p>Campbell Biology. That's the textbook Sam clutches in his hands as he slowly creaks his bedroom door open. A thick, heavy textbook.
@@ -1849,10 +1814,9 @@
                     His legs give way, and he collapses to the floor, the tears he was holding back finally pushing past his defenses. And so, he sits there on the ground, crying. Alone.</p>
             </div>
         </details>
-        <details id="2-7" class="">
-            <summary class='sectionHeader'>
+        <details id="2-7" class="Jacob Sam">
+            <summary>
                 <h1>Christmas Tree V2</h1>
-                <p class="chars">Jacob x Sam</p>
             </summary>
             <div class="content">
                 <p>Colorful lights twinkle around the house. Christmas day, yet there is nobody to celebrate it with.
@@ -1919,10 +1883,9 @@
                     Sam rolls his eyes, even though the offer does make him feel appreciated. "Fine. Only this once."</p>
             </div>
         </details>
-        <details id="2-8" class="">
-            <summary class='sectionHeader'>
+        <details id="2-8" class="Jacob Jay Sam">
+            <summary>
                 <h1>Never Have I Ever</h1>
-                <p class="chars">Jacob x Jay x Sam</p>
             </summary>
             <div class="content">
                 <p>"Truth or dare~?"

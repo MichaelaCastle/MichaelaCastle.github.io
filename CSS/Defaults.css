@@ -8,6 +8,7 @@
     --h1-0-3: hwb(var(--hue1) 00% 30%);
     --h2-0-3: hwb(var(--hue2) 00% 30%);
     --h1-6-0: hwb(var(--hue1) 60% 00%);
+    --h2-6-0: hwb(var(--hue2) 60% 00%);
     --h1-8-0-h2-8-0: linear-gradient(var(--angle), var(--h1-8-0) 25%, var(--h2-8-0));
     --h1-0-3-h2-0-3: linear-gradient(var(--angle), var(--h1-0-3) 25%, var(--h2-0-3));
 }
@@ -20,7 +21,8 @@
     --h2-8-0: hwb(var(--hue2) 00% 80%);
     --h1-0-3: hwb(var(--hue1) 30% 00%);
     --h2-0-3: hwb(var(--hue2) 30% 00%);
-    --h1-6-0: hwb(var(--hue1) 00% 25%);
+    --h1-6-0: hwb(var(--hue1) 00% 60%);
+    --h2-6-0: hwb(var(--hue2) 00% 60%);
     --h1-8-0-h2-8-0: linear-gradient(var(--angle), var(--h1-8-0) 25%, var(--h2-8-0));
     --h1-0-3-h2-0-3: linear-gradient(var(--angle), var(--h1-0-3) 25%, var(--h2-0-3));
 }
