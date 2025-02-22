@@ -17,8 +17,7 @@
     <style>
         :root {
             --hue: 190;
-            --hue1: 190deg;
-            --hue2: 200deg;
+            --hue2: 200;
             --angle: 160deg;
         }
         .qAndA{
@@ -37,6 +36,10 @@
             margin: 0;
             border: 0px;
         }
+        .qAndA, p{
+            color: hsl(var(--hue), 50%, 30%);
+            mix-blend-mode: luminosity;
+        }
         .tableOfContents{
             font-size: 17.5px;
             font-weight: 550;
@@ -48,9 +51,33 @@
         }
 
         .tableOfContents a {
-            color: var(--h1-0-8);
+            color: var(--darkText);
             padding: 0 .25rem;
             margin: 0 -.25rem;
+            position: relative;
+            transition: color .55s ease-in-out;
+        }
+        .tableOfContents a:hover {
+            color: var(--lightColor);
+        }
+        .tableOfContents a:after {
+            border-radius: 25px;
+            transition: box-shadow .5s ease-in-out;
+            box-shadow: inset 0 0 0 0 var(--darkText);
+            content: '';
+            z-index: -1;
+            position: absolute;
+            left: -5px;
+            height: 100%;
+            width: calc(100% + 10px);
+            top: 0%;
+        }
+        .tableOfContents a:hover:after {
+            box-shadow: inset 500px 0 0 0 var(--darkText);
+        }
+        [data-selected-theme="alt"] .tableOfContents a:hover {
+            color: var(--lightColor) !important;
+            text-decoration-color: var(--lightColor) !important;
         }
         @media only screen and (orientation: landscape) {
             .qAndA, .tableOfContents {
@@ -59,16 +86,17 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="CSS/Defaults.css">
+    <link rel="stylesheet" href="CSS/HeadersAndDefaults.css">
+    <link rel="stylesheet" href="CSS/Nav.css">
     <script src="nav.js"></script>
     <script>
         window.onload = () => {
-            // getVersionNumber();
-            // let headStyles = `
-            // <link rel="stylesheet" href="CSS/HeadersAndDefaults.css?v=${versionNumber}">
-            // <link rel="stylesheet" href="CSS/Nav.css?v=${versionNumber}">
-            // `;
-            // document.querySelector('head').innerHTML += headStyles;
+            getVersionNumber();
+            let headStyles = `
+            <link rel="stylesheet" href="CSS/HeadersAndDefaults.css?v=${versionNumber}">
+            <link rel="stylesheet" href="CSS/Nav.css?v=${versionNumber}">
+            `;
+            document.querySelector('head').innerHTML += headStyles;
             CreateNavbar("TheParticle")
         }
     </script>

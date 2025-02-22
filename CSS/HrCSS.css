@@ -1,0 +1,79 @@
+hr {
+    line-height: 1px;
+    height: 0px;
+    width: 50%;
+    transform: translateX(calc(50% - 0.51rem));
+    font-size: 1.25rem;
+    border: 2px solid black;
+    margin: 20px 0;
+    overflow: visible;
+}
+hr:after {
+    content: var(--middleHR);
+    color: black;
+    background-color: var(--h1-6-0);
+    background-color: hsl(0deg, 0%, 70%);
+    padding: 0 0.5rem;
+}
+hr.ImageTop, hr.ImageBottom{
+    border-width: 0;
+    background-image: none;
+    background-color: inherit;
+    width: fit-content;
+    transform: translateX(calc(50vw - 50% - 0.51rem));
+}
+hr.ImageTop:after{
+    content: "╭──────" var(--middleImageHR) "──────╮";
+    background-image: none;
+    background-color: inherit;
+    color: var(--h1-0-3);
+}
+hr.ImageBottom:after{
+    content: "╰──────" var(--middleImageHR) "──────╯";
+    background-image: none;
+    background-color: inherit;
+    color: var(--h1-0-3);
+    
+}
+hr.ImageTop{
+    margin-top: 40px;
+}
+hr.ImageBottom{
+    margin-bottom: 40px;
+}
+x:-o-prefocus, hr:after {
+    content: "";
+}
+
+@media (min-width: 530px){
+    hr{
+        width: 20vw;
+        transform: translateX(calc(50vw - 10vw - 0.51rem));
+    }
+    .ImageTop:after{
+        content: "╭────────────" var(--middleImageHR) "────────────╮";
+    }
+    .ImageBottom:after{
+        content: "╰────────────" var(--middleImageHR) "────────────╯";
+    }
+    hr.ImageTop, hr.ImageBottom{
+        width: fit-content;
+        transform: translateX(calc(50vw - 50% - 0.51rem));
+    }
+}
+@media (max-width: 375px){
+    .ImageTop:after{
+        content: "╭─" var(--middleAddition) "───" var(--middleImageHR) "───" var(--middleAddition) "─╮";
+    }
+    .ImageBottom:after{
+        content: "╰─" var(--middleAddition) "───" var(--middleImageHR) "───" var(--middleAddition) "─╯";
+    }
+}
+@media (max-width: 320px){
+    .ImageTop:after{
+        content: "╭─" var(--middleAddition) "─" var(--middleImageHR) "─" var(--middleAddition) "─╮";
+    }
+    .ImageBottom:after{
+        content: "╰─" var(--middleAddition) "─" var(--middleImageHR) "─" var(--middleAddition) "─╯";
+    }
+}

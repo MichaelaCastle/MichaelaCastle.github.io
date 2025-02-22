@@ -58,78 +58,78 @@ let CreateNavbar = (selected = 'Characters') =>{
     document.querySelector('footer').querySelectorAll('button').forEach((button) => {
         button.addEventListener('click', handleThemeSelection);
     });
-    document.querySelector('head').innerHTML += `
-    <style>
-        footer{
-            position: sticky;
-            bottom: 0;
-            display: flex;
-            justify-content: right;
-        }
-        footer button{
-            background-color: hsl(var(--hue2), 50%, 70%);
-            width: 50px;
-            height: 50px;
-            border-radius: 25px;
-            /*border-style: dotted;*/
-            border-style: solid;
-            border-width: 0px;
-            margin: 5px;
-            transition: .2s ease-in-out 0s;
-        }
-        footer button:hover{
-            cursor: pointer;
-            transform: scale(1.2);
-            background-color: hsl(var(--hue2), 50%, 50%);
-        }
-        #NormalMode{
-            background-color: hsl(var(--hue), 30%, 80%);
-            border-color: hsl(var(--hue), 30%, 30%);
-        }
-        #AltMode{
-            background-color: hsl(var(--hue2), 30%, 20%);
-            border-color: hsl(var(--hue2), 30%, 80%);
-        }
-        #CustMode{
-            background-size: 200% auto;
-            background-image: linear-gradient(135deg,
-                hsl(000, 70%, 70%) 0%,
-                hsl(036, 70%, 70%) 10%,
-                hsl(072, 70%, 70%) 20%,
-                hsl(108, 70%, 70%) 30%,
-                hsl(114, 70%, 70%) 40%,
-                hsl(150, 70%, 70%) 50%,
-                hsl(186, 70%, 70%) 60%,
-                hsl(222, 70%, 70%) 70%,
-                hsl(260, 70%, 70%) 80%,
-                hsl(296, 70%, 70%) 90%,
-                hsl(332, 70%, 70%) 100%);
-            border-color: hsl(var(--hue2), 30%, 30%);
-            border-width: 1px;
-        }
-        #NormalMode:hover{
-            background-color: hsl(var(--hue), 30%, 50%);
-        }
-        #AltMode:hover{
-            background-color: hsl(var(--hue2), 30%, 50%);
-        }
-        #CustMode:hover{
-            background-position: right center;
-        }
-        button[aria-pressed="true"], #CustMode[aria-pressed="true"] {
-            border-style: solid;
-            border-width: 3px;
-        }
-        /*@media (max-width: 529px) {
-            footer button{
-                border-width: 0px;
-            }
-            footer button[aria-pressed="true"] {
-                border-style: solid;
-                border-width: 3px;
-            }
-        }*/
-    </style>`;
+    // document.querySelector('head').innerHTML += `
+    // <style>
+    //     footer{
+    //         position: sticky;
+    //         bottom: 0;
+    //         display: flex;
+    //         justify-content: right;
+    //     }
+    //     footer button{
+    //         background-color: hsl(var(--hue2), 50%, 70%);
+    //         width: 50px;
+    //         height: 50px;
+    //         border-radius: 25px;
+    //         /*border-style: dotted;*/
+    //         border-style: solid;
+    //         border-width: 0px;
+    //         margin: 5px;
+    //         transition: .2s ease-in-out 0s;
+    //     }
+    //     footer button:hover{
+    //         cursor: pointer;
+    //         transform: scale(1.2);
+    //         background-color: hsl(var(--hue2), 50%, 50%);
+    //     }
+    //     #NormalMode{
+    //         background-color: hsl(var(--hue), 30%, 80%);
+    //         border-color: hsl(var(--hue), 30%, 30%);
+    //     }
+    //     #AltMode{
+    //         background-color: hsl(var(--hue2), 30%, 20%);
+    //         border-color: hsl(var(--hue2), 30%, 80%);
+    //     }
+    //     #CustMode{
+    //         background-size: 200% auto;
+    //         background-image: linear-gradient(135deg,
+    //             hsl(000, 70%, 70%) 0%,
+    //             hsl(036, 70%, 70%) 10%,
+    //             hsl(072, 70%, 70%) 20%,
+    //             hsl(108, 70%, 70%) 30%,
+    //             hsl(114, 70%, 70%) 40%,
+    //             hsl(150, 70%, 70%) 50%,
+    //             hsl(186, 70%, 70%) 60%,
+    //             hsl(222, 70%, 70%) 70%,
+    //             hsl(260, 70%, 70%) 80%,
+    //             hsl(296, 70%, 70%) 90%,
+    //             hsl(332, 70%, 70%) 100%);
+    //         border-color: hsl(var(--hue2), 30%, 30%);
+    //         border-width: 1px;
+    //     }
+    //     #NormalMode:hover{
+    //         background-color: hsl(var(--hue), 30%, 50%);
+    //     }
+    //     #AltMode:hover{
+    //         background-color: hsl(var(--hue2), 30%, 50%);
+    //     }
+    //     #CustMode:hover{
+    //         background-position: right center;
+    //     }
+    //     button[aria-pressed="true"], #CustMode[aria-pressed="true"] {
+    //         border-style: solid;
+    //         border-width: 3px;
+    //     }
+    //     /*@media (max-width: 529px) {
+    //         footer button{
+    //             border-width: 0px;
+    //         }
+    //         footer button[aria-pressed="true"] {
+    //             border-style: solid;
+    //             border-width: 3px;
+    //         }
+    //     }*/
+    // </style>`;
     // document.querySelector('header').innerHTML += `
     // <div class="navbar">
     //     <h3 id="SiteName">Prismoria</h3>

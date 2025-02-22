@@ -1,3 +1,5 @@
+let isPlaying = false;
+
 let playNext = () => {
     // console.log(current);
     current++;
@@ -12,6 +14,7 @@ let playNext = () => {
         document.querySelector('#SongName').innerHTML = names[current];
         document.querySelector('#player').play();
     }
+    isPlaying = true;
 }
 let playPrev = () => {
     // console.log(current);
@@ -26,5 +29,19 @@ let playPrev = () => {
         document.querySelector('#player').src = songs[current];
         document.querySelector('#SongName').innerHTML = names[current];
         document.querySelector('#player').play();
+    }
+    isPlaying = true;
+}
+
+let playOrPause = () => {
+    if(isPlaying){
+        document.querySelector('#player').pause();
+        document.querySelector('#play').classList = "fa fas fa-play";
+        isPlaying = false;
+    }
+    else{
+        isPlaying = true;
+        document.querySelector('#player').play();
+        document.querySelector('#play').classList = "fa fas fa-pause";
     }
 }

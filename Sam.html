@@ -8,34 +8,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700;800&family=Spectral:wght@200;300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="images/Favicons/Sam512.png" sizes="512x512">
-    <link rel="icon" type="image/png" href="images/Favicons/Sam256.png" sizes="256x256">
-    <link rel="icon" type="image/png" href="images/Favicons/Sam180.png" sizes="180x180">
-    <link rel="icon" type="image/png" href="images/Favicons/Sam128.png" sizes="128x128">
-    <link rel="icon" type="image/png" href="images/Favicons/Sam96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="images/Favicons/Sam32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="images/Favicons/Sam16.png" sizes="16x16">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <link rel="icon" type="image/png" href="images/Favicons/Jacob512.png" sizes="512x512">
+    <link rel="icon" type="image/png" href="images/Favicons/Jacob256.png" sizes="256x256">
+    <link rel="icon" type="image/png" href="images/Favicons/Jacob180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="images/Favicons/Jacob128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="images/Favicons/Jacob96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="images/Favicons/Jacob32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/Favicons/Jacob16.png" sizes="16x16">
     <style>
         :root {
-            --hue: 120;
-            --hue2: 200;
+            --hue1: 120deg;
+            --hue2: 320deg;
             --angle: 160deg;
-
-            --middleHR: "✿";
+            --middleHR: "☕︎ 𓆩⟡𓆪 ☕︎";
             --middleImageHR: " ⋆⋅☆⋅⋆ ";
             --middleLength: 7;
             --middleAddition: "──";
-
-            --answerDecor: "✿ ";
-        }
+            --aDecor: "☕︎ ";
+        }   
     </style>
-    <link rel="stylesheet" href="CSS/HeadersAndDefaults.css">
-    <link rel="stylesheet" href="CSS/Character.css?v=1">
-    <link rel="stylesheet" href="CSS/Audioplayer.css">
-    <link rel="stylesheet" href="CSS/HrStyles.css">
-    <link rel="stylesheet" href="CSS/Nav.css">
+    <link rel="stylesheet" href="CSS/Defaults.css">
+    <link rel="stylesheet" href="CSS/Wiki.css">
+    <link rel="stylesheet" href="CSS/HrCSS.css">
     <script src="nav.js"></script>
-    <script src="Sam.js"></script>
+    <script src="Jacob2.js"></script>
     <script>
         let current = 0;
         let names = ["  Cave In   -   Owl City  ", "  East To West   -   Casting Crowns  ", "  Hey, Doctor Doctor  -  MITM  ", "  Waiting On A Miracle  -  Encanto  "];
@@ -44,6 +41,7 @@
     <script src="Audioplayer.js"></script>
 </head>
 <body>
+    
     <header>
         <div class="navbar">
             <h3 id="SiteName">Prismoria</h3>
@@ -57,9 +55,6 @@
                         <a href="Jacob.html">Jacob Jackson</a>
                         <a href="Sam.html">Samuel Broteez</a>
                         <a href="Elliot.html">Elliot Evans</a>
-                        <!-- <a href="YoungElliot.html">(Younger) Elliot Evans</a>
-                        <a href="Adam.html">Adam Zondervan</a>
-                        <a href="Rene.html">Rene Tickle</a> -->
                     </div>
                 </div>
                 <a href="SomeStories.html" id="SomeStories">Some Stories</a>
@@ -68,36 +63,34 @@
         </div>
     </header>
     <main>
-        <div class="sectionHeader" id="Name"><h1>Samuel Broteez</h1></div>
-        <div class="sectionHeader"><h1>Character Sheet</h1></div>
-        <p>PS: Sorry Apple users, I developed this before I learned that Apple CSS is differnet from literally any other CSS</p>
+        <h1 class="sectionHeader">Samuel Broteez</h1>
+        <h1 class="sectionHeader">Character Sheet</h1>
         <div class="tw">
             <div class="audio-player">
-                <div><h2>
-                    <button id="PrevSong" onclick="playPrev()" class="audioButtons"></button>
+                <div class="title">
+                    <button onclick="playPrev()" class="audioButtons"><i class="fa fas fa-caret-left"></i></button>
                     <span id="SongName">  Cave In   -   Owl City  </span>
-                    <button id="NextSong" onclick="playNext()" class="audioButtons"></button>
-                </h2></div>
-                <audio preload="auto" onended="playNext()" id="player" src="Audio/Cave In.ogg" type="audio/mpeg" controls controlsList="nodownload noplaybackrate"></audio>
+                    <button onclick="playNext()" class="audioButtons"><i class="fa fas fa-caret-right"></i></button>
+                </div>
+                <div class="controls">
+                    <button onclick="playOrPause()" class="audioButtons"><i id="play" class="fa fas fa-play"></i></button>
+                    <div class="range">  
+                        <input type="range" id="player-slider" value="0" aria-valuemax="100"/>
+                    </div>
+                    <audio preload="auto" onended="playNext()" id="player" src="Audio/Cave In.ogg" type="audio/mpeg" controls controlsList="nodownload noplaybackrate"></audio>
+                </div>
             </div>
             <div class="playlist">
-                <p><a target="_blank" href="https://open.spotify.com/playlist/2a5O2watIHm6RJ9uXgJ9EC?si=0OxoMroLQvSEF2s4TrPBjA&pi=FLJlP19BSfWbp">Spotify Playlist</a></p>
-                <!-- <p><a target="_blank" href="https://youtube.com/playlist?list=PLAngkiNHrzuA_rzEJg2yLK5Dw1qwL6O0z&si=iN0tsjdCu_xyzSde">Main Youtube Playlist</a></p>
-                <p><a target="_blank" href="https://youtube.com/playlist?list=PLAngkiNHrzuBQY8G4rIN0BXgmUxmLcQq8&si=vRej4aPODgU4zpG0">Sam x Jay</a></p>
-                <p><a target="_blank" href="https://youtube.com/playlist?list=PLAngkiNHrzuD2dMtESA0je0hQPMiDqm0X&si=QC63SH1AbGBOmsB2">Sam x Jacob</a></p>
-                <p><a target="_blank" href="https://youtube.com/playlist?list=PLAngkiNHrzuDU0uwUTUygw-ozSmTgz__R&si=wrhGbSgGSGxi4eRZ">Sam x Elliot</a></p>
-                <p><a target="_blank" href="https://youtube.com/playlist?list=PLAngkiNHrzuAKfbFCKFIH8w4QnUiOtsgI&si=VmaZRyQFHb9IiFxe">Sam x Jay x Jacob</a></p> -->
+                <p><a target="_blank" href="https://open.spotify.com/playlist/41eMHGmmd4CiTctLhQP0AB?si=ded6swhIQ6WjRMaBfyxY3A&pi=87lwFzJES9iHA">Spotify Playlist</a></p>
             </div>
-            <!-- <p>┏━━━━━━━━━━━━━━━━┓</p> -->
             <p>╭━━━━━━━━━━━━━━━━╮</p>
             <p>Trigger Warnings</p>
             <p>Depression, suicide, drug addiction</p>
-            <!-- <p>┗━━━━━━━━━━━━━━━━┛</p> -->
             <p>╰━━━━━━━━━━━━━━━━╯</p>
         </div>
         <div class="sectionLabel">
             <hr>
-            <p><b>Contents</b></p>
+            <h2>Contents</h2>
             <hr>
         </div>
         <p>I. Teaser</p>
@@ -114,87 +107,342 @@
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Teaser</b></p>
+            <h2>Teaser</h2>
             <hr>
         </div>
-        <p id="TeaserText">Slowly, the boy flutters his eyes open. Where is he? What happened?<span class="br"></span>
-        He looks around to get a sense of his surroundings. The boy seems to be in a fairly old house. The plumbing drums and creaks, the soft green paint on the walls has started to chip away over time, and the cushions of the dark couch he's on are rough and worn down. Despite that, the place as a whole has a warm and inviting atmosphere, and he can't quite place why. Whatever this place is, the room he's in looks to be a living room. There are two couches that face each other with a coffee table in between them.<span class="br"></span>
-        A searing hot wave of pain jolts up his arm when the boy tries to sit up. He inhales sharply and falls back onto the couch, now remembering what happened before he somehow got here. There was a wolf attack. He's lucky he was able to fend them off for the most part, even if he didn't make it out unharmed. But how did he get here?<span class="br"></span>
-        He looks down at his arm, finally noticing the bandage wrapped around the wound, which fresh blood starts to stain. He must've opened the wound again when he tried to sit up. Who bandaged his arm though?<span class="brLarge"></span>
-        The boy doesn't have to wonder for long, as a green eyed blonde takes a seat on the couch across from him.<span class="br"></span>
-        "Don't strain yourself, you're safe here. You were attacked, so I brought you here to heal you," the blonde says, his voice... Oh, his voice is so soft and gentle. That alone is almost enough to soothe the boy.<span class="br"></span>
-        "W-who are you?"<span class="br"></span>
-        The blonde smiles politely, a shy kind of smile. "I'm Sam. Who I am doesn't matter though, you should focus on resting so your arm can heal."</p>
+        <p id="TeaserText">Slowly, the boy flutters his eyes open. Where is he? What happened?
+            He looks around to get a sense of his surroundings. The boy seems to be in a fairly old house. The plumbing drums and creaks, the soft green paint on the walls has started to chip away over time, and the cushions of the dark couch he's on are rough and worn down. Despite that, the place as a whole has a warm and inviting atmosphere, and he can't quite place why. Whatever this place is, the room he's in looks to be a living room. There are two couches that face each other with a coffee table in between them.
+            A searing hot wave of pain jolts up his arm when the boy tries to sit up. He inhales sharply and falls back onto the couch, now remembering what happened before he somehow got here. There was a wolf attack. He's lucky he was able to fend them off for the most part, even if he didn't make it out unharmed. But how did he get here?
+            He looks down at his arm, finally noticing the bandage wrapped around the wound, which fresh blood starts to stain. He must've opened the wound again when he tried to sit up. Who bandaged his arm though?
+            
+            The boy doesn't have to wonder for long, as a green eyed blonde takes a seat on the couch across from him.
+            "Don't strain yourself, you're safe here. You were attacked, so I brought you here to heal you," the blonde says, his voice... Oh, his voice is so soft and gentle. That alone is almost enough to soothe the boy.
+            "W-who are you?"
+            The blonde smiles politely, a shy kind of smile. "I'm Sam. Who I am doesn't matter though, you should focus on resting so your arm can heal."</p>
         <hr class="ImageTop">
         <img src="images/Sam/Reality.jpg">
         <p class="quoteCaption">“Don't worry about me, I just want you to be happy.”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Basic Info</b></p>
+            <h2>Basic Info</h2>
             <hr>
         </div>
-        <div class="info" id="BasicInfo"></div>
+        <div class="info" id="BasicInfo">
+            <p class='q'>Birth Name</p>
+            <p class='a'>Samuel Amos Broteez</p>
+            <p class='q'>Current Name</p>
+            <p class='a'>Samuel Amos Broteez</p>
+            <div class="br"></div>
+            <p class='q'>First Name</p>
+            <p class='a'>Samuel</p>
+            <p class='q'>Meaning</p>
+            <p class='a'>"Name of God" or "Heard of God" ("God has Heard")</p>
+            <p class='q'>Significance</p>
+            <p class='a'>He thinks he has heard God. He believes that when he died for 3 minutes and 7 seconds, he saw God and heard him. He's been religious ever since</p>
+            <div class="br"></div>
+            <p class='q'>Middle Name</p>
+            <p class='a'>Amos</p>
+            <p class='q'>Meaning</p>
+            <p class='a'>"Burden" or "One who bears the burden"</p>
+            <p class='q'>Significance</p>
+            <p class='a'>He's been burdened with raising his little brother and consoling everyone around him while struggling to maintain a stable job because he has a reputation of a murderer even though he did nothing wrong. But as long as he can get Simon to live until he can go to college, then it will have been worth it. Because then at least Simon got to live to his potential</p>
+            <div class="br"></div>
+            <p class='q'>Last Name</p>
+            <p class='a'>Broteez</p>
+            <div class="br"></div>
+            <p class='q'>Nicknames</p>
+            <p class='a'>Sam</p>
+            <p><i>Reason</i></p>
+            <p><i>Shortened version of Samuel. This is what he's most commonly called</i></p>
+            <p class='a'>Sammy</p>
+            <p><i>Reason</i></p>
+            <p><i>Another version of Samuel, but he hates being called this. He thinks it sounds too childish</i></p>
+            <p class='a'>Samikins (Sam-i-kins)</p>
+            <p><i>Reason</i></p>
+            <p><i>His best friend thought it was a cute nickname. Sam does not like it</i></p>
+            <p class='a'>Biscuit</p>
+            <p><i>Reason</i></p>
+            <p><i>Because he's sweet uwu</i></p>
+            <p class='a'>Dozens of other Sam variations</p>
+            <p><i>Reason</i></p>
+            <p><i>Jacob is constantly coming up with new names he hates</i></p>
+            <div class="br"></div>
+            <p class='q'>Biological Gender</p>
+            <p class='a'>Male</p>
+            <p class='q'>Preferred Gender</p>
+            <p class='a'>Male</p>
+            <p class='q'>Pronouns</p>
+            <p class='a'>He / him / his</p>
+            <div class="br"></div>
+            <p class='q'>Sexual Orientation</p>
+            <p class='a'>Demi-sexual</p>
+            <p class='q'>Romantic Orientation</p>
+            <p class='a'>Bi-romantic</p>
+            <p class='a'><i>Often attracted to intelligence, so he's a bit sapio-romantic / sapio-sexual</i></p>
+            <div class="br"></div>
+            <p class='q'>Age</p>
+            <p class='a'>20</p>
+            <p class='q'>Birthday</p>
+            <p class='a'>January 3rd</p>
+            <p class='q'>Zodiac Sign</p>
+            <p class='a'>Capricorn</p>
+            <div class="br"></div>
+            <p class='q'>Occupation</p>
+            <p class='a'>Official: He has this job that requires him to fill out paperwork to turn back in and get paid for. He doesn't question why his employer needs this, he just does it</p>
+            <p class='a'>Unofficial: He acts as a medical profession / doctor for those who can't afford the hospital</p>
+            <div class="br"></div>
+            <p class='q'>Where they live</p>
+            <p class='a'>Prismoria</p>
+            <div class="br"></div>
+            <p class='q'>Languages</p>
+            <p class='a'>English</p>
+            <p class='a'>Spanih</p>
+            <p class='a'>French</p>
+            <p class='a'>Dutch</p>
+            <p class='a'>A bit of German</p>
+        </div>
         <hr class="ImageTop">
         <img src="images/Sam/MountainsUnmovable.png">
         <p class="quoteCaption">“Just give me a week, that's all I need. We can fix this,<br>you just have to trust me.”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Health and Abilities</b></p>
+            <h2>Health and Abilities</h2>
             <hr>
         </div>
-        <div class="info" id="Health"></div>
+        <div class="info" id="Health">
+            <p class='q'>Physical Illnesses</p>
+            <p class='a'>None</p>
+            <p class='q'>Mental Illnesses</p>
+            <p class='a'>Depression</p>
+            <div class="brLarge"></div>
+            <p class='q'>Triggers</p>
+            <p class='a'>Wolves</p>
+            <p class='q'>Addictions</p>
+            <p class='a'>Anti-depressants</p>
+            <div class="brLarge"></div>
+            <p class='q'>Mutation / Power</p>
+            <p class='a'>Water Manipulation</p>
+            <p class='q'>How long have they had it</p>
+            <p class='a'>Since he was around 12</p>
+            <p class='q'>What are the limitations</p>
+            <p class='a'>In order to use his power, whatever he's trying to do must contain H2O</p>
+        </div>
         <hr class="ImageTop">
         <img src="images/Sam/Lovesick Sam.jpg">
         <p class="quoteCaption">“I know it may feel like you're stranded in an endless ocean<br>with nobody to throw you a life jacket, but it doesn't have to be that way.”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Appearance</b></p>
+            <h2>Appearance</h2>
             <hr>
         </div>
-        <div class="info" id="Appearance"></div>
+        <div class="info" id="Appearance">
+            <p class='q'>Height</p>
+            <p class='a'>5'5"</p>
+            <p class='a'>165.1 cm</p>
+            <p class='q'>Weight</p>
+            <p class='a'>118 lbs.</p>
+            <p class='a'>53.5239 kg</p>
+            <div class="brLarge"></div>
+            <p class='q'>Skin color</p>
+            <p class='a'>Pale ivory</p>
+            <div class="brLarge"></div>
+            <p class='q'>Hair color</p>
+            <p class='a'>Dirty blonde</p>
+            <p class='q'>Hair style</p>
+            <p class='a'>Curly / Wavy, but he always straightens it And he has a fringe</p>
+            <div class="brLarge"></div>
+            <p class='q'>Eye color(s)</p>
+            <p class='a'>Bright green (Which he refers to as poison green)</p>
+            <div class="brLarge"></div>
+            <p class='q'>Wings (Optional)</p>
+            <p class='q'>Type</p>
+            <p class='a'>Angel wings</p>
+            <p class='q'>Color</p>
+            <p class='a'>White</p>
+            <p class='q'>Size</p>
+            <p class='a'>12'6" per wing, 25' total wingspan</p>
+            <p class='a'>3.81 meter per wing, 7.62 meter total wingspan</p>
+            <p class='q'>Feel</p>
+            <p class='a'>Very, very, very soft. Heavenly soft. Like nothing you've ever felt before</p>
+            <div class="brLarge"></div>
+            <p class='q'>Piercings</p>
+            <p class='a'>None</p>
+            <p class='q'>Scars</p>
+            <p class='a'>A slash going across his eye, which he covers up with makeup</p>
+            <p class='q'>Tattoos</p>
+            <p class='a'>None</p>
+            <p class='q'>Birthmark</p>
+            <p class='a'>None</p>
+            <p class='q'>Freckles</p>
+            <p class='a'>No</p>
+            <div class="brLarge"></div>
+            <p class='q'>Glasses / Contacts</p>
+            <p class='a'>He has glasses, but he never wears them. He'd rather be partly blind.</p>
+            <div class="brLarge"></div>
+            <p class='q'>Accent / Voice</p>
+            <p class='a'>Very soft and relaxing voice, it's easy to trust him and his gentle ways</p>
+            <p class='a'>By default, his laugh is really quiet or even silent. If he gets better mentally, then it can change and it just has an adorable sound</p>
+        </div>
         <hr class="ImageTop">
         <img src="images/Sam/WakingUpInTears.jpg">
         <p class="quoteCaption">“I'm not cute, that's childish, and I'm certainly not a child.”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Personality</b></p>
+            <h2>Personality</h2>
             <hr>
         </div>
-        <div class="info" id="Personality"></div>
+        <div class="info" id="Personality">
+            <p class='q'>Closest Stereotype</p>
+            <p class='a'>Nerd</p>
+            <div class="br"></div>
+            <p class='q'>Overall Description</p>
+            <p class='a'>Sam is the nicest person you will ever meet. He is always willing to lend a hand and will always try to see the good in people. He will repeatedly give people another chance to redeem themselves, no matter how bad what they did before was. This does not apply to himself however. If he thinks that he did something bad, he will not forgive himself for it. It will seem like a much bigger mistake than it really was to him, in his mind it's blown way out of proportion. He needs someone to keep him grounded and remind him that things aren't as big as they seem (though he also finds it difficult to accept help from others). And if he can't handle his own thoughts, he will resort to drugs to block out the pain and get himself back together.</p>
+            <p class='a'>Despite sometimes not being able to grasp how important his actions are, he is very smart. He's a nerd, and he's proud of it. Sometimes, this can be really cute. If the right topic happens to be brought up, he will start fangirling over some biology thing or about a book he read fifteen times over. He doesn't notice that he's doing it, and he looks like a little kid when he does. Once he realizes, he will shut up and feel embarrassed about it.</p>
+            <div class="br"></div>
+            <p class='q'>Likes</p>
+            <p class='a'>Pastries. He really likes sweets. Not much more to say about it.</p>
+            <p class='a'>Biology and medicine. Every since he was ten, he wanted to be a doctor. He had a near death experience, the doctors who saved him were like angels to him and he wanted to be just like them. Medicine became his passion</p>
+            <p class='a'>Puppies. He's always wanted to get a puppy but has always been too worried about whether or not he'd be able to take care of it. He doesn't know if he'd be able to keep buying it food and whatnot for it to survive. But he does love puppies.</p>
+            <div class="br"></div>
+            <p class='q'>Dislikes</p>
+            <p class='a'>Anything that he considers to be childish. He had to start going to work and support a family by himself when he was 10. He stopped being a kid. But employers don't want to be paying a ten year old, that would just be stupid. Because of his age, it was very hard to make enough money to even be able to buy food. He hates being viewed as young or child-like because of this</p>
+            <p class='a'>Similar to the last one, he hates when people assume things based on ones appearance. He didn't look like a skilled intellect or anything when he was 10, he was 10 for Christ's sake. Nobody wanted to hire a stupid little kid. But when he started to make himself look older and more mature than he was, he started getting better results. But why should he have to change his outfit just to be hired? That in itself is stupid. He will never, well, he always tries not to judge someone based off of their looks, he tries his best to ignore any prejudice biases due to how someone appears on the outside. Someone also once said something that really stuck with him: "I care more about someone's personality. People aren't always going to look as good as they used to. We all get old. But if you find someone who has a golden heart, that's not going to change, and you'll still be happy living with them."</p>
+            <p class='a'>Competition or someone challenging his intellect. He can be pretty jealous sometimes, and he is a sore loser.</p>
+            <div class="br"></div>
+            <p class='q'>Positive Traits</p>
+            <p class='a'>Kind and caring, he will try to help anyone he can. He's very compassionate</p>
+            <p class='a'>Smart and analytical, he can understand a persons motives and perspective pretty easily</p>
+            <p class='a'>Pure and innocent</p>
+            <p class='a'>Good listener. He won't push for information you're not comfortable telling, but if you need to get something off your chest, he will sit and listen. And if you need comforting, he will offer himself up to a hug if needed</p>
+            <div class="br"></div>
+            <p class='q'>Negative Traits</p>
+            <p class='a'>Doesn't stand up for himself and lets himself get torn down</p>
+            <p class='a'>Self-destructive as well as overly self-sacrificing is not a good combination. He will do anything to help others, he will go ahead and take the repercussions for them without thinking about how it will affect himself</p>
+            <p class='a'>He can act quite childishly when he's frustrated and may throw things at you</p>
+            <p class='a'>He has a hard time asking others for help, even when he desperately needs it. And he makes himself look like he has everything together, even if he's really falling apart</p>
+            <div class="br"></div>
+            <p class='q'>Hobbies</p>
+            <p class='a'>Medicine</p>
+            <p class='a'>Chess</p>
+            <div class="br"></div>
+            <p class='q'>Fears</p>
+            <p class='a'>Being picked up. Odd, I know, but he has been the victim of bulling in the past. They did some really mean things to him, and if someone tries to pick him up without warning him ahead of time, he will freak out. No matter who they are</p>
+            <p class='a'>Wolves. He is deathly afraid of wolves</p>
+            <p class='a'>Losing his brother / His brother committing suicide just like he did, except Simon won't get a second chance like him</p>
+            <p><i>(In all further rps, Simon will be dead. He's very toxic, and I don't want to rp him)</i></p>
+            <p class='a'>The dark, he's scared of the dark and need a nightlight in order to sleep.</p>
+            <div class="br"></div>
+            <p class='q'>Love Language(s)</p>
+            <p class='a'>Words of Affirmation: You really like hearing your partner say, "I love you." Those three words are particularly meaningful, special, and reassuring for you to hear. Again and again and again. You appreciate when you are being acknowledged and praised. It's nice to have your efforts recognized with kind words, no matter how small it is. It lets you know that you are valued.</p>
+            <p class='a'>Physical Touch: People who communicate their appreciation through this language, when they consent to it, feel appreciated when they are hugged, kissed, or cuddled. They value the feeling of warmth and comfort that comes with physical touch.</p>
+            <div class="br"></div>
+            <p class='q'>Greatest joy in life</p>
+            <p class='a'>Helping others</p>
+            <div class="br"></div>
+            <p class='q'>Biggest Regret</p>
+            <p class='a'>Holding his little brother back when his sister was in danger</p>
+            <div class="br"></div>
+            <p class='q'>Biggest Accomplishment</p>
+            <p class='a'>Being Jacob's friend</p>
+            <div class="br"></div>
+            <p class='q'>Darkest Secret</p>
+            <p class='a'>His sister's dead body is still in the woods, not buried, and he can never find the courage to bury her</p>
+            <div class="br"></div>
+            <p class='q'>Extra</p>
+            <p class='a'>This is gonna sound weird, but when he falls into deep sleep, so like an hour or 2 after falling asleep, he does talk in his sleep. And not just any random nonsense, no no no no no. He fricken recites facts in his sleep. Very quietly, but if you stay up past him, you might just hear random knowledge. That is how nerd he is.</p>
+            <p class='a'>He can actually be quite evil at times.</p>
+        </div>
         <hr class="ImageTop">
         <img src="images/Sam/SamPortrait.png">
         <p class="quoteCaption">“There's someone out there that's right for everyone. Wait, don't try to turn that around on me, that's ridiculous. Blasphemy. Nobody cares about me.”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Self-Perception</b></p>
+            <h2>Self-Perception</h2>
             <hr>
         </div>
-        <div class="info" id="Perception"></div>
+        <div class="info" id="Perception">
+            <p class='q'>How they feel about themselves</p>
+            <p class='a'>He does not like himself. He believes his only purpose in life is to raise his little brother, nothing else. He doesn't care if his brother treats him terribly, he deserves it.</p>
+            <div class="br"></div>
+            <p class='q'>How they would describe themselves</p>
+            <p class='a'>Someone who tries and often fails to be nice. Someone who can't even fulfill their only purpose in life. Someone who doesn't deserve to be happy. Someone who can't be fixed.</p>
+            <div class="br"></div>
+            <p class='q'>What they think is their best trait</p>
+            <p class='a'>His intelligence</p>
+            <div class="br"></div>
+            <p class='q'>What they think is their worst trait</p>
+            <p class='a'>Everything mostly. But if he had to pick his worst trait, it would probably be his cowardice</p>
+            <div class="br"></div>
+            <p class='q'>How they think other perceive them</p>
+            <p class='a'>Monster</p>
+            <div class="br"></div>
+            <p class='q'>What they would like to change about themselves</p>
+            <p class='a'>Everything</p>
+        </div>
         <hr class="ImageTop">
         <img src="images/Sam/AngelSam.png">
         <p class="quoteCaption">“Stop lying to yourself, you are good enough. You deserve a good life, everyone does.”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Relations</b></p>
+            <h2>Relations</h2>
             <hr>
         </div>
-        <div class="info" id="Relations"></div>
+        <div class="info" id="Relations">
+            <p class='q'>Biological Mother</p>
+            <p class='a'>Katherine Broteez</p>
+            <p class='q'>Status</p>
+            <p class='a'>Deceased</p>
+            <div class="br"></div>
+            <p class='q'>Biological Father</p>
+            <p class='a'>xxx</p>
+            <p class='q'>Status</p>
+            <p class='a'>Deceased</p>
+            <div class="br"></div>
+            <p class='q'>Sister</p>
+            <p class='a'>Lindsey</p>
+            <p class='q'>Status</p>
+            <p class='a'>Deceased</p>
+            <div class="br"></div>
+            <p class='q'>Brother</p>
+            <p class='a'>Simon</p>
+            <p class='q'>Status</p>
+            <p class='a'>Dead</p>
+            <div class="br"></div>
+            <p class='q'>Friends</p>
+            <p class='q'><i>Best friend</i></p>
+            <p class='a'><a href='Jacob.html'>Jacob Jackson</a></p>
+            <p class='q'><i>Friend</i></p>
+            <p class='a'><a href='Adam.html'>Adam Zondervan</a></p>
+            <p class='q'><i>Friend</i></p>
+            <p class='a'><a href='Jay.html'>Jay Star</a></p>
+        </div>
         <hr class="ImageTop">
         <img src="images/Sam/PastICantErase.jpg">
         <p class="quoteCaption">“Everyone deserves to be given the chance to change.”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Roleplay Info</b></p>
+            <h2>Roleplay Info</h2>
             <hr>
         </div>
-        <div class="info" id="RpInfo"></div>
+        <div class="info" id="RpInfo">
+            <p class='q'>Availability</p>
+            <p class='a'>Open</p>
+            <div class="br"></div>
+            <p class='q'>Genres</p>
+            <p class='a'>Fantasy</p>
+            <p class='a'>Angst</p>
+            <p class='a'>Sci-Fi</p>
+            <p class='a'>Romance</p>
+            <p class='a'>Mystery?</p>
+            <p class='a'>Adventure</p>
+        </div>
     </main>
     <footer>
         <button data-theme="normal" aria-pressed="true" id="NormalMode"></button>

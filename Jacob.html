@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700;800&family=Spectral:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
     <link rel="icon" type="image/png" href="images/Favicons/Jacob512.png" sizes="512x512">
     <link rel="icon" type="image/png" href="images/Favicons/Jacob256.png" sizes="256x256">
     <link rel="icon" type="image/png" href="images/Favicons/Jacob180.png" sizes="180x180">
@@ -18,28 +19,21 @@
     <style>
         :root {
             --hue: 0;
-            --hue2: 300;
+            --hue1: 0deg;
+            --hue2: 300deg;
             --angle: 160deg;
-
             --middleHR: "♫";
             --middleImageHR: " ♪ ♫ 𝄞 ♫ ♪ ";
             --middleLength: 11;
             --middleAddition: "";
-
-            --answerDecor: "♪ ";
-            --answerDecor: "♫ ";
-            --answerDecor: "𝄞 ";
-        }
-
-        
+            --aDecor: "𝄞 ";
+        }   
     </style>
-    <link rel="stylesheet" href="CSS/HeadersAndDefaults.css">
-    <link rel="stylesheet" href="CSS/Character.css?v=1">
-    <link rel="stylesheet" href="CSS/Audioplayer.css">
-    <link rel="stylesheet" href="CSS/HrStyles.css">
-    <link rel="stylesheet" href="CSS/Nav.css">
+    <link rel="stylesheet" href="CSS/Defaults.css">
+    <link rel="stylesheet" href="CSS/Wiki.css">
+    <link rel="stylesheet" href="CSS/HrCSS.css">
     <script src="nav.js"></script>
-    <script src="Jacob.js"></script>
+    <script src="Jacob2.js"></script>
     <script>
         let current = 0;
         let names = ["  Sugar Popped Sunshine     -     Static-P  ","  2 Bed, 2 Bath (and a Ghost)  -  Bug Hunter  ", "  I Swallowed Shampoo  ", "  Count On Me  -  Bruno Mars  "];
@@ -48,6 +42,7 @@
     <script src="Audioplayer.js"></script>
 </head>
 <body>
+    
     <header>
         <div class="navbar">
             <h3 id="SiteName">Prismoria</h3>
@@ -61,9 +56,6 @@
                         <a href="Jacob.html">Jacob Jackson</a>
                         <a href="Sam.html">Samuel Broteez</a>
                         <a href="Elliot.html">Elliot Evans</a>
-                        <!-- <a href="YoungElliot.html">(Younger) Elliot Evans</a>
-                        <a href="Adam.html">Adam Zondervan</a>
-                        <a href="Rene.html">Rene Tickle</a> -->
                     </div>
                 </div>
                 <a href="SomeStories.html" id="SomeStories">Some Stories</a>
@@ -72,18 +64,22 @@
         </div>
     </header>
     <main>
-        <div class="sectionHeader" id="Name"><h1>Jacob Jackson</h1></div>
-        <div class="sectionHeader"><h1>Character Sheet</h1></div>
-        <p>PS: Sorry Apple users, I developed this before I learned that Apple CSS is differnet from literally any other CSS</p>
-        
+        <h1 class="sectionHeader">Jacob Jackson</h1>
+        <h1 class="sectionHeader">Character Sheet</h1>
         <div class="tw">
             <div class="audio-player">
-                <div><h2>
-                    <button id="PrevSong" onclick="playPrev()" class="audioButtons"></button>
+                <div class="title">
+                    <button onclick="playPrev()" class="audioButtons"><i class="fa fas fa-caret-left"></i></button>
                     <span id="SongName">  Sugar Popped Sunshine     -     Static-P  </span>
-                    <button id="NextSong" onclick="playNext()" class="audioButtons"></button>
-                </h2></div>
-                <audio preload="auto" onended="playNext()" id="player" src="Audio/Sugar Popped Sunshine.mp3" type="audio/mpeg" controls controlsList="nodownload noplaybackrate"></audio>
+                    <button onclick="playNext()" class="audioButtons"><i class="fa fas fa-caret-right"></i></button>
+                </div>
+                <div class="controls">
+                    <button onclick="playOrPause()" class="audioButtons"><i id="play" class="fa fas fa-play"></i></button>
+                    <div class="range">  
+                        <input type="range" id="player-slider" value="0" aria-valuemax="100"/>
+                    </div>
+                    <audio preload="auto" onended="playNext()" id="player" src="Audio/Sugar Popped Sunshine.mp3" type="audio/mpeg" controls controlsList="nodownload noplaybackrate"></audio>
+                </div>
             </div>
             <div class="playlist">
                 <p><a target="_blank" href="https://open.spotify.com/playlist/41eMHGmmd4CiTctLhQP0AB?si=ded6swhIQ6WjRMaBfyxY3A&pi=87lwFzJES9iHA">Spotify Playlist</a></p>
@@ -94,14 +90,15 @@
             </div>
             <p>╭━━━━━━━━━━━━━━━━╮</p>
             <p>Trigger Warnings</p>
-            <p>None really. Might change this</p>
-            <p><i>Credit</i></p>
-            <p><i>I don't know how this happened, but Jacob seriously looks just like the way some people draw Grian's avatar (Except for the eyes. Other than the eye color, it is spot on). Any character art is by VSasha on twitter. They are an amazing artist</i></p>
+            <p>None really. Might change this.</p>
+            <p>His past has trigger warnings, but it is mostly just the backstory</p>
+            <!-- <p><i>Credit</i></p>
+            <p><i>I don't know how this happened, but Jacob seriously looks just like the way some people draw Grian's avatar (Except for the eyes. Other than the eye color, it is spot on). Any character art is by VSasha on twitter. They are an amazing artist</i></p> -->
             <p>╰━━━━━━━━━━━━━━━━╯</p>
         </div>
         <div class="sectionLabel">
             <hr>
-            <p><b>Contents</b></p>
+            <h2>Contents</h2>
             <hr>
         </div>
         <p>I. Teaser</p>
@@ -113,85 +110,281 @@
         <p>VII. Relations</p>
         <p>VIII. Roleplay Info</p>
         <hr class="ImageTop">
-        <img src="images/Jacob/Smile.png">
-        <p class="quoteCaption">“The rarer someone's smile, the special-er it is.”</p>
+        <img src="images/Jacob/Jacob32.png">
+        <p class="quoteCaption">“The rarer someone's smile, the more special-er it is.”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Teaser</b></p>
+            <h2>Teaser</h2>
             <hr>
         </div>
         <p id="TeaserText"></p>
         <hr class="ImageTop">
-        <img src="images/Jacob/Grian1.jpg">
+        <img src="images/Jacob/Smile.png">
         <p class="quoteCaption">“When my father walked out that door,<br>I swore I would never leave those close to me.<br>Nobody deserves that pain.”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Basic Info</b></p>
+            <h2>Basic Info</h2>
             <hr>
         </div>
-        <div class="info" id="BasicInfo"></div>
+        <div class="info" id="BasicInfo">
+            <p class="q">Birth Name</p>
+            <p class="a">Jacob Isaac Jackson</p>
+            <p class="q">Current Name</p>
+            <p class="a">Jacob Isaac Jackson</p>
+            <div class='br'></div>
+            <p class="q">First Name</p>
+            <p class="a">Jacob</p>
+            <p class="q">Meaning</p>
+            <p class="a">Holder of the heel or supplanter</p>
+            <div class='br'></div>
+            <p class="q">Middle Name</p>
+            <p class="a">Isaac</p>
+            <p class="q">Meaning</p>
+            <p class="a">He will laugh, he will rejoice</p>
+            <div class='br'></div>
+            <p class="q">Last Name</p>
+            <p class="a">Jackson</p>
+            <p class="q">Meaning</p>
+            <p class="a">Son of Jack, God has been gracious</p>
+            <div class='br'></div>
+            <p class="q">Nicknames</p>
+            <p class="a">He would love for Jake to be his nickname, but he's always around Sam who never uses nicknames, so it never caught on. But he would love nicknames, nobody has given him any</p>
+            <div class='br'></div>
+            <p class="q">Biological Gender</p>
+            <p class="a">Male</p>
+            <p class="q">Preferred Gender</p>
+            <p class="a">Agender</p>
+            <p class="q">Pronouns</p>
+            <p class="a">He's fine with being referred to as anything. It does not offend him. He looks more masculine, so most refer to him with masculine pronouns, but he's fine with they/them or ever she/her. He does dress femininely sometimes, he doesn't categorize genders.</p>
+            <div class='br'></div>
+            <p class="q">Sexual Orientation</p>
+            <p class="a">Gay</p>
+            <p class="q">Romantic Orientation</p>
+            <p class="a">Gay</p>
+            <div class='br'></div>
+            <p class="q">Age</p>
+            <p class="a">17 to 22 depending on the rp</p>
+            <p class="a">Default 22</p>
+            <p class="q">Birthday</p>
+            <p class="a">July 8th</p>
+            <p class="q">Zodiac Sign</p>
+            <p class="a">Cancer</p>
+            <div class='br'></div>
+            <p class="q">Occupation</p>
+            <p class="a">Singer / Songwriter</p>
+            <p class="a">Actor</p>
+            <div class='br'></div>
+            <p class="q">Where they live</p>
+            <p class="a">Prismoria</p>
+            <div class='br'></div>
+            <p class="q">Languages</p>
+            <p class="a">English</p>
+        </div>
         <hr class="ImageTop">
         <img src="images/Jacob/Pride.png">
         <p class="quoteCaption">“Oh, you love me. You wouldn't dare hurt an innocent little cutie~”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Health and Abilities</b></p>
+            <h2>Health and Abilities</h2>
             <hr>
         </div>
-        <div class="info" id="Health"></div>
+        <div class="info" id="Health">
+            <p class="q">Physical Illnesses</p>
+            <p class="a">Dwarfism</p>
+            <p class="q">Mental Illnesses</p>
+            <p class="a">None (Maybe PTSD)-</p>
+            <p class="q">Triggers</p>
+            <p class="a">SA/Depression, abandonment, Being trapped, cannibalism</p>
+            <div class='br'></div>
+            <p class="q">Mutation / Power</p>
+            <p class="a">Time Manipulation</p>
+            <p class="q">How long have they had it</p>
+            <p class="a">About 12 years</p>
+            <p class="q">How do they use it (If it's a power)</p>
+            <p class="a">Teleportation, pulling pranks</p>
+            <p class="q">What are the limitations (If it's a power)</p>
+            <p class="a">It takes a lot of effort and often gives him a headache. Stopping the entire universe from continuing on is pretty difficult</p>
+        </div>
         <hr class="ImageTop">
-        <img src="images/Jacob/Grian2.jpg">
+        <img src="images/Jacob/femboy.jpg">
         <p class="quoteCaption">“Revenge is always ten times worse~”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Appearance</b></p>
+            <h2>Appearance</h2>
             <hr>
         </div>
-        <div class="info" id="Appearance"></div>
+        <div class="info" id="Appearance">
+            <p class="q">Height</p>
+            <p class="a">4'8"</p>
+            <p class="a">142.24 cm</p>
+            <p class="q">Weight</p>
+            <p class="a">98 lbs.</p>
+            <p class="a">44.45 kg</p>
+            <div class='br'></div>
+            <p class="q">Skin color</p>
+            <p class="a">Warm ivory</p>
+            <div class='br'></div>
+            <p class="q">Hair color</p>
+            <p class="a">Caramel Brown</p>
+            <p class="q">Hair style</p>
+            <p class="a">Wavy and messy</p>
+            <div class='br'></div>
+            <p class="q">Eye color(s)</p>
+            <p class="a">Vivid blue</p>
+            <p class="a"><i>(as said in the credits, Grian is the perfect representation of him with the eye color being the only incorrect part)</i></p>
+            <div class='br'></div>
+            <p class="q">Piercings (If any)</p>
+            <p class="a">Ear piercings</p>
+            <p class="a">He wears a dangling gold star earing on his right ear</p>
+            <p class="q">Scars (If any)</p>
+            <p class="a">None</p>
+            <p class="q">Tattoos (If any)</p>
+            <p class="a">None</p>
+            <p class="q">Birthmark (If any)</p>
+            <p class="a">None</p>
+            <p class="q">Freckles</p>
+            <p class="a">Yes</p>
+            <p class="q">Where</p>
+            <p class="a">Arms and the bridge of his nose</p>
+            <div class='br'></div>
+            <p class="q">Accent / Voice</p>
+            <p class="a">He has a very melodic and enchanting voice. He is a singer after all, he chose that career for a reason</p>
+        </div>
         <hr class="ImageTop">
         <img src="images/Jacob/Microphone.jpg">
         <p class="quoteCaption">“What's the point of living if you don't go wild over the tiniest things?”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Personality</b></p>
+            <h2>Personality</h2>
             <hr>
         </div>
-        <div class="info" id="Personality"></div>
+        <div class="info" id="Personality">
+            <p class='q'>Closest Stereotype</p>
+            <p class='a'>That over-energetic guy who's always happy</p>
+            <p class='q'>Overall Description</p>
+            <p class='a'>Jacob is a 'lil ball of sunshine, always trying to cheer people up. If you are sad, he won't try to fix the problem, because not everything needs to be fixed, he'll just offer you the comfort and attention you need. This is a pure and wholesome boi who will do anything for his friends. However, Jacob is a force of nature, he cannot be stopped. He is very mischievous and always pulling pranks to get a reaction.</p>
+            <p class='answer'>Jacob is strangely good at reading others. He can look at someone and recite, down to a percentage, what they are feeling. But, he isn't doing this all the time. It's a result of something that happened with <a href="Sam.html"><u>Sam</u></a>, something he vowed to never let happen again.</p>
+            <div class='br'></div>
+            <p class='q'>Likes</p>
+            <p class='a'>Making people smile and joking around</p>
+            <p class='a'>Music and performing. His father used to play guitar with him, his father was his role model. Until said father ditched after being told that his son was gay. But, Jacob still loves music none-the-less.</p>
+            <p class='a'>Teasing people</p>
+            <div class='br'></div>
+            <p class='q'>Dislikes</p>
+            <p class='a'>People who are too serious or try to mask their feelings</p>
+            <p class='a'>Being alone, he always wanted to be with someone else</p>
+            <p class='a'>Silence</p>
+            <div class='br'></div>
+            <p class='q'>Positive Traits</p>
+            <p class='a'>Charming and playful. He is basically a force of nature. If he wants something, he can and will get it because he just knows how to play people. Often, all he really wants is to have fun and make others happy though.</p>
+            <p class='a'>Loyal. He will never leave a friend. If a friendship falls apart, it's because the other person left, not the other way around.</p>
+            <p class='a'>Musically talented</p>
+            <div class='br'></div>
+            <p class='q'>Negative Traits</p>
+            <p class='a'>He is very annoying. He never runs out of things to say or do, and he never runs out of energy. It is impossible to keep up with him.</p>
+            <p class='a'>Overly-trusting</p>
+            <p class='a'>Easily distracted</p>
+            <div class='br'></div>
+            <p class='q'>Fears</p>
+            <p class='a'>Losing those he cares about. That's why he's so good at reading feelings, he learned how to do that because he was worried about his friend with depression who was amazing at hiding his pain. He needed to be able to tell when that friend needed help. He can't bear the thought of losing someone close like that again</p>
+            <p class='a'>Losing touch with who he is. Changing so much that he doesn't recognize the person staring back at him in the mirror</p>
+            <p class='a'>Losing hope. As long as he has even a little bit of hope, he can go on, but if he doesn't have any more hope, there really is no point in living</p>
+            <div class='br'></div>
+            <p class='q'>Hobbies</p>
+            <p class='a'>Singing - His father was a singer, and he always looked up to his father as a kid. He used to watch all his shows and concerts on this old, box tv.</p>
+            <p class='a'>Playing the guitar - His father taught him how to play guitar. They would sometimes play together</p>
+            <p class='a'>Acting - Musicals were some of the first places he was able to sing or perform in front of a crowd. He also managed to drag <a href="Jay.html"><u>Jay</u></a> into musicals and plays.</p>
+            <div class='br'></div>
+            <p class='q'>Love Language(s)</p>
+            <p class='a'>Quality Time: This love language is all about giving your undivided attention to that one special person, without the distraction of television, phone screens, or any other outside interference. They have a strong desire to actively spend time with their significant other, having meaningful conversations or sharing recreational activities.</p>
+            <p class='a'>Physical Touch: People who communicate their appreciation through this language, when they consent to it, feel appreciated when they are hugged, kissed, or cuddled. They value the feeling of warmth and comfort that comes with physical touch.</p>
+            <div class='br'></div>
+            <p class='q'>Extra</p>
+            <p class='a'>He will do anything to make someone smile if he finds them interesting or could use some cheering up. He doesn't give up easily. The guy spent 3 full years trying to get one guy to just say one word to him, then another 3 years trying to help him heal from past trauma and be happier in general. He is determined.</p>
+        </div>
         <hr class="ImageTop">
-        <img src="images/Jacob/Grian3.png">
+        <img src="images/Jacob/agender.png">
         <p class="quoteCaption">“... We've all lost someone close to us, even... Even the ones we think can never leave.”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Self-Perception</b></p>
+            <h2>Self-Perception</h2>
             <hr>
         </div>
-        <div class="info" id="Perception"></div>
+        <div class="info" id="Perception">
+            <p class='q'>How they feel about themselves</p>
+            <p class='a'>Jacob is confident in his own abilities. He has no problems with his looks. This isn't to say he has no problems.</p>
+            <div class='br'></div>
+            <p class='q'>How they would describe themselves</p>
+            <p class='a'>Confident, outgoing, playful, fun to be around</p>
+            <div class='br'></div>
+            <p class='q'>What they think is their best trait</p>
+            <p class='a'>His loyalty</p>
+            <div class='br'></div>
+            <p class='q'>What they think is their worst trait</p>
+            <p class='a'>He can be a bit much to handle. There is just a <i>lot</i> of energy pent up inside of him.</p>
+            <div class='br'></div>
+            <p class='q'>How they think other perceive them</p>
+            <p class='a'>An outgoing, if not annoyingly energetic, cheerful person</p>
+            <div class='br'></div>
+            <p class='q'>What they would like to change about themselves</p>
+            <p class='a'>His past</p>
+        </div>
         <hr class="ImageTop">
         <img src="images/Jacob/Dramtic.jpg">
         <p class="quoteCaption">“Want to play a game~?”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Relations</b></p>
+            <h2>Relations</h2>
             <hr>
         </div>
-        <div class="info" id="Relations"></div>
+        <div class="info" id="Relations">
+            <p class='q'>Mother</p>
+            <p class='a'>Ally Kane</p>
+            <p class='q'>Status</p>
+            <p class='a'>Deceased</p>
+            <div class='br'></div>
+            <p class='q'>Father</p>
+            <p class='a'>Keven Jackson</p>
+            <p class='q'>Status</p>
+            <p class='a'>Alive but estranged</p>
+            <div class='br'></div>
+            <p class='q'>Ex-Lover</p>
+            <p class='a'><a href="Jay.html">Jay Star</a></p>
+            <p class='q'>Status</p>
+            <p class='a'>Alive (?) <i>He lives in an unknown state of living</i></p>
+            <div class='br'></div>
+            <p class='q'>Best Friend</p>
+            <p class='a'><a href="Sam.html">Sam Broteez</a></p>
+            <p class='q'>Status</p>
+            <p class='a'>Alive</p>
+        </div>
         <hr class="ImageTop">
         <img src="images/Jacob/LoveLife.gif">
         <p class="quoteCaption">“You're beautiful in your own way, so just be you.<br>The point of life is to be happy,<br>not to spend it all trying to meet everyone's expectations.”</p>
         <hr class="ImageBottom">
         <div class="sectionLabel">
             <hr>
-            <p><b>Roleplay Info</b></p>
+            <h2>Roleplay Info</h2>
             <hr>
         </div>
-        <div class="info" id="RpInfo"></div>
+        <div class="info" id="RpInfo">
+            <p class='q'>Availability</p>
+            <p class='a'>Open</p>
+            <p class='a'>I may have to pair him with another oc to bounce off of. I haven't done many (or any) rps with Jacob as my main.</p>
+            <div class='br'></div>
+            <p class='q'>Genres</p>
+            <p class='a'>Fantasy</p>
+            <p class='a'>Angst</p>
+            <p class='a'>Sci-Fi</p>
+            <p class='a'>Romance</p>
+        </div>
     </main>
     <footer>
         <button data-theme="normal" aria-pressed="true" id="NormalMode"></button>
