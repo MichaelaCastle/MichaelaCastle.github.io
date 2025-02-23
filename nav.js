@@ -1,5 +1,5 @@
 const smallDevice = window.matchMedia("(max-width: 576px)");
-let defaultTheme = "noraml";
+let defaultTheme = "alt";
 const pressedButtonSelector = '[data-theme][aria-pressed="true"]';
 let versionNumber;
 let handleDeviceChange = (e) => {
