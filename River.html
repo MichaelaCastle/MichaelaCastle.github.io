@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" data-selected-theme="alt">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>River Lucero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&family=Sofia&family=Merriweather+Sans:wght@400;500;600;700;800&family=Baloo+Bhaijaan+2:wght@400..800&family=Spectral:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <!-- <link rel="icon" type="image/png" href="images/Favicons/Jacob512.png" sizes="512x512">
+    <link rel="icon" type="image/png" href="images/Favicons/Jacob256.png" sizes="256x256">
+    <link rel="icon" type="image/png" href="images/Favicons/Jacob180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="images/Favicons/Jacob128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="images/Favicons/Jacob96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="images/Favicons/Jacob32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/Favicons/Jacob16.png" sizes="16x16"> -->
+    <style>
+        :root {
+            --hue: 0;
+            --hue1: 30deg;
+            --hue2: 60deg;
+            --angle: 160deg;
+            --middleHR: " ⋆ ☽ ⋆ ";
+            --middleImageHR: " ════ ⋆★⋆ ════ ";
+            --middleLength: 17;
+            --middleAddition: "──";
+            --aDecor: "✧ ";
+
+            
+            --bodyText: "Sniglet", serif;
+            --headingText: "Sofia", serif;
+            --headingTextAdjustment: 1.5rem;
+        }   
+    </style>
+    <link rel="stylesheet" href="CSS/Defaults.css">
+    <link rel="stylesheet" href="CSS/Wiki.css">
+    <link rel="stylesheet" href="CSS/HrCSS.css">
+    <script src="nav.js"></script>
+    <script src="Jacob2.js"></script>
+    <script>
+        let current = 0;
+        let names = ["  Sugar Popped Sunshine     -     Static-P  ","  2 Bed, 2 Bath (and a Ghost)  -  Bug Hunter  ", "  I Swallowed Shampoo  ", "  Count On Me  -  Bruno Mars  "];
+        let songs = ["Audio/Sugar Popped Sunshine.mp3", "Audio/2 Bed, 2 Bath (and a Ghost).mp3", "Audio/I Swallowed Shampoo.ogg", "Audio/Count On Me.ogg"];
+    </script>
+    <script src="Audioplayer.js"></script>
+</head>
+<body>
+    
+    <header>
+        <div class="navbar">
+            <h3 id="SiteName">Prismoria</h3>
+            <div class="flex-container">
+                <a href="index.html" id="TheParticle">The Particle</a>
+                <div class="dropdown">
+                    <button class="dropbtn Selected" id="Characters">Characters
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="Jay.html">Jay Star</a>
+                        <a href="Jacob.html">Jacob Jackson</a>
+                        <a href="Sam.html">Samuel Broteez</a>
+                        <a href="Elliot.html">Elliot Evans</a>
+                        <a href="River.html">River Lucero</a>
+                    </div>
+                </div>
+                <a href="SomeStories.html" id="SomeStories">Some Stories</a>
+                <a href="Updates.html" id="Updates">Site Updates</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1 class="sectionHeader">River Lucero (Very WIP)</h1>
+        <h1 class="sectionHeader">Character Sheet</h1>
+        <div class="tw">
+            <div class="audio-player">
+                <div class="title">
+                    <button onclick="playPrev()" class="audioButtons"><i class="fa fas fa-caret-left"></i></button>
+                    <span id="SongName">  (Placeholder) Sugar Popped Sunshine     -     Static-P  </span>
+                    <button onclick="playNext()" class="audioButtons"><i class="fa fas fa-caret-right"></i></button>
+                </div>
+                <div class="controls">
+                    <button onclick="playOrPause()" class="audioButtons"><i id="play" class="fa fas fa-play"></i></button>
+                    <div class="range">  
+                        <input type="range" id="player-slider" value="0" aria-valuemax="100"/>
+                    </div>
+                    <audio preload="auto" onended="playNext()" id="player" src="Audio/Sugar Popped Sunshine.mp3" type="audio/mpeg" controls controlsList="nodownload noplaybackrate"></audio>
+                </div>
+            </div>
+            <!-- <div class="playlist">
+                <p><a target="_blank" href="https://open.spotify.com/playlist/41eMHGmmd4CiTctLhQP0AB?si=ded6swhIQ6WjRMaBfyxY3A&pi=87lwFzJES9iHA">Spotify Playlist</a></p>
+            </div> -->
+            <!-- <p>╭━━━━━━━━━━━━━━━━╮</p>
+            <p>Trigger Warnings</p>
+            <p>None really. Might change this.</p>
+            <p>His past has trigger warnings, but it is mostly just the backstory</p>
+            <p>╰━━━━━━━━━━━━━━━━╯</p> -->
+        </div>
+        <div class="sectionLabel">
+            <hr>
+            <h2>Contents</h2>
+            <hr>
+        </div>
+        <p>I. Teaser</p>
+        <p>II. Basic info</p>
+        <p>III. Health and Abilities</p>
+        <p>IV. Appearance</p>
+        <p>V. Personality</p>
+        <p>VI. Self Perception</p>
+        <p>VII. Relations</p>
+        <p>VIII. Roleplay Info</p>
+        <hr class="ImageTop">
+        <img src="images/Caspian/placehold.jpg">
+        <p class="quoteCaption">“Placerholder! Woo!”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <h2>Teaser</h2>
+            <hr>
+        </div>
+        <p id="TeaserText"></p>
+        <hr class="ImageTop">
+        <img src="images/Caspian/placehold.jpg">
+        <p class="quoteCaption">“Placerholder! Woo!”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <h2>Basic Info</h2>
+            <hr>
+        </div>
+        <div class="info" id="BasicInfo">
+            <p class="q">Birth Name</p>
+            <p class="a">River Lucero</p>
+            <p class="q">Current Name</p>
+            <p class="a">River Lucero</p>
+            <div class='br'></div>
+            <p class="q">First Name</p>
+            <p class="a">River</p>
+            <p class="q">Meaning</p>
+            <p class="a">Flowing body of water</p>
+            <div class='br'></div>
+            <p class="q">Middle Name</p>
+            <p class="a"></p>
+            <p class="q">Meaning</p>
+            <p class="a"></p>
+            <div class='br'></div>
+            <p class="q">Last Name</p>
+            <p class="a">Lucero</p>
+            <p class="q">Meaning</p>
+            <p class="a">"Light" or "Star"</p>
+            <div class='br'></div>
+            <p class="q">Nickname(s)</p>
+            <p class="a"></p>
+            <div class='br'></div>
+            <p class="q">Biological Gender</p>
+            <p class="a">Male</p>
+            <p class="q">Preferred Gender</p>
+            <p class="a">Male</p>
+            <p class="q">Pronouns</p>
+            <p class="a">He/Him</p>
+            <div class='br'></div>
+            <p class="q">Sexual Orientation</p>
+            <p class="a">Demi-sexual</p>
+            <p class="q">Romantic Orientation</p>
+            <p class="a">Pan-romantic</p>
+            <div class='br'></div>
+            <p class="q">Age</p>
+            <p class="a">23</p>
+            <p class="q">Birthday</p>
+            <p class="a">November 28th</p>
+            <p class="q">Zodiac Sign</p>
+            <p class="a">Sagittarius</p>
+            <div class='br'></div>
+            <p class="q">Occupation</p>
+            <p class="a"></p>
+            <div class='br'></div>
+            <p class="q">Where they live</p>
+            <p class="a">Prismoria</p>
+            <div class='br'></div>
+            <p class="q">Languages</p>
+            <p class="a">English</p>
+        </div>
+        <hr class="ImageTop">
+        <img src="images/Caspian/placehold.jpg">
+        <p class="quoteCaption">“Placerholder! Woo!”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <h2>Health and Abilities</h2>
+            <hr>
+        </div>
+        <div class="info" id="Health">
+            <p class="q">Physical Illnesses</p>
+            <p class="a">None</p>
+            <p class="q">Mental Illnesses</p>
+            <p class="a"></p>
+            <p class="q">Triggers</p>
+            <p class="a"></p>
+            <div class='br'></div>
+            <p class="q">Mutation / Power</p>
+            <p class="a">Terraventus-kinesis (earth wind control)</p>
+            <p class="q">How long have they had it</p>
+            <p class="a"></p>
+            <p class="q">How do they use it (If it's a power)</p>
+            <p class="a"></p>
+            <p class="q">What are the limitations (If it's a power)</p>
+            <p class="a"></p>
+        </div>
+        <hr class="ImageTop">
+        <img src="images/River/RiverNeutral.png">
+        <p class="quoteCaption">“Placerholder! Woo!”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <h2>Appearance</h2>
+            <hr>
+        </div>
+        <div class="info" id="Appearance">
+            <p class="q">Height</p>
+            <p class="a">5'10"</p>
+            <p class="a">177.8cm</p>
+            <p class="q">Weight</p>
+            <p class="a">148lbs</p>
+            <p class="a">67.1kg</p>
+            <div class='br'></div>
+            <p class="q">Skin color</p>
+            <p class="a">Umber</p>
+            <div class='br'></div>
+            <p class="q">Hair color</p>
+            <p class="a">Reddish auburn with deep navy blue strands and a forest-y green ahodge</p>
+            <p class="q">Hair style</p>
+            <p class="a"></p>
+            <div class='br'></div>
+            <p class="q">Eye color(s)</p>
+            <p class="a">Hazel?</p>
+            <div class='br'></div>
+            <p class="q">Piercings (If any)</p>
+            <p class="a">None</p>
+            <p class="q">Scars (If any)</p>
+            <p class="a">None</p>
+            <p class="q">Tattoos (If any)</p>
+            <p class="a">A sailors compass on his right shoulder</p>
+            <p class="q">Birthmark (If any)</p>
+            <p class="a"></p>
+            <p class="q">Freckles</p>
+            <p class="a">None</p>
+            <div class='br'></div>
+            <p class="q">Accent / Voice</p>
+            <p class="a">He has a soft, coastal lilt. Not full-on sailor, but something he caught from his grandfather, blended in with the Prismorian dialect.</p>
+        </div>
+        <hr class="ImageTop">
+        <img src="images/River/CompassTattoo.jpg">
+        <p class="quoteCaption">“Placerholder! Woo!”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <h2>Personality</h2>
+            <hr>
+        </div>
+        <div class="info" id="Personality">
+            <p class='q'>Closest Stereotype</p>
+            <p class='a'></p>
+            <p class='q'>Overall Description</p>
+            <p class='a'>River is known for his boundless energy and insatiable curiosity. He's never left Prismoria, but he hears stories about the outside world from his grandfather, who used to be a sailor. He always longs to understand the unknown and to explore where nobody else dares.</p>
+            <p class='a'>Normally, River is quite cheerful and optimistic. No matter what's going on, he tries to see the positive side of things.He's also an avid reader, with a particular fondness for high fantasy.</p>
+            <div class='br'></div>
+            <p class='q'>Likes</p>
+            <p class='a'>Astrology</p>
+            <p class='a'>Adventure</p>
+            <p class='a'></p>
+            <div class='br'></div>
+            <p class='q'>Dislikes</p>
+            <p class='a'></p>
+            <p class='a'></p>
+            <p class='a'></p>
+            <div class='br'></div>
+            <p class='q'>Positive Traits</p>
+            <p class='a'></p>
+            <p class='a'></p>
+            <p class='a'></p>
+            <div class='br'></div>
+            <p class='q'>Negative Traits</p>
+            <p class='a'></p>
+            <p class='a'></p>
+            <p class='a'></p>
+            <div class='br'></div>
+            <p class='q'>Fears</p>
+            <p class='a'></p>
+            <p class='a'></p>
+            <p class='a'></p>
+            <div class='br'></div>
+            <p class='q'>Hobbies</p>
+            <p class='a'></p>
+            <p class='a'></p>
+            <p class='a'></p>
+            <div class='br'></div>
+            <p class='q'>Love Language(s)</p>
+            <p class='a'>Quality Time: This love language is all about giving your undivided attention to that one special person, without the distraction of television, phone screens, or any other outside interference. They have a strong desire to actively spend time with their significant other, having meaningful conversations or sharing recreational activities</p>
+            <p class='a'>Gifts: People whose love language is receiving gifts enjoy being gifted something that is both physical and meaningful. The key is to give meaningful things that matter to them and reflect their values, not necessarily yours</p>
+            <div class='br'></div>
+            <p class='q'>Extra</p>
+            <p class='a'></p>
+        </div>
+        <hr class="ImageTop">
+        <img src="images/Caspian/placehold.jpg">
+        <p class="quoteCaption">“Placerholder! Woo!”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <h2>Self-Perception</h2>
+            <hr>
+        </div>
+        <div class="info" id="Perception">
+            <p class='q'>How they feel about themselves</p>
+            <p class='a'></p>
+            <div class='br'></div>
+            <p class='q'>How they would describe themselves</p>
+            <p class='a'></p>
+            <div class='br'></div>
+            <p class='q'>What they think is their best trait</p>
+            <p class='a'></p>
+            <div class='br'></div>
+            <p class='q'>What they think is their worst trait</p>
+            <p class='a'></p>
+            <div class='br'></div>
+            <p class='q'>How they think other perceive them</p>
+            <p class='a'></p>
+            <div class='br'></div>
+            <p class='q'>What they would like to change about themselves</p>
+            <p class='a'></p>
+        </div>
+        <hr class="ImageTop">
+        <img src="images/Caspian/placehold.jpg">
+        <p class="quoteCaption">“Placerholder! Woo!”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <h2>Relations</h2>
+            <hr>
+        </div>
+        <div class="info" id="Relations">
+            <p class='q'>Mother</p>
+            <p class='a'></p>
+            <p class='q'>Status</p>
+            <p class='a'></p>
+            <div class='br'></div>
+            <p class='q'>Father</p>
+            <p class='a'></p>
+            <p class='q'>Status</p>
+            <p class='a'></p>
+        </div>
+        <hr class="ImageTop">
+        <img src="images/Caspian/placehold.jpg">
+        <p class="quoteCaption">“Placerholder! Woo!”</p>
+        <hr class="ImageBottom">
+        <div class="sectionLabel">
+            <hr>
+            <h2>Roleplay Info</h2>
+            <hr>
+        </div>
+        <div class="info" id="RpInfo">
+            <p class='q'>Availability</p>
+            <p class='a'>Yes! I know this is still in the bar-bones stages currently, but I plan on fleshing him out more through time.</p>
+            <div class='br'></div>
+            <p class='q'>Genres</p>
+            <p class='a'>Fantasy</p>
+            <p class='a'>Romance</p>
+            <p class='a'>Sci-Fi</p>
+            <p class='a'>Slice of Life</p>
+        </div>
+    </main>
+    <footer>
+        <button data-theme="normal" aria-pressed="false" id="NormalMode"></button>
+        <button data-theme="alt" aria-pressed="true" id="AltMode"></button>
+    </footer>
+</body>
+</html>
