@@ -82,18 +82,18 @@ header{
 
 
 
-*{
+body{
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--hue1), 74%, 27%) hsl(var(--hue1), 24%, 72%);
 }
-*::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: 10px;
 }
-*::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
     background: hsl(var(--hue1), 24%, 72%);
 }
-*::-webkit-scrollbar-thumb {
-    background-color: hsla(var(--hue1), 74%, 27%, 0.5);
+body::-webkit-scrollbar-thumb {
+    background-color: hsla(var(--hue1), 74%, 27%, 0.75);
 }
 a:link, a:visited, a:active{
     color: var(--h1-0-8);

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" data-selected-theme="normal">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prismoria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700;800&family=Spectral:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/Favicons/Favicon512.png" sizes="512x512">
+    <link rel="icon" type="image/png" href="images/Favicons/Favicon192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="images/Favicons/Favicon180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="images/Favicons/Favicon32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/Favicons/Favicon16.png" sizes="16x16">
+    <link rel="icon" type="image/icon" href="images/Favicons/favicon.ico" sizes="48x48">
+    <style>
+        :root {
+            --hue: 190;
+            --hue1: 190deg;
+            --hue2: 200deg;
+            --angle: 160deg;
+        }
+        .qAndA{
+            margin-bottom: 5px;
+            margin-top: 5px;
+            padding: 5px 20px 5px 20px;
+            text-align: center;
+        }
+        h2{
+            margin: 0;
+            font-size: 19.333333333px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        hr{
+            margin: 0;
+            border: 0px;
+        }
+        .tableOfContents{
+            font-size: 17.5px;
+            font-weight: 550;
+            text-align: center;
+        }
+        .tableOfContents ul{
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tableOfContents a {
+            color: var(--h1-0-8);
+            padding: 0 .25rem;
+            margin: 0 -.25rem;
+        }
+        @media only screen and (orientation: landscape) {
+            .qAndA, .tableOfContents {
+                padding-left:15vw;
+                padding-right:15vw;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="CSS/Defaults.css">
+    <script src="nav.js"></script>
+    <script>
+        window.onload = () => {
+            // getVersionNumber();
+            // let headStyles = `
+            // <link rel="stylesheet" href="CSS/HeadersAndDefaults.css?v=${versionNumber}">
+            // <link rel="stylesheet" href="CSS/Nav.css?v=${versionNumber}">
+            // `;
+            // document.querySelector('head').innerHTML += headStyles;
+            CreateNavbar("TheParticle")
+        }
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .gallery {
+            background: #EEE;
+            /* height: fit-content; */
+            height: 240px;
+            display: block;
+        }
+
+        .gallery-cell {
+            width: 20%;
+            min-height:100%;
+            margin-right: 0px;
+            background: #8C8;
+            border: dashed black;
+            border-width: 0px 3px 0px 0px;
+            /* border-right:2px; */
+        }
+        /* big buttons, no circle */
+        .flickity-prev-next-button {
+            width: 80px;
+            height: 80px;
+            background: hsla(var(--hue), 50%, 75%, 0.25);
+            transition: transform 0.3s;
+        }
+        /* arrow color */
+        .flickity-prev-next-button .arrow {
+            fill: hsl(var(--hue), 100%, 75%);
+        }
+        .flickity-prev-next-button.no-svg {
+            color: hsl(var(--hue), 100%, 75%);
+        }
+        .flickity-prev-next-button:hover {
+            background: hsla(var(--hue), 50%, 75%, 0.25);
+            transform: scale(1.25) translateY(-40%);
+        }
+        /* hide disabled button */
+        .flickity-prev-next-button:disabled {
+            display: none;
+        }
+        .card{
+            text-align: center;
+            font-family: 'Merriweather Sans', sans-serif;
+            height: 100%;
+        }
+        .sam{
+            background-color: hsl(120, 40%, 67%);
+        }
+        .elliot{
+            background-color: hsl(86, 40%, 67%);
+        }
+        .jay{
+            background-color: hsl(180, 40%, 67%);
+        }
+        .rene{
+            background-color: hsl(270, 40%, 67%);
+        }
+        .jacob{
+            background-color: hsl(0, 40%, 67%);
+        }
+        .adam{
+            background-color: hsl(45, 40%, 67%);
+        }
+        .card h4{
+            margin: 0;
+            padding: 5px 5px;
+            color: hsl(0, 60%, 20%);
+            /* mix-blend-mode: color-burn; */
+            mix-blend-mode: luminosity;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .card p{
+            color: hsl(0, 60%, 20%);
+            /* mix-blend-mode: color-burn; */
+            mix-blend-mode: luminosity;
+            position:absolute;
+            bottom: 5px;
+            /* display: block; */
+            width: 100%;
+            font-size: 14px;
+        }
+        [data-selected-theme="alt"] .sam{
+            background-color: hsl(120, 40%, 33%);
+        }
+        [data-selected-theme="alt"] .elliot{
+            background-color: hsl(86, 40%, 33%);
+        }
+        [data-selected-theme="alt"] .jay{
+            background-color: hsl(180, 40%, 33%);
+        }
+        [data-selected-theme="alt"] .rene{
+            background-color: hsl(270, 40%, 33%);
+        }
+        [data-selected-theme="alt"] .jacob{
+            background-color: hsl(0, 40%, 33%);
+        }
+        [data-selected-theme="alt"] .adam{
+            background-color: hsl(45, 40%, 33%);
+        }
+        [data-selected-theme="alt"] .card h4, [data-selected-theme="alt"] .card p{
+            color: hsl(0, 60%, 80%);
+        }
+        [data-selected-theme="alt"] .gallery-cell {
+            border-color: hsl(0, 0%, 85%);
+        }
+        img{
+            max-width: 50%;
+            max-height: 50%;
+            width: auto;
+            height: auto;
+            /* transform: translateX(calc(0%)); */
+            border-radius: 15px;
+            /* border: 2px solid rgba(0, 0, 0, 0.5); */
+        }
+        .gallery-cell img{
+            transition: transform 0.3s;
+        }
+        .gallery-cell img:hover{
+            transform: scale(1.15);
+        }
+        .dontHoverLink:hover{
+            text-decoration: solid 0px black !important;
+        }
+        @media only screen and (max-width: 920px) {
+            .gallery-cell {
+                width: 30%;
+            }
+            .gallery {
+                height: 185px;
+            }
+            img{
+                max-height: 120px;
+            }
+            .card p{
+                font-size: 12px;
+            }
+        }
+        @media only screen and (max-width: 675px) {
+            .gallery-cell {
+                width: 50%;
+            }
+            .gallery {
+                height: 185px;
+            }
+            img{
+                max-height: 120px;
+            }
+            .card p{
+                font-size: 12px;
+            }
+        }
+        @media only screen and (max-width: 520px) {
+            .gallery-cell {
+                width: 80%;
+            }
+            .gallery {
+                height: 185px;
+            }
+            img{
+                max-height: 120px;
+            }
+            .card p{
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h3 id="SiteName">Prismoria</h3>
+            <div class="flex-container">
+                <a href="index.html" id="TheParticle" class="Selected">The Particle</a>
+                <div class="dropdown">
+                    <button class="dropbtn" id="Characters">Characters
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="Jay.html">Jay Star</a>
+                        <a href="Jacob.html">Jacob Jackson</a>
+                        <a href="Sam.html">Samuel Broteez</a>
+                        <a href="Elliot.html">Elliot Evans</a>
+                        <!-- <a href="YoungElliot.html">(Younger) Elliot Evans</a>
+                        <a href="Adam.html">Adam Zondervan</a>
+                        <a href="Rene.html">Rene Tickle</a> -->
+                    </div>
+                </div>
+                <a href="SomeStories.html" id="SomeStories">Some Stories</a>
+                <a href="Updates.html" id="Updates">Site Updates</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+        <div class="gallery js-flickity"
+            data-flickity-options='{ "wrapAround": true, "autoPlay": true, "pauseAutoPlayOnHover": true, "freeScroll": true, "pageDots": false, "adaptiveHeight": false}'>
+            <div class="gallery-cell elliot">
+                <a href="Elliot.html" class="dontHoverLink">
+                <div class="card ">
+                    <h4>Elliot Evans</h4>
+                    <img src="images/Favicons/Elliot512.png">
+                    <p>The Scientist / Inventor - 42 Years<br><i>ENTJ-A - Commander</i></p>
+                </div></a>
+            </div>
+            <div class="gallery-cell sam">
+                <a href="Sam.html" class="dontHoverLink">
+                <div class="card">
+                    <h4>Samuel Broteez</h4>
+                    <img src="images/Favicons/Sam512.png">
+                    <p>The Doctor - 20 Years<br><i>INFJ-T - Advocate</i></p>
+                </div></a>
+            </div>
+            <div class="gallery-cell jay">
+                <a href="Jay.html" class="dontHoverLink">
+                <div class="card">
+                    <h4>Jay Star</h4>
+                    <img src="images/Favicons/Jay512.png">
+                    <p>The Magic Source - 24 Years<br><i>INFP - Mediator</i></p>
+                </div></a>
+            </div>
+            <div class="gallery-cell rene">
+                <a href="Rene.html" class="dontHoverLink">
+                <div class="card">
+                    <h4>Rene Tickle</h4>
+                    <img src="images/Favicons/Rene512.png">
+                    <p>The Programmer - 19 Years<br><i>Still figuring it out</i></p>
+                </div></a>
+            </div>
+            <div class="gallery-cell jacob">
+                <a href="Jacob.html" class="dontHoverLink">
+                <div class="card">
+                    <h4>Jacob Jackson</h4>
+                    <img src="images/Favicons/Jacob512.png">
+                    <p>The Cheerful One - 22 Years<br><i>ESFP-A - Entertainer</i></p>
+                </div></a>
+            </div>
+            <div class="gallery-cell adam">
+                <a href="Adam.html" class="dontHoverLink">
+                <div class="card">
+                    <h4>Adam Zondervan</h4>
+                    <img src="images/Favicons/Adam512.png">
+                    <p>The Guitarist - 23 Years<br><i>ISFP-A - Adventurer</i></p>
+                </div></a>
+            </div>
+        </div>
+        <div class="sectionHeader"><h1>Table of Contents</h1></div>
+        <div class="tableOfContents">
+            <ul>
+                <li><a href="#Particle">The Particle</a></li>
+                <li><a href="#MoreInfo">More Info</a></li>
+                <li><a href="#Religion">Religion</a></li>
+            </ul>
+        </div>
+        <div class="sectionHeader" id="Particle"><h1>The Particle</h1></div>
+        <div class="qAndA"><h2>How was it created?</h2>
+            <hr>
+        <p>In the lab the Elliot owned, he ran a bunch of tests on Jay to try and figure out how to make magic possible. It took eight years, but eventually, he and the scientists came up with the particle and released it into the air.</p></div>
+        <div class="qAndA"><h2>What is it?</h2>
+            <hr>
+        <p>The Particle is just that: a particle. It's in the air, you can't escape it. It's like how viruses can be airborne.</p></div>
+        <div class="qAndA"><h2>What does it do?</h2>
+            <hr>
+        <p>Once someone breathes in the particle, it affects them based on how it reacts with their DNA. Some people gain the ability to control a power, others gain weird mutations like cat ears or a third hand. But some people get fatal mutations, slowly killing them.</p>
+        <p>People aren't the only ones taking in air and we're not the only ones with DNA. Animals, and even plants meet both of those requirements. This means animals and plants are screwed up as well. There can be flying wolves. A tree can attack someone. Nothing is off the table anymore.</p></div>
+        <div class="qAndA"><h2>Can some people not be affected?</h2>
+            <hr>
+        <p>Just like with viruses, some people are naturally immune. And just like with viruses, there's also a period of exposure before symptoms start appearing. The time it takes for the particle to effect each person is also dependent on how it reacts with their DNA.</p></div>
+        <div class="qAndA"><h2>Can someone have powers and a mutation?</h2>
+            <hr>
+        <p>Powers ARE a mutation, and the particle only creates one mutation. It's either ONE power or ONE mutation. You can't have a fire-breathing wolf with wings, that's just absurd.</p></div>
+        <div class="qAndA"><h2>Can the effects be reversed?</h2>
+            <hr>
+        <p>Currently, no. Elliot actually has a very painful and very slow fatal mutation, so he has his scientists desperately looking for a cure.</p></div>
+        <div class="qAndA"><h2>Power Dampeners:</h2>
+            <hr>
+            <p>The lab deals with a lot of magical individuals. Since they constantly need new test subjects in the pursuit for a cure, they have to keep kidnapping people. In order to make that easier, they have created a power dampener that can be shot at someone and cause their mutation or powers to be rendered ineffective for 6 hours. The public does not know about these power dampeners.</p>
+            <p>The effects of using these dampeners on a regular basis has yet to be recorded.</p></div>
+        <div class="sectionHeader" id="MoreInfo"><h1>More Info</h1></div>
+        <div class="qAndA"><h2>How do people discover their powers?</h2>
+            <hr>
+            <p>Most people discover their powers through an emotional outburst. Emotions have a strong tie to the ability to wield magic. In a moment of very intense feelings, any feelings, regardless of if they're good or bad, it can trigger their powers to activate. That's because powers are at their highest power when the user is the most emotional. With practice, that can be changed.</p>
+            <p>As for mutations, some mutations appear overnight, while others develop over time.</p></div>
+        <div class="qAndA"><h2>Powers with specific rules that may seem unexpected</h2>
+            <hr>
+            <p><b>Animal characteristics:</b> Really, that's the shapeshifting power, the user is able to shift into one other particular form, and their human form maintains some characteristic of that animal, like ears, a tail, or wings. The physical features will show up first. They can also get stuck in animal form if they accidentally transform and don't have enough control yet to be able to transform back.</p>
+            <p><b>Healing:</b> There are two types of healing: transference and mending. Most people are likely to get mending if they have the ability to heal, and this means their powers work as how you would expect healing powers to work. You heal someone or something, that's it. There is a rarer form too, transference. This is the type of healing Jay can use, and since the particle is a weaker and more constricted version of his powers, a select few gain that same system as him. Instead of simply healing someone, the wound is transferred over to the user. Therefore, the user can't bring someone back to life, or else they would be transferring death to themselves.</p></div>
+        <div class="qAndA"><h2>Are some people more powerful than others?</h2>
+            <hr>
+            <p>In a sense, yes and no. It depends on how the user views their own powers. For instance, someone who can control water also has ice powers. If you think about it on the microscopic level, controlling water means controlling all the molecules within a body of water. If you make the molecules move slower, that makes it colder and can turn it into ice, and vice versa. Being able to have that precise control however would take a lot of practicing. In a way, that means water manipulation is more powerful than ice powers since water manipulation can be used to imitate ice powers. Same thing with heat powers: If you heat up one area in the air and cool down (remove heat) from another area, you can create wind due to the laws of thermodynamics in physics.</p>
+            <p>It depends largely on how much control a user has over their powers. The more control a user has, and the more creative a user is, the more than can figure out how to mold their specific power into more than it seems. Most of the time, the power transformation tricks apply to being able to use the basic elemental powers like wind, fire, water, and stuff like that. Elemental powers can be affected by normal physics the most, so users can simply use physics to their advantage.</p></div>
+        <div class="qAndA"><h2>What can be concluded based on similar mutations/powers?</h2>
+            <hr>
+            <p>The particle creates a mutation based on ones DNA. Family members will have very similar if not the same powers and mutations as each other since their DNA is so similar. Children are more likely to present with changes since they are growing and their body is going through natural changes to begin with. So often the child will mutate first and the parents will follow suit after.</p></div>
+        <div class="qAndA"><h2>How are plants affected?</h2>
+            <hr>
+            <p>Plants have DNA and do take in air to survive. Therefore, they are affected by the particle and can also gain mutations and powers. Since their cells are not compatible with conscious thought processes, they can not purposely activate any powers. If someone or something damages them, for instance, if someone stepped on a tree root, as a reflex, if the tree gained the ability to have some mobility, it can swing a branch towards the offender. It's not a conscious decision, just a reaction.</p></div>
+        <div class="qAndA"><h2>How has society changed?</h2>
+            <hr>
+            <p>Magic has not been around long enough for significant changes to be made. For instance, there is no "How to use powers 101" class in schools or anything, no new laws made. It hasn't been long enough for society to figure out how to go about it.</p>
+            <p>Most SOCIAL changes have occurred due to lack of knowledge. Just like in the real world, with things like LGBTQ+, not all but a lot of the people who are against it don't understand it. It's foreign and alien to them, so they discriminate against it. It's the same with this magic system. People don't understand it, so sometimes if a child mutates before a parent, they might be disowned because the parents don't know how to react or possibly accept that. This is also why the kidnaps are called "disappearances," because nobody knows if it's kidnap, if it's by choice, if they got sucked into another dimension or something, nobody knows except for a select few.</p></div>
+        <div class="sectionHeader" id="Religion"><h1>Religion</h1></div>
+        <div class="qAndA"><h2>Wings</h2>
+            <hr>
+            <p>There is one characteristic a person can get without needing the particle. If they die and come back, they might come back and a few years later gain angel wings. Since people also have mutations, a lot of people write that off as a mutation and not any proof towards a specific religion. However, it is not a mutation.</p></div>
+        <div class="sectionHeader" id="FAQ"><h1>FAQ</h1></div>
+        <div class="qAndA"><h2>What if my character doesn't match up with these rules?</h2>
+            <hr>
+            <p>Talk! We can discuss it and see if we can come to a compromise :) Most of my characters follow these rules. Really, they're there so that nobody has any over-powered characters and to make sure there's consistency.</p></div>
+        <div class="qAndA"><h2>Book?</h2>
+            <hr>
+            <p>Since I've gotten this multiple times now, yes, I plan on turning all of this into some sort of novel, visual novel, or other medium. It's like my life mission.</p></div>
+    </main>
+    <footer>
+        <button data-theme="normal" aria-pressed="true" id="NormalMode"></button>
+        <button data-theme="alt" aria-pressed="false" id="AltMode"></button>
+        <!-- <button data-theme="custom" aria-pressed="false" id="CustMode"></button> -->
+    </footer>
+</body>
+</html>
