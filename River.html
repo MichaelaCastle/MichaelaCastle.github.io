@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>River Lucero</title>
+    <meta name="author" content="Sam Castle">
+    <meta name="description" content="Character sheet for an OC, River">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&family=Sofia&family=Merriweather+Sans:wght@400;500;600;700;800&family=Baloo+Bhaijaan+2:wght@400..800&family=Spectral:wght@200;300;400;600;700&display=swap" rel="stylesheet">
@@ -19,8 +21,9 @@
     <style>
         :root {
             --hue: 0;
-            --hue1: 30deg;
-            --hue2: 60deg;
+            --hue1: 20deg; /* Opposite of 200 */
+            --hue2: 240deg; /* Opposite of 60 */
+            --hue3: 140deg; /* Opposite of 320 */
             --angle: 160deg;
             --middleHR: " ⋆ ☽ ⋆ ";
             --middleImageHR: " ══ ⋆★⋆ ══ ";
@@ -32,7 +35,16 @@
             --bodyText: "Sniglet", serif;
             --headingText: "Sofia", serif;
             --headingTextAdjustment: 1.5rem;
-        }   
+        }
+        [data-selected-theme="normal"] {
+            --h1-8-0-h2-8-0: linear-gradient(var(--angle), var(--h1-8-0) 20%, hwb(var(--hue3) 80% 00%), var(--h2-8-0)) !important;
+            --h1-0-3-h2-0-3: linear-gradient(var(--angle), var(--h1-0-3) 20%, hwb(var(--hue3) 00% 30%), var(--h2-0-3)) !important;
+        }
+
+        [data-selected-theme="alt"] {
+            --h1-8-0-h2-8-0: linear-gradient(var(--angle), var(--h1-8-0) 20%, hwb(var(--hue3) 00% 80%), var(--h2-8-0)) !important;
+            --h1-0-3-h2-0-3: linear-gradient(var(--angle), var(--h1-0-3) 20%, hwb(var(--hue3) 30% 00%), var(--h2-0-3)) !important;
+        }
     </style>
     <link rel="stylesheet" href="CSS/Defaults.css">
     <link rel="stylesheet" href="CSS/Wiki.css">
@@ -145,11 +157,11 @@
             <p class="a"></p>
             <div class='br'></div>
             <p class="q">Biological Gender</p>
-            <p class="a">Male</p>
+            <p class="a">Female</p>
             <p class="q">Preferred Gender</p>
-            <p class="a">Male</p>
+            <p class="a">Non-Binary</p>
             <p class="q">Pronouns</p>
-            <p class="a">He/Him</p>
+            <p class="a">They/Them</p>
             <div class='br'></div>
             <p class="q">Sexual Orientation</p>
             <p class="a">Demi-sexual</p>

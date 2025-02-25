@@ -23,6 +23,7 @@
         :root {
             --hue1: 180deg;
             --hue2: 65deg;
+            --hue3: 320deg;
             --angle: 160deg;
             --middleHR: "☀";
             --middleImageHR: " ✦ • • ☀ • • ✦ ";
@@ -34,6 +35,16 @@
             --headingText: "Gloria Hallelujah", serif;
             --headingText: Eraser;
             --headingTextAdjustment: 1.5rem;
+        }
+        :root,
+        [data-selected-theme="normal"] {
+            --h1-8-0-h2-8-0: linear-gradient(var(--angle), var(--h1-8-0) 20%, hwb(var(--hue3) 80% 00%), var(--h2-8-0)) !important;
+            --h1-0-3-h2-0-3: linear-gradient(var(--angle), var(--h1-0-3) 20%, hwb(var(--hue3) 00% 30%), var(--h2-0-3)) !important;
+        }
+
+        [data-selected-theme="alt"] {
+            --h1-8-0-h2-8-0: linear-gradient(var(--angle), var(--h1-8-0) 20%, hwb(var(--hue3) 00% 80%), var(--h2-8-0)) !important;
+            --h1-0-3-h2-0-3: linear-gradient(var(--angle), var(--h1-0-3) 20%, hwb(var(--hue3) 30% 00%), var(--h2-0-3)) !important;
         }
         #TeaserText p{
             text-align: left;
