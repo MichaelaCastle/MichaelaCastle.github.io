@@ -30,7 +30,7 @@ img:hover{
     padding: 0 7rem;
 }
 .info{
-    padding: 1rem 7rem;
+    padding: 1rem 15vw;
 }
 #TeaserText{
     padding-top: 5px;
@@ -67,6 +67,16 @@ img:hover{
 
 
 
+@media (max-width: 850px) {
+    .info{
+        padding: 1rem 5rem;
+    }
+}
+@media (max-width: 650px) {
+    .info{
+        padding: 1rem 3rem;
+    }
+}
 @media (max-width: 529px) {
     .info, #TeaserText, .quoteCaption, main > p:not(.a):not(.q):not(.quoteCaption){
         padding: 0 2rem;
