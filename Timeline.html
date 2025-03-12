@@ -11,14 +11,17 @@
             --h1-0-1-h2-0-1: linear-gradient(var(--angle), hwb(var(--hue1) 00% 10%) 25%, hwb(var(--hue2) 00% 10%));
             --lore: hwb(var(--hue1) 75% 00%);
             --cute: hwb(var(--hue2) 00% 00%);
+            --tl-col:  hwb(var(--hue1) 00% 90%);
         }
         :root,
         [data-selected-theme="normal"] {
             --lore: hwb(var(--hue1) 00% 75%);
+            --tl-col:  hwb(var(--hue1) 00% 90%);
         }
 
         [data-selected-theme="alt"] {
             --lore: hwb(var(--hue1) 75% 00%);
+            --tl-col:  hwb(var(--hue1) 90% 00%);
         }
 
         details {
@@ -203,6 +206,10 @@
         .time .events li{
             width: fit-content;
             text-wrap: nowrap;
+        }
+        .time .events li a{
+            /* color: var(--tl-col); */
+            text-decoration: underline;
         }
         .timeline{
             /* width: max-content; */
