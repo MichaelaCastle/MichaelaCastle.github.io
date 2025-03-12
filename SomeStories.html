@@ -85,20 +85,20 @@
             text-align: center;
             padding: 10px;
         }
-        .tableOfContents{
+        .tableOfContents, .y{
             font-size: 17.5px;
             font-weight: 550;
             text-align: left;
             padding-left:15vw;
             padding-right:15vw;
         }
-        .tableOfContents a {
+        ul a {
             padding: 0 .25rem;
             margin: 0 -.25rem;
             position: relative;
             transition: color .5s ease-in-out;
         }
-        .tableOfContents a:after {
+        ul a:after {
             border-radius: 25px;
             transition: box-shadow .4s ease-in-out;
             box-shadow: inset 0 0 0 0 var(--h2-6-0);
@@ -110,7 +110,7 @@
             width: calc(100% + 10px);
             top: 0%;
         }
-        .tableOfContents a:hover:after {
+        ul a:hover:after {
             box-shadow: inset 500px 0 0 0 var(--h2-6-0);
         }
         ul{
@@ -119,18 +119,18 @@
         ul li ul{
             font-size: 17.5px;
         }
-        .tableOfContents li.lore, .tableOfContents li.cute{
+        ul:not(#color-key) li.lore, ul:not(#color-key) li.cute{
             list-style: disc;
         }
-        .tableOfContents li.cute::marker
+        ul:not(#color-key) li.cute::marker
         {
             color: var(--cute);
         }
-        .tableOfContents li.lore::marker
+        ul:not(#color-key) li.lore::marker
         {
             color: var(--lore);
         }
-        .tableOfContents h3{
+        ul:not(#color-key) h3{
             padding: 10px 0;
             margin: 15px 0 0 0;
             font-size: 20px;
@@ -151,7 +151,7 @@
             background-color: var(--cute);
         }
         @media only screen and (max-width: 520px) {
-            .tableOfContents {
+            .tableOfContents, .y {
                 padding-left:0vw;
                 padding-right:0vw;
             }
@@ -205,14 +205,14 @@
                 <li>If you have any requests or ideas, send them to me at JaylexA5.Prismoria@gmail.com :3</li>
             </ul>
             <ul>
-                <li><a href="Pre-Plot">Before the plot (Aka, Elliot's life)</a>
+                <li><a href="#Pre-Plot">Before the plot (Aka, Elliot's life)</a>
                     <ul>
                         <li class="    "><a href="#0-0">Security Footage #6385</a></li>
                         <li class="    "><a href="#0-1">Briefcase</a></li>
                         <li class="    "><a href="#0-2">Valentines</a></li>
                     </ul>
                 </li>
-                <li><a href="Pre-Jay">Pre-Jay (This whole section is cute, ngl)</a>
+                <li><a href="#Pre-Jay">Pre-Jay (This whole section is cute, ngl)</a>
                     <ul>
                         <li class="lore"><a href="#1 ">Sam x Jacob First Meeting</a></li>
                         <li class="    "><a href="#2 ">The Meeting - Part 2</a></li>
@@ -2177,7 +2177,14 @@
     Once Jacob pulls himself back together again, he turns around in Jay's hold to lean up and kiss him on the cheek. "I love you so much." He looks back to Sam. "Now that neither of you are brooding and/or on edge, I won't make you partake in my games anymore. You can get back to work if you'd like~"</p>
             </article>
         </details>
-        <!-- <div class="sectionHeader" id="Data"><h1>Random Data</h1></div> -->
+        <!-- <div class="sectionHeader" id="Data"><h1>Random Data</h1></div>
+        <ul class="y">
+            <li>Elliot Stories - 3</li>
+            <li>Jacob Stories - </li>
+            <li>Jay Stories - </li>
+            <li>Sam Stories - </li>
+            <li>Lore Stories - </li>
+        </ul> -->
     </main>
     <footer>
         <button data-theme="normal" aria-pressed="false" id="NormalMode"></button>
