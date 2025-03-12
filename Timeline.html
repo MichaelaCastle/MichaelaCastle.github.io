@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" data-selected-theme="alt">
+<head>
+    <meta charset="utf-8">
+    <title>Timeline</title>
+    <style>
+        :root {
+            --hue1: 200deg;
+            --hue2: 320deg;
+            --angle: 160deg;
+            --h1-0-1-h2-0-1: linear-gradient(var(--angle), hwb(var(--hue1) 00% 10%) 25%, hwb(var(--hue2) 00% 10%));
+            --lore: hwb(var(--hue1) 75% 00%);
+            --cute: hwb(var(--hue2) 00% 00%);
+        }
+        :root,
+        [data-selected-theme="normal"] {
+            --lore: hwb(var(--hue1) 00% 75%);
+        }
+
+        [data-selected-theme="alt"] {
+            --lore: hwb(var(--hue1) 75% 00%);
+        }
+
+        details {
+            margin: initial;
+        }
+        details.lore summary{
+            border-left: solid 10px var(--lore);
+        }
+        details.cute summary{
+            border-left: solid 10px var(--cute);
+        }
+        summary p.chars{
+            margin-left: 30px;
+            margin-bottom: 5px;
+            text-align: left;
+            text-indent: 0;
+            width: fit-content;
+            transform: translateX(0px);
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+        summary.sectionHeader{
+            background-image: var(--h1-0-1-h2-0-1);
+            background-attachment: fixed;
+        }
+        .twc{
+            margin-bottom: 0px;
+        }
+        summary{
+            text-align: left;
+        }
+        summary h1{
+            margin-bottom: 0;
+        }
+        .sectionHeader:not(#ToCTitle):not(summary) h1{
+            padding-left: 0;
+        }
+        .sectionHeader:not(:first-of-type){
+            margin: 5px 0;
+        }
+        p:not(.info){
+            white-space: pre-wrap;
+            text-align: left;
+            padding-bottom: 5px;
+            text-indent: 20px;
+            width: clamp(75px, min(150ch, 85%), 100%);
+            transform: translateX(calc(50vw - 50% - 10px));
+        }
+        .info{
+            font-size: 20px;
+            font-weight: 400;
+            text-align: center;
+            padding: 10px;
+        }
+        .tableOfContents{
+            font-size: 17.5px;
+            font-weight: 550;
+            text-align: left;
+            padding-left:15vw;
+            padding-right:15vw;
+        }
+        ul a {
+            padding: 0 .25rem;
+            margin: 0 -.25rem;
+            position: relative;
+            transition: color .5s ease-in-out;
+        }
+        ul a:after {
+            border-radius: 25px;
+            transition: box-shadow .4s ease-in-out;
+            box-shadow: inset 0 0 0 0 var(--h2-6-0);
+            content: '';
+            z-index: -1;
+            position: absolute;
+            left: -5px;
+            height: 100%;
+            width: calc(100% + 10px);
+            top: 0%;
+        }
+        ul a:hover:after {
+            box-shadow: inset 500px 0 0 0 var(--h2-6-0);
+        }
+        ul{
+            font-size: 20px;
+        }
+        ul li ul{
+            font-size: 17.5px;
+        }
+        ul:not(#color-key) li.lore, ul:not(#color-key) li.cute{
+            list-style: disc;
+        }
+        ul:not(#color-key) li.cute::marker
+        {
+            color: var(--cute);
+        }
+        ul:not(#color-key) li.lore::marker
+        {
+            color: var(--lore);
+        }
+        ul:not(#color-key) h3{
+            padding: 10px 0;
+            margin: 15px 0 0 0;
+            font-size: 20px;
+        }
+        ul#color-key{
+            list-style: none;
+        }
+        ul#color-key li div{
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 1rem;
+        }
+        ul#color-key li:nth-child(1) div{
+            background-color: var(--lore);
+        }
+        ul#color-key li:nth-child(2) div{
+            background-color: var(--cute);
+        }
+        @media only screen and (max-width: 520px) {
+            .tableOfContents {
+                padding-left:0vw;
+                padding-right:0vw;
+            }
+            p:not(.info){
+                text-indent: 0px;
+            }
+            .content{
+                padding: 10px 10px 10px 10px;
+            }
+        }
+    </style>
+
+
+    <style>
+        [data-char="yellow"] {--time-dot-color: hsl(60 , 100%, 70%);}
+        [data-char="Elliot"] {--time-dot-color: hsl(75 , 100%, 20%);}
+        [data-char="Jay"]    {--time-dot-color: hsl(200, 100%, 50%);}
+        [data-char="Sam"]    {--time-dot-color: hsl(120, 100%, 50%);}
+        [data-char="Jacob"]  {--time-dot-color: hsl(350, 100%, 70%);}
+        .time{
+            display: grid;
+            grid-template-columns: 150px 25px 1fr;
+            gap: 10px;
+        }
+
+        .time h2 {
+            width: 150px;
+            text-align: right;
+            margin: 0;
+        }
+        .time .dot {
+            margin-inline: 16px;
+            border-left: 2px solid var(--h1-0-8);
+            height: 100%;
+            position: relative;
+        }
+        .time .dot::after {
+            content: "";
+            box-sizing: border-box;
+            background-color: var(--time-dot-color);
+            position: absolute;
+            border: 2px solid var(--h1-0-8);
+            border-radius: 25px;
+            width: 25px;
+            height: 25px;
+            top: 0px;
+            left: -14px;
+        }
+        .time .events {
+            text-align: left;
+            margin: 0;
+            margin-bottom: 10px;
+            padding: 10px;
+            list-style: none;
+            order: 2;
+            background-color: hsla(0, 0%, 100%, 0.1);
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+        .time .events li{
+            width: fit-content;
+            text-wrap: nowrap;
+        }
+        .timeline{
+            /* width: max-content; */
+            margin: 10px;
+        }
+        @media only screen and (min-width: 1000px){
+            .timeline{
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="CSS/Defaults.css">
+</head>
+<body>
+    <article class="timeline">
+        <section data-char="Elliot" class="time">
+            <h2>-42 Years</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li>Elliot is born</li>
+            </ul>
+        </section>
+        <section data-char="Elliot" class="time">
+            <h2>-27 Years</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li><a>Security Footage #6385</a></li>
+            </ul>
+        </section>
+        <section data-char="Jay" class="time">
+            <h2>-24 Years</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li>Jay is born</li>
+            </ul>
+        </section>
+        <section data-char="Elliot" class="time">
+            <h2></h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li><a>The Briefcase</a></li>
+            </ul>
+        </section>
+        <section data-char="Jacob" class="time">
+            <h2>-22 Years</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li>Jacob is born</li>
+            </ul>
+        </section>
+        <section data-char="Elliot" class="time">
+            <h2>-21 Years</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li>Elliot and Nico adopt Jay</li>
+            </ul>
+        </section>
+        <section data-char="Jay" class="time">
+            <h2></h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li>The portal enters the world</li>
+                <li>Jay finds it, gains the pendant</li>
+                <li>Jay gets kidnapped</li>
+            </ul>
+        </section>
+        <section data-char="Sam" class="time">
+            <h2>-20 Years</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li>Sam is born</li>
+            </ul>
+        </section>
+        <section data-char="Jay" class="time">
+            <h2>-19 Years</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li>Pendant gains sentience</li>
+            </ul>
+        </section>
+        <section data-char="Sam" class="time">
+            <h2>-12 Years</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li>Sam and Jacob meet</li>
+                <li><a>The Meeting</a></li>
+                <li><a>The Meeting Pt 2</a></li>
+                <li><a>Lunch</a></li>
+                <li><a>Dictionary</a></li>
+                <li><a>3.14159, this is pi, followed by...</a></li>
+                <li><a>Friends?</a></li>
+                <li><a>Friends!</a></li>
+                <li><a>Sleepover</a></li>
+            </ul>
+        </section>
+        <section data-char="Jay" class="time">
+            <h2>-11 Years</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li>Particle is released</li>
+                <li>Jay escapes</li>
+            </ul>
+        </section>
+        <section data-char="Sam" class="time">
+            <h2>-10 Years</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li><a>The Event</a></li>
+                <li><a>The News</a></li>
+                <li><a>I'm here for you</a></li>
+                <li><a>You said I could stay here...</a></li>
+            </ul>
+        </section>
+        <section data-char="Jay" class="time">
+            <h2></h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li>Jay meets Jacob</li>
+                <li><a>Jay x Jacob Meeting</a></li>
+                <li><a>Christmas Tree V1</a></li>
+            </ul>
+        </section>
+        <section data-char="Jacob" class="time">
+            <h2>-9 Years</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li><a>Colors</a></li>
+            </ul>
+        </section>
+        <section data-char="Jacob" class="time">
+            <h2>-8 Years</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li><a>The Musical</a></li>
+                <li><a>The Musical, Part 2</a></li>
+                <li><a>Visiting</a></li>
+            </ul>
+        </section>
+        <section data-char="Jay" class="time">
+            <h2>-7 Years</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li>Jay speaks for the first time</li>
+                <li><a>Taken</a></li>
+            </ul>
+        </section>
+        <section data-char="Jay" class="time">
+            <h2>-6 Years</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li>Jay meets Sam</li>
+                <li><a>Jay x Sam Meeting</a></li>
+                <li><a>Bandages</a></li>
+                <li><a>Nightmares</a></li>
+                <li><a>Returning</a></li>
+            </ul>
+        </section>
+        <section data-char="Elliot" class="time">
+            <h2>-3 Years</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li><a>Idk what to title this</a></li>
+            </ul>
+        </section>
+        <section data-char="yellow" class="time">
+            <h2>0</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li>Point in time all rps start from</li>
+            </ul>
+        </section>
+        <section data-char="Jacob" class="time">
+            <h2>1 Year</h2>
+            <div class="dot"></div>
+            <ul class="events">
+                <li><a>Dead Man Walking</a></li>
+                <li><a>Christmas Tree V2</a></li>
+            </ul>
+        </section>
+    </article>
+</body>
+</html>
