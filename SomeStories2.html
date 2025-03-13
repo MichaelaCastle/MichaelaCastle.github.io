@@ -116,6 +116,20 @@
         ul{
             font-size: 20px;
         }
+        ul li ul{
+            font-size: 17.5px;
+        }
+        ul:not(#color-key) li.lore, ul:not(#color-key) li.cute{
+            list-style: disc;
+        }
+        ul:not(#color-key) li.cute::marker
+        {
+            color: var(--cute);
+        }
+        ul:not(#color-key) li.lore::marker
+        {
+            color: var(--lore);
+        }
         ul:not(#color-key) h3{
             padding: 10px 0;
             margin: 15px 0 0 0;
@@ -149,119 +163,12 @@
             }
         }
     </style>
-    <style>
-        [data-char="yellow"] {--time-dot-color: hsl(60 , 100%, 70%);}
-        [data-char="Elliot"] {--time-dot-color: hsl(75 , 100%, 20%);}
-        [data-char="Jay"]    {--time-dot-color: hsl(200, 100%, 50%);}
-        [data-char="Sam"]    {--time-dot-color: hsl(120, 100%, 50%);}
-        [data-char="Jacob"]  {--time-dot-color: hsl(350, 100%, 70%);}
-        .time{
-            display: grid;
-            grid-template-columns: 125px 25px 1fr;
-            gap: 10px;
-        }
-
-        .time h2 {
-            text-align: right;
-            margin: 0;
-        }
-        .time .dot {
-            margin-inline: 16px;
-            border-left: 2px solid var(--h1-0-8);
-            height: 100%;
-            position: relative;
-        }
-        .time .dot::after {
-            content: "";
-            box-sizing: border-box;
-            background-color: var(--time-dot-color);
-            position: absolute;
-            border: 2px solid var(--h1-0-8);
-            border-radius: 25px;
-            width: 25px;
-            height: 25px;
-            top: 0px;
-            left: -14px;
-        }
-        .time .events {
-            text-align: left;
-            margin: 0;
-            margin-bottom: 10px;
-            padding: 10px;
-            list-style: none;
-            order: 2;
-            background-color: hsla(0, 0%, 100%, 0.1);
-            border-radius: 10px;
-            font-size: 1rem;
-        }
-        .time .events li a{
-            text-decoration: underline;
-        }
-        .timeline{
-            margin: 10px;
-            position: relative;
-        }
-        @media only screen and (min-width: 1000px){
-            .timeline{
-                display: flex;
-                flex-direction: column;
-                height: 1000px;
-                flex-wrap: wrap;
-            }
-        }
-        @media only screen and (min-width: 1500px){
-            .timeline{
-                display: flex;
-                flex-direction: column;
-                height: 750px;
-                flex-wrap: wrap;
-            }
-        }
-    </style>
-    <style>
-        .circle {
-            display: none;
-            position: absolute;
-            background-color: var(--h2-8-0);
-            border-radius: 10px;
-            padding: 10px;
-            color: var(--h2-0-8);
-            pointer-events: none;
-        }
-        .time:has(.dot:hover) ~ .circle{
-            display: block;
-        }
-    </style>
     <link rel="stylesheet" href="CSS/Defaults.css">
     <link rel="stylesheet" href="CSS/Dropdowns.css?v=1">
     <script src="nav.js"></script>
     <script>
-        var mouseX = 0, mouseY = 0;
-        var xp = 0, yp = 0;
-        var circle;
-        
         window.onload = () => {
             CreateNavbar("SomeStories");
-            circle = document.querySelector('#circle');
-            addEventListener("mousemove", (e) => {
-                if (!e.target.classList.contains("dot")) { return; }
-                circle.style.left = `${e.pageX - 100}px`;
-                circle.style.top = `${e.pageY - 290}px`;
-                let section = e.target.closest("section");
-                if (section) {
-                    let data = {
-                        elliot: section.getAttribute("data-EA"),
-                        jay: section.getAttribute("data-JA"),
-                        jacob: section.getAttribute("data-JJA"),
-                        sam: section.getAttribute("data-SA"),
-                    };
-                    
-                    circle.innerHTML = `Elliot: ${data.elliot}<br>
-                    Jay: ${data.jay}<br>
-                    Jacob: ${data.jacob}<br>
-                    Sam: ${data.sam}`;
-                }
-            });
         };
     </script>
 </head>
@@ -294,189 +201,59 @@
             <ul id="color-key">
                 <li><div></div> - Lore</li>
                 <li><div></div> - Just a really wholesome story</li>
+                <li>These are all relatively in chronological order</li>
                 <li>If you have any requests or ideas, send them to me at JaylexA5.Prismoria@gmail.com :3</li>
             </ul>
+            <ul>
+                <li><a href="#Pre-Plot">Before the plot (Aka, Elliot's life)</a>
+                    <ul>
+                        <li class="    "><a href="#0-0">Security Footage #6385</a></li>
+                        <li class="    "><a href="#0-1">Briefcase</a></li>
+                        <li class="    "><a href="#0-2">Valentines</a></li>
+                    </ul>
+                </li>
+                <li><a href="#Pre-Jay">Pre-Jay (This whole section is cute, ngl)</a>
+                    <ul>
+                        <li class="lore"><a href="#1 ">Sam x Jacob First Meeting</a></li>
+                        <li class="    "><a href="#2 ">The Meeting - Part 2</a></li>
+                        <li class="    "><a href="#3 ">Lunch</a></li>
+                        <li class="    "><a href="#4 ">Dictionary</a></li>
+                        <li class="    "><a href="#5 ">3.14159, this is pi, followed by...</a></li>
+                        <li class="    "><a href="#6 ">Friends?</a></li>
+                        <li class="    "><a href="#7 ">Friends!</a></li>
+                        <li class="    "><a href="#8 ">Sleepover</a></li>
+                        <li class="lore"><a href="#9 ">The Event</a></li>
+                        <li class="    "><a href="#10">The News</a></li>
+                        <li class="    "><a href="#11">I'm here for you</a></li>
+                        <li class="    "><a href="#12">You said I could stay here...</a></li>
+                    </ul>
+                </li>
+                <li><a href="#Pre-Kidnap">Pre-Kidnap</a>
+                    <ul>
+                        <li class="lore"><a href="#1-1">Jay x Jacob First Meeting</a></li>
+                        <li class="cute"><a href="#1-2">Christmas Tree V1</a></li>
+                        <li class="cute"><a href="#1-3">Colors</a></li>
+                        <li class="    "><a href="#1-4">The Musical</a></li>
+                        <li class="    "><a href="#1-5">The Musical - Part 2</a></li>
+                        <li class="    "><a href="#1-6">Visiting</a></li>
+                    </ul>
+                </li>
+                <li><a href="#Post-Kidnap">Post-Kidnap</a>
+                    <ul>
+                        <li class="lore"><a href="#2-1">Taken</a></li>
+                        <li class="lore"><a href="#2-2">Jay x Sam First Meeting</a></li>
+                        <li class="lore"><a href="#2-3">Bandages</a></li>
+                        <li class="cute"><a href="#2-4">Nightmare</a></li>
+                        <li class="    "><a href="#2-5">Returning</a></li>
+                        <li class="cute"><a href="#2-6">The Kiss</a></li>
+                        <li class="lore"><a href="#2-10">Idk what to title this</a></li>
+                        <li class="lore"><a href="#2-7">Dead Man Walking</a></li>
+                        <li class="cute"><a href="#2-8">Christmas Tree V2</a></li>
+                        <li class="    "><a href="#2-9">Never Have I Ever</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-        <article class="timeline">
-            <section data-char="Elliot" class="time" data-EA="0 Years Old" data-JA="Unborn" data-SA="Unborn" data-JJA="Unborn">
-                <h2>-42 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li>Elliot is born</li>
-                </ul>
-            </section>
-            <section data-char="Elliot" class="time" data-EA="15 Years Old" data-JA="Unborn" data-SA="Unborn" data-JJA="Unborn">
-                <h2>-27 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li><a href="#0-0">Security Footage #6385</a></li>
-                </ul>
-            </section>
-            <section data-char="Jay" class="time" data-EA="18 Years Old" data-JA="0 Years Old" data-SA="Unborn" data-JJA="Unborn">
-                <h2>-24 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li>Jay is born</li>
-                </ul>
-            </section>
-            <section data-char="Elliot" class="time" data-EA="18 Years Old" data-JA="0 Years Old" data-SA="Unborn" data-JJA="Unborn">
-                <h2></h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li><a href="#0-1">The Briefcase</a></li>
-                </ul>
-            </section>
-            <section data-char="Jacob" class="time" data-EA="20 Years Old" data-JA="2 Years Old" data-JJA="0 Years Old" data-SA="Unborn">
-                <h2>-22 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li>Jacob is born</li>
-                </ul>
-            </section>
-            <section data-char="Elliot" class="time" data-EA="21 Years Old" data-JA="3 Years Old" data-JJA="1 Year Old" data-SA="Unborn">
-                <h2>-21 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li>Elliot and Nico adopt Jay</li>
-                </ul>
-            </section>
-            <section data-char="Jay" class="time" data-EA="21 Years Old" data-JA="3 Years Old" data-JJA="1 Year Old" data-SA="Unborn">
-                <h2></h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li>The portal enters the world</li>
-                    <li>Jay finds it, gains the pendant</li>
-                    <li>Jay gets kidnapped</li>
-                </ul>
-            </section>
-            <section data-char="Sam" class="time" data-EA="22 Years Old" data-JA="4 Years Old" data-JJA="2 Years Old" data-SA="0 Years Old">
-                <h2>-20 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li>Sam is born</li>
-                </ul>
-            </section>
-            <section data-char="Jay" class="time" data-EA="23 Years Old" data-JA="5 Years Old" data-JJA="3 Years Old" data-SA="1 Year Old">
-                <h2>-19 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li>Pendant gains sentience</li>
-                </ul>
-            </section>
-            <section data-char="Sam" class="time" data-EA="30 Years Old" data-JA="12 Years Old" data-JJA="10 Years Old" data-SA="8 Years Old">
-                <h2>-12 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li>Sam and Jacob meet</li>
-                    <li><a href="#1">The Meeting</a></li>
-                    <li><a href="#2">The Meeting Pt 2</a></li>
-                    <li><a href="#3">Lunch</a></li>
-                    <li><a href="#4">Dictionary</a></li>
-                    <li><a href="#5">3.14159, this is pi, followed by...</a></li>
-                    <li><a href="#6">Friends?</a></li>
-                    <li><a href="#7">Friends!</a></li>
-                    <li><a href="#8">Sleepover</a></li>
-                </ul>
-            </section>
-            <section data-char="Jay" class="time" data-EA="31 Years Old" data-JA="13 Years Old" data-JJA="11 Years Old" data-SA="9 Years Old">
-                <h2>-11 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li>Particle is released</li>
-                    <li>Jay escapes</li>
-                </ul>
-            </section>
-            <section data-char="Sam" class="time" data-EA="32 Years Old" data-JA="14 Years Old" data-JJA="12 Years Old" data-SA="10 Years Old">
-                <h2>-10 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li><a href="#9">The Event</a></li>
-                    <li><a href="#10">The News</a></li>
-                    <li><a href="#11">I'm here for you</a></li>
-                    <li><a href="#12">You said I could stay here...</a></li>
-                </ul>
-            </section>
-            <section data-char="Jay" class="time" data-EA="32 Years Old" data-JA="14 Years Old" data-JJA="12 Years Old" data-SA="10 Years Old">
-                <h2></h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li>Jay meets Jacob</li>
-                    <li><a href="#1-1">Jay x Jacob Meeting</a></li>
-                    <li><a href="#1-2">Christmas Tree V1</a></li>
-                </ul>
-            </section>
-            <section data-char="Jacob" class="time" data-EA="33 Years Old" data-JA="15 Years Old" data-JJA="13 Years Old" data-SA="11 Years Old">
-                <h2>-9 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li><a href="#1-3">Colors</a></li>
-                </ul>
-            </section>
-            <section data-char="Jacob" class="time" data-EA="34 Years Old" data-JA="16 Years Old" data-JJA="14 Years Old" data-SA="12 Years Old">
-                <h2>-8 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li><a href="#1-4">The Musical</a></li>
-                    <li><a href="#1-5">The Musical, Part 2</a></li>
-                    <li><a href="#1-6">Visiting</a></li>
-                </ul>
-            </section>
-            <section data-char="Jay" class="time" data-EA="35 Years Old" data-JA="17 Years Old" data-JJA="15 Years Old" data-SA="13 Years Old">
-                <h2>-7 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li>Jay speaks for the first time</li>
-                    <li><a href="#2-1">Taken</a></li>
-                </ul>
-            </section>
-            <section data-char="Jay" class="time" data-EA="36 Years Old" data-JA="18 Years Old" data-JJA="16 Years Old" data-SA="14 Years Old">
-                <h2>-6 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li>Jay meets Sam</li>
-                    <li><a href="#2-2">Jay x Sam Meeting</a></li>
-                    <li><a href="#2-3">Bandages</a></li>
-                    <li><a href="#2-4">Nightmares</a></li>
-                    <li><a href="#2-5">Returning</a></li>
-                </ul>
-            </section>
-            <section data-char="Jay" class="time" data-EA="38 Years Old" data-JA="20 Years Old" data-JJA="18 Years Old" data-SA="16 Years Old">
-                <h2>-4 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li>Jay allows himself to actually be alive</li>
-                    <li><a href="#2-6">The Kiss</a></li>
-                </ul>
-            </section>
-            <section data-char="Elliot" class="time" data-EA="39 Years Old" data-JA="21 Years Old" data-JJA="19 Years Old" data-SA="17 Years Old">
-                <h2>-3 Years</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li><a href="#2-10">Idk what to title this</a></li>
-                </ul>
-            </section>
-            <section data-char="yellow" class="time" data-EA="42 Years Old" data-JA="24 Years Old" data-JJA="22 Years Old" data-SA="20 Years Old">
-                <h2>0</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li>Point in time all rps start from</li>
-                </ul>
-            </section>
-            <section data-char="Jacob" class="time" data-EA="43 Years Old" data-JA="25 Years Old" data-JJA="23 Years Old" data-SA="21 Years Old">
-                <h2>1 Year</h2>
-                <div class="dot"></div>
-                <ul class="events">
-                    <li><a href="#2-7">Dead Man Walking</a></li>
-                    <li><a href="#2-8">Christmas Tree V2</a></li>
-                </ul>
-            </section>
-            <div id="circle" class="circle">
-                Elliot: 43 Years Old<br>
-                Jay: 25 Years Old<br>
-                Jacob: 23 Years Old<br>
-                Sam: 21 Years Old
-            </div>
-        </article>
         <div class="sectionHeader" id="Pre-Plot"><h1>Before the plot (Aka, Elliot's life)</h1></div>
         <details id="0-0" class="">
             <summary class='sectionHeader'>
