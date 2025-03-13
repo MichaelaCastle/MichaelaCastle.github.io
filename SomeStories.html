@@ -22,14 +22,17 @@
             --h1-0-1-h2-0-1: linear-gradient(var(--angle), hwb(var(--hue1) 00% 10%) 25%, hwb(var(--hue2) 00% 10%));
             --lore: hwb(var(--hue1) 75% 00%);
             --cute: hwb(var(--hue2) 00% 00%);
+            --time-bg: hsla(0, 0%, 100%, 0.1);
         }
         :root,
         [data-selected-theme="normal"] {
             --lore: hwb(var(--hue1) 00% 75%);
+            --time-bg: hsla(0, 0%, 0%, 0.1);
         }
 
         [data-selected-theme="alt"] {
             --lore: hwb(var(--hue1) 75% 00%);
+            --time-bg: hsla(0, 0%, 100%, 0.1);
         }
 
         details {
@@ -190,7 +193,7 @@
             padding: 10px;
             list-style: none;
             order: 2;
-            background-color: hsla(0, 0%, 100%, 0.1);
+            background-color: var(--time-bg);
             border-radius: 10px;
             font-size: 1rem;
         }
