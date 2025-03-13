@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-selected-theme="alt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Baloo+Bhaijaan+2:wght@400..800&family=Merriweather+Sans:wght@400;500;600;700;800&family=Pangolin&family=Spectral:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <link rel="icon" type="image/png" href="../images/Favicons/Sam512.png" sizes="512x512">
+    <link rel="icon" type="image/png" href="../images/Favicons/Sam192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="../images/Favicons/Sam180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="../images/Favicons/Sam32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/Favicons/Sam16.png" sizes="16x16">
+    <title>Sam Profile</title>
+    <style>
+        :root {
+            --hue1: 120deg;
+            --hue2: 150deg;
+            --angle: 160deg;
+            --bodyText: "Baloo Bhaijaan 2", serif;
+            /* --bodyText: Expresso; */
+            --headingText: "Amita", serif;
+        }
+    </style>
+    <link rel="stylesheet" href="../CSS/Defaults.css">
+    <script src="../nav.js"></script>
+    <script>
+        window.onload = () => handleDeviceChange(smallDevice);
+    </script>
+    <style>
+        body{
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: var(--bodyText), 'Spectral', serif;
+        }
+        main h3{
+            font-family: var(--headingText), 'Merriweather Sans', sans-serif;
+        }
+        main{
+            display: grid;
+            grid-template-columns: 1fr 2.75fr 1fr;
+            flex: 1;
+        }
+        main > div{
+            background: url('images/Sam/books.jpg');
+            background-size: cover;
+            background-repeat: no-repeat, no-repeat;
+            background-position: center;
+        }
+        .flex-col{
+            display: flex;
+            flex-direction: column;
+        }
+        .flex-row{
+            display: flex;
+            flex-direction: row;
+        }
+        .flex-center{
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .name{
+            background: linear-gradient(transparent, hsla(0, 0%, 0%, 0.75) 90%), url('images/Sam/tea.jpg');
+            border: var(--c3-4-0) solid;
+            border-width: 0px 0px 3px 0px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .name .pfp{
+            max-width: 150px;
+            max-height: 150px;
+            border-radius: 100px;
+            border: solid 4px hwb(var(--hue1) 80% 00%);
+            background: radial-gradient(hwb(var(--hue1) 00% 80%), hwb(var(--hue1) 00% 00%));
+        }
+        
+        .name .levels, .name .joined, .name .info div, .sectionDivider h3, .posts{
+            flex: 1;
+        }
+        .name .username{
+            text-align: center;
+            font-weight: 600;
+        }
+        .name .info{
+            text-align: center;
+            flex-wrap: nowrap;
+            width: 80%;
+        }
+        .name .info div p:last-of-type{
+            font-size: 1.25rem;
+        }
+
+
+        .sectionDivider{
+            background-image: linear-gradient(var(--angle), var(--h1-6-0) 25%, var(--h2-6-0));
+            background-attachment: fixed;
+            flex-wrap: nowrap;
+            height: 3.5rem;
+        }
+        .bio p{
+            white-space: pre-wrap;
+            text-align: left;
+            padding: 10px;
+        }
+        .posts{
+            background: linear-gradient(hsla(var(--hue1), 100%, 5%, 0.9) 7rem, transparent), url('images/Sam/pawprint.jpg');
+        }
+
+        .posts .flex-row:not(.flex-center){
+            flex-wrap: wrap;
+        }
+        .post{
+            margin: 10px;
+            background-color: var(--h1-8-0);
+            border: 2px var(--h1-0-3) solid;
+            border-radius: 10px;
+            transition: transform 0.15s;
+            padding: 10px;
+            min-width: 200px;
+            flex: 1;
+        }
+        .post:hover{
+            transform: scale(1.05, 1.05);
+        }
+        .post h4{
+            text-wrap: wrap;
+            margin: 0;
+            margin-bottom: 5px;
+            flex: 1;
+        }
+        .post:nth-child(even){
+            background-color: var(--h2-8-0);
+            border: 2px var(--h2-0-3) solid;
+        }
+        
+        .format-img{
+            background-size: cover;
+            background-repeat: no-repeat, no-repeat;
+            background-position: center;
+        }
+
+
+
+        @media (max-height: 750px) {
+            .name .pfp{
+                max-height: 100px;
+                max-width: 100px;
+            }
+        }
+        @media (max-width: 1400px){
+            main{
+                grid-template-columns: 1fr 4fr 1fr;
+            }
+        }
+        @media (max-width: 1150px){
+            main{
+                grid-template-columns: 0fr 4fr 0fr;
+            }
+        }
+        @media (max-width: 500px){
+        }
+        </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h3 id="SiteName">Prismoria</h3>
+            <div class="flex-container">
+                <a href="index.html" id="TheParticle">The Particle</a>
+                <div class="dropdown">
+                    <button class="dropbtn" id="Characters">Characters
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="Jay.html">Jay Star</a>
+                        <a href="Jacob.html">Jacob Jackson</a>
+                        <a href="Sam.html">Samuel Broteez</a>
+                        <a href="Elliot.html">Elliot Evans</a>
+                        <a href="River.html">River Lucero</a>
+                        <a href="Lucian.html">Lucian Draven</a>
+                    </div>
+                </div>
+                <a href="SomeStories.html" id="SomeStories" class="Selected">Some Stories</a>
+                <a href="Updates.html" id="Updates">Site Updates</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div></div>
+        <article class="flex-col">
+            <section class="name format-img flex-col flex-center">
+                <img src="../Game/CharacterSprites/SamNeutral.png" class="pfp format-img">
+                <p class="username">GreenTea_SB</p>
+                <div class="info flex-row flex-center">
+                    <div>
+                        <p>Followers</p>
+                        <p>10</p>
+                    </div>
+                    <div>
+                        <p>Following</p>
+                        <p>2083</p>
+                    </div>
+                </div>
+            </section>
+            <section class="sectionDivider flex-row flex-center">
+                <h3 class="dropdown">5 Posts</h3>
+                <h3 class="dropdown">2k Replies</h3>
+                <h3>Wall</h3>
+            </section>
+            <section class="bio">
+                <p>| 20 | He/Him | Unofficial Official Doctor |
+Not really going to post, I'm just here to stalk Owl City :/
+Go look at *insert username*, they make good music
+                </p>
+            </section>
+            
+            <section class="posts flex-col p10 format-img">
+                <div class="sectionDivider flex-center flex-row"><h3>Posts</h3></div>
+                <h2>User has posts privated</h2>
+            </section>
+        </article>
+        <div></div>
+    </main>
+    <!-- <footer>
+        <button data-theme="normal" aria-pressed="false" id="NormalMode"></button>
+        <button data-theme="alt" aria-pressed="true" id="AltMode"></button>
+    </footer> -->
+    <script src="Accordian.js"></script>
+</body>
+</html>
