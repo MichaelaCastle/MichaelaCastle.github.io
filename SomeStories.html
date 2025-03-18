@@ -153,11 +153,11 @@
         }
     </style>
     <style>
-        [data-char="yellow"] {--time-dot-color: hsl(60 , 100%, 70%);}
-        [data-char="Elliot"] {--time-dot-color: hsl(75 , 100%, 20%);}
-        [data-char="Jay"]    {--time-dot-color: hsl(200, 100%, 50%);}
-        [data-char="Sam"]    {--time-dot-color: hsl(120, 100%, 50%);}
-        [data-char="Jacob"]  {--time-dot-color: hsl(350, 100%, 70%);}
+        .time.yellow {--time-dot-color: hsl(60 , 100%, 70%);}
+        .time.elliot {--time-dot-color: hsl(75 , 100%, 20%);}
+        .time.jay    {--time-dot-color: hsl(200, 100%, 50%);}
+        .time.sam    {--time-dot-color: hsl(120, 100%, 50%);}
+        .time.jacob  {--time-dot-color: hsl(350, 100%, 70%);}
         .time{
             display: grid;
             grid-template-columns: 125px 25px 1fr;
@@ -254,17 +254,7 @@
                 circle.style.top = `${e.pageY - 290}px`;
                 let section = e.target.closest("section");
                 if (section) {
-                    let data = {
-                        elliot: section.getAttribute("data-EA"),
-                        jay: section.getAttribute("data-JA"),
-                        jacob: section.getAttribute("data-JJA"),
-                        sam: section.getAttribute("data-SA"),
-                    };
-                    
-                    circle.innerHTML = `Elliot: ${data.elliot}<br>
-                    Jay: ${data.jay}<br>
-                    Jacob: ${data.jacob}<br>
-                    Sam: ${data.sam}`;
+                    circle.innerHTML = section.getAttribute("data-ages").replaceAll("|", " Years Old");
                 }
             });
         };
@@ -296,49 +286,49 @@
     <main>
         <div class="sectionHeader" id="ToCTitle"><h1>Table of Contents</h1></div>
         <article class="timeline">
-            <section data-char="Elliot" class="time" data-EA="0 Years Old" data-JA="Unborn" data-SA="Unborn" data-JJA="Unborn">
+            <section class="time elliot" data-ages='Elliot: 0|<br>Jay: Unborn<br>Jacob: Unborn<br>Sam: Unborn'>
                 <h2>-42 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
                     <li>Elliot is born</li>
                 </ul>
             </section>
-            <section data-char="Elliot" class="time" data-EA="15 Years Old" data-JA="Unborn" data-SA="Unborn" data-JJA="Unborn">
+            <section class="time elliot" data-ages='Elliot: 15|<br>Jay: Unborn<br>Jacob: Unborn<br>Sam: Unborn'>
                 <h2>-27 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
                     <li><a href="#0-0">Security Footage #6385</a></li>
                 </ul>
             </section>
-            <section data-char="Jay" class="time" data-EA="18 Years Old" data-JA="0 Years Old" data-SA="Unborn" data-JJA="Unborn">
+            <section class="time jay" data-ages='Elliot: 18|<br>Jay: 0|<br>Jacob: Unborn<br>Sam: Unborn'>
                 <h2>-24 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
                     <li>Jay is born</li>
                 </ul>
             </section>
-            <section data-char="Elliot" class="time" data-EA="18 Years Old" data-JA="0 Years Old" data-SA="Unborn" data-JJA="Unborn">
+            <section class="time elliot" data-ages='Elliot: 18|<br>Jay: 0|<br>Jacob: Unborn<br>Sam: Unborn'>
                 <h2></h2>
                 <div class="dot"></div>
                 <ul class="events">
                     <li><a href="#0-1">The Briefcase</a></li>
                 </ul>
             </section>
-            <section data-char="Jacob" class="time" data-EA="20 Years Old" data-JA="2 Years Old" data-JJA="0 Years Old" data-SA="Unborn">
+            <section class="time jacob" data-ages="Elliot: 20|<br>Jay: 2|<br>Jacob: 0|<br>Sam: Unborn">
                 <h2>-22 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
                     <li>Jacob is born</li>
                 </ul>
             </section>
-            <section data-char="Elliot" class="time" data-EA="21 Years Old" data-JA="3 Years Old" data-JJA="1 Year Old" data-SA="Unborn">
+            <section class="time elliot" data-ages="Elliot: 21|<br>Jay: 3|<br>Jacob: 1 Year Old<br>Sam: Unborn">
                 <h2>-21 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
                     <li>Elliot and Nico adopt Jay</li>
                 </ul>
             </section>
-            <section data-char="Jay" class="time" data-EA="21 Years Old" data-JA="3 Years Old" data-JJA="1 Year Old" data-SA="Unborn">
+            <section class="time jay" data-ages="Elliot: 21|<br>Jay: 3|<br>Jacob: 1 Year Old<br>Sam: Unborn">
                 <h2></h2>
                 <div class="dot"></div>
                 <ul class="events">
@@ -347,28 +337,28 @@
                     <li>Jay gets kidnapped</li>
                 </ul>
             </section>
-            <section data-char="Sam" class="time" data-EA="22 Years Old" data-JA="4 Years Old" data-JJA="2 Years Old" data-SA="0 Years Old">
+            <section class="time sam" data-ages="Elliot: 22|<br>Jay: 4|<br>Jacob: 2|<br>Sam: 0|">
                 <h2>-20 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
                     <li>Sam is born</li>
                 </ul>
             </section>
-            <section data-char="Jay" class="time" data-EA="23 Years Old" data-JA="5 Years Old" data-JJA="3 Years Old" data-SA="1 Year Old">
+            <section class="time jay" data-ages="Elliot: 23|<br>Jay: 5|<br>Jacob: 3|<br>Sam: 1 Year Old">
                 <h2>-19 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
                     <li>Pendant gains sentience</li>
                 </ul>
             </section>
-            <section data-char="Jacob" class="time" data-EA="28 Years Old" data-JA="10 Years Old" data-JJA="8 Years Old" data-SA="6 Year Old">
+            <section class="time jacob" data-ages="Elliot: 28|<br>Jay: 10|<br>Jacob: 8|<br>Sam: 6|">
                 <h2>-10 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
                     <li>Jacob's parents split up</li>
                 </ul>
             </section>
-            <section data-char="Sam" class="time" data-EA="30 Years Old" data-JA="12 Years Old" data-JJA="10 Years Old" data-SA="8 Years Old">
+            <section class="time sam" data-ages="Elliot: 30|<br>Jay: 12|<br>Jacob: 10|<br>Sam: 8|">
                 <h2>-12 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
@@ -383,7 +373,7 @@
                     <li><a href="#8">Sleepover</a></li>
                 </ul>
             </section>
-            <section data-char="Jay" class="time" data-EA="31 Years Old" data-JA="13 Years Old" data-JJA="11 Years Old" data-SA="9 Years Old">
+            <section class="time jay" data-ages="Elliot: 31|<br>Jay: 13|<br>Jacob: 11|<br>Sam: 9|">
                 <h2>-11 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
@@ -391,7 +381,7 @@
                     <li>Jay escapes</li>
                 </ul>
             </section>
-            <section data-char="Sam" class="time" data-EA="32 Years Old" data-JA="14 Years Old" data-JJA="12 Years Old" data-SA="10 Years Old">
+            <section class="time sam" data-ages="Elliot: 32|<br>Jay: 14|<br>Jacob: 12|<br>Sam: 10|">
                 <h2>-10 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
@@ -399,10 +389,11 @@
                     <li><a href="#10">The News</a></li>
                     <li><a href="#11">I'm here for you</a></li>
                     <li><a href="#12">You said I could stay here...</a></li>
+                    <li>Sam's mother dies</li>
                     <li>Sam gets his first job</li>
                 </ul>
             </section>
-            <section data-char="Jay" class="time" data-EA="32 Years Old" data-JA="14 Years Old" data-JJA="12 Years Old" data-SA="10 Years Old">
+            <section class="time jay" data-ages="Elliot: 32|<br>Jay: 14|<br>Jacob: 12|<br>Sam: 10|">
                 <h2></h2>
                 <div class="dot"></div>
                 <ul class="events">
@@ -412,14 +403,14 @@
                     <li><a href="#1-2">Christmas Tree V1</a></li>
                 </ul>
             </section>
-            <section data-char="Jacob" class="time" data-EA="33 Years Old" data-JA="15 Years Old" data-JJA="13 Years Old" data-SA="11 Years Old">
+            <section class="time jacob" data-ages="Elliot: 33|<br>Jay: 15|<br>Jacob: 13|<br>Sam: 11|">
                 <h2>-9 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
                     <li><a href="#1-3">Colors</a></li>
                 </ul>
             </section>
-            <section data-char="Jacob" class="time" data-EA="34 Years Old" data-JA="16 Years Old" data-JJA="14 Years Old" data-SA="12 Years Old">
+            <section class="time jacob" data-ages="Elliot: 34|<br>Jay: 16|<br>Jacob: 14|<br>Sam: 12|">
                 <h2>-8 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
@@ -428,7 +419,7 @@
                     <li><a href="#1-6">Visiting</a></li>
                 </ul>
             </section>
-            <section data-char="Jay" class="time" data-EA="35 Years Old" data-JA="17 Years Old" data-JJA="15 Years Old" data-SA="13 Years Old">
+            <section class="time jay" data-ages="Elliot: 35|<br>Jay: 17|<br>Jacob: 15|<br>Sam: 13|">
                 <h2>-7 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
@@ -436,7 +427,7 @@
                     <li><a href="#2-1">Taken</a></li>
                 </ul>
             </section>
-            <section data-char="Jay" class="time" data-EA="36 Years Old" data-JA="18 Years Old" data-JJA="16 Years Old" data-SA="14 Years Old">
+            <section class="time jay" data-ages="Elliot: 36|<br>Jay: 18|<br>Jacob: 16|<br>Sam: 14|">
                 <h2>-6 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
@@ -447,7 +438,7 @@
                     <li><a href="#2-5">Returning</a></li>
                 </ul>
             </section>
-            <section data-char="Jay" class="time" data-EA="38 Years Old" data-JA="20 Years Old" data-JJA="18 Years Old" data-SA="16 Years Old">
+            <section class="time jay" data-ages="Elliot: 38|<br>Jay: 20|<br>Jacob: 18|<br>Sam: 16|">
                 <h2>-4 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
@@ -455,21 +446,28 @@
                     <li><a href="#2-6">The Kiss</a></li>
                 </ul>
             </section>
-            <!-- <section data-char="Elliot" class="time" data-EA="39 Years Old" data-JA="21 Years Old" data-JJA="19 Years Old" data-SA="17 Years Old">
+            <!-- <section class="time" data-EA="39 Years Old" data-JA="21 Years Old" data-JJA="19 Years Old" data-SA="17 Years Old">
                 <h2>-3 Years</h2>
                 <div class="dot"></div>
                 <ul class="events">
                     <li><a href="#2-10">Idk what to title this</a></li>
                 </ul>
             </section> -->
-            <section data-char="yellow" class="time" data-EA="42 Years Old" data-JA="24 Years Old" data-JJA="22 Years Old" data-SA="20 Years Old">
+            <section class="time jacob" data-ages="Elliot: 41|<br>Jay: 23|<br>Jacob: 21|<br>Sam: 19|">
+                <h2>-1 Years</h2>
+                <div class="dot"></div>
+                <ul class="events">
+                    <li>Jacob is killed</li>
+                </ul>
+            </section>
+            <section class="time yellow" data-ages="Elliot: 42|<br>Jay: 24|<br>Jacob: 22|<br>Sam: 20|">
                 <h2>0</h2>
                 <div class="dot"></div>
                 <ul class="events">
                     <li>Point in time all rps start from</li>
                 </ul>
             </section>
-            <section data-char="Jacob" class="time" data-EA="43 Years Old" data-JA="25 Years Old" data-JJA="23 Years Old" data-SA="21 Years Old">
+            <section class="time jacob" data-ages="Elliot: 43|<br>Jay: 25|<br>Jacob: 23|<br>Sam: 21|">
                 <h2>1 Year</h2>
                 <div class="dot"></div>
                 <ul class="events">
