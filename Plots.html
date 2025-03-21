@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" data-selected-theme="alt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700;800&family=Spectral:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/Favicons/Favicon512.png" sizes="512x512">
+    <link rel="icon" type="image/png" href="images/Favicons/Favicon192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="images/Favicons/Favicon180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="images/Favicons/Favicon32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/Favicons/Favicon16.png" sizes="16x16">
+    <link rel="icon" type="image/icon" href="images/Favicons/favicon.ico" sizes="48x48">
+    <title>Plots</title>
+    <style>
+        :root {
+            --hue1: 340deg;
+            --hue2: 30deg;
+            --angle: 160deg;
+            --h1-0-1-h2-0-1: linear-gradient(var(--angle), hwb(var(--hue1) 00% 10%) 25%, hwb(var(--hue2) 00% 10%));
+            --lore: hwb(var(--hue1) 75% 00%);
+            --cute: hwb(var(--hue2) 00% 00%);
+            --time-bg: hsla(0, 0%, 100%, 0.1);
+        }
+        :root,
+        [data-selected-theme="normal"] {
+            --lore: hwb(var(--hue1) 00% 75%);
+            --time-bg: hsla(0, 0%, 0%, 0.1);
+        }
+
+        [data-selected-theme="alt"] {
+            --lore: hwb(var(--hue1) 75% 00%);
+            --time-bg: hsla(0, 0%, 100%, 0.1);
+        }
+
+        details {
+            margin: initial;
+        }
+        summary p.chars{
+            margin-left: 30px;
+            margin-bottom: 5px;
+            text-align: left;
+            text-indent: 0;
+            width: fit-content;
+            transform: translateX(0px);
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+        summary.sectionHeader{
+            background-image: var(--h1-0-1-h2-0-1);
+            background-attachment: fixed;
+        }
+        .twc{
+            margin-bottom: 0px;
+        }
+        summary{
+            text-align: left;
+        }
+        summary h1{
+            margin-bottom: 0;
+        }
+        .sectionHeader:not(#ToCTitle):not(summary) h1{
+            padding-left: 0;
+        }
+        .sectionHeader:not(:first-of-type){
+            margin: 5px 0;
+        }
+        p:not(.info){
+            white-space: pre-wrap;
+            text-align: left;
+            padding-bottom: 5px;
+            text-indent: 20px;
+            width: clamp(75px, min(150ch, 85%), 100%);
+            transform: translateX(calc(50vw - 50% - 10px));
+        }
+        .info{
+            font-size: 20px;
+            font-weight: 400;
+            text-align: center;
+            padding: 10px;
+        }
+        @media only screen and (max-width: 520px) {
+            p:not(.info){
+                text-indent: 0px;
+            }
+            .content{
+                padding: 10px 10px 10px 10px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="CSS/Defaults.css">
+    <link rel="stylesheet" href="CSS/Dropdowns.css?v=1">
+    <script src="nav.js"></script>
+    <script>
+        window.onload = () => {
+            CreateNavbar("SomeStories");
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h3 id="SiteName">Prismoria</h3>
+            <div class="flex-container">
+                <a href="index.html" id="TheParticle">The Particle</a>
+                <div class="dropdown">
+                    <button class="dropbtn" id="Characters">Characters
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="Jay.html">Jay Star</a>
+                        <a href="Jacob.html">Jacob Jackson</a>
+                        <a href="Sam.html">Samuel Broteez</a>
+                        <a href="Elliot.html">Elliot Evans</a>
+                        <a href="River.html">River Lucero</a>
+                        <a href="Lucian.html">Lucian Draven</a>
+                    </div>
+                </div>
+                <a href="SomeStories.html" id="SomeStories" class="Selected">Some Stories</a>
+                <a href="Updates.html" id="Updates">Site Updates</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="sectionHeader" id="ToCTitle"><h1>Plots</h1></div>
+        <details>
+            <summary class='sectionHeader'>
+                <h1>List of pairings without full plots</h1>
+            </summary>
+            <article class="content">
+                <p>● BG3 Astarion × really any of my characters
+● The vampire and the angel / The vampire and the doctor (Sam or Lucian)
+● Father figure type rp (this will be mainly a wholesome rp) (Sam or Jay)
+- The investigator and the mysterious (Jay)
+- Cheerful × silent and moody (Jay or Jacob)
+- Who knew working for an evil lab wasn't so bad (Elliot)
+● The demon and the angel (either way. I have a demon and an angel oc)
+● Blind date (Literally. As in, a blind character) (Sam)
+- Ex bully × victim (Sam)
+- The bartender and the hopeless (Elliot)
+- The guard and the guarded (Elliot)
+- Tutoring sessions (Sam)
+- Wolf boy × Werewolf (Sam)
+
+● means I'm really interested</p>
+            </article>
+        </details>
+        <details>
+            <summary class='sectionHeader'>
+                <h1>Sam's Default Plot</h1>
+                <p class="chars">Sam</p>
+            </summary>
+            <article class="content">
+                <p>Slowly, the boy flutters his eyes open. Where is he? What happened?
+He looks around to get a sense of his surroundings. The boy seems to be in a fairly old house. The plumbing drums and creaks, the soft green paint on the walls has started to chip away over time, and the cushions of the dark couch he's on are rough and worn down. Despite that, the place as a whole has a warm and inviting atmosphere, and he can't quite place why. Whatever this place is, the room he's in looks to be a living room. There are two couches that face each other with a coffee table in between them.
+A searing hot wave of pain jolts up his arm when the boy tries to sit up. He inhales sharply and falls back onto the couch, now remembering what happened before he somehow got here. There was a wolf attack. He's lucky he was able to fend them off for the most part, even if he didn't make it out unharmed. But how did he get here?
+>He looks down at his arm, finally noticing the bandage wrapped around the wound, which fresh blood starts to stain. He must've opened the wound again when he tried to sit up. Who bandaged his arm though?
+
+The boy doesn't have to wonder for long, as a green eyed blonde takes a seat on the couch across from him.
+"Don't strain yourself, you're safe here. You were attacked, so I brought you here to heal you," the blonde says, his voice... Oh, his voice is so soft and gentle. That alone is almost enough to soothe the boy.
+"W-who are you?"
+The blonde smiles politely, a shy kind of smile. "I'm Sam. Who I am doesn't matter though, you should focus on resting so your arm can heal."</p>
+            </article>
+        </details>
+        <details>
+            <summary class='sectionHeader'>
+                <h1>The Inventor</h1>
+                <p class="chars">Elliot</p>
+            </summary>
+            <article class="content">
+                <p>Muse A was a regular college student, going about their day normally. They had some time before their next class would start, so they went out to take a little walk through campus. Today had the perfect weather: warm with a gentle breeze and clear skies up above. It was the perfect day for a stroll.
+
+During their stroll, Muse A stumbles across something. This... Beautiful scene laid out in front of them. Near campus is a small river with an arched wooden bridge going across it. Someone decorated the bridge railings with fairy lights and petals, as well as a hand-made overhang to attach a few more dim lights to. Underneath the cherry tree before the bridge, a matching blanket was laid out in the grass. It's like something straight out of a fairytale. And there Muse B sits, a crestfallen expression on his face.</p>
+            </article>
+        </details>
+        <details>
+            <summary class='sectionHeader'>
+                <h1>As Bright As The Stars Above</h1>
+                <p class="chars">Jay</p>
+            </summary>
+            <article class="content">
+                <p>"What's that one?"
+
+"That's the north star. Whenever you feel lost during the night or a storm, you can always trust it to take you home."
+
+---
+
+He shines as brightly as the stars above.
+
+River was running away from a wild wolf in the forest. It had already gotten a bite out of his calf; he was pushing through the pain.
+In his pained running, his boot gets struck in a root, tripping him.
+That's when a tall blonde man swings down from a tree branch above him. A blue glow emanates from his chest, the glow seeming to coarse through his veins.
+
+He can't see much more of what happened. The pain from his leg is finally catching up to him, the world is starting to fade away.
+
+---
+
+Warmth.
+He stretches a little and pushes himself off the ground to sit up. His head is pounding.
+A makeshift blanket made out of leaves and vines falls off him as he sits up. The sound of rushing water fills the air.
+He looks around for a few moments, trying to figure out where he is. It's not long until he spots the man who saved him, sitting at the edge of a small pond, cleaning some clothes in the water. The pond is at the bottom of a large waterfall, the sun glistening off the ripples and waves.</p>
+            </article>
+        </details>
+        <details>
+            <summary class='sectionHeader'>
+                <h1>One of those POV soulmate AUs</h1>
+                <p class="chars">Any</p>
+            </summary>
+            <article class="content">
+                <p>What if we had two characters switch bodies? Like, one day, your oc would wake up in my ocs body and vise versa? Idk how we'd even rp that, we'd have to skip to them searching for themselves to create that first actual interaction between them.</p>
+            </article>
+        </details>
+        <details>
+            <summary class='sectionHeader'>
+                <h1>Online Friends</h1>
+                <p class="chars">Sam</p>
+            </summary>
+            <article class="content">
+                <p>Muse A and Muse B have been online friends for a long time. Muse A has always had a small crush on Muse B, but has never acted on it. The two used to live very far away, and thus could never meet in person, until one day, Muse A moves. He moves close enough to Muse B that he suggests meeting up when Muse A tells him. Muse A agrees of course, so they set up a time and place to meet up.
+
+The two boys have never really seen what each other look like. They haven't shared a lot of photos. So they're going to have to hope they manage to find each other.
+When Muse A arrives at the meeting place, they immediately are able to spot Muse B though. The anxious blonde pacing back and forth, repeatedly checking the time on his phone as he waits for Muse A. He looks... Amazing. Muse A was expecting some nerdy looking guy, but that is not what he got. Muse A can barely even find the courage to walk up to Muse B to introduce themselves.
+
+After getting to know each other in person, Muse A finds that Muse B is even nicer in person than they are online. Muse B is a wholesome and sweet boy just trying to help others, even if he can't help himself. Muse A can't help but like them even more, but is scared to tell Muse B about their feelings. The two keep meeting up regularly, and eventually, Muse B starts to realize that something's up with Muse A.</p>
+            </article>
+        </details>
+        <details>
+            <summary class='sectionHeader'>
+                <h1>The Vampire</h1>
+                <p class="chars">Lucian</p>
+            </summary>
+            <article class="content">
+                <p>It was late in the evening, the sun was starting to set. It's been days since Lucian was able to find a wild animal to draw blood from. He refuses to kill any people due to this new thirst. It's not like he was bitten by a vampire or anything, he just started noticing changes slowly... Things have been louder than normal, slower than normal. His teeth have grown fangs. And then there's the thirst... If he does nothing, this lightheaded feeling will keep getting worse. He feels weak, so weak.
+
+As a last-ditch effort, he decides to try to sneak into the hospital. Yeah, he may be stealing blood that could go to someone who might need it, but... Oh, he can't think straight, he just needs some. He's managed to sneak in to where they keep those IV blood packet things, rummaging around to find one in some drawers. From outside the room, rustling and drawers opening and closing can be heard. He can't quite see that well right now, he's a bit more clumsy than usual.
+
+Soon enough, he finds what he's looking for. Without another thought, he bites in. He doesn't even notice the door opening as someone came to investigate the sounds.</p>
+            </article>
+        </details>
+    </main>
+    <footer>
+        <button data-theme="normal" aria-pressed="false" id="NormalMode"></button>
+        <button data-theme="alt" aria-pressed="true" id="AltMode"></button>
+    </footer>
+    <script src="Accordian.js"></script>
+</body>
+</html>
