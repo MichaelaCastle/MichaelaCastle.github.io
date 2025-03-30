@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-selected-theme="normal">
+<html lang="en" data-selected-theme="alt">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,30 +18,65 @@
     <style>
         :root {
             --hue: 40;
-            --hue2: 55;
+            --hue1: 40deg;
+            --hue2: 55deg;
             --angle: 160deg;
-
             --middleHR: "✿";
             --middleImageHR: "༺♥༻❀༺♥༻";
             --middleLength: 7;
             --middleAddition: "──";
+            --aDecor: "➽─❥ ";
 
-            --answerDecor: "➽─❥ ";
+            /* --bodyText: "Baloo Bhaijaan 2", serif;
+            --headingText: "Expletus Sans", serif;
+            --headingTextAdjustment: 1.5rem; */
+        }
+        .PersonalityFlexbox{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        details{
+            flex: 1 1 auto;
+            width: clamp(40%, 50%, 90%);
+        }
+        .content{
+            border: 3px var(--h2-0-8) solid;
+            border-top: 0px;
+            border-radius: 0px 0px 10px 10px;
+        }
+        @media (max-width: 950px){
+            details{
+                width: clamp(45%, 70%, 100%);
+            }
+        }
+        @media (max-width: 650px){
+            details{
+                width: clamp(45%, 70%, 100%);
+            }
+            #Personality{
+                padding: 0 0rem 0 0rem;
+            }
+            #Personality p:not(details p){
+                padding: 0 5rem 0 5rem;
+            }
+        }
+        @media (max-width: 529px){
+            #Personality p:not(details p){
+                padding: 0 3rem 0 3rem;
+            }
         }
     </style>
-    <link rel="stylesheet" href="CSS/HeadersAndDefaults.css">
-    <link rel="stylesheet" href="CSS/Character.css">
-    <link rel="stylesheet" href="CSS/Audioplayer.css">
-    <link rel="stylesheet" href="CSS/HrStyles.css">
-    <link rel="stylesheet" href="CSS/Nav.css">
+    <link rel="stylesheet" href="CSS/Defaults.css">
+    <link rel="stylesheet" href="CSS/Wiki.css">
+    <link rel="stylesheet" href="CSS/HrCSS.css">
     <script src="nav.js"></script>
-    <script src="Adam.js"></script>
     <script>
-        let current = 0;
-        let names = ["  Cave In   -   Owl City  ", "  East To West   -   Casting Crowns  "];
-        let songs = ["Audio/Cave In.ogg", "Audio/East To West.ogg"];
+        // let current = 0;
+        // let names = ["  Cave In   -   Owl City  ", "  East To West   -   Casting Crowns  "];
+        // let songs = ["Audio/Cave In.ogg", "Audio/East To West.ogg"];
         </script>
-    <script src="Audioplayer.js"></script>
+    <!-- <script src="Audioplayer.js"></script> -->
 </head>
 <body>
     <header>
@@ -57,9 +92,9 @@
                         <a href="Jacob.html">Jacob Jackson</a>
                         <a href="Sam.html">Samuel Broteez</a>
                         <a href="Elliot.html">Elliot Evans</a>
-                        <!-- <a href="YoungElliot.html">(Younger) Elliot Evans</a>
+                        <a href="River.html">River Lucero</a>
+                        <a href="Lucian.html">Lucian Draven</a>
                         <a href="Adam.html">Adam Zondervan</a>
-                        <a href="Rene.html">Rene Tickle</a> -->
                     </div>
                 </div>
                 <a href="SomeStories.html" id="SomeStories">Some Stories</a>
@@ -68,20 +103,26 @@
         </div>
     </header>
     <main>
-        <div class="sectionHeader" id="Name"><h1>Adam Zondervan</h1></div>
-        <div class="sectionHeader"><h1>Character Sheet</h1></div>
+        <h1 class="sectionHeader">Adam Zondervan</h1>
+        <h1 class="sectionHeader">Character Sheet</h1>
         <div class="tw">
-            <div class="audio-player">
-                <div><h2>
-                    <button id="PrevSong" onclick="playPrev()" class="audioButtons"></button>
-                    <span id="SongName">  Cave In   -   Owl City  </span>
-                    <button id="NextSong" onclick="playNext()" class="audioButtons"></button>
-                </h2></div>
-                <audio preload="auto" onended="playNext()" id="player" src="Audio/Cave In.ogg" type="audio/mpeg" controls controlsList="nodownload noplaybackrate"></audio>
-            </div>
+            <!-- <div class="audio-player">
+                <div class="title">
+                    <button onclick="playPrev()" class="audioButtons"><i class="fa fas fa-caret-left"></i></button>
+                    <span id="SongName">  Mr. Johnson    -    David Reid  </span>
+                    <button onclick="playNext()" class="audioButtons"><i class="fa fas fa-caret-right"></i></button>
+                </div>
+                <div class="controls">
+                    <button onclick="playOrPause()" class="audioButtons"><i id="play" class="fa fas fa-play"></i></button>
+                    <div class="range">  
+                        <input type="range" id="player-slider" value="0" aria-valuemax="100"/>
+                    </div>
+                    <audio preload="auto" onended="playNext()" id="player" src="Audio/Mr. Johnson.mp3" type="audio/mpeg" controls controlsList="nodownload noplaybackrate"></audio>
+                </div>
+            </div> -->
             <p>╭━━━━━━━━━━━━━━━━╮</p>
             <p>Trigger Warnings</p>
-            <p>Depression, suicide, drug addiction</p>
+            <p>Not sure</p>
             <p>╰━━━━━━━━━━━━━━━━╯</p>
         </div>
         <div class="sectionLabel">
@@ -116,7 +157,63 @@
             <p><b>Basic Info</b></p>
             <hr>
         </div>
-        <div class="info" id="BasicInfo"></div>
+        <section class="info" id="BasicInfo">
+            <p class='q'>Birth Name</p>
+            <p class='a'>Abagael Zondervan (Fun fact, Dutch don't have middle names. If they had 3 names, it would be 2 first names and 1 last name)</p>
+            <p class='q'>Current Name</p>
+            <p class='a'>Adam Zondervan</p>
+            <div class='br'></div>
+            <p class='q'>Birth First Name</p>
+            <p class='a'>Abagael</p>
+            <p class='q'>Meaning</p>
+            <p class='a'>Father of joy</p>
+            <div class='br'></div>
+            <p class='q'>Current First Name</p>
+            <p class='a'>Adam</p>
+            <p class='q'>Meaning</p>
+            <p class='a'>Red Earth</p>
+            <p class='q'>Significance</p>
+            <p class='a'>He did not care about the meaning when he chose this name, he just wanted something somewhat close to his birth name</p>
+            <div class='br'></div>
+            <p class='q'>Last Name</p>
+            <p class='a'>Zondervan</p>
+            <p class='q'>Meaning</p>
+            <p class='a'>Without a surname</p>
+            <div class='br'></div>
+            <p class='q'>Nicknames</p>
+            <p class='a'>Addy</p>
+            <div class='br'></div>
+            <p class='q'>Biological Gender</p>
+            <p class='a'>Female</p>
+            <p class='q'>Preferred Gender</p>
+            <p class='a'>Male</p>
+            <p class='q'>Pronouns</p>
+            <p class='a'>He/him</p>
+            <div class='br'></div>
+            <p class='q'>Sexual Orientation</p>
+            <p class='a'>Pansexual</p>
+            <p class='q'>Romantic Orientation</p>
+            <p class='a'>Panromantic</p>
+            <div class='br'></div>
+            <p class='q'>Age</p>
+            <p class='a'>22 - 23</p>
+            <p class='q'>Birthday</p>
+            <p class='a'>May 24th</p>
+            <p class='q'>Zodiac Sign</p>
+            <p class='a'>Gemini</p>
+            <div class='br'></div>
+            <p class='q'>Occupation</p>
+            <p class='a'>Guitarist</p>
+            <div class='br'></div>
+            <p class='q'>Where they live</p>
+            <p class='a'>Prismoria</p>
+            <div class='br'></div>
+            <p class='q'>Languages</p>
+            <p class='a'>Dutch</p>
+            <p class='a'>English</p>
+            <p class='a'>French</p>
+            <p class='a'>Spanish</p>
+        </section>
         <hr class="ImageTop">
         <img src="images/Adam/Heart.jpg">
         <p class="quoteCaption">“Laughter is the best medicine”</p>
@@ -126,7 +223,22 @@
             <p><b>Health and Abilities</b></p>
             <hr>
         </div>
-        <div class="info" id="Health"></div>
+        <section class="info" id="Health">
+            <p class='q'>Physical Illnesses</p>
+            <p class='a'>Heart disease</p>
+            <p class='q'>Mental Illnesses</p>
+            <p class='a'>None</p>
+            <div class='br'></div>
+            <p class='q'>Triggers</p>
+            <p class='a'>None that is known of</p>
+            <div class='br'></div>
+            <p class='q'>Mutation / Power</p>
+            <p class='a'>Wind Manipulation</p>
+            <p class='q'>How long have they had it</p>
+            <p class='a'>About 7 years</p>
+            <p class='q'>How do they use it</p>
+            <p class='a'>Shutting doors, picking things up, annoying people</p>
+        </section>
         <hr class="ImageTop">
         <img src="images/Adam/HotCocoa.jpg">
         <p class="quoteCaption">“I know I'm cute~”</p>
@@ -136,7 +248,34 @@
             <p><b>Appearance</b></p>
             <hr>
         </div>
-        <div class="info" id="Appearance"></div>
+        <section class="info" id="Appearance">
+            <p class='q'>Height</p>
+            <p class='a'>5'7"</p>
+            <p class='a'>170.18 cm</p>
+            <p class='q'>Weight</p>
+            <p class='a'>123 lbs.</p>
+            <p class='a'>55.79 kg</p>
+            <div class='br'></div>
+            <p class='q'>Hair color</p>
+            <p class='a'>Light brown</p>
+            <div class='br'></div>
+            <p class='q'>Eye color(s)</p>
+            <p class='a'>Hazel</p>
+            <div class='br'></div>
+            <p class='q'>Piercings</p>
+            <p class='a'>None</p>
+            <p class='q'>Scars</p>
+            <p class='a'>None</p>
+            <p class='q'>Tattoos</p>
+            <p class='a'>None</p>
+            <p class='q'>Birthmark</p>
+            <p class='a'>Some discoloration on his left forearm</p>
+            <p class='q'>Freckles</p>
+            <p class='a'>Yes</p>
+            <div class='br'></div>
+            <p class='q'>Accent / Voice</p>
+            <p class='a'>He has a Dutch accent. It's not that thick, but when he gets worried or scared, it does become more prominent in his voice. His laugh is also very infectious</p>
+        </section>
         <hr class="ImageTop">
         <img src="images/Adam/MusicSheet.png">
         <p class="quoteCaption">“What is there to like about me? Well... I'm funny?”</p>
@@ -146,7 +285,47 @@
             <p><b>Personality</b></p>
             <hr>
         </div>
-        <div class="info" id="Personality"></div>
+        <section class="info" id="Personality">
+            <p class='q'>Closest Stereotype</p>
+            <p class='a'>Goofball</p>
+            <p class='q'>Overall Description</p>
+            <p class='a'>Adam is a pretty chill guy when you first meet him. He's not exactly outgoing, nor is he timid. He's just an average, nice guy. Once he gets to know someone and becomes friends with them, he opens up a bit more and starts playing around with them. He can be really funny and he also likes to tease people, but he is respectful of their boundaries. If someone tells him that they genuinely dislike when he jokes around about xyz, he'll never mention it around them again, and he expects they will do the same for him. Also, he does like to swear. It's not excessive, but he does swear.</p>
+            <div class='br'></div>
+            <p class='q'>Likes</p>
+            <p class='a'>Laughter. In general. Felt like it was cheating to say "Making people laugh/smile", "The sound of laughter", "Being able to make someone cry from laughing so much" and "People who make him laugh as well" in separate bullets, so now it's just one</p>
+            <p class='a'>Hot chocolate. He will drink it as much as other people will drink coffee</p>
+            <p class='a'>Pulling pranks and just playing around with friends</p>
+            <p class='a'>Soft, fluffy things</p>
+            <p class='a'>Sweaters</p>
+            <div class='br'></div>
+            <p class='q'>Dislikes</p>
+            <p class='a'>Being called adorable or pretty. He can take cute, but he grew up in a family of only girls and used to be a girl himself. Those words are just too girly to him</p>
+            <p class='a'>Snow and the cold. He gets cold easily</p>
+            <p class='a'>Super serious, all work people</p>
+            <p class='a'>Violations of personal space / constant physical affection</p>
+            <div class='br'></div>
+            <p class='q'>Positive Traits</p>
+            <p class='a'>He's playful, funny, and charming</p>
+            <p class='a'>Open about most of his issues. He's not secretive and won't hold a grudge</p>
+            <p class='a'>Protective and loyal towards his friends</p>
+            <div class='br'></div>
+            <p class='q'>Negative Traits</p>
+            <p class='a'>He is not open about his health issues</p>
+            <p class='a'>He doesn't take things seriously sometimes</p>
+            <p class='a'>He lets his fears dictate his future</p>
+            <div class='br'></div>
+            <p class='q'>Fears</p>
+            <p class='a'>That he has Huntington's just like his mother. He's too scared to get tested. And he's scared of passing that on if he ever has kids</p>
+            <p class='a'>Spiders or really any creepy crawly bugs</p>
+            <p class='a'>Heights</p>
+            <div class='br'></div>
+            <p class='q'>Hobbies</p>
+            <p class='a'>Playing the guitar</p>
+            <p class='a'>Writing in his diary</p>
+            <div class='br'></div>
+            <p class='q'>Love Language(s)</p>
+            <p class='a'>Quality Time: This love language is all about giving your undivided attention to that one special person, without the distraction of television, phone screens, or any other outside interference. They have a strong desire to actively spend time with their significant other, having meaningful conversations or sharing recreational activities.</p>
+        </section>
         <hr class="ImageTop">
         <img src="images/Adam/Diary2.jpg">
         <p class="quoteCaption">“I only use my diary to be able to remember everything, so, s-sh... Shut up!”</p>
@@ -156,7 +335,25 @@
             <p><b>Self-Perception</b></p>
             <hr>
         </div>
-        <div class="info" id="Perception"></div>
+        <section class="info" id="Perception">
+            <p class='q'>How they feel about themselves</p>
+            <p class='a'>Adam is confident with himself. He doesn't dislike himself for the most part.</p>
+            <div class='br'></div>
+            <p class='q'>How they would describe themselves</p>
+            <p class='a'>An ambivert who likes to play guitar and have fun with friends.</p>
+            <div class='br'></div>
+            <p class='q'>What they think is their best trait</p>
+            <p class='a'>His sense of humor</p>
+            <div class='br'></div>
+            <p class='q'>What they think is their worst trait</p>
+            <p class='a'>His inability to get over his fears</p>
+            <div class='br'></div>
+            <p class='q'>How they think other perceive them</p>
+            <p class='a'>The funny but reliable friend</p>
+            <div class='br'></div>
+            <p class='q'>What they would like to change about themselves</p>
+            <p class='a'>His gender assigned at birth</p>
+        </section>
         <hr class="ImageTop">
         <img src="images/Adam/Aesthetic.jpg">
         <p class="quoteCaption">“Three feet, you're in my bubble.”</p>
@@ -166,7 +363,27 @@
             <p><b>Relations</b></p>
             <hr>
         </div>
-        <div class="info" id="Relations"></div>
+        <section class="info" id="Relations">
+            <p class='q'>Mother</p>
+            <p class='a'>Mila Zondervan</p>
+            <p class='q'>Status</p>
+            <p class='a'>Dying</p>
+            <div class='br'></div>
+            <p class='q'>Father</p>
+            <p class='a'>Stijn Zondervan</p>
+            <p class='q'>Status</p>
+            <p class='a'>Dead</p>
+            <div class='br'></div>
+            <p class='q'>Sister</p>
+            <p class='a'>Roseline Zondervan</p>
+            <p class='q'>Status</p>
+            <p class='a'>Alive</p>
+            <div class='br'></div>
+            <p class='q'>Sister</p>
+            <p class='a'>Fleur Zondervan</p>
+            <p class='q'>Status</p>
+            <p class='a'>Alive</p>
+        </section>
         <hr class="ImageTop">
         <img src="images/Adam/Aesthetic2.jpg">
         <p class="quoteCaption">“Every one needs to loosen up a bit. We've all gotten stressed and weighed down with work and society that we've forgotten what life is truly meant for. To be happy.”</p>
@@ -176,11 +393,20 @@
             <p><b>Roleplay Info</b></p>
             <hr>
         </div>
-        <div class="info" id="RpInfo"></div>
+        <section class="info" id="RpInfo">
+            <p class='q'>Availability</p>
+            <p class='a'>Open</p>
+            <div class='br'></div>
+            <p class='q'>Genres</p>
+            <p class='a'>Fantasy</p>
+            <p class='a'>Angst</p>
+            <p class='a'>Sci-Fi</p>
+            <p class='a'>Romance</p>
+        </section>
     </main>
     <footer>
-        <button data-theme="normal" aria-pressed="true" id="NormalMode"></button>
-        <button data-theme="alt" aria-pressed="false" id="AltMode"></button>
+        <button data-theme="normal" aria-pressed="false" id="NormalMode"></button>
+        <button data-theme="alt" aria-pressed="true" id="AltMode"></button>
         <!-- <button data-theme="custom" aria-pressed="false" id="CustMode"></button> -->
     </footer>
 </body>
