@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en" data-selected-theme="alt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700;800&family=Spectral:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/Favicons/Favicon512.png" sizes="512x512">
+    <link rel="icon" type="image/png" href="images/Favicons/Favicon192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="images/Favicons/Favicon180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="images/Favicons/Favicon32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/Favicons/Favicon16.png" sizes="16x16">
+    <link rel="icon" type="image/icon" href="images/Favicons/favicon.ico" sizes="48x48">
+    <title>OC Dev Questions</title>
+    <style>
+        :root {
+            --hue1: 200deg;
+            --hue2: 320deg;
+            --angle: 160deg;
+            --h1-0-1-h2-0-1: linear-gradient(var(--angle), hwb(var(--hue1) 00% 10%) 25%, hwb(var(--hue2) 00% 10%));
+            --lore: hwb(var(--hue1) 75% 00%);
+            --cute: hwb(var(--hue2) 00% 00%);
+            --time-bg: hsla(0, 0%, 100%, 0.1);
+        }
+        :root,
+        [data-selected-theme="normal"] {
+            --lore: hwb(var(--hue1) 00% 75%);
+            --time-bg: hsla(0, 0%, 0%, 0.1);
+        }
+
+        [data-selected-theme="alt"] {
+            --lore: hwb(var(--hue1) 75% 00%);
+            --time-bg: hsla(0, 0%, 100%, 0.1);
+        }
+
+        details {
+            margin: initial;
+        }
+        details.lore summary{
+            border-left: solid 10px var(--lore);
+        }
+        details.cute summary{
+            border-left: solid 10px var(--cute);
+        }
+        summary p.chars{
+            margin-left: 30px;
+            margin-bottom: 5px;
+            text-align: left;
+            text-indent: 0;
+            width: fit-content;
+            transform: translateX(0px);
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+        summary.sectionHeader{
+            background-image: var(--h1-0-1-h2-0-1);
+            background-attachment: fixed;
+        }
+        .twc{
+            margin-bottom: 0px;
+        }
+        summary{
+            text-align: left;
+        }
+        summary h1{
+            margin-bottom: 0;
+        }
+        .sectionHeader:not(#ToCTitle):not(summary) h1{
+            padding-left: 0;
+        }
+        .sectionHeader:not(:first-of-type){
+            margin: 5px 0;
+        }
+        p:not(.info){
+            white-space: pre-wrap;
+            text-align: left;
+            padding-bottom: 5px;
+            text-indent: 20px;
+            width: clamp(75px, min(150ch, 85%), 100%);
+            transform: translateX(calc(50vw - 50% - 10px));
+        }
+        .info{
+            font-size: 20px;
+            font-weight: 400;
+            text-align: center;
+            padding: 10px;
+        }
+        @media only screen and (max-width: 520px) {
+            p:not(.info){
+                text-indent: 0px;
+            }
+            .content{
+                padding: 10px 10px 10px 10px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="CSS/Defaults.css">
+    <link rel="stylesheet" href="CSS/Dropdowns.css?v=1">
+    <script src="nav.js"></script>
+    <script>
+        window.onload = () => {
+            CreateNavbar("SomeStories");
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h3 id="SiteName">Prismoria</h3>
+            <div class="flex-container">
+                <a href="index.html" id="TheParticle">The Particle</a>
+                <div class="dropdown">
+                    <button class="dropbtn" id="Characters">Characters
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="Jay.html">Jay Star</a>
+                        <a href="Jacob.html">Jacob Jackson</a>
+                        <a href="Sam.html">Samuel Broteez</a>
+                        <a href="Elliot.html">Elliot Evans</a>
+                        <a href="River.html">River Lucero</a>
+                        <a href="Lucian.html">Lucian Draven</a>
+                        <a href="Adam.html">Adam Zondervan</a>
+                    </div>
+                </div>
+                <a href="SomeStories.html" id="SomeStories" class="Selected">Some Stories</a>
+                <a href="Updates.html" id="Updates">Site Updates</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="sectionHeader"><h1>OC Dev Questions</h1></div>
+        <details id="1" class="">
+            <summary class='sectionHeader'>
+                <h1>Clothes</h1>
+                <p class="chars">1,714 Words</p>
+            </summary>
+            <article class="content">
+                <p>Clothes. What kinds of things do they wear? Simple, elaborate, color matching? Is there a specific reason for why they wear what they wear? How well do they maintain their clothes? Has their fashion sense always been like this, or did it change from how it was when they were younger? (Idea: <https://youtube.com/shorts/QYamHDcXbjc?si=SSTfG1-9Zbnmom4j> )
+
+    ---
+
+    The three boys have no idea where they are. Some white void. Blindingly white. They have been lined up from youngest to oldest: Sam, Jacob, Jay.
+
+    The question has been posed to them.
+
+    Surprisingly, the first to speak is Jay. "Weird thing to be kidnapped for." His deep, gravelly voice is more controlled than normal. Less emotional. "Any rules, sir?" He's not the least bit worried or concerned. As long as he obeys commands the way his captor wants, everything will be fine. And, clearly, this voice wants them to speak freely. The nature of the question suggests it.
+
+    His stance and the way he holds himself is something Jacob has seem many times. Somewhere between A5 and Jay; this is Alex speaking. A soldier's composure.
+
+    "Answer the question truthfully, with the full truth, and you may leave." The voice sounds. From where, who knows.
+
+    The next to speak is Sam, cautiously looking to Jacob. "Can't you just... Zap us out of here?"
+    Jacob closes his eyes for a few seconds, trying to focus. But, it seems like his powers are useless here. "No- I can't even pause time."
+    Sam then looks to Jay, a silent question of if <i>he</i> can get them out of there. He just looks at the younger boy as if they're crazy for asking. "Rule one of being kidnapped, do not attempt to escape. Assume the captor has all exits sealed."
+    Jacob rolls his eyes and starts pacing around the void, looking to see if there are even any walls. It's hard to tell. "Don't bother. Jay's used to cages. He's not escaping without good reason."
+    "Being abducted is not good reason in itself?" Sam shoots back.
+    The brunette shrugs, holding a hand up to see if he can feel a wall. "A failed attempt has consequences. You need a reason that outweighs that consequence. Since we don't seem to be threatened right now, the stakes are not high enough for him to act." He finally reached a wall, just a few feet away from the other two. Now that he has a landmark in this strange white room, he starts following the edge of the walls, mapping out how big the space is.
+
+    The voice brings their attention back to the question at hand. "Enough discussing. Answer the question. Young one first."
+
+    Sam stays quiet. This is the most benign question ever, but it does not matter what the question is. Why is he the only one who even thought about trying to leave? how did they get here? Is this God? If so, shouldn't he already know the answer?
+
+    Jacob pauses his mini-exploration to look at Sam. "Just answer the question-"
+    "I don't really want to..."
+    "Rule two of captivity," Jay sounds a little more annoyed, but it's barely noticeable. "Do what you're told, do not complain."
+
+    Sam looks down, fiddling with his sleeve. He doesn't even know where he would begin with this question. A normal person would answer "Oh, it makes me feel confident," "I really like these colors," "I don't have a reason," but he's not a normal person.
+    The death stare he is getting from Jay however is a pretty good motivator. It's not even that he looks mad or anything; he just has a <i>really intense</i> stare, especially when he's mostly lifeless like this.
+    "I just like looking like this?" The words felt flimsy, inadequate.
+
+    Now he gets a glare from Jacob as well. "Ominous voice man said the truth."
+
+    "Okay." Welp, might as well just go for. "Well, uh- Nobody is going to trust a child to know how to heal them. Nor do they want to hire one." Once he starts speaking, he feels compelled to continue. With more detail than he planned. This place has a weird trance effect. "Child labor laws are really annoying to work around." He hadn't meant to say that. He didn't <i>choose</i> to say that.
+    Even in this weird situation, Jacob laughs quietly at that, breaking some of the tension in the room. "That is a <i>hot take</i> there, Sammy~"
+    "I- I'm not saying there shouldn't be any! But looking young does make employers turn away from you."
+    "The question is about clothing, and you bring up <i>child labor laws</i>, immediately." Jacob's done mapping out the room, so for now, he leans against one of the walls, crossing his arms. "That's a bold stance."
+    Sam spreads his arms out, in wordless confusion. "I don't know! When I started talking, I felt <i>compelled</i> to give context!"
+    "No, no, I understand." He waves off Sam's defense dismissively. "Just a hell of an opening act. Carry on~"
+
+    "Okay!" He takes a quick breath to recompose himself. "Anyway! Child labor laws suck, so- In order to make people more comfortable with hiring me, I had to find a way to appear older. Doesn't do anything for the law, just makes them feel like it's less illegal than it is." He starts pacing around the room. It doesn't feel right standing still in this situation. How Jay stands perfectly still and silent like a robot baffles him. "I needed makeup to hide the scar, and I needed makeup to make myself have a more defined face, like an adult." Yes, he actually gives himself lines to look older, despite being an adult now.
+    "The suit helps, but a black one makes it look like a child trying way too hard to be impressive and profession. It's too stark. And it clearly put people off- So, I tried different combinations. Whatever this is seems to put people at ease if they need help, while still being professional enough to be taken seriously. If anything is off, I have no assumed credibility. And then the wings came! Only God knows how that didn't mess it all up." Once he's done, he stands still again, looking up. "Good enough?"
+
+    The room flashes a bright yellow for a moment before returning to the blinding white.
+
+    The three stand in silence for a few moments, trying to figure out what that means. Obviously, yellow doesn't mean <i>bad</i>, but does it mean <i>good</i>?
+
+    Jacob breaks the silence after a few moments, smiling a bit. "I think I know what ominous voice man wants~" He glances over at the green-eyed blond, grinning.
+    The tips of Sam's ears tinge pink. "No, I--"
+    "The voice did mention, 'how did it change from when you were younger?' I got this one~" He pushes off the wall and takes center stage. More like center of the room, but he's just going to pretend this is a stage. "Let me paint you a picture~"
+    "Jacob, I don't think--"
+    He waves off Sam's complaint. "'Lil Samikins--"
+    "It's just Sam."
+    "Sure. 'Lil Samsung here had absolutely no fashion sense before "the event". What was the first thing I ever saw you in?... His hair was a fucking cry for help. Looked like a pineapple. His outfit- That was like, the most obnoxiously bright color imaginable, with a nerdy pun on the shirt. It was criminally neon, an assault on the eyes. Oh my God, and the glasses! The biggest and thickest circle frames. Harry Potter to the max. I don't know <i>how</i> his parents allowed this. He also used to--"
+    Before Jacob can continue, Sam walks over and clamp a hand over his mouth to shut him up. "That is enough of that."
+
+    The room lights up green with a cheerful <i>ding</i> for a moment before returning to white. That was enough of that.
+
+    Jacob is a bit disappointed he can't keep talking about that. He could talk about either Sam or Jay for a <i>long</i> time.
+
+    "Short one, your turn," the voice states.
+
+    Jacob quickly pushes Sam's hand away. "Hey!"
+    "He wears a child's small to medium." Sam steps away from Jacob, getting in a quick line for payback. Which earns him a playful glare.
+    After a beat, Jacob rolls his eyes and gets into his answer. Unlike Sam, he is not starting with child labor laws. "I don't think I'm going to have as deep of an answer as Samshine. I'm gay and agender. Knew that very early on as a kid, I never wanted to blend in. I probably had some... Questionable outfits to start with, but thankfully my mother never let me leave the house looking like a pineapple. I did experiment a lot, make a lot of attempts to look like my father. I wanted to be a popstar like him. You can't get famous without a bold look~ Nowadays, it really just depends on how I'm feeling. Sometimes more feminine, sometimes more masculine." He shrugs. There isn't a lot of meticulous planning in his wardrobe. It's more just vibes based. He wants pink that day, he wears pink. "I don't really care what others think of it. Sorry that I don't have a longer answer~"
+
+    The room turns green with that cheerful <i>ding</i> again.
+
+    "Oh, <i>that</i> was enough for him?" Sam scoffs and crosses his arms. "But mine was incomplete?"
+
+    "Your turn to answer, tall one."
+
+    There is zero hesitation. No time to even think about his answer. He simply obeys. "Stolen clothes. Baggy clothes are harder for knives to cut through. Tank top underneath to stop blood from seeping through to the outside. Dark colors blend in crowds." Short, to the point. Speak only as much as needed. His clothing choice is purely survival based. No expression or identity.
+
+    The room turns green.
+
+    Jacob looks between Sam and Jay for a moment. "Does that mean we're good? What now?"
+
+    They don't have to wait long to figure out. The room turns white again, but much brighter than before. They have to cover their eyes from the light. When they're able to see again, they're all where they were before whatever that was. Like nothing happened. The time is the same as before they were taken.</p>
+            </article>
+        </details>
+        <details id="1" class="">
+            <summary class='sectionHeader'>
+                <h1>Hair</h1>
+                <p class="chars">2,776 Words</p>
+            </summary>
+            <article class="content">
+                <p>Hair. How do they keep their hair? Does it hold any significant value to them? How do they maintain it? Do they cut it themselves? Has it changed at all over time? Do they even keep a hairstyle for more than a month, or do they dye it a new color every week? If they've never dyed it before and <i>had</i> to dye it at some point, what color(s) would they pick?
+
+    ---
+
+    The new question has been posed.
+
+    The white void has returned, engulfing all surroundings in the intense light. It's nothing new this time; the three boys know what they need to do to get out. Doesn't make it any less jarring to suddenly be transported to a heaven-adjacent question room that does not exist in the dimension of time.
+
+    Well, jarring for some of them. Jay is unphased, and is once again the first to speak. Another simple question to know exactly what the captors want. "Same order?" Youngest to oldest. He was last the previous time due to being the oldest.
+
+    "Same order," the omniscient voice confirms.
+
+    With that knowledge, Jay goes ahead and lowers himself to the ground, assuming his regular relaxed position; on his back, one leg bent up, and resting an arm under his head.
+    Sam and Jacob can squabble on their own, but they will eventually fulfill their roles. So, there is a very high chance this is not a permanent cage. There is no reason to panic. He can wait his turn, rest, answer the question, and leave.
+
+    Sam, once again, is less than pleased to be here. Seeing the eldest -- the strongest and most likely to successfully escape -- put absolutely no effort into escaping... Annoying, to say the least. "Really? You're not even concerned this time?"
+    "We know how to get out. Just answer."
+    "The question is simple and non-invasive this time, but what happens when it asks something real? Like, why you never sleep in beds -- why you won't even <i>touch</i> a bed."
+    He tilts his head, his gaze meeting Sam's. "That's only applicable to me; why would it ask something only one of us can answer?"
+    Rolling his eyes, Sam crosses his arms. "Fine, 'What are your phobias?' then."
+    The calm indifference in Jay's eyes shifts to a more threatening stare, boring straight through the younger boy. "I know your social security number."
+    "... Alright!" He breaks eye contact and drops his arms back down, not pressing that anymore. There is no convincing Jay that he should try to escape without getting in the crossfire himself.
+
+    Meanwhile, Jacob is pacing again, mapping the room's invisible walls by instinct. The light swallows all shadows, makes every surface impossible to track.
+    "Well," he starts, "I know why I can't stop time here."
+    He rests a palm against the blank void. "Time's already paused."
+    Sam glances over before pausing for a moment, looking up as if trying to sense something. After a few seconds, he speaks again. "Yeah, there is no water movement within a few miles..."
+    "No," Jay sighs softly. "Time is moving. There is a fire burning, I can hear it."
+    "Where?"
+    A beat, silent analysis before answering. "Below." He sits up, resting his weight on one arm. "The full area. Far down, but directly below us."
+
+    "But..." Sam looks around, his hand twitching by his side. "There is no plumbing."
+    Jacob stands still, giving the other a confused look. "And?"
+    "If time is moving, water should be too." This is a strange room, sure, but it is a <i>room</i>. Presumably in a building. At an acceptable temperature, there should be a heating system around. But, he can't detect any water around them. There's nothing. "How does this place even work?"
+    "Magic," Jay answers simply.
+    "Magic is just what science can not yet understand."
+    "And yet you believe in a God..."
+    Jacob speaks without turning. "If you keep questioning the question room..." He leans back against the wall like it's familiar. "...it'll get annoyed."
+
+    The blonde sighs, pinching the bridge of his nose as he tries to reason out where on Earth they could be. Are they even on Earth?
+
+    That assumption might be the game changer.
+
+    "Right, right... And I have to go first? Why me?"
+    Jacob shrugs. "Not for our mortal minds to know, apparently~"
+    "Who are you calling mortal?" Jay says half-jokingly, letting himself fall back down to rest on the floor.
+    "My bad, my bad, you're right~ Not for our mortal <i>and other</i> minds to know." He corrects with a chuckle. "Either way, just answer the question. I wish I could break the ice for you, but I can't."
+    That's the real hitch -- the fact that Sam's first. First to get on with it. It's just like being called first to give a presentation in class; only, there are no slides or notes to rely on.
+
+    Sam's not good with having the spotlight on him. Not in a non-casual setting.
+
+    "What was the exact wording of the question again?" He looks to Jay, who repeats the instructions word for word. "Right... Well..."
+    He pauses, trying to come up with the right way to start this. No jumping straight to child labor like last time. But, he doesn't finish assembling his thoughts before blurting out, "What kind of question even is that? Why do we have to answer that?"
+
+    Jay's free hand swiftly buries itself in his hair as he lets out a sharp exhale of annoyance.
+    Jacob just laughs, pushing off the wall. "You're going to drive Jay-bird insane~ Just answer the question." He walks over and kneels down next to Jay. "Start with the last part. What color would you dye it?"
+    "Pink."
+    Silence.
+    Stunned silence.
+    Until Jacob finally finds his voice again. "Pink?!?!"
+    A smile tugs at Sam's lips. It's not easy to leave Jacob speechless like that. "Light pink. Cotton candy pink."
+    "You didn't even have to think about that! How long have you had that idea for?!"
+    "I already have a pink tie."
+    Jacob mouths 'wha-', furrowing his brows. He tries to think of something to say, but he's reeling from that fact. <i>Pink? The guy whose entire existence was a muted green palette just casually dropped... pink? Cotton candy pink, no less.</i>
+
+    The eldest is not as shocked. If anything, that's just Sam <i>considering</i> if he should present more like he actually is than the facade he's so delicately crafted. All the neutrals and greens... That's to create a sense of reliability and trust.
+    It doesn't matter why Sam would pick pink though; what matters is that he's started answering the question and they are closer to leaving. "Don't stop there. Finish your answer."
+    "No, no-" Jacob cuts in. "I need an explanation. Why pink? Your whole--" he gestures up and down wildly towards the blonde, "-<i>thing</i> is built around green. Where are you getting pink from?"
+    Since the others are on the ground, Sam decides to sit down across from them with his legs crossed. It'd be awkward to be the only one standing the whole time. "Why not pink?"
+    "Sam, you need a reason, you're Sam. You answered the clothes question with child labor laws. There has to be some outlandish reason."
+    "Let him move on," Jay whines.
+    "No!" Jacob smiles and shakes his head. "We are getting to the bottom of this!"
+    Jay pushes himself back up, propping himself up with one arm and theatrically raising the other to the omniscient voice. "Captors, is that enough for that piece?"
+    The room glows green with a pleasant ding.
+    "Thank you," he says, validated. "Now, move on." He swipes his arm to the side before shifting into a more comfortable seated position.
+    Jacob laughs. "Alright, alright~" He looks back to Sam. "I am going to get a reason for the pink thing later, don't doubt me. For now though, next part; you cut your own hair, right?"
+    The youngest nods. "Hairdressers are expensive and... I don't trust 'em. I don't like strangers touching me."
+
+    "Something we actually agree on," Jay mutters.
+    Jacob smiles and leans against Jay's shoulder. "You don't mind affection~"
+    "I do from strangers." He says it, but he's never one to turn down affection; especially not from Jacob. Quietly, he pulls him onto his lap and wraps his arms around him, resting his head on the smaller boys shoulder.
+    Jacob's smile brightens as the warmth engulfs him. Of course, he relaxes in his boyfriend's hold, gently resting a hand on top of Jay's.
+
+    Sam glances up, toward the spot they've all silently agreed is where to address the room. "Is that enough? I don't have a lot to say- I cut my own hair. Not a lot of meaning to it, just habit."
+    He doesn't see a reason to point out the obvious styling; neatly combed to the side, not a single hair out of place. His fringe stops right above his eyes, curved upwards slightly from repeatedly brushing it out of his eyes. If he let it, his bangs would cover half his face.
+    "I mean, I guess I have more steps than some guys? Basic shower plus a hair mask for health. Nothing crazy though-"
+
+    The room glows green with another pleasant chime.
+
+    He's done. It's now up to the other two.
+
+    "You use a hair mask?" Jacob can't help but dig deeper into that.
+    "I use makeup everyday, what do you expect from me?"
+    "Fair enough."
+
+    Jacob takes a moment to think about what to say. Just like last time, he doesn't have a lot. His appearance in general is quite fluid and unplanned. "Well, I have tried a lot of styles. But, my hair never wants to cooperate, it doesn't last outside of the salon. I do get it done professionally- I don't know how to cut it myself." He shrugs.
+    "It's really not that hard, I can show you," Sam offers, almost by instinct.
+    His eyes sparkle as his gaze snaps to Sam, fully embodying the ":D" emoticon. "Really?"
+    He tilts his head to the side, actually thinking it over now. "I mean, yeah. Just be prepared with a hat for the worst case scenario."
+    That smile flips upside-down. (D:) "Absolutely not, then!"
+    Sam chuckles softly. "Relax~ I said worst case scenario. As long as you don't get too greedy with your cuts, all mistakes can be fixed."
+    "No. No, you're not ruining my hair." He glances up to address the room. "I guess it does hold value to me, clearly. It is part of my image, my fame. Can't risk losing that recognition."
+
+    Jay nuzzles Jacob gently. "That is not what made you famous. Nor is that what makes people keep coming back."
+    "Oh, shush," he says with an appreciative smile. "My looks had to play <i>some</i> part in making you fall for me. You're soft for anything cute."
+    "No."
+    A simple and short reply, but it leaves Jacob quiet for a few moments. Eventually, he laces his fingers between Jay's and simply returns to the issue at hand: the room.
+
+    "If I had to dye my hair someth--"
+    "You have dyed your hair before," Sam interjects.
+    "Oh, right. Uh... I don't remember what color?"
+    "Pink."
+    Jacob blinks and looks at Sam. "Pink?" The same as what Sam <i>would</i> pick.
+    "<i>Not</i> a light pink, it was a very in-your-face bright pink."
+    But still pink. Sam might be trying to backpedal with that clarification, but it doesn't change the core of it. That's the link. That's the reason. It has to be.
+
+    The room flashes green and sounds off a cheerful ping, indicating that Jacob's answer is enough. But, he suspects it was also confirming his suspicions.
+
+    Sam realizes this as well.
+
+    "Jay! Your turn," he prompts, cutting off the interrogation before it even begins.
+    And Jay obliges, as always. Give him an order and he will follow it -- given the order doesn't clash with any of his morals.
+    "I guess I cut it myself."
+    "Am I really the only one who doesn't?"
+    "Potential money save," Sam says, almost in perfect beat with Jay.
+    "I live in a tree."
+    "What do you want from us?" Sam finishes for the both of them.
+    Jacob just chuckles softly, amazed by how in sync those two were for that. "Y'all acting like <i>I'm</i> the crazy one for being normal."
+    "It <i>is</i> normal to cut your own hair!" Sam retaliates.
+    "I wasn't saying it's <i>not</i> normal! Multiple things can be normal at once, Sammy."
+
+    This is the start of another harmless argument between the two. Jay stops it before it can get too far. "I cut it so I can see. That's all that matters."
+
+    The room flashes yellow.
+
+    Both Jacob and Sam shut up, staring at Jay -- the one who refuses to lie, no matter how little -- in disbelief.
+
+    Jay lifts his head, looking around at the yellow room in indignation. "Well, fuck you too, that's not a lie- I thought we were friends."
+    "Language," Sam mutters. "You thought ominous question man was your friend?"
+    Jacob gently squeezes Jay's hand. "Yellow means half-truth, as far as we know. Not a lie, per se..."
+    He tightens his hold on the brunette and looks down, trying to figure out what the room could be looking for. He hadn't gotten to the color bit yet, it didn't give him a chance. It stopped him before he could move on from the style/cut section. Last time, it didn't care about his very short answer, why is it different this time?
+
+    The room falls silent for longer than it should. Seconds tick by, then minutes. It takes a while before Jay finally reaches a conclusion.
+
+    "Control." His jaw clenches. "One of the few things about the vessel the pendant does not care about, other than not letting it impair sight. Something I can choose about my own body..."
+    A moment of hesitation, then Jacob turns around in Jay's hold to hug him tightly, burying his head against his chest.
+
+    His hair itself is not controlled; it is a mess. Curly strands going in every direction, leaves and twigs tangled in the curls... The front is cut so that it doesn't cover his eyes, but the back is long -- compared to the rest -- and untamed. The texture itself is extremely soft, like a cat's fur, so he does take care of it. It's just hard to get all the leaves out without a mirror.
+
+    "If the pendant did care, it would want me to have the easiest to obtain -- for us -- style that blends into a crowd." He looks like he just came out of the forest, because he did. That does not 'blend into a crowd.'
+
+    Sam raises a hand. "Speaking of the pendant, what's going on with it right now? Is it silent? You're acting more Jay than normal."
+    "I can't hear it. It's still maintaining the vessel, but it can't speak. ... I don't like the quiet."
+
+    As if mocking him, it becomes quiet again as that information settles into all of them.
+
+    Jacob doesn't let it last for too long. Jay's words may be heavy and sound like something that should be addressed right now, but he knows that's not what Jay wants. He was asked a question, and he answered with the truth, the only thing he will ever provide. The truth can be heavy.
+    So, it's best to move on. "You've dyed your hair, right? Or would that count as dye? I know you changed it for a musical, but there was no dye involved... You just snapped your fingers and, bam! Black hair."
+    Jay shrugs, gently running a hand through Jacob's hair. "No idea. Either way, I would still want to dye it black. That looked cool."
+    "Why didn't you keep it?"
+    "I picked the last name Star; I felt like I had to live up to that."
+    Jacob snorts and pulls back from the hug, getting comfortable again.
+    "What about a black hole?" Sam points out.
+    "A what?"
+    "The lack of light. A star dies and the gravitational force crea--" He stops himself midsentence and sighs. "Yeah, I hear it." He looks up at the room. "Are we good? That should be the last part answered."
+
+    The room turns green.
+
+    They don't have to wait long for what they know will happen to happen. The room turns white again, but much brighter than before. They have to cover their eyes from the light. When they're able to see again, they're all where they were before being taken. Like nothing happened. Just like last time.</p>
+            </article>
+        </details>
+        <details id="2" class="">
+            <summary class='sectionHeader'>
+                <h1>Fears</h1>
+                <p class="chars">2,553 Words</p>
+            </summary>
+            <article class="content">
+                <p>What is your OC's greatest fear? How do they handle it? Where did it come from? Did they always have it? How do they handle fear in general? How do they alleviate that anxiety, if at all?
+
+    ---
+
+    The question has been posed.
+
+    For a good few seconds, none of the three boys move. Eventually, Sam looks up at Jay. No words, no verbal pleading for him to try to break them out of here. Just a single look, a question without words.
+
+    Jay tears off his necklace. The chain burns against his palms, but he doesn't flinch. He barely seems to notice. To him, it's not a source of comfort anymore. It's a blade. A matchstick. A scalpel.
+    Something sharp to cut through the silence.
+
+    Jacob's hand doesn't just reach; it clamps down, like he's trying to <i>hold Jay here</i> in this moment.  
+    "Jay, no," he says, too fast, like it's a reflex.  
+    Not because of the rules. Not because of the question.  
+    Because he knows Jay.  
+    Because Jay will always be the first to burn.
+
+    Sam looks at Jacob like he's crazy. "What do you mean, 'Jay, no'? No, Jay, yes. Obviously."
+    "We don't know what the punishments are for not cooperating. Just because he's no-"
+
+    Jacob doesn't get to finish his sentence before Jay rips his hand away from him and walks towards one of the walls. "Jay decides what he does, not you." He holds his free hand up to the wall, feeling the surface.
+    Cold. Smooth. Too smooth. Everything has some grain to it, some imperfections; not this place.
+
+    "Jay," Jacob tries to reason, "you said it yourself the first time we got here. We should assume our captors have all exits sealed."
+    "This is Jay we're talking about though... Hasn't he broken out of the lab several times?"
+    The brunette watches the giant in silence for a few moments before turning away and brushing a hand through his hair. His feet seem to move on their own as he walks around and around. "But we've already agreed, we're powerless here. He needs a script!"
+
+    "I'm still standing, aren't I?" Jay spins the chain around until he finds a loop that's been bent open just enough. "No magic means no me." He slices through his fingertip with the loop, a drop of blood falling to the floor without a sound. It doesn't soak into the ground, it just sits there. Like water on a leaf.
+
+    The white glow of the room flashes brighter. All three of them freeze.
+    "New order. Oldest to youngest."
+
+    Great, now the room is mad.
+
+    Jacob's gaze locks back onto Jay, the eldest. No words come out though.
+    Jay doesn't see Jacob's concern, he doesn't see anything. He feels the floor. It's moving. <i>They're</i> moving. He kneels down on one knee and closes his eyes, listening more closely.
+    "The fire." His normally steady voice shakes. "It's either rising, or we're being lowered." His eyes snap back open as he looks to the others.
+
+    The statement lingers in the air.
+    Jay started his inspection for any weaknesses, and the room retaliated.
+    They could die.
+
+    Seconds pass. Valuable seconds.
+
+    "What do you need?" Sam asks, maintaining a calm composure.
+    "You both wrote off magic when Jacob said he couldn't pause time, but this place was already pausing time in our reality. Are you able to use your powers?"
+    Sam shakes his head. "There is no water around. Minimal water vapor, not enough to do anything with." He starts to take off the jacket part of his suit, removing that layer of constriction.
+    "Yes, there is." Jay nods to the blood on the ground. Then, he raises his hand over the small drop and presses on his cut finger, letting more color join it.
+
+    Jacob can't look away. This isn't the first time Jay used his own body as fuel, as a source of some kind.
+    <i>As a source of food... Jacob's source of food.</i>
+    Even without a real blade, the guy is ready to cut off a limb like it's nothing, just to not have to voice his fears out loud. His heart falls further and further as each drop of blood is added to the pool.
+
+    The younger boy stops in his tracks. His heart skips a beat. This is insane. But, it's do or die. He finishes taking the jacket off and tosses it to the side. "That's not enough to cause any erosion." Regardless, he takes a few steps towards Jay and holds out a hand towards the small puddle. The viscous red water bunches together, rising off the floor in a flowing ball.
+
+    Powers were always on the table. And not just Jay's.
+
+    "Guys," Jacob's voice cuts through that moment of realization. "Stop! Just answer the question." He forces himself to move, to swiftly kneel down beside Jay and take his hand in his. "What happened to 'rule two of captivity, do what you're told; do not complain'? It's not that bad, it's just talking. We're not being asked to <i>do</i> anything, just answer some questions."
+
+    A wild animal trapped in a snare. Jay takes a shaky breath, trying to listen to and consider Jacob's words. He wants to believe him. He always wants to believe Jacob. It is just talking, but...
+    The topic. It's an endeavor to find a weakness, to find a bargaining chip to hold above their heads. An attempt to find the loaded gun and finish off the animal.
+    There has to be a weakness in the snare.
+
+    The ball of red bursts apart, seeping into Jay and Jacob's clothes. Jacob averts his attention to Sam, whose hand is anything but stable. No matter how calm and collected he tries to appear, Jacob sees right through it. He sees the tension in his shoulders, the faster rise and fall of his chest, the ever so slightly dilated pupils. And, most notably now, the inability to control his powers.
+    He looks back to Jay. The pendant is off, so his feelings are more on display than they normally would be in an unfamiliar location. This isn't a logical deconstruction of the room, not a thought-out ploy to find a weapon. He's the scared little boy he always has been, left in a cage with no way out. Time has always been on his side until Jacob, someone who can die, comes into play. So, he's desperately looking for a single crack in security. Biting and kicking, even biting himself to break out of the snare. Anything to break the snare.
+    Jacob gently opens Jay's hand, pulling the necklace away. Unlike Jay, he grimaces, the heat too much to hold. The chain clangs to the ground. "We're going to be okay. Please, stop hurting yourself. Give them a half answer. Maybe that will buy us more time?"
+
+    "The room can hear us." Sam's voice is just as calm as ever, but it's louder than normal. "That would only work if it didn't know the plan." He lets his hand fall to his side, fighting the urge to fidget with something, anything.
+    "It will hear any plan we have. Yes, by speaking it out loud, we lose some of the leverage, but it's still giving it a little bit of what it wants."
+
+    Jay suddenly perks up, like a cat hearing something in the distance. He yanks his hand away from Jacob, grabbing the necklace again, holding it close to his chest. "It's moving faster..." He barely speaks above a whisper.
+
+    Silence.
+    And then shattering ice. The air is dryer.
+    Since he has no long sleeves to fiddle with -- his cream undershirt is only a short sleeved button-up --, Sam starts to mess with his hair, feeling the texture between his fingers. Something to keep himself grounded. That perfect appearance is quickly being stripped away, layer by layer.
+
+    Jacob swallows the lump in his throat. "Jay, give them something."
+    Jay stays silent, unmoving.
+    Sam watches him, jaw tight. Then, "Alex."
+    Any life that was in Jay fades, a hollowness filling his eyes.
+    Jacob snaps his head to look at Sam, letting out a small gasp. There is no way the blonde just played that card.
+    "Answer." Sam orders. "I'm really sorry."
+
+    Jay pushes himself up to his bare feet, the necklace dangling from his now vicelike grip on it. He stands like a soldier, a demon, an assassin.
+    "Jacob dying."
+
+    ...
+
+    The room flashes yellow. He followed Jacob's order, not Sam's; give them a half answer.
+
+    Sam hesitates before asking gently, "Is the room or fire still moving?"
+    "No."
+
+    Jacob scrambles to his feet to hug Jay, but it's like hugging a wall. A very warm wall, but a wall nonetheless. "Jay, we are going to be okay. You don't have to protect me. I really don't think they're actually going to kill us, that would be counterproductive. Since they seem to want to know about us, we must be important to them. And that means, too important to kill off."
+
+    Jay looks down at Jacob. The brunette is like a kid clinging onto their parents legs. Then, he looks back up, straight ahead into the void of white. "Killing Jacob."
+    Jacob flinches and holds on tighter. "It wasn't your fault."
+
+    The room flashes green. That was enough for it. All Jay had to do the whole time was to say two simple words.
+
+    Since Jacob is the second oldest, he quickly follows up with his answer. No further ado, no beating around the bush. Sam and Jay should not be in this room for much longer; not in this state.
+    "Being abandoned. Having nobody. I can't..." His hands clench Jay's sweatshirt. "I can't lose my family."
+
+    The room flashes green again.
+
+    Something seems to flicker to life in Jay's eyes, and he kneels down to return Jacob's hug. But then, he looks to Sam; the last one who needs to answer before they can leave.
+
+    Sam. His hair is a mess, sticking up in some places and not conforming to his regular style at all. With only a shirt, tie, and pants, he looks... Vulnerable, almost. The brown-beige suit jacket really adds a layer of protection that is so engrained into his being, it's almost like he's naked without the full outfit.
+
+    He hesitates, unable to meet either of the other twos' gazes. Instead, he focuses on the ground. The bright, blinding ground.
+    He opens his mouth, but the words catch. He tries again.
+    "I... Death-"
+
+    The room flashes red.
+
+    "Heights."
+    Red.
+    "The dark."
+    Red.
+    "Water!"
+    Red.
+    "Love?"
+    Red.
+
+    "Sam, it said greatest fear." Jacob says quietly, still clinging onto Jay. The giant may have softened enough to reciprocate the affection, but there's no way he's <i>okay</i>.
+
+    A moment passes.
+
+    "Death isn't your greatest fear?" That finally hits Jacob. "Not any of the others either?" He pulls away from Jay to turn and look at Sam.
+
+    Oh, fuck.
+    That's a man on the verge of a meltdown.
+
+    A ball of ice forms in the air, sucking in more of the water vapor and making the air dryer. Then, it shatters.
+    Sam's powers are going haywire, he has no control over them. If they were in a normal building, the sink would've exploded by now, the pipes would be in shambles, the sky would be filling with clouds.
+
+    Jacob looks up at Jay, to Sam, and back again. Burned and shattered, fire and ice.
+    "Sam, breath. Sit down. We have time."
+
+    Sam nods, stumbling backward before sliding down the wall. He is breathing -- hyperventilating.
+
+    Jay doesn't soften the moment. "We're moving again," he states.
+    <i>They do not have time.</i>
+
+    "It is... It should..." He pulls his knees to his chest. "It should be death-"
+
+    "Whatever it is, we really aren't going to care. We've seen your worst." It's hard to tell what exactly is the barrier for Sam right now. Maybe appearance? How people perceive him? If it was that simple, he should not be having a full blown panic attack over it. Something else is here.
+    "No, you... You don't understand-" He buries a hand in his hair, his nails drawing blood. "I lied."
+    "Shocker."
+    Jacob lightly hits Jay's hand for that comment. "About what? It's okay, we will understand. We're not leaving you, no matter what."
+    "I..." He stops, barely managing to stop himself from letting any tears fall.
+
+    Okay, that's it.
+    Jacob gently untangles himself from Jay's hold; not pushing him away, just easing back. He crosses the short distance to Sam, crouching in front of him. Sam's got his arms wrapped around his knees, nails still digging in, eyes locked somewhere far away.
+
+    He doesn't force contact. He opens his arms, soft and slow, an invitation more than anything else.
+
+    And that's all it takes.
+
+    Sam surges forward like a dam breaking, collapsing into Jacob's chest. His body trembles as the sobs come, full and uncontrollable. Jacob catches him, arms folding around Sam protectively. Sam's tears soak into the fabric of Jacob's shirt, and he clutches him like a lifeline.
+
+    "I don't want to go to hell-" The words scrape out, broken and raw.
+
+    "... What do you mean?" Jacob gently stops Sam from potentially hurting himself any further. "Didn't you go to heaven? What makes you think you're going to hell? You're an angel."
+    Sam shakes his head. "Not... Not directly." His voice cracks. "Only for the last five minutes."
+    The world itself stops.
+    "I went straight to hell when I died," He continues, "For ten years."
+    He was only dead for three minutes.
+    Now that he's started, he can't seem to stop. This lie, this secret kept for ten years straight, has been torn open and there is no shutting the door now.
+    "I'm not an angel, not even close. The only reason I'm not still there is because someone had to raise Simon, and I couldn't even do that right! Now he's stuck in hell, I know it-" He's barely breathing between words. Thunder booms somewhere outside the room, far away.
+
+    This isn't right. Sam can't be bad. Sam? Mr. No-swearing Sam? The guy who offers his house to any person who needs a place to stay, for free? The guy who saved Jacob's life at one point? That Sam? This isn't right.
+
+    "I don't care about dying, I just... I can't go back there- I... I don't want to torture..."
+
+    <b><i>To</i></b> torture?
+    Jacob's stomach drops.
+    <i>To</i> torture? Not <i>be</i> tortured?
+    Jacob silently and slowly turns his head to look at Jay. None of this is making any sense. What does he even say to this? What does he do?
+
+    Jay sits cross legged on the floor, silently taking all of this in. Eventually, he lets out a long breath before speaking. "Was it under threat of being tortured yourself?"
+    Sam nods.
+
+    Okay, okay. That makes sense. A little. No it doesn't, but it makes <i>more</i> sense.
+
+    "Well, you're not going back there yet." He looks up at the room. "That is the answer, yes? 'Hell'?"
+
+    The room flashes green.
+
+    There's no time to breathe.  
+    The room turns white, blinding. No sound.  
+    And just like that, they're back, where they were before. Shifted around to where they moved in the room.
+    As if nothing happened.
+    As if everything didn't.
+    But Sam's still a mess.</p>
+            </article>
+        </details>
+        <details id="3" class="">
+            <summary class='sectionHeader'>
+                <h1>Trauma</h1>
+                <p class="chars">5,271 Words</p>
+            </summary>
+            <article class="content">
+                <p>Who was your OC before the trauma? Before the plot? Do they miss that version of themselves? Do they pity that version?
+
+    ---
+
+    The question has been posed.
+
+    Everything about the boys have gone back to normal from last time, but the room has not reset. Nearby lay the discarded suit jacket from last time, a few drops of blood over in the corner of the room...
+    None of that is pertinent, though. Not after hearing what the question is this time.
+
+    Jay doesn't move. He doesn't relax. He just stands there, staring at the floor where his blood had pooled before, where Sam's tears had fallen. His hand clenches and unclenches at his side.
+
+    "This is different," Jacob says quietly, his eyes fixed on Jay. "This isn't about what we wear or how we look. This is..."
+    "Cruel," Sam finishes, his voice barely above a whisper. But he's looking at Jay too. They're both looking at Jay.
+
+    Because they know. They all know Jay was three when it started. They all know there's no "before" for him to remember, no person to miss. The question is asking him to mourn someone who never existed.
+
+    "We will get to that issue later." The room lights up, the ominous voice speaking from an unknown origin. "For now, normal order. Youngest to oldest."
+
+    So, the room is aware this is an impossible question for one of them.
+    They all stand there for a good thirty second of so, turning that over in their heads. Jacob considers standing up for Jay, but that would be pointless. It would put their lives in danger again. No need to open that can of worms again.
+
+    Sam silently walks over to the discarded jacket and picks it up, neatly folding it over his arm. He has a new one on right now, so, he's just going to hold the old one. Hopefully, when this is over, it comes with him. "I don't mourn him; Jacob does."
+
+    Jacob closes his eyes, inhales, and exhales. "You were... And still are. Incredible."
+    Sam rolls his eyes. "Great save." He finds one of the walls in the undefined space, leaning back against it. "But we both know I was the most annoying kid ever back then."
+    He opens his eyes again and shakes his head. "No, you... You were. Yes, you could be annoying and you had no filter, but... Your smile. One smile and I was in love. And now..." He pauses, staring down at the ground. "Your laugh is silent. It wasn't always like that." Another moment of silence before, "Sometimes, if I manage to catch you sleep deprived enough, I can bring the old Sam back."
+    Sam stays quiet for a bit, but a bittersweet smile finds its way to his lips. Bittersweet with a hint of appreciation.
+
+    "Your core never did change. I know you think you were a dick--"
+    "Language-"
+    "-- back then, but you weren't. Just a bit socially unaware~" He softens. "You never intended harm. You always wanted to help others. It's just that nobody could get past the whole know-it-all spoiled rich kid part."
+    "I called your mother a child."
+    Jacob laughs, nodding. "You did!" He pinches the bridge of his nose, recalling the scene. " 'Hey, heads up -- my mother has a medical condition!' "
+    And then, in sync, they both say " 'Is the medical condition that she's a <i>child</i>?' "
+    "No filter! None!" He laughs again at the pure absurdity of it, waving his hand to punctuate his words. "And you meant nothing by it! That was a <i>genuine</i> question."
+    Sam can't help but chuckle as well. "I mean, you never know, she could've been a child. Had to confirm."
+    "Obviously~ 'Hey Sam, I was wondering if you wanted to go out some time?' "
+    Without missing a beat, Sam finishes the scene Jacob is reenacting, putting on the best child-who-just-discovered-ice-cream look. " 'Like a playdate?' " He gasps dramatically. " 'We could have a sleepover!' "
+    Jacob sighs, a wide smile stuck on his face. "You're still just as oblivious now."
+    "And you're still just as needling~"
+
+    He rolls his eyes and waves off the playful insult dismissively. "Yeah, yeah. You really don't miss those times at all?"
+    Sam shakes his head, mindlessly working out a crease the jacket had gotten from lying on the ground. "Wish to be back in school? No. That version of me would not have been able to save you from hypothermia. Besides, my mother had to die."
+
+    Jay, who'd been silently listening, blinks at that. His brow furrows, and he <i>has</i> to speak up. "That took a turn..."  
+    "I didn't like her anyway." The words come too fast, too blunt; more armor than answer. He then looks up towards the ceiling. "Does that check your little box, God? Not that you are one. I've met him. Just as cruel, but he values free will."
+
+    A little angry emoticon, ">:(", appears on one of the walls, but the room glows green regardless.
+
+    "Okay, okay," Jacob says quickly, shooting a look between Sam and the wall with the angry face. "Let's not antagonize our mysterious captor." He takes a breath, clearly trying to reset the mood. "My turn, right?"
+    Sam holds up his free hand, a signal for Jacob to stop before getting too far. "Why did it use an emoticon? That's pretty old-fashioned. Is it constricted to a keyboard?"
+    "Does it matter?"
+    "It's interesting." He glances over to Jay. "Jay, are you able to scratch the wall with that necklace? See if it's a screen?"
+
+    Jay looks at the wall, considering. Jacob quickly steps in between him and the wall. "Hey now, we don't want to start falling again, do we?"
+    "You said it yourself, they need us alive." Instead of going for the wall right in front of him, he suddenly turns and throws his fist at the conjoining wall with a step forward of momentum.
+
+    <i>Crack.</i>
+
+    Not the wall.
+    His hand.
+
+    He doesn't move after the impact for a few seconds, squeezing his eyes tightly before eventually retracting his arm slowly, shaking out his wrist. "Pain dampening didn't-- It's not--" His voice comes out uncharacteristically strained. "Fuck-"
+
+    Sam inhales sharply, his gaze focused on the slightly bloodied knuckles. "Why did you go for a punch? The necklace would've worked." He sets the jacket down and starts pulling things from his pockets; bandages and over-the-counter painkillers. Because of course he carries them. The suit is more than just for looks. Sam is a walking first aid kit.
+    He approaches slowly, hands visible, and offers Jay the pain relievers. "Here, let me take a look..."
+    Jay doesn't fight it, letting Sam look at his hand.
+    "I know most of it will be healed whenever we get out of here but... You broke it."
+    "Wonderful." Jay keeps his head down, his eyes still squeezed shut in pain, clenching his jaw. "Fix it."
+    Sam's already on it, starting to wrap up the injury. "I can't do much, these bandages aren't meant for casts. But as long as you don't move your hand too much, you will be fine."
+    "Yeah, whatever. Jacob- Get answering."
+
+    Jacob desperately wants to comfort Jay in some way, but physical pain has to simply be endured. "I uh... I don't think I <i>have</i> changed due to trauma?"
+    "Yeah," Sam agrees, securing the bandage around Jay's fingers. "I was going to say, you are one resilient person."
+    "I learned how to read others better," Jacob offers.
+    "I still don't know how you managed to communicate with Jay before he could speak... It's a miracle you understood anything."
+    Jay cuts in, blunt as ever. "He was wrong half the time."
+    Sam chuckles, letting go of Jay's hand. "I can't do anything else for you. You'll have to wait for the painkillers to kick in."
+    Jacob is _not_ letting that go. "What do you mean I was wrong half the time?! I-- I had entire conversations with you just by watching the microscopic changes in your paralanguage!"
+    "Para-who?"
+    "The reason why strangers don't believe you're telling the truth! Your paralanguage doesn't match your words."
+    A beat.
+    "Like when Sam says 'I'm fine,' it's normally a little higher pitched than normal."
+    Both of the blondes look at Jacob, confusion written all over their faces.
+    "It is higher pitched, by half a step on the piano."
+    "Half a step? <i>That's</i> what you keep picking up on?" Sam doesn't even try to mask his annoyance.
+    Jacob smiles "innocently" and nods. "Sometimes less..."
+
+    Jay goes quiet for a moment, studying Jacob's face. Then, unexpectedly, "That's why nothing breaks you."
+    Jacob tilts his head, confused. "What?"
+    "You hear every lie, every half-truth, every pain... and you still choose to feel it all. You're the strongest person I know."
+    Heat starts to rise to Jacob's cheeks.
+    Sam annoyance washes away; he nods in agreement. "Nobody has to work that hard to read you. You're an open book. That level of self-assurance is surreal."
+    Trauma couldn't change Jacob, because he always dealt with it in the moment. No bottling is away for years on end like Sam, no disconnecting from reality like Jay. He lets that darkness in while it's still small. There is nothing to mourn.
+
+    The room flashes green.
+
+    Sam goes back to pick up the blazer again, folding it over his arm. Meanwhile, the pain killers have started to kick in. The pulsing pain starts to leave.
+
+    The room returns to its familiar white glow. All eyes land on Jay, once again. How, oh how, can someone with little to no memories of a time before trauma answer this question?
+    The man of the hour says absolutely nothing.
+    What can he say?
+
+    A hairline crack of blue light splits the floor. It moves like liquid lightning, tracing a path from where Jay stands to the wall behind him. The light follows the outline of something that wasn't there before -- the edges of a door, glowing with the same ethereal blue as Jay's pendant.
+    The door swings open on its own, cool air rushing in; real air, carrying the scent of pine and earth and freedom. And standing in the doorway is Jay. Or at least, a version of him.
+
+    The same, yet, in every way, not. His hair -- a maze of wild and untamed dandelion blond curls -- has no leaves in it. No twigs, no feathers, no remnants of the forest that proved to be too difficult to remove without a mirror. His clothes look like they were bought specifically for him, not stolen out of necessity. Some paint stains the thin, cinnamon brown t-shirt hugging his frame. Artistic stains, from some project long gone -- blues, yellows, and pinks smeared without intention.
+    A t-shirt and shorts; something Jay would never wear. Something Jay <i>could</i> never wear.
+    He <i>has</i> shoes, real ones. They fit. They're not falling apart. Real Jay rarely bothers unless he has to go out in public. It's impossible to find anything that fits him, given his height. So, when he does find something that fits, he keeps them until they're not shoes anymore.
+    And the eyes... The eyes have always given Jay away, always been the first flicker of humanity beneath his desolate mannerisms. New-Jay's eyes are so full of life; of hope. No mask, no filter, no "conceal, don't feel, don't let them know" Elsa-esk mentality. And not nearly as intense of a stare. Normally, his gaze, whether good or bad, is like a laser.
+    A hint of that pure-Jay toothy grin lingers on his lips.
+
+    Real-Jay moves without thinking, grabbing ahold of the other's wrist and pulling them into the room. They are unmoving on their own, frozen in time. That doesn't matter right now, however. There is a door, and it is <i>open</i>.
+    He stops at the precipice, the hollow entrance, and looks down at the missing ground on the other side. Miles below them is the ground, barely in view. That fire he keeps hearing? It's an eternal forest fire; reds and oranges mixing in with the distant greens of the canopy.
+    The outside of the room makes no sense. Placing a hand on the doorframe to keep himself anchored and leaning out, he can see the side of whatever they're in. It's small. Smaller than the area Jacob had mapped out. Walls made of patterned metal sheets with no seams, no screws.
+
+    "What's out there?" Sam's gentle voice brings him back to the situation at hand.
+    He steps back from the doorway, putting a safer distance between him and the drop. "What's that show? The one with the..." Snapping his fingers, it takes him a moment to find the right words. "Blue box?"
+
+    "A Tardis?!" Sam translates with ease, unable to keep the excitement out of his tone. "We're in a Tardis?" He briskly heads to the doorway, taking a peek. "Not exactly how I wanted this to happen-"
+    The drop registers.
+    The ground is miles below. Distant trees, a wildfire horizon. He stumbles back like the air itself pushed him, the color draining from his face.
+
+    Jay wastes no time with trying to figure out what any of those details mean. The door isn't an exit. It's time to deal with the new entity.
+    Just as swiftly as he pulled Fake-Jay into the room, he takes ahold on one of his arms again, looking at the bare skin. The uncut, uninjured arm. Soft skin. Their hands are soft too, used only for creation and regular activities.
+    Not a single drop of blood has been shed by these hands.
+    Not a single drop of blood has to be soaked up by layers of fabric, they can wear anything, including a t-shirt.
+
+    He looks up at his fa-- Hold up. He looks <b><i>up</i></b>?
+    Fake-Jay is taller than Real-Jay. By a good few inches. Being 6'8" tall, he has never had to look <i>up</i> at someone before; this is a first.
+    "How is he taller than me?" His gaze shifts to Sam.
+    "I, uh--" A beat, recomposing. "You were starved, weren't you?"
+    ...
+    Jay looks back at the other version, at their unstained hands. All their fingers are the right size -- he has one that's shorter than it should be. Everything about this imitation is different. Better. There was always light in their world.
+
+    "Where are they from?" He speaks quietly, subdued.
+    The room brightens. "Any other timeline."
+    A few moments pass by.
+    Jay steps back, letting go, and looks up at the ceiling, at the room. "Why? Why are we here?" There is no anger in his voice, no fight, no venom. There is nothing.
+    The room does not respond.
+    ...
+    With one passing thought, Jay starts for the door again.
+    Jacob quickly grabs his wrist, holding him back. "Jay!"
+    "I can't die." He yanks his hand away.
+    "Then what are you trying to accomplish?" He runs in front of the other, almost falling out the door in the process. Jay catches him before he can.
+    "I'm the only one who can leave."
+    "And how will you get back up?" Sam offers.
+    "We'll all be teleported back next time this place has a question."
+    "We don't know when that is."
+    "Where are we?"
+
+    Jay's voice does not come from Jay.
+
+    All heads turn to look at Fake-Jay, moving and alive.
+
+    "We?" Jacob moves away from the doorway.
+    "Yeah-" Fake-Jay looks at his hands, as if to make sure he's real. That <i>this</i> is real. He turns his hands over, stretching his fingers out. "I don't know what the duplicate thing is about though..."
+    "<i>I'm</i> not the duplicate."
+    They pause, their gaze flickering Sam and Jacob. It doesn't take long for him to realize, "You're not mine... Are you?"
+    "No, we're all from the same universe," Sam states, but real-Jay holds up a hand to correct him.
+    "Timeline. The only connection to an alternate universe here is the pendant. We're from diverging timelines. The pendant has drilled that difference many times." He looks to the door. "The place we are in now is an alternate dimension, from what I can tell." He looks back to Fake-Jay, specifically honing in on the neck. There rests the coppery chain he was looking for. "You have a pendant. too."
+    Their hand instinctively flies to their chest, where the crystal should be under his shirt.
+    "Crystallina. Is she safe?"
+    They tilt their head, confused. "Why wouldn't she be? What did you do to her?"
+    Jay shrugs, taking a moment to debate how much he should say. "We had a... Disagreement. Haven't seen her in... A few winters?"
+    "<i>Winters?</i> Who talks like that?"
+
+    Jacob steps away from the opening to a safer area in the room, chuckling softly. "Someone who only started talking 7 years ago."
+    Before Fake-Jay can even comprehend that, Real-Jay follows up with another question. "How old are you?"
+    You can practically see the gears chugging along in Fake-Jay's head, as if submerged in a viscous vat of liquid. He stands motionless, his brows furrowed, his knuckles white from his grip on the pendant. Eventually, he finds the ability to speak again. "I'm sorry, but I never got an answer. Where are we?"
+    "We don't know," Sam answers, leaning back against one of the walls. "We're not allowed to leave until we answer some questions. This is our fourth time here."
+    "How old am I?" Jay repeats.
+    "What kinds of questions?" Fake-Jay ignores Jay's question. "Why am I here?"
+    Sam nods to Real-Jay. "Repeat the question, please."
+    He does, word for word. Just following the order given to him.
+    Sam looks back to Fake-Jay. "Our Jay... Doesn't remember a time before."
+
+    The door slams shut, the outline seals. As if it was never there.
+    Jay flings his hands up towards where the door used to be, then slaps them onto his thighs with a sharp sigh. "And <i>there</i> goes my chance to jump out the window!"
+
+    "Jay?" Fake-Jay looks at the other, then back to Sam. "What do you mean Jay? I'm Ale--"
+    Jacob is quick to step and and cut him off, grabbing Fake-Jay's free hand with enough force to hurt, but only a little. "Ah ah ah! Okay! You go by birth name, great. You can't say it. Do you have a nickname not based around it? Something we can call you? What do <i>I</i> call you?"
+    Wincing in pain, he does stop himself from saying the first nickname that comes to mind since it is similar to Alex. Then, his cheeks turn a little red. "You?... You call me Love..."
+    Jay focuses his gaze anywhere but those two.
+    "Or, whatever you feel like in the moment- Why can't I say my name?"
+    Jacob hesitates, caught off guard for a moment. Then, he focuses on the task at hand. "I can't do that since there are two of you, and that would be confusing. What about Sam? What does he cal-- He doesn't use nicknames... Anyone else. What does anyone else call you?"
+    "They also call me--"
+    "Right, because Sam refuses to use nicknames, no one else does either." He lets go of Fake-Jay's hand and pinches the bridge of his nose, trying to come up with something. 'Jay' would not be suitable to call someone who has never gone by it.
+    Sam chimes in with, "So sorry? I had no idea I was creating this issue for you."
+    Jacob waves him off. "You're fine." He looks up at Fake-Jay with a smile, finally landing on a decision. "Dolphin~"
+
+    "'Ey!" Real-Jay interjects. "I do not sound like a do--"
+    "You do~"
+    "I can throw you like a bag of sticks, and I will throw you into the waterfall when we get home. You <i>better</i> take that back, right now!"
+    "Over my de--" Jacob stops when he hears "Dolphin" chuckle softly at their little scuffle. Just as he predicted, it is the same signature-Jay laugh. A good few octaves above his normally deep and gravelly voice; very high-pitched, like a dolphin. He gestures to Dolphin as proof to Jay. "Tell me that didn't sound like a dolphin! You <i>heard</i> it! You can't lie. Now that you've heard it from the outside, say it. Say you <i>don't</i> sound like a dolphin. I <i>dare</i> you."
+    Jay tries to say something, then stops. His silence, as always, says more than words ever could. Jacob is right, he <i>can't</i> say that. He stammers, then just crosses his arms and looks away, muttering "I'm throwing you into the waterfall when we get home..."
+
+    "Uh-huh~ You do that. Good luck catching me." He brings his attention back to Dolphin, Fake-Jay's new temporary name. "As for why we can't use your real name, it will make Jay go all soldier, test-subject mode. You also can't say 5A backwards; playing Battleship is difficult."
+    "Or chess..." Sam says quietly.
+    "When are you saying letters and numbers in chess?"
+    "Algebraic chess notation-"
+    "Algebraic..." Jacob lets out a breath and shakes his head. "Of course, Sam. How could I forget <i>algebraic chess notation</i>?"
+    Dolphin smiles. "I mean, that would be more relevant than Battleship."
+    That immediately catches Sam's attention. He can't help the smile tugging at his lips, his eyes almost sparkling with excitement. "You play? What else is different?"
+    "I mean..." He looks Sam up and down, then to Jay, and back to Sam. "You look like you did before therapy. It's weird to see you without the glasses. And blond hair-"
+    "... Alright, never mind. I don't want to know."
+    Now Jacob perks up. "What? How? How did we convince him to do that? What did we do?"
+    "Tag teaming, obviously. Took a lot of convincing."
+    Jacob chuckles softly. "Sounds about right~ But what specifically did we do? Jay-bird and I have <i>tried</i> to convince him."
+    "Well... Your tour was a big piece of it. You potentially leaving."
+    The light fades from his eyes.
+
+    He actually went on tour in other timelines?
+    It would make sense. No being presumed dead right before the date. No needing to stay off the radar for a year.
+
+    Sam hesitates, ready to drop the blazer if Jacob needs some form of comfort.
+
+    Dolphin softens. He kneels down and pulls the brunette into a hug, gently burying a hand in his messy hair. "I'm so sorry."
+    Jay clenches his hands into a fist, a familiar blue glow flickering to life from under his sweatshirt. Sam immediately clocks the light, but stays quiet.
+
+    Jacob's hands wrap around Dolphin, clenching the back of his shirt. He's... Not warm. Not <i>inhumanly</i> warm. Dolphin is a normal temperate.
+    Not the adapted warmth Jay got from being burned so much in the past.
+    He lets himself melt into the embrace, lets the tears fall.
+    The arms around him are the familiar, but it's not the same. Protective, but weak. Soft, but fragile.
+    He never realized how secure Jay's hold has always been. There was always choice, always an option to refuse consent, but it was still strong. Safe.
+    There was never a doubt in his mind that when Jay carries him, Jay will not drop him.
+
+    Doubt exists for alternate-Jay.
+
+    Jay glances towards Sam, clenching and unclenching his fist. His hand starts to reach out, then stops when Sam shakes his head no. He raises his hand to hold onto the pendant under the thick fabric. "Yes." His deep, unfeeling voice cuts through the quiet.
+    Jacob's attention snaps to the sound.
+
+    The pendant is glowing.
+    The pendant is active.
+
+    The tall blonde looks up at the ceiling, addressing the room. "Your question: yes."
+
+    The room flashes yellow.
+
+    "Jay..." Jacob rubs his eyes, trying to wipe away the tears. "I love <i>you</i>."
+    Jay pays no mind to that, focusing on the room and not Fake-Jay comforting <i>his</i> boyfriend. "Yes and no."
+
+    The room stays white.
+    The answers needs more context.
+
+    "Stars shine brighter during the night, light is more visible in the dark. But... I would've like to know what the sun was like before I became nocturnal."
+
+    Silence.
+
+    "Life that thrives in extreme environments are resilient only to that environment. They wither away in normalcy."
+
+    More silence.
+    The room flashes green.
+    Jacob pulls away from Dolphin slightly, his tear-stained face turned toward Jay. "You don't wither," he says quietly. "You don't."
+    Jay's grip on the pendant tightens. "You don't know what normal looks like either."
+    "I do. I was born in the light."
+
+    Dolphin slowly releases Jacob, staring at Real-Jay with something that might be horror. "I don't... I don't understand. What happened to us?"
+
+    Real-Jay finally looks directly at him. "How old are you?" He repeats the question from before.
+    "Twenty-four." This time, Dolphin actually answers and acknowledges the question.
+    Jay looks to Sam. He doesn't have to ask the question, he knows Sam will understand why he was looking for an age.
+    "You escaped at thirteen or fourteen. Spoke at seventeen. Found joy at twenty."
+
+    Jacob pushes himself to his feet and returns to Jay's side, reaching up to tug at Jay's arm, urging him to let go of the pendant. "Those milestones won't sound so big in the future. It's abnormal timing, but you still hit them. That's all that matters."
+
+    "Escaped? Dolphin repeats, his eyes wide. "Seriously, what happened? Where did we go?"
+    "Who are your parents?" Jay gently puts an arm around Jacob, holding him close.
+    "My parents? Elliot and Han."
+    Han? Who the fuck is Han? Never mind that. "No Nico?"
+    "Never heard of a Nico."
+    "Elliot and Nico built a lab." Jay puts emphasis on every word. There is no emotion in his voice, no life. Just a cold void.
+    Dolphin's face goes pale. "A lab? What kind of..." He stops, his hand flying to his pendant. "No. No, that's impossible. Elliot would never!" His voice cracks. "He's my <i>father</i>. He taught me to paint. He built me a workshop. He..." The words die as he stares at Jay's emotionless face, at the scars barely visible beneath his clothes.
+    "We are the perfect test subject. The story ends with us killing Jacob. Three years after he showed us what life really is."
+
+    "You killed..." Dolphin's voice breaks entirely. He looks at Jacob, alive and breathing, then back to Jay. "I would never. I could never hurt anyone, let alone--" He's shaking now. "How does someone become..." He gestures helplessly at Jay. "How do you come back from that? And if you killed him, how is he standing right there?"
+    "Jacob 2.0," Jacob clarifies. "I created a time paradox. He killed the other me." Then he looks up at Jay. "It's not your fault."
+    "Without telling anyone..." Sam adds quietly.
+
+    They all thought Jacob was truly dead. The tour got canceled. Sam and Jay were left with nothing. The world lost a star, but Sam and Jay lost their North Star.
+
+    The pendant continues to glow, slowly getting brighter. While it gains its bearing, the life continues to drain from Jay. The only thing grounding him is Jacob.
+    Dolphin doesn't say anything for the longest time, not moving at all. None of that made any sense to him. It's impossible. Eventually, he decides to focus on what is here and now. "What's going on with the pendant? What spell are you trying to cast?"
+    Sam takes that opportunity to jump in with the question that has been in his head the second he saw that blue glow. "Is it reconnected with you?"
+    Jay nods in response to Sam, but it takes him a few moments to come with anything to say to the other version of himself.
+
+    Casting a spell? Who calls it that?
+    Magic is not commonplace in their world since there was no lab... Is Fake-Jay the only one with access to magic?
+
+    "No... It's scanning my memory of the time it was gone for, fixing the hand I broke, and regulating anything off." He tilts his head. "Does yours not talk to you?"
+    "It talks to you?? It's a rock!"
+    Jay shakes his head. "Ever heard of Be More Chill?"
+    "The musical?"
+    "That, but able to search through the history and future of the current timeline."
+    Dolphin stares at Jay, blinks a few times, looks down at the ground... His brows furrow, trying to wrap his head around that. "How? How did it turn from a broken portal to that?"
+    Jay shrugs, like this is nothing more than explaining a routine check-up, not an infection of his soul. "It got pushed past that red mode during testing. The magic seeped into my heart." And from there, it infected his blood, and the rest of his very being. He kneels down to be more level with Jacob, pulling him into an actual hug.
+    From where he leans against the wall, Sam finally speaks; the question that's been building since the glow first started. "What would happen if you two swapped? Just for a minute."
+
+    The room flashes red, an angry mechanical bang sounding around them.
+
+    All of them, aside from Jay, jump, looking around at the room.
+    Sam narrows his eyes, taking that reaction into account. "Interesting... But if it's worried about that, why hasn't it zapped up back to reality?"
+    A moment passes.
+    The main three look to the only one who hasn't answered the question; Dolphin.
+
+    The room flashes red again.
+    "Small one," the ominous voice speaks. "Redo your answer."
+    With the knowledge he has now.
+
+    Jacob pauses, giving himself time to rethink the question. He looks up at Jay, leans into the strong and secure hold around him. It's so warm; Jay has always felt like a personal heater.
+
+    Seconds tick by.
+
+    "No," he answers. "Yes, I mourn the tour. I mourn what could be. I do not mourn the life I could've had." As if to prove his point, he leans up to give Jay a kiss on the cheek, making the stoic giant turn bright red. "I wouldn't trade <i>my</i> Jay for the world~ The other one is great in his own right, but he's not mine. I doubt he basically broke like a computer running out of CPU the first time we kissed~ I doubt I had the chance to show him what joy is. To see him laugh for the first time, ever."
+    Jay fights the urge to shut Jacob up, since surely this is the answer the room is looking for. Instead, he buries his head against the other's shoulder, hiding his burning face. His grip around Jacob tightens, but not enough to hurt.
+    "And Sam," Jacob continues, a wide smile finding his face. He could've kept going on about Jay and really flustered the poor guy, but he's showing him some mercy. "He doesn't need therapy. I mean- I am still going to pester him about it. But he's exactly who I need as he is. He saved me life. Getting either of these two to really laugh is amazing because it needs to be earned. The challenge is rewarding."
+
+    The room flashes green, holding the light longer this time, as if savoring the completeness of their answers.
+
+    Dolphin looks between all of them, his eyes settling on Jay. "I still don't understand how--"
+
+    But the room has heard enough. The familiar blinding white begins to build, brighter than before. They all instinctively shield their eyes.
+
+    "Wait!" Dolphin calls out, reaching toward them. "I need to know--"
+
+    The light swallows his words. When it fades, they're back where they were before being taken. The three of them, alone again.
+
+    Like nothing happened.
+
+    Except Jay's hand is healed, and they all carry the weight of what they've seen.</p>
+            </article>
+        </details>
+    </main>
+    <footer>
+        <button data-theme="normal" aria-pressed="false" id="NormalMode"></button>
+        <button data-theme="alt" aria-pressed="true" id="AltMode"></button>
+    </footer>
+    <script src="Accordian.js"></script>
+</body>
+</html>
