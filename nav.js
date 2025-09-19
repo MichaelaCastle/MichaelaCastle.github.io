@@ -5,7 +5,7 @@ let versionNumber;
 let handleDeviceChange = (e) => {
     if (e.matches) {
         document.querySelector('#TheParticle').innerHTML = "Home";
-        document.querySelector('#SomeStories').innerHTML = "Stories";
+        // document.querySelector('#SomeStories').innerHTML = "Stories";
         document.querySelector('#Updates').innerHTML = "Updates";
     }
 };
